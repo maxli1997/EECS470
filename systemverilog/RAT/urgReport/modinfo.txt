@@ -1,0 +1,2092 @@
+===============================================================================
+Module : testbench
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 66.40  82.22 --      50.58 
+
+Source File(s) : 
+
+/afs/umich.edu/user/m/e/meitang/Desktop/EECS470-final-project/systemverilog/RAT/rat_testbench.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 66.40  82.22 --      50.58 testbench 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : testbench
+
+             Line No.   Total   Covered  Percent
+TOTAL                      180      148    82.22
+ALWAYS             57        2        2   100.00
+ROUTINE            76       43       11    25.58
+ROUTINE           145       22       22   100.00
+INITIAL           182      113      113   100.00
+
+56                          always begin
+57         2/2                  #5 clock=~clock;
+58                          end
+59                      
+60                          task check_rat_output;
+61                              input   rat1_valid, rat2_valid;
+62                      	    input   [`PR_LEN-1:0]   rat11_reg, rat12_reg, rat21_reg, rat22_reg;
+63                              input   [`AR_SIZE-1:0][`PR_LEN-1:0] rat_out1, rat_out2;
+64                              input   [`AR_SIZE-1:0][`PR_LEN-1:0] rat_arr_out;
+65                              input   [`AR_LEN-1:0]               ar1_out, ar2_out;
+66                              input   [`PR_LEN-1:0]               pr1_out, pr2_out;
+67                              input   pr1_valid, pr2_valid;
+68                              input   c_rat1_valid, c_rat2_valid;
+69                      	    input   [`PR_LEN-1:0]   c_rat11_reg, c_rat12_reg, c_rat21_reg, c_rat22_reg;
+70                              input   [`AR_SIZE-1:0][`PR_LEN-1:0] c_rat_out1, c_rat_out2;
+71                              input   [`AR_SIZE-1:0][`PR_LEN-1:0] c_rat_arr_out;
+72                              input   [`AR_LEN-1:0]               c_ar1_out, c_ar2_out;
+73                              input   [`PR_LEN-1:0]               c_pr1_out, c_pr2_out;
+74                              input   c_pr1_valid, c_pr2_valid;
+75                              // check whether rat correct know the insts are valid or not
+76         1/1                  if (rat1_valid != c_rat1_valid) begin
+77         0/1     ==>              $display("@@@ Wrong rat1_valid, expected: %d", c_rat1_valid);
+78         0/1     ==>              $display("@@@ Failed");
+79         0/1     ==>              $finish;
+80                              end
+                        MISSING_ELSE
+81         1/1                  if (rat2_valid != c_rat2_valid) begin
+82         0/1     ==>              $display("@@@ Wrong rat2_valid, expected: %d", c_rat2_valid);
+83         0/1     ==>              $display("@@@ Failed");
+84         0/1     ==>              $finish;
+85                              end
+                        MISSING_ELSE
+86                              // when insts are valid check whether rat correctly find the ar-pr mapping
+87         1/1                  if (rat11_reg != c_rat11_reg && c_rat1_valid) begin
+88         0/1     ==>              $display("@@@ Wrong rat11_reg, expected: %d, got: %d", c_rat11_reg, rat11_reg);
+89         0/1     ==>              $display("@@@ Failed");
+90         0/1     ==>              $finish;
+91                              end
+                        MISSING_ELSE
+92         1/1                  if (rat12_reg != c_rat12_reg && c_rat1_valid) begin
+93         0/1     ==>              $display("@@@ Wrong rat12_reg, expected: %d, got: %d", c_rat12_reg, rat12_reg);
+94         0/1     ==>              $display("@@@ Failed");
+95         0/1     ==>              $finish;
+96                              end
+                        MISSING_ELSE
+97         1/1                  if (rat21_reg != c_rat21_reg && c_rat2_valid) begin
+98         0/1     ==>              $display("@@@ Wrong rat21_reg, expected: %d, got: %d", c_rat21_reg, rat21_reg);
+99         0/1     ==>              $display("@@@ Failed");
+100        0/1     ==>              $finish;
+101                             end
+                        MISSING_ELSE
+102        1/1                  if (rat22_reg != c_rat22_reg && c_rat2_valid) begin
+103        0/1     ==>              $display("@@@ Wrong rat22_reg, expected: %d, got: %d", c_rat22_reg, rat22_reg);
+104        0/1     ==>              $display("@@@ Failed");
+105        0/1     ==>              $finish;
+106                             end
+                        MISSING_ELSE
+107                             // when insts are valid check whether rat correct backup the updated rat after each inst
+108        1/1                  if (rat_out1 != c_rat_out1 && c_rat1_valid) begin
+109        0/1     ==>              $display("@@@ Wrong brat backup for first inst");
+110        0/1     ==>              $display("@@@ Failed");
+111        0/1     ==>              $finish;
+112                             end
+                        MISSING_ELSE
+113        1/1                  if (rat_out2 != c_rat_out2 && c_rat2_valid) begin
+114        0/1     ==>              $display("@@@ Wrong brat backup for second inst");
+115        0/1     ==>              $display("@@@ Failed");
+116        0/1     ==>              $finish;
+117                             end
+                        MISSING_ELSE
+118                             // check the initial rat
+119        1/1                  if (rat_arr_out != c_rat_arr_out) begin
+120        0/1     ==>              $display("@@@ Wrong rat");
+121        0/1     ==>              $display("@@@ Failed");
+122        0/1     ==>              $finish;
+123                             end   
+                        MISSING_ELSE
+124                             // check for replaced ar-pr mapping  
+125        1/1                  if ((ar1_out != c_ar1_out || pr1_out != c_pr1_out) && c_pr1_valid) begin
+126        0/1     ==>              $display("@@@ Wrong ar-pr pair, expected: %d -> %d got: %d -> %d", ar1_out,pr1_out, c_ar1_out,c_pr1_out);
+127        0/1     ==>              $display("@@@ Failed");
+128                             end
+                        MISSING_ELSE
+129        1/1                  if ((ar2_out != c_ar2_out || pr2_out != c_pr2_out) && c_pr2_valid) begin
+130        0/1     ==>              $display("@@@ Wrong ar-pr pair, expected: %d -> %d got: %d -> %d", ar2_out,pr2_out, c_ar2_out,c_pr2_out);
+131        0/1     ==>              $display("@@@ Failed");
+132        0/1     ==>              $finish;
+133                             end                               
+                        MISSING_ELSE
+134                         endtask
+135                         task show_rat;
+136                             input   rat1_valid, rat2_valid;
+137                     	    input   [`PR_LEN-1:0]   rat11_reg, rat12_reg, rat21_reg, rat22_reg;
+138                             input   [`AR_SIZE-1:0][`PR_LEN-1:0] rat_out1, rat_out2;
+139                             input   [`AR_SIZE-1:0][`PR_LEN-1:0] rat_arr_out;
+140                             input   [`AR_LEN-1:0]               ar1_out, ar2_out;
+141                             input   [`PR_LEN-1:0]               pr1_out, pr2_out;
+142                             input   pr1_valid, pr2_valid;
+143                             input   [10:0] cycle_num;
+144                             begin
+145        1/1                      $display("@@@\t\tCycle %d", cycle_num);
+146        1/1                      $display("@@@updated rat from last cycle:");
+147        1/1                      $display("@@@\t\tAR#\t\t\t\t\t\tPR#");
+148        1/1                      for (int i = 0; i < `AR_SIZE; i++) begin
+149        1/1                          $display("@@@\t%d\t\t\t\t\t\t%d", i, rat_arr_out[i]);
+150                                 end
+151        1/1                      if (rat1_valid) begin
+152        1/1                          $display("@@@inst#1 opa uses pr %d opb uses pr %d", rat11_reg, rat12_reg);
+153        1/1                          $display("@@@inst#1 modify ar %d which now is used? %b mapping to pr %d", ar1_out, pr1_valid, pr1_out);
+154        1/1                          $display("@@@brat for first inst:");
+155        1/1                          $display("@@@\t\tAR#\t\t\t\t\t\tPR#");
+156        1/1                          for (int i = 0; i < `AR_SIZE; i++) begin
+157        1/1                              $display("@@@\t%d\t\t\t\t\t\t%d", i, rat_out1[i]);
+158                                     end
+159                                 end
+160                                 else begin
+161        1/1                          $display("@@@inst#1 is not valid");
+162                                 end
+163        1/1                      if (rat2_valid) begin
+164        1/1                          $display("@@@inst#2 opa uses pr %d opb uses pr %d", rat21_reg, rat22_reg);
+165        1/1                          $display("@@@inst#2 modify ar %d which now is used? %b mapping to pr %d", ar2_out, pr2_valid, pr2_out);
+166        1/1                          $display("@@@brat for second inst:");
+167        1/1                          $display("@@@\t\tAR#\t\t\t\t\t\tPR#");
+168        1/1                          for (int i = 0; i < `AR_SIZE; i++) begin
+169        1/1                              $display("@@@\t%d\t\t\t\t\t\t%d", i, rat_out2[i]);
+170                                     end
+171                                 end
+172                                 else begin
+173        1/1                          $display("@@@inst#2 is not valid");
+174                                 end
+175        1/1                      $display("@@@");
+176                             end
+177                         endtask  // show_rat
+178                     
+179                     
+180                         initial begin
+181                             // Initiate to all zero except reset
+182        1/1                  cnt = 0;
+183        1/1                  clock = 0;
+184        1/1                  reset = 1;
+185                             //dispatched insts
+186        1/1                  valid1_in = 0;
+187        1/1                  valid2_in = 0;
+188        1/1                  reg11_in = 1;
+189        1/1                  reg12_in = 2;
+190        1/1                  reg21_in = 0;
+191        1/1                  reg22_in = 0;
+192        1/1                  dest_reg1_in = 0;
+193        1/1                  dest_reg2_in = 0;
+194                             //freelist assignments
+195        1/1                  regNum1 = 10;
+196        1/1                  regNum2 = 11;
+197        1/1                  success1 = 0;
+198        1/1                  success2 = 0;
+199                             // mispred case brat being reversed order
+200        1/1                  brat_en = 0;
+201        1/1                  for (int i = 0; i<`AR_SIZE;i=i+1) begin
+202        1/1                      c_brat[i] = `AR_SIZE-1-i;
+203                             end
+204        1/1                  @(negedge clock)
+205        1/1                  reset = 0;
+206        1/1                  for (int i = 0; i<`AR_SIZE;i=i+1) begin
+207        1/1                      c_rat_out1[i] = 0;
+208        1/1                      c_rat_out2[i] = 0;
+209                             end
+210                     
+211                             // cycle 0 just check reset, nothing will be done in cycle 0
+212        1/1                  @(posedge clock)
+213        1/1                  #2
+214        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+215                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+216        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+217                                 0,0,0,0,0,0,c_rat_out1,c_rat_out1,c_rat_out1,0,0,0,0,0,0);
+218                             // at negedge cycle 0 id stage send out insts and correct values are prepared
+219        1/1                  @(posedge clock)
+220        1/1                  valid1_in = 1;
+221        1/1                  cnt += 1;
+222        1/1                  c_rat_arr_out = c_rat_out2;
+223        1/1                  c_rat_out1[0] = 10;
+224        1/1                  c_rat_out2 = c_rat_out1;
+225                             // cycle 1
+226                             // only one inst(load); since no loads have completed the ar will map to 0 as default and means nothing
+227                             // freelist assign pr 10 to ar 0
+228                             // at posedge cycle 1 freelist will send free pr to rat
+229        1/1                  regNum1 <= `SD 10;
+230        1/1                  success1 <= `SD 1;
+231                             // rat should have finished everything
+232        1/1                  #2
+233        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+234                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+235        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+236                                 1,0,0,0,0,0,c_rat_out1,c_rat_out2,c_rat_arr_out,0,0,0,0,1,0);        
+237                             // at negedge cycle 1 dispatched inst come
+238        1/1                  @(posedge clock)
+239        1/1                  cnt += 1;
+240        1/1                  valid1_in = 0;
+241        1/1                  valid2_in = 1;
+242        1/1                  c_rat_arr_out = c_rat_out2;
+243        1/1                  c_rat_out1 = c_rat_arr_out;
+244        1/1                  c_rat_out2 = c_rat_out1;
+245        1/1                  c_rat_out2[0] = 11;
+246                             // cycle 2
+247                             // one inst using the loaded ar 0
+248                             // freelist assign pr 11 to ar 0
+249                             
+250        1/1                  success1 <= `SD 0;
+251        1/1                  success2 <= `SD 1;
+252        1/1                  #2
+253        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+254                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+255        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+256                                 0,1,0,0,10,10,c_rat_out1,c_rat_out2,c_rat_arr_out,0,0,0,10,0,1);
+257        1/1                  @(posedge clock)
+258        1/1                  cnt += 1;
+259        1/1                  valid1_in = 1;
+260        1/1                  reg11_in = 4;
+261        1/1                  reg12_in = 5;
+262        1/1                  reg21_in = 6;
+263        1/1                  reg22_in = 6;
+264        1/1                  dest_reg1_in = 20;
+265        1/1                  dest_reg2_in = 21;
+266        1/1                  success1 = 0;
+267        1/1                  success2 = 0;
+268        1/1                  c_rat_arr_out = c_rat_out2;
+269        1/1                  c_rat_out1 = c_rat_arr_out;
+270        1/1                  c_rat_out1[20] = 1;
+271        1/1                  c_rat_out2 = c_rat_out1;
+272        1/1                  c_rat_out2[21] = 2;
+273                             // cycle 3
+274                             // two valid insts 
+275                             
+276        1/1                  success1 <= `SD 1;
+277        1/1                  success2 <= `SD 1;
+278        1/1                  regNum1 <= `SD 1;
+279        1/1                  regNum2 <= `SD 2;
+280        1/1                  #2
+281        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+282                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+283        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+284                                 1,1,0,0,0,0,c_rat_out1,c_rat_out2,c_rat_arr_out,20,21,0,0,1,1);
+285        1/1                  @(posedge clock)
+286        1/1                  cnt += 1;
+287        1/1                  valid1_in = 0;
+288        1/1                  valid2_in = 0;
+289        1/1                  c_rat_arr_out = c_rat_out2;
+290        1/1                  c_rat_out1 = c_brat;
+291        1/1                  c_rat_out2 = c_brat;
+292                             // cycle 4
+293                             // mispred happens and no new insts
+294                             
+295        1/1                  brat_arr_in <= `SD c_brat;
+296        1/1                  brat_en <= `SD 1;
+297        1/1                  #2
+298        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+299                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+300        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+301                                 0,0,0,0,0,0,c_rat_out1,c_rat_out2,c_rat_arr_out,0,0,0,0,0,0);
+302        1/1                  @(posedge clock)
+303        1/1                  cnt += 1;
+304        1/1                  c_rat_arr_out = c_rat_out2;
+305        1/1                  valid1_in = 1;
+306        1/1                  valid2_in = 1;
+307        1/1                  for (int i = 0; i<`AR_SIZE;i=i+1) begin
+308        1/1                      c_brat[i] = i;
+309                             end
+310        1/1                  c_rat_arr_out = c_rat_out2;
+311        1/1                  c_rat_out1 = c_brat;
+312        1/1                  c_rat_out2 = c_brat;
+313                             // cycle 5
+314                             // mispred happens and two new insts, these insts should be ignored
+315                             // try another brat which is 0->AR-1
+316                             
+317        1/1                  success1 <= `SD 1;
+318        1/1                  success2 <= `SD 1;
+319        1/1                  regNum1 <= `SD 3;
+320        1/1                  regNum2 <= `SD 4;
+321        1/1                  brat_arr_in <= `SD c_brat;
+322        1/1                  brat_en <= `SD 1;
+323        1/1                  #2
+324        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+325                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+326        1/1                  check_rat_output(rat1_valid, rat2_valid,rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out, ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid,
+327                                 0,0,0,0,0,0,brat_arr_in,brat_arr_in,c_rat_arr_out,20,21,1,2,0,0);
+328        1/1                  @(posedge clock)
+329        1/1                  valid1_in = 0;
+330        1/1                  valid2_in = 0;
+331                             
+332        1/1                  brat_en <= `SD 0;
+333        1/1                  #2
+334        1/1                  show_rat(rat1_valid, rat2_valid, rat11_reg, rat12_reg, rat21_reg, rat22_reg, rat_out1, rat_out2, rat_arr_out,
+335                                 ar1_out, ar2_out, pr1_out, pr2_out, pr1_valid, pr2_valid, cnt);
+336        1/1                  $display("@@@ PASSED!");
+337        1/1                  $finish;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : testbench
+                Total Covered Percent 
+Totals          36    10      27.78   
+Total Bits      3292  1665    50.58   
+Total Bits 0->1 1646  1079    65.55   
+Total Bits 1->0 1646  586     35.60   
+
+                                  
+Signals          36   10   27.78  
+Signal Bits      3292 1665 50.58  
+Signal Bits 0->1 1646 1079 65.55  
+Signal Bits 1->0 1646 586  35.60  
+
+Signal Details
+                                       Toggle Toggle 1->0 Toggle 0->1 
+clock                                  Yes    Yes         Yes         
+reset                                  No     Yes         No          
+valid1_in                              Yes    Yes         Yes         
+valid2_in                              Yes    Yes         Yes         
+reg11_in[0]                            No     Yes         No          
+reg11_in[1]                            No     No          No          
+reg11_in[2]                            No     No          Yes         
+reg11_in[4:3]                          No     No          No          
+reg12_in[0]                            No     No          Yes         
+reg12_in[1]                            No     Yes         No          
+reg12_in[2]                            No     No          Yes         
+reg12_in[4:3]                          No     No          No          
+reg21_in[0]                            No     No          No          
+reg21_in[2:1]                          No     No          Yes         
+reg21_in[4:3]                          No     No          No          
+reg22_in[0]                            No     No          No          
+reg22_in[2:1]                          No     No          Yes         
+reg22_in[4:3]                          No     No          No          
+dest_reg1_in[1:0]                      No     No          No          
+dest_reg1_in[2]                        No     No          Yes         
+dest_reg1_in[3]                        No     No          No          
+dest_reg1_in[4]                        No     No          Yes         
+dest_reg2_in[0]                        No     No          Yes         
+dest_reg2_in[1]                        No     No          No          
+dest_reg2_in[2]                        No     No          Yes         
+dest_reg2_in[3]                        No     No          No          
+dest_reg2_in[4]                        No     No          Yes         
+regNum1[0]                             No     No          Yes         
+regNum1[1]                             Yes    Yes         Yes         
+regNum1[2]                             No     No          No          
+regNum1[3]                             No     Yes         No          
+regNum1[5:4]                           No     No          No          
+regNum2[1:0]                           No     Yes         No          
+regNum2[2]                             No     No          Yes         
+regNum2[3]                             No     Yes         No          
+regNum2[5:4]                           No     No          No          
+success1                               Yes    Yes         Yes         
+success2                               Yes    Yes         Yes         
+brat_en                                Yes    Yes         Yes         
+brat_arr_in[0][4:0]                    No     Yes         No          
+brat_arr_in[1][0]                      No     No          Yes         
+brat_arr_in[1][4:1]                    No     Yes         No          
+brat_arr_in[2][0]                      No     Yes         No          
+brat_arr_in[2][1]                      No     No          Yes         
+brat_arr_in[2][4:2]                    No     Yes         No          
+brat_arr_in[3][1:0]                    No     No          Yes         
+brat_arr_in[3][4:2]                    No     Yes         No          
+brat_arr_in[4][1:0]                    No     Yes         No          
+brat_arr_in[4][2]                      No     No          Yes         
+brat_arr_in[4][4:3]                    No     Yes         No          
+brat_arr_in[5][0]                      No     No          Yes         
+brat_arr_in[5][1]                      No     Yes         No          
+brat_arr_in[5][2]                      No     No          Yes         
+brat_arr_in[5][4:3]                    No     Yes         No          
+brat_arr_in[6][0]                      No     Yes         No          
+brat_arr_in[6][2:1]                    No     No          Yes         
+brat_arr_in[6][4:3]                    No     Yes         No          
+brat_arr_in[7][2:0]                    No     No          Yes         
+brat_arr_in[7][4:3]                    No     Yes         No          
+brat_arr_in[8][2:0]                    No     Yes         No          
+brat_arr_in[8][3]                      No     No          Yes         
+brat_arr_in[8][4]                      No     Yes         No          
+brat_arr_in[9][0]                      No     No          Yes         
+brat_arr_in[9][2:1]                    No     Yes         No          
+brat_arr_in[9][3]                      No     No          Yes         
+brat_arr_in[9][4]                      No     Yes         No          
+brat_arr_in[10][0]                     No     Yes         No          
+brat_arr_in[10][1]                     No     No          Yes         
+brat_arr_in[10][2]                     No     Yes         No          
+brat_arr_in[10][3]                     No     No          Yes         
+brat_arr_in[10][4]                     No     Yes         No          
+brat_arr_in[11][1:0]                   No     No          Yes         
+brat_arr_in[11][2]                     No     Yes         No          
+brat_arr_in[11][3]                     No     No          Yes         
+brat_arr_in[11][4]                     No     Yes         No          
+brat_arr_in[12][1:0]                   No     Yes         No          
+brat_arr_in[12][3:2]                   No     No          Yes         
+brat_arr_in[12][4]                     No     Yes         No          
+brat_arr_in[13][0]                     No     No          Yes         
+brat_arr_in[13][1]                     No     Yes         No          
+brat_arr_in[13][3:2]                   No     No          Yes         
+brat_arr_in[13][4]                     No     Yes         No          
+brat_arr_in[14][0]                     No     Yes         No          
+brat_arr_in[14][3:1]                   No     No          Yes         
+brat_arr_in[14][4]                     No     Yes         No          
+brat_arr_in[15][3:0]                   No     No          Yes         
+brat_arr_in[15][4]                     No     Yes         No          
+brat_arr_in[16][3:0]                   No     Yes         No          
+brat_arr_in[16][4]                     No     No          Yes         
+brat_arr_in[17][0]                     No     No          Yes         
+brat_arr_in[17][3:1]                   No     Yes         No          
+brat_arr_in[17][4]                     No     No          Yes         
+brat_arr_in[18][0]                     No     Yes         No          
+brat_arr_in[18][1]                     No     No          Yes         
+brat_arr_in[18][3:2]                   No     Yes         No          
+brat_arr_in[18][4]                     No     No          Yes         
+brat_arr_in[19][1:0]                   No     No          Yes         
+brat_arr_in[19][3:2]                   No     Yes         No          
+brat_arr_in[19][4]                     No     No          Yes         
+brat_arr_in[20][1:0]                   No     Yes         No          
+brat_arr_in[20][2]                     No     No          Yes         
+brat_arr_in[20][3]                     No     Yes         No          
+brat_arr_in[20][4]                     No     No          Yes         
+brat_arr_in[21][0]                     No     No          Yes         
+brat_arr_in[21][1]                     No     Yes         No          
+brat_arr_in[21][2]                     No     No          Yes         
+brat_arr_in[21][3]                     No     Yes         No          
+brat_arr_in[21][4]                     No     No          Yes         
+brat_arr_in[22][0]                     No     Yes         No          
+brat_arr_in[22][2:1]                   No     No          Yes         
+brat_arr_in[22][3]                     No     Yes         No          
+brat_arr_in[22][4]                     No     No          Yes         
+brat_arr_in[23][2:0]                   No     No          Yes         
+brat_arr_in[23][3]                     No     Yes         No          
+brat_arr_in[23][4]                     No     No          Yes         
+brat_arr_in[24][2:0]                   No     Yes         No          
+brat_arr_in[24][4:3]                   No     No          Yes         
+brat_arr_in[25][0]                     No     No          Yes         
+brat_arr_in[25][2:1]                   No     Yes         No          
+brat_arr_in[25][4:3]                   No     No          Yes         
+brat_arr_in[26][0]                     No     Yes         No          
+brat_arr_in[26][1]                     No     No          Yes         
+brat_arr_in[26][2]                     No     Yes         No          
+brat_arr_in[26][4:3]                   No     No          Yes         
+brat_arr_in[27][1:0]                   No     No          Yes         
+brat_arr_in[27][2]                     No     Yes         No          
+brat_arr_in[27][4:3]                   No     No          Yes         
+brat_arr_in[28][1:0]                   No     Yes         No          
+brat_arr_in[28][4:2]                   No     No          Yes         
+brat_arr_in[29][0]                     No     No          Yes         
+brat_arr_in[29][1]                     No     Yes         No          
+brat_arr_in[29][4:2]                   No     No          Yes         
+brat_arr_in[30][0]                     No     Yes         No          
+brat_arr_in[30][4:1]                   No     No          Yes         
+brat_arr_in[31][4:0]                   No     No          Yes         
+Other bits of brat_arr_in[31:0][5:0]   No     No          No          
+c_brat[0][4:0]                         No     Yes         No          
+c_brat[1][0]                           No     No          Yes         
+c_brat[1][4:1]                         No     Yes         No          
+c_brat[2][0]                           No     Yes         No          
+c_brat[2][1]                           No     No          Yes         
+c_brat[2][4:2]                         No     Yes         No          
+c_brat[3][1:0]                         No     No          Yes         
+c_brat[3][4:2]                         No     Yes         No          
+c_brat[4][1:0]                         No     Yes         No          
+c_brat[4][2]                           No     No          Yes         
+c_brat[4][4:3]                         No     Yes         No          
+c_brat[5][0]                           No     No          Yes         
+c_brat[5][1]                           No     Yes         No          
+c_brat[5][2]                           No     No          Yes         
+c_brat[5][4:3]                         No     Yes         No          
+c_brat[6][0]                           No     Yes         No          
+c_brat[6][2:1]                         No     No          Yes         
+c_brat[6][4:3]                         No     Yes         No          
+c_brat[7][2:0]                         No     No          Yes         
+c_brat[7][4:3]                         No     Yes         No          
+c_brat[8][2:0]                         No     Yes         No          
+c_brat[8][3]                           No     No          Yes         
+c_brat[8][4]                           No     Yes         No          
+c_brat[9][0]                           No     No          Yes         
+c_brat[9][2:1]                         No     Yes         No          
+c_brat[9][3]                           No     No          Yes         
+c_brat[9][4]                           No     Yes         No          
+c_brat[10][0]                          No     Yes         No          
+c_brat[10][1]                          No     No          Yes         
+c_brat[10][2]                          No     Yes         No          
+c_brat[10][3]                          No     No          Yes         
+c_brat[10][4]                          No     Yes         No          
+c_brat[11][1:0]                        No     No          Yes         
+c_brat[11][2]                          No     Yes         No          
+c_brat[11][3]                          No     No          Yes         
+c_brat[11][4]                          No     Yes         No          
+c_brat[12][1:0]                        No     Yes         No          
+c_brat[12][3:2]                        No     No          Yes         
+c_brat[12][4]                          No     Yes         No          
+c_brat[13][0]                          No     No          Yes         
+c_brat[13][1]                          No     Yes         No          
+c_brat[13][3:2]                        No     No          Yes         
+c_brat[13][4]                          No     Yes         No          
+c_brat[14][0]                          No     Yes         No          
+c_brat[14][3:1]                        No     No          Yes         
+c_brat[14][4]                          No     Yes         No          
+c_brat[15][3:0]                        No     No          Yes         
+c_brat[15][4]                          No     Yes         No          
+c_brat[16][3:0]                        No     Yes         No          
+c_brat[16][4]                          No     No          Yes         
+c_brat[17][0]                          No     No          Yes         
+c_brat[17][3:1]                        No     Yes         No          
+c_brat[17][4]                          No     No          Yes         
+c_brat[18][0]                          No     Yes         No          
+c_brat[18][1]                          No     No          Yes         
+c_brat[18][3:2]                        No     Yes         No          
+c_brat[18][4]                          No     No          Yes         
+c_brat[19][1:0]                        No     No          Yes         
+c_brat[19][3:2]                        No     Yes         No          
+c_brat[19][4]                          No     No          Yes         
+c_brat[20][1:0]                        No     Yes         No          
+c_brat[20][2]                          No     No          Yes         
+c_brat[20][3]                          No     Yes         No          
+c_brat[20][4]                          No     No          Yes         
+c_brat[21][0]                          No     No          Yes         
+c_brat[21][1]                          No     Yes         No          
+c_brat[21][2]                          No     No          Yes         
+c_brat[21][3]                          No     Yes         No          
+c_brat[21][4]                          No     No          Yes         
+c_brat[22][0]                          No     Yes         No          
+c_brat[22][2:1]                        No     No          Yes         
+c_brat[22][3]                          No     Yes         No          
+c_brat[22][4]                          No     No          Yes         
+c_brat[23][2:0]                        No     No          Yes         
+c_brat[23][3]                          No     Yes         No          
+c_brat[23][4]                          No     No          Yes         
+c_brat[24][2:0]                        No     Yes         No          
+c_brat[24][4:3]                        No     No          Yes         
+c_brat[25][0]                          No     No          Yes         
+c_brat[25][2:1]                        No     Yes         No          
+c_brat[25][4:3]                        No     No          Yes         
+c_brat[26][0]                          No     Yes         No          
+c_brat[26][1]                          No     No          Yes         
+c_brat[26][2]                          No     Yes         No          
+c_brat[26][4:3]                        No     No          Yes         
+c_brat[27][1:0]                        No     No          Yes         
+c_brat[27][2]                          No     Yes         No          
+c_brat[27][4:3]                        No     No          Yes         
+c_brat[28][1:0]                        No     Yes         No          
+c_brat[28][4:2]                        No     No          Yes         
+c_brat[29][0]                          No     No          Yes         
+c_brat[29][1]                          No     Yes         No          
+c_brat[29][4:2]                        No     No          Yes         
+c_brat[30][0]                          No     Yes         No          
+c_brat[30][4:1]                        No     No          Yes         
+c_brat[31][4:0]                        No     No          Yes         
+Other bits of c_brat[31:0][5:0]        No     No          No          
+c_rat_out1[0][4:0]                     Yes    Yes         Yes         
+c_rat_out1[1][0]                       No     No          Yes         
+c_rat_out1[1][4:1]                     Yes    Yes         Yes         
+c_rat_out1[2][0]                       Yes    Yes         Yes         
+c_rat_out1[2][1]                       No     No          Yes         
+c_rat_out1[2][4:2]                     Yes    Yes         Yes         
+c_rat_out1[3][1:0]                     No     No          Yes         
+c_rat_out1[3][4:2]                     Yes    Yes         Yes         
+c_rat_out1[4][1:0]                     Yes    Yes         Yes         
+c_rat_out1[4][2]                       No     No          Yes         
+c_rat_out1[4][4:3]                     Yes    Yes         Yes         
+c_rat_out1[5][0]                       No     No          Yes         
+c_rat_out1[5][1]                       Yes    Yes         Yes         
+c_rat_out1[5][2]                       No     No          Yes         
+c_rat_out1[5][4:3]                     Yes    Yes         Yes         
+c_rat_out1[6][0]                       Yes    Yes         Yes         
+c_rat_out1[6][2:1]                     No     No          Yes         
+c_rat_out1[6][4:3]                     Yes    Yes         Yes         
+c_rat_out1[7][2:0]                     No     No          Yes         
+c_rat_out1[7][4:3]                     Yes    Yes         Yes         
+c_rat_out1[8][2:0]                     Yes    Yes         Yes         
+c_rat_out1[8][3]                       No     No          Yes         
+c_rat_out1[8][4]                       Yes    Yes         Yes         
+c_rat_out1[9][0]                       No     No          Yes         
+c_rat_out1[9][2:1]                     Yes    Yes         Yes         
+c_rat_out1[9][3]                       No     No          Yes         
+c_rat_out1[9][4]                       Yes    Yes         Yes         
+c_rat_out1[10][0]                      Yes    Yes         Yes         
+c_rat_out1[10][1]                      No     No          Yes         
+c_rat_out1[10][2]                      Yes    Yes         Yes         
+c_rat_out1[10][3]                      No     No          Yes         
+c_rat_out1[10][4]                      Yes    Yes         Yes         
+c_rat_out1[11][1:0]                    No     No          Yes         
+c_rat_out1[11][2]                      Yes    Yes         Yes         
+c_rat_out1[11][3]                      No     No          Yes         
+c_rat_out1[11][4]                      Yes    Yes         Yes         
+c_rat_out1[12][1:0]                    Yes    Yes         Yes         
+c_rat_out1[12][3:2]                    No     No          Yes         
+c_rat_out1[12][4]                      Yes    Yes         Yes         
+c_rat_out1[13][0]                      No     No          Yes         
+c_rat_out1[13][1]                      Yes    Yes         Yes         
+c_rat_out1[13][3:2]                    No     No          Yes         
+c_rat_out1[13][4]                      Yes    Yes         Yes         
+c_rat_out1[14][0]                      Yes    Yes         Yes         
+c_rat_out1[14][3:1]                    No     No          Yes         
+c_rat_out1[14][4]                      Yes    Yes         Yes         
+c_rat_out1[15][3:0]                    No     No          Yes         
+c_rat_out1[15][4]                      Yes    Yes         Yes         
+c_rat_out1[16][3:0]                    Yes    Yes         Yes         
+c_rat_out1[16][4]                      No     No          Yes         
+c_rat_out1[17][0]                      No     No          Yes         
+c_rat_out1[17][3:1]                    Yes    Yes         Yes         
+c_rat_out1[17][4]                      No     No          Yes         
+c_rat_out1[18][0]                      Yes    Yes         Yes         
+c_rat_out1[18][1]                      No     No          Yes         
+c_rat_out1[18][3:2]                    Yes    Yes         Yes         
+c_rat_out1[18][4]                      No     No          Yes         
+c_rat_out1[19][1:0]                    No     No          Yes         
+c_rat_out1[19][3:2]                    Yes    Yes         Yes         
+c_rat_out1[19][4]                      No     No          Yes         
+c_rat_out1[20][1:0]                    Yes    Yes         Yes         
+c_rat_out1[20][2]                      No     No          Yes         
+c_rat_out1[20][3]                      Yes    Yes         Yes         
+c_rat_out1[20][4]                      No     No          Yes         
+c_rat_out1[21][0]                      No     No          Yes         
+c_rat_out1[21][1]                      Yes    Yes         Yes         
+c_rat_out1[21][2]                      No     No          Yes         
+c_rat_out1[21][3]                      Yes    Yes         Yes         
+c_rat_out1[21][4]                      No     No          Yes         
+c_rat_out1[22][0]                      Yes    Yes         Yes         
+c_rat_out1[22][2:1]                    No     No          Yes         
+c_rat_out1[22][3]                      Yes    Yes         Yes         
+c_rat_out1[22][4]                      No     No          Yes         
+c_rat_out1[23][2:0]                    No     No          Yes         
+c_rat_out1[23][3]                      Yes    Yes         Yes         
+c_rat_out1[23][4]                      No     No          Yes         
+c_rat_out1[24][2:0]                    Yes    Yes         Yes         
+c_rat_out1[24][4:3]                    No     No          Yes         
+c_rat_out1[25][0]                      No     No          Yes         
+c_rat_out1[25][2:1]                    Yes    Yes         Yes         
+c_rat_out1[25][4:3]                    No     No          Yes         
+c_rat_out1[26][0]                      Yes    Yes         Yes         
+c_rat_out1[26][1]                      No     No          Yes         
+c_rat_out1[26][2]                      Yes    Yes         Yes         
+c_rat_out1[26][4:3]                    No     No          Yes         
+c_rat_out1[27][1:0]                    No     No          Yes         
+c_rat_out1[27][2]                      Yes    Yes         Yes         
+c_rat_out1[27][4:3]                    No     No          Yes         
+c_rat_out1[28][1:0]                    Yes    Yes         Yes         
+c_rat_out1[28][4:2]                    No     No          Yes         
+c_rat_out1[29][0]                      No     No          Yes         
+c_rat_out1[29][1]                      Yes    Yes         Yes         
+c_rat_out1[29][4:2]                    No     No          Yes         
+c_rat_out1[30][0]                      Yes    Yes         Yes         
+c_rat_out1[30][4:1]                    No     No          Yes         
+c_rat_out1[31][4:0]                    No     No          Yes         
+Other bits of c_rat_out1[31:0][5:0]    No     No          No          
+c_rat_out2[0][4:0]                     Yes    Yes         Yes         
+c_rat_out2[1][0]                       No     No          Yes         
+c_rat_out2[1][4:1]                     Yes    Yes         Yes         
+c_rat_out2[2][0]                       Yes    Yes         Yes         
+c_rat_out2[2][1]                       No     No          Yes         
+c_rat_out2[2][4:2]                     Yes    Yes         Yes         
+c_rat_out2[3][1:0]                     No     No          Yes         
+c_rat_out2[3][4:2]                     Yes    Yes         Yes         
+c_rat_out2[4][1:0]                     Yes    Yes         Yes         
+c_rat_out2[4][2]                       No     No          Yes         
+c_rat_out2[4][4:3]                     Yes    Yes         Yes         
+c_rat_out2[5][0]                       No     No          Yes         
+c_rat_out2[5][1]                       Yes    Yes         Yes         
+c_rat_out2[5][2]                       No     No          Yes         
+c_rat_out2[5][4:3]                     Yes    Yes         Yes         
+c_rat_out2[6][0]                       Yes    Yes         Yes         
+c_rat_out2[6][2:1]                     No     No          Yes         
+c_rat_out2[6][4:3]                     Yes    Yes         Yes         
+c_rat_out2[7][2:0]                     No     No          Yes         
+c_rat_out2[7][4:3]                     Yes    Yes         Yes         
+c_rat_out2[8][2:0]                     Yes    Yes         Yes         
+c_rat_out2[8][3]                       No     No          Yes         
+c_rat_out2[8][4]                       Yes    Yes         Yes         
+c_rat_out2[9][0]                       No     No          Yes         
+c_rat_out2[9][2:1]                     Yes    Yes         Yes         
+c_rat_out2[9][3]                       No     No          Yes         
+c_rat_out2[9][4]                       Yes    Yes         Yes         
+c_rat_out2[10][0]                      Yes    Yes         Yes         
+c_rat_out2[10][1]                      No     No          Yes         
+c_rat_out2[10][2]                      Yes    Yes         Yes         
+c_rat_out2[10][3]                      No     No          Yes         
+c_rat_out2[10][4]                      Yes    Yes         Yes         
+c_rat_out2[11][1:0]                    No     No          Yes         
+c_rat_out2[11][2]                      Yes    Yes         Yes         
+c_rat_out2[11][3]                      No     No          Yes         
+c_rat_out2[11][4]                      Yes    Yes         Yes         
+c_rat_out2[12][1:0]                    Yes    Yes         Yes         
+c_rat_out2[12][3:2]                    No     No          Yes         
+c_rat_out2[12][4]                      Yes    Yes         Yes         
+c_rat_out2[13][0]                      No     No          Yes         
+c_rat_out2[13][1]                      Yes    Yes         Yes         
+c_rat_out2[13][3:2]                    No     No          Yes         
+c_rat_out2[13][4]                      Yes    Yes         Yes         
+c_rat_out2[14][0]                      Yes    Yes         Yes         
+c_rat_out2[14][3:1]                    No     No          Yes         
+c_rat_out2[14][4]                      Yes    Yes         Yes         
+c_rat_out2[15][3:0]                    No     No          Yes         
+c_rat_out2[15][4]                      Yes    Yes         Yes         
+c_rat_out2[16][3:0]                    Yes    Yes         Yes         
+c_rat_out2[16][4]                      No     No          Yes         
+c_rat_out2[17][0]                      No     No          Yes         
+c_rat_out2[17][3:1]                    Yes    Yes         Yes         
+c_rat_out2[17][4]                      No     No          Yes         
+c_rat_out2[18][0]                      Yes    Yes         Yes         
+c_rat_out2[18][1]                      No     No          Yes         
+c_rat_out2[18][3:2]                    Yes    Yes         Yes         
+c_rat_out2[18][4]                      No     No          Yes         
+c_rat_out2[19][1:0]                    No     No          Yes         
+c_rat_out2[19][3:2]                    Yes    Yes         Yes         
+c_rat_out2[19][4]                      No     No          Yes         
+c_rat_out2[20][1:0]                    Yes    Yes         Yes         
+c_rat_out2[20][2]                      No     No          Yes         
+c_rat_out2[20][3]                      Yes    Yes         Yes         
+c_rat_out2[20][4]                      No     No          Yes         
+c_rat_out2[21][0]                      No     No          Yes         
+c_rat_out2[21][1]                      Yes    Yes         Yes         
+c_rat_out2[21][2]                      No     No          Yes         
+c_rat_out2[21][3]                      Yes    Yes         Yes         
+c_rat_out2[21][4]                      No     No          Yes         
+c_rat_out2[22][0]                      Yes    Yes         Yes         
+c_rat_out2[22][2:1]                    No     No          Yes         
+c_rat_out2[22][3]                      Yes    Yes         Yes         
+c_rat_out2[22][4]                      No     No          Yes         
+c_rat_out2[23][2:0]                    No     No          Yes         
+c_rat_out2[23][3]                      Yes    Yes         Yes         
+c_rat_out2[23][4]                      No     No          Yes         
+c_rat_out2[24][2:0]                    Yes    Yes         Yes         
+c_rat_out2[24][4:3]                    No     No          Yes         
+c_rat_out2[25][0]                      No     No          Yes         
+c_rat_out2[25][2:1]                    Yes    Yes         Yes         
+c_rat_out2[25][4:3]                    No     No          Yes         
+c_rat_out2[26][0]                      Yes    Yes         Yes         
+c_rat_out2[26][1]                      No     No          Yes         
+c_rat_out2[26][2]                      Yes    Yes         Yes         
+c_rat_out2[26][4:3]                    No     No          Yes         
+c_rat_out2[27][1:0]                    No     No          Yes         
+c_rat_out2[27][2]                      Yes    Yes         Yes         
+c_rat_out2[27][4:3]                    No     No          Yes         
+c_rat_out2[28][1:0]                    Yes    Yes         Yes         
+c_rat_out2[28][4:2]                    No     No          Yes         
+c_rat_out2[29][0]                      No     No          Yes         
+c_rat_out2[29][1]                      Yes    Yes         Yes         
+c_rat_out2[29][4:2]                    No     No          Yes         
+c_rat_out2[30][0]                      Yes    Yes         Yes         
+c_rat_out2[30][4:1]                    No     No          Yes         
+c_rat_out2[31][4:0]                    No     No          Yes         
+Other bits of c_rat_out2[31:0][5:0]    No     No          No          
+c_rat_arr_out[0][4:0]                  No     No          Yes         
+c_rat_arr_out[1][4:1]                  No     No          Yes         
+c_rat_arr_out[2][0]                    No     No          Yes         
+c_rat_arr_out[2][4:2]                  No     No          Yes         
+c_rat_arr_out[3][4:2]                  No     No          Yes         
+c_rat_arr_out[4][1:0]                  No     No          Yes         
+c_rat_arr_out[4][4:3]                  No     No          Yes         
+c_rat_arr_out[5][1]                    No     No          Yes         
+c_rat_arr_out[5][4:3]                  No     No          Yes         
+c_rat_arr_out[6][0]                    No     No          Yes         
+c_rat_arr_out[6][4:3]                  No     No          Yes         
+c_rat_arr_out[7][4:3]                  No     No          Yes         
+c_rat_arr_out[8][2:0]                  No     No          Yes         
+c_rat_arr_out[8][4]                    No     No          Yes         
+c_rat_arr_out[9][2:1]                  No     No          Yes         
+c_rat_arr_out[9][4]                    No     No          Yes         
+c_rat_arr_out[10][0]                   No     No          Yes         
+c_rat_arr_out[10][2]                   No     No          Yes         
+c_rat_arr_out[10][4]                   No     No          Yes         
+c_rat_arr_out[11][2]                   No     No          Yes         
+c_rat_arr_out[11][4]                   No     No          Yes         
+c_rat_arr_out[12][1:0]                 No     No          Yes         
+c_rat_arr_out[12][4]                   No     No          Yes         
+c_rat_arr_out[13][1]                   No     No          Yes         
+c_rat_arr_out[13][4]                   No     No          Yes         
+c_rat_arr_out[14][0]                   No     No          Yes         
+c_rat_arr_out[14][4]                   No     No          Yes         
+c_rat_arr_out[15][4]                   No     No          Yes         
+c_rat_arr_out[16][3:0]                 No     No          Yes         
+c_rat_arr_out[17][3:1]                 No     No          Yes         
+c_rat_arr_out[18][0]                   No     No          Yes         
+c_rat_arr_out[18][3:2]                 No     No          Yes         
+c_rat_arr_out[19][3:2]                 No     No          Yes         
+c_rat_arr_out[20][1:0]                 No     No          Yes         
+c_rat_arr_out[20][3]                   No     No          Yes         
+c_rat_arr_out[21][1]                   No     No          Yes         
+c_rat_arr_out[21][3]                   No     No          Yes         
+c_rat_arr_out[22][0]                   No     No          Yes         
+c_rat_arr_out[22][3]                   No     No          Yes         
+c_rat_arr_out[23][3]                   No     No          Yes         
+c_rat_arr_out[24][2:0]                 No     No          Yes         
+c_rat_arr_out[25][2:1]                 No     No          Yes         
+c_rat_arr_out[26][0]                   No     No          Yes         
+c_rat_arr_out[26][2]                   No     No          Yes         
+c_rat_arr_out[27][2]                   No     No          Yes         
+c_rat_arr_out[28][1:0]                 No     No          Yes         
+c_rat_arr_out[29][1]                   No     No          Yes         
+c_rat_arr_out[30][0]                   No     No          Yes         
+Other bits of c_rat_arr_out[31:0][5:0] No     No          No          
+rat1_valid                             Yes    Yes         Yes         
+rat2_valid                             Yes    Yes         Yes         
+rat11_reg[5:0]                         No     No          No          
+rat12_reg[5:0]                         No     No          No          
+rat21_reg[0]                           No     No          No          
+rat21_reg[1]                           Yes    Yes         Yes         
+rat21_reg[2]                           No     No          No          
+rat21_reg[3]                           Yes    Yes         Yes         
+rat21_reg[5:4]                         No     No          No          
+rat22_reg[0]                           No     No          No          
+rat22_reg[1]                           Yes    Yes         Yes         
+rat22_reg[2]                           No     No          No          
+rat22_reg[3]                           Yes    Yes         Yes         
+rat22_reg[5:4]                         No     No          No          
+rat_out1[0][4:0]                       Yes    Yes         Yes         
+rat_out1[1][0]                         No     No          Yes         
+rat_out1[1][4:1]                       Yes    Yes         Yes         
+rat_out1[2][0]                         Yes    Yes         Yes         
+rat_out1[2][1]                         No     No          Yes         
+rat_out1[2][4:2]                       Yes    Yes         Yes         
+rat_out1[3][1:0]                       No     No          Yes         
+rat_out1[3][4:2]                       Yes    Yes         Yes         
+rat_out1[4][1:0]                       Yes    Yes         Yes         
+rat_out1[4][2]                         No     No          Yes         
+rat_out1[4][4:3]                       Yes    Yes         Yes         
+rat_out1[5][0]                         No     No          Yes         
+rat_out1[5][1]                         Yes    Yes         Yes         
+rat_out1[5][2]                         No     No          Yes         
+rat_out1[5][4:3]                       Yes    Yes         Yes         
+rat_out1[6][0]                         Yes    Yes         Yes         
+rat_out1[6][2:1]                       No     No          Yes         
+rat_out1[6][4:3]                       Yes    Yes         Yes         
+rat_out1[7][2:0]                       No     No          Yes         
+rat_out1[7][4:3]                       Yes    Yes         Yes         
+rat_out1[8][2:0]                       Yes    Yes         Yes         
+rat_out1[8][3]                         No     No          Yes         
+rat_out1[8][4]                         Yes    Yes         Yes         
+rat_out1[9][0]                         No     No          Yes         
+rat_out1[9][2:1]                       Yes    Yes         Yes         
+rat_out1[9][3]                         No     No          Yes         
+rat_out1[9][4]                         Yes    Yes         Yes         
+rat_out1[10][0]                        Yes    Yes         Yes         
+rat_out1[10][1]                        No     No          Yes         
+rat_out1[10][2]                        Yes    Yes         Yes         
+rat_out1[10][3]                        No     No          Yes         
+rat_out1[10][4]                        Yes    Yes         Yes         
+rat_out1[11][1:0]                      No     No          Yes         
+rat_out1[11][2]                        Yes    Yes         Yes         
+rat_out1[11][3]                        No     No          Yes         
+rat_out1[11][4]                        Yes    Yes         Yes         
+rat_out1[12][1:0]                      Yes    Yes         Yes         
+rat_out1[12][3:2]                      No     No          Yes         
+rat_out1[12][4]                        Yes    Yes         Yes         
+rat_out1[13][0]                        No     No          Yes         
+rat_out1[13][1]                        Yes    Yes         Yes         
+rat_out1[13][3:2]                      No     No          Yes         
+rat_out1[13][4]                        Yes    Yes         Yes         
+rat_out1[14][0]                        Yes    Yes         Yes         
+rat_out1[14][3:1]                      No     No          Yes         
+rat_out1[14][4]                        Yes    Yes         Yes         
+rat_out1[15][3:0]                      No     No          Yes         
+rat_out1[15][4]                        Yes    Yes         Yes         
+rat_out1[16][3:0]                      Yes    Yes         Yes         
+rat_out1[16][4]                        No     No          Yes         
+rat_out1[17][0]                        No     No          Yes         
+rat_out1[17][3:1]                      Yes    Yes         Yes         
+rat_out1[17][4]                        No     No          Yes         
+rat_out1[18][0]                        Yes    Yes         Yes         
+rat_out1[18][1]                        No     No          Yes         
+rat_out1[18][3:2]                      Yes    Yes         Yes         
+rat_out1[18][4]                        No     No          Yes         
+rat_out1[19][1:0]                      No     No          Yes         
+rat_out1[19][3:2]                      Yes    Yes         Yes         
+rat_out1[19][4]                        No     No          Yes         
+rat_out1[20][1:0]                      Yes    Yes         Yes         
+rat_out1[20][2]                        No     No          Yes         
+rat_out1[20][3]                        Yes    Yes         Yes         
+rat_out1[20][4]                        No     No          Yes         
+rat_out1[21][0]                        No     No          Yes         
+rat_out1[21][1]                        Yes    Yes         Yes         
+rat_out1[21][2]                        No     No          Yes         
+rat_out1[21][3]                        Yes    Yes         Yes         
+rat_out1[21][4]                        No     No          Yes         
+rat_out1[22][0]                        Yes    Yes         Yes         
+rat_out1[22][2:1]                      No     No          Yes         
+rat_out1[22][3]                        Yes    Yes         Yes         
+rat_out1[22][4]                        No     No          Yes         
+rat_out1[23][2:0]                      No     No          Yes         
+rat_out1[23][3]                        Yes    Yes         Yes         
+rat_out1[23][4]                        No     No          Yes         
+rat_out1[24][2:0]                      Yes    Yes         Yes         
+rat_out1[24][4:3]                      No     No          Yes         
+rat_out1[25][0]                        No     No          Yes         
+rat_out1[25][2:1]                      Yes    Yes         Yes         
+rat_out1[25][4:3]                      No     No          Yes         
+rat_out1[26][0]                        Yes    Yes         Yes         
+rat_out1[26][1]                        No     No          Yes         
+rat_out1[26][2]                        Yes    Yes         Yes         
+rat_out1[26][4:3]                      No     No          Yes         
+rat_out1[27][1:0]                      No     No          Yes         
+rat_out1[27][2]                        Yes    Yes         Yes         
+rat_out1[27][4:3]                      No     No          Yes         
+rat_out1[28][1:0]                      Yes    Yes         Yes         
+rat_out1[28][4:2]                      No     No          Yes         
+rat_out1[29][0]                        No     No          Yes         
+rat_out1[29][1]                        Yes    Yes         Yes         
+rat_out1[29][4:2]                      No     No          Yes         
+rat_out1[30][0]                        Yes    Yes         Yes         
+rat_out1[30][4:1]                      No     No          Yes         
+rat_out1[31][4:0]                      No     No          Yes         
+Other bits of rat_out1[31:0][5:0]      No     No          No          
+rat_out2[0][4:0]                       Yes    Yes         Yes         
+rat_out2[1][0]                         No     No          Yes         
+rat_out2[1][4:1]                       Yes    Yes         Yes         
+rat_out2[2][0]                         Yes    Yes         Yes         
+rat_out2[2][1]                         No     No          Yes         
+rat_out2[2][4:2]                       Yes    Yes         Yes         
+rat_out2[3][1:0]                       No     No          Yes         
+rat_out2[3][4:2]                       Yes    Yes         Yes         
+rat_out2[4][1:0]                       Yes    Yes         Yes         
+rat_out2[4][2]                         No     No          Yes         
+rat_out2[4][4:3]                       Yes    Yes         Yes         
+rat_out2[5][0]                         No     No          Yes         
+rat_out2[5][1]                         Yes    Yes         Yes         
+rat_out2[5][2]                         No     No          Yes         
+rat_out2[5][4:3]                       Yes    Yes         Yes         
+rat_out2[6][0]                         Yes    Yes         Yes         
+rat_out2[6][2:1]                       No     No          Yes         
+rat_out2[6][4:3]                       Yes    Yes         Yes         
+rat_out2[7][2:0]                       No     No          Yes         
+rat_out2[7][4:3]                       Yes    Yes         Yes         
+rat_out2[8][2:0]                       Yes    Yes         Yes         
+rat_out2[8][3]                         No     No          Yes         
+rat_out2[8][4]                         Yes    Yes         Yes         
+rat_out2[9][0]                         No     No          Yes         
+rat_out2[9][2:1]                       Yes    Yes         Yes         
+rat_out2[9][3]                         No     No          Yes         
+rat_out2[9][4]                         Yes    Yes         Yes         
+rat_out2[10][0]                        Yes    Yes         Yes         
+rat_out2[10][1]                        No     No          Yes         
+rat_out2[10][2]                        Yes    Yes         Yes         
+rat_out2[10][3]                        No     No          Yes         
+rat_out2[10][4]                        Yes    Yes         Yes         
+rat_out2[11][1:0]                      No     No          Yes         
+rat_out2[11][2]                        Yes    Yes         Yes         
+rat_out2[11][3]                        No     No          Yes         
+rat_out2[11][4]                        Yes    Yes         Yes         
+rat_out2[12][1:0]                      Yes    Yes         Yes         
+rat_out2[12][3:2]                      No     No          Yes         
+rat_out2[12][4]                        Yes    Yes         Yes         
+rat_out2[13][0]                        No     No          Yes         
+rat_out2[13][1]                        Yes    Yes         Yes         
+rat_out2[13][3:2]                      No     No          Yes         
+rat_out2[13][4]                        Yes    Yes         Yes         
+rat_out2[14][0]                        Yes    Yes         Yes         
+rat_out2[14][3:1]                      No     No          Yes         
+rat_out2[14][4]                        Yes    Yes         Yes         
+rat_out2[15][3:0]                      No     No          Yes         
+rat_out2[15][4]                        Yes    Yes         Yes         
+rat_out2[16][3:0]                      Yes    Yes         Yes         
+rat_out2[16][4]                        No     No          Yes         
+rat_out2[17][0]                        No     No          Yes         
+rat_out2[17][3:1]                      Yes    Yes         Yes         
+rat_out2[17][4]                        No     No          Yes         
+rat_out2[18][0]                        Yes    Yes         Yes         
+rat_out2[18][1]                        No     No          Yes         
+rat_out2[18][3:2]                      Yes    Yes         Yes         
+rat_out2[18][4]                        No     No          Yes         
+rat_out2[19][1:0]                      No     No          Yes         
+rat_out2[19][3:2]                      Yes    Yes         Yes         
+rat_out2[19][4]                        No     No          Yes         
+rat_out2[20][1:0]                      Yes    Yes         Yes         
+rat_out2[20][2]                        No     No          Yes         
+rat_out2[20][3]                        Yes    Yes         Yes         
+rat_out2[20][4]                        No     No          Yes         
+rat_out2[21][0]                        No     No          Yes         
+rat_out2[21][1]                        Yes    Yes         Yes         
+rat_out2[21][2]                        No     No          Yes         
+rat_out2[21][3]                        Yes    Yes         Yes         
+rat_out2[21][4]                        No     No          Yes         
+rat_out2[22][0]                        Yes    Yes         Yes         
+rat_out2[22][2:1]                      No     No          Yes         
+rat_out2[22][3]                        Yes    Yes         Yes         
+rat_out2[22][4]                        No     No          Yes         
+rat_out2[23][2:0]                      No     No          Yes         
+rat_out2[23][3]                        Yes    Yes         Yes         
+rat_out2[23][4]                        No     No          Yes         
+rat_out2[24][2:0]                      Yes    Yes         Yes         
+rat_out2[24][4:3]                      No     No          Yes         
+rat_out2[25][0]                        No     No          Yes         
+rat_out2[25][2:1]                      Yes    Yes         Yes         
+rat_out2[25][4:3]                      No     No          Yes         
+rat_out2[26][0]                        Yes    Yes         Yes         
+rat_out2[26][1]                        No     No          Yes         
+rat_out2[26][2]                        Yes    Yes         Yes         
+rat_out2[26][4:3]                      No     No          Yes         
+rat_out2[27][1:0]                      No     No          Yes         
+rat_out2[27][2]                        Yes    Yes         Yes         
+rat_out2[27][4:3]                      No     No          Yes         
+rat_out2[28][1:0]                      Yes    Yes         Yes         
+rat_out2[28][4:2]                      No     No          Yes         
+rat_out2[29][0]                        No     No          Yes         
+rat_out2[29][1]                        Yes    Yes         Yes         
+rat_out2[29][4:2]                      No     No          Yes         
+rat_out2[30][0]                        Yes    Yes         Yes         
+rat_out2[30][4:1]                      No     No          Yes         
+rat_out2[31][4:0]                      No     No          Yes         
+Other bits of rat_out2[31:0][5:0]      No     No          No          
+rat_arr_out[0][4:0]                    Yes    Yes         Yes         
+rat_arr_out[1][0]                      No     No          Yes         
+rat_arr_out[1][4:1]                    Yes    Yes         Yes         
+rat_arr_out[2][0]                      Yes    Yes         Yes         
+rat_arr_out[2][1]                      No     No          Yes         
+rat_arr_out[2][4:2]                    Yes    Yes         Yes         
+rat_arr_out[3][1:0]                    No     No          Yes         
+rat_arr_out[3][4:2]                    Yes    Yes         Yes         
+rat_arr_out[4][1:0]                    Yes    Yes         Yes         
+rat_arr_out[4][2]                      No     No          Yes         
+rat_arr_out[4][4:3]                    Yes    Yes         Yes         
+rat_arr_out[5][0]                      No     No          Yes         
+rat_arr_out[5][1]                      Yes    Yes         Yes         
+rat_arr_out[5][2]                      No     No          Yes         
+rat_arr_out[5][4:3]                    Yes    Yes         Yes         
+rat_arr_out[6][0]                      Yes    Yes         Yes         
+rat_arr_out[6][2:1]                    No     No          Yes         
+rat_arr_out[6][4:3]                    Yes    Yes         Yes         
+rat_arr_out[7][2:0]                    No     No          Yes         
+rat_arr_out[7][4:3]                    Yes    Yes         Yes         
+rat_arr_out[8][2:0]                    Yes    Yes         Yes         
+rat_arr_out[8][3]                      No     No          Yes         
+rat_arr_out[8][4]                      Yes    Yes         Yes         
+rat_arr_out[9][0]                      No     No          Yes         
+rat_arr_out[9][2:1]                    Yes    Yes         Yes         
+rat_arr_out[9][3]                      No     No          Yes         
+rat_arr_out[9][4]                      Yes    Yes         Yes         
+rat_arr_out[10][0]                     Yes    Yes         Yes         
+rat_arr_out[10][1]                     No     No          Yes         
+rat_arr_out[10][2]                     Yes    Yes         Yes         
+rat_arr_out[10][3]                     No     No          Yes         
+rat_arr_out[10][4]                     Yes    Yes         Yes         
+rat_arr_out[11][1:0]                   No     No          Yes         
+rat_arr_out[11][2]                     Yes    Yes         Yes         
+rat_arr_out[11][3]                     No     No          Yes         
+rat_arr_out[11][4]                     Yes    Yes         Yes         
+rat_arr_out[12][1:0]                   Yes    Yes         Yes         
+rat_arr_out[12][3:2]                   No     No          Yes         
+rat_arr_out[12][4]                     Yes    Yes         Yes         
+rat_arr_out[13][0]                     No     No          Yes         
+rat_arr_out[13][1]                     Yes    Yes         Yes         
+rat_arr_out[13][3:2]                   No     No          Yes         
+rat_arr_out[13][4]                     Yes    Yes         Yes         
+rat_arr_out[14][0]                     Yes    Yes         Yes         
+rat_arr_out[14][3:1]                   No     No          Yes         
+rat_arr_out[14][4]                     Yes    Yes         Yes         
+rat_arr_out[15][3:0]                   No     No          Yes         
+rat_arr_out[15][4]                     Yes    Yes         Yes         
+rat_arr_out[16][3:0]                   Yes    Yes         Yes         
+rat_arr_out[16][4]                     No     No          Yes         
+rat_arr_out[17][0]                     No     No          Yes         
+rat_arr_out[17][3:1]                   Yes    Yes         Yes         
+rat_arr_out[17][4]                     No     No          Yes         
+rat_arr_out[18][0]                     Yes    Yes         Yes         
+rat_arr_out[18][1]                     No     No          Yes         
+rat_arr_out[18][3:2]                   Yes    Yes         Yes         
+rat_arr_out[18][4]                     No     No          Yes         
+rat_arr_out[19][1:0]                   No     No          Yes         
+rat_arr_out[19][3:2]                   Yes    Yes         Yes         
+rat_arr_out[19][4]                     No     No          Yes         
+rat_arr_out[20][1:0]                   Yes    Yes         Yes         
+rat_arr_out[20][2]                     No     No          Yes         
+rat_arr_out[20][3]                     Yes    Yes         Yes         
+rat_arr_out[20][4]                     No     No          Yes         
+rat_arr_out[21][0]                     No     No          Yes         
+rat_arr_out[21][1]                     Yes    Yes         Yes         
+rat_arr_out[21][2]                     No     No          Yes         
+rat_arr_out[21][3]                     Yes    Yes         Yes         
+rat_arr_out[21][4]                     No     No          Yes         
+rat_arr_out[22][0]                     Yes    Yes         Yes         
+rat_arr_out[22][2:1]                   No     No          Yes         
+rat_arr_out[22][3]                     Yes    Yes         Yes         
+rat_arr_out[22][4]                     No     No          Yes         
+rat_arr_out[23][2:0]                   No     No          Yes         
+rat_arr_out[23][3]                     Yes    Yes         Yes         
+rat_arr_out[23][4]                     No     No          Yes         
+rat_arr_out[24][2:0]                   Yes    Yes         Yes         
+rat_arr_out[24][4:3]                   No     No          Yes         
+rat_arr_out[25][0]                     No     No          Yes         
+rat_arr_out[25][2:1]                   Yes    Yes         Yes         
+rat_arr_out[25][4:3]                   No     No          Yes         
+rat_arr_out[26][0]                     Yes    Yes         Yes         
+rat_arr_out[26][1]                     No     No          Yes         
+rat_arr_out[26][2]                     Yes    Yes         Yes         
+rat_arr_out[26][4:3]                   No     No          Yes         
+rat_arr_out[27][1:0]                   No     No          Yes         
+rat_arr_out[27][2]                     Yes    Yes         Yes         
+rat_arr_out[27][4:3]                   No     No          Yes         
+rat_arr_out[28][1:0]                   Yes    Yes         Yes         
+rat_arr_out[28][4:2]                   No     No          Yes         
+rat_arr_out[29][0]                     No     No          Yes         
+rat_arr_out[29][1]                     Yes    Yes         Yes         
+rat_arr_out[29][4:2]                   No     No          Yes         
+rat_arr_out[30][0]                     Yes    Yes         Yes         
+rat_arr_out[30][4:1]                   No     No          Yes         
+rat_arr_out[31][4:0]                   No     No          Yes         
+Other bits of rat_arr_out[31:0][5:0]   No     No          No          
+ar1_out[1:0]                           No     No          No          
+ar1_out[2]                             No     No          Yes         
+ar1_out[3]                             No     No          No          
+ar1_out[4]                             No     No          Yes         
+ar2_out[0]                             No     No          Yes         
+ar2_out[1]                             No     No          No          
+ar2_out[2]                             No     No          Yes         
+ar2_out[3]                             No     No          No          
+ar2_out[4]                             No     No          Yes         
+pr1_out[5:0]                           No     No          No          
+pr2_out[0]                             No     No          No          
+pr2_out[1]                             Yes    Yes         Yes         
+pr2_out[2]                             No     No          No          
+pr2_out[3]                             Yes    Yes         Yes         
+pr2_out[5:4]                           No     No          No          
+pr1_valid                              Yes    Yes         Yes         
+pr2_valid                              Yes    Yes         Yes         
+cnt[1:0]                               Yes    Yes         Yes         
+cnt[2]                                 No     No          Yes         
+cnt[10:3]                              No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 66.40  82.22 --      50.58 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 79.50  84.69 100.00  53.82 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 66.40  82.22 --      50.58 testbench 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 85.84 100.00 100.00  57.52 r    
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : rat
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 85.84 100.00 100.00  57.52 
+
+Source File(s) : 
+
+/afs/umich.edu/user/m/e/meitang/Desktop/EECS470-final-project/systemverilog/RAT/rat.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME        
+ 85.84 100.00 100.00  57.52 testbench.r 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : rat
+
+             Line No.   Total   Covered  Percent
+TOTAL                       29       29   100.00
+ALWAYS             58       26       26   100.00
+ALWAYS             97        3        3   100.00
+
+57                          always_comb begin
+58         1/1                  rat_arr = rat_arr_out;
+59         1/1                  rat_arr_temp1 = rat_arr;
+60         1/1                  rat_arr_temp2 = rat_arr_temp1;
+61         1/1                  rat11_reg = 0;
+62         1/1                  rat12_reg = 0;
+63         1/1                  rat21_reg = 0;
+64         1/1                  rat22_reg = 0;
+65         1/1                  rat_out1 = rat_arr_temp1;
+66         1/1                  rat_out2 = rat_arr_temp2;
+67         1/1                  pr1_out = 0;
+68         1/1                  pr2_out = 0;
+69                              // if mispredict recover to given brat and the received insts are then invalid
+70         1/1                  if (brat_en) begin
+71         1/1                      rat_arr_temp2 = brat_arr_in;
+72                              end
+73                              // if no misprediction, update rat according to freelist
+74                              // only update if inst is valid and freelist is not full
+75                              else begin
+76         1/1                      if (valid1_in && success1) begin
+77         1/1                          rat11_reg = rat_arr[reg11_in];
+78         1/1                          rat12_reg = rat_arr[reg12_in];
+79         1/1                          pr1_out = rat_arr[dest_reg1_in];
+80         1/1                          rat_arr_temp1[dest_reg1_in] = regNum1;
+81         1/1                          rat_out1 = rat_arr_temp1;
+82                                  end
+                        MISSING_ELSE
+83         1/1                      rat_arr_temp2 = rat_arr_temp1;
+84         1/1                      if (valid2_in && success2) begin
+85         1/1                          rat21_reg = rat_arr_temp1[reg21_in];
+86         1/1                          rat22_reg = rat_arr_temp1[reg22_in];
+87         1/1                          pr2_out = rat_arr_temp1[dest_reg2_in];
+88         1/1                          rat_arr_temp2[dest_reg2_in] = regNum2;
+89         1/1                          rat_out2 = rat_arr_temp2;
+90                                  end
+                        MISSING_ELSE
+91                              end
+92                          end
+93                      
+94                          /* Sequential Logic */
+95                          // synopsys sync_set_reset "reset"
+96                          always_ff @(posedge clock) begin
+97         1/1                  if (reset) begin
+98         1/1                      rat_arr_out <= `SD 0;
+99                              end
+100                             else begin
+101        1/1                      rat_arr_out <= `SD rat_arr_temp2;
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : rat
+
+               Total   Covered  Percent
+Conditions          6        6   100.00
+Logical             6        6   100.00
+Non-Logical         0        0
+Event               0        0
+
+ LINE       76
+ EXPRESSION (valid1_in && success1)
+             ----1----    ----2---
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       84
+ EXPRESSION (valid2_in && success2)
+             ----1----    ----2---
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : rat
+                Total Covered Percent 
+Totals          34    10      29.41   
+Total Bits      2886  1660    57.52   
+Total Bits 0->1 1443  1076    74.57   
+Total Bits 1->0 1443  584     40.47   
+
+                               
+Ports          31   10  32.26  
+Port Bits      1734 940 54.21  
+Port Bits 0->1 867  596 68.74  
+Port Bits 1->0 867  344 39.68  
+
+                                 
+Signals          3    0   0.00   
+Signal Bits      1152 720 62.50  
+Signal Bits 0->1 576  480 83.33  
+Signal Bits 1->0 576  240 41.67  
+
+Port Details
+                                     Toggle Toggle 1->0 Toggle 0->1 Direction 
+clock                                Yes    Yes         Yes         INPUT     
+reset                                No     Yes         No          INPUT     
+valid1_in                            Yes    Yes         Yes         INPUT     
+valid2_in                            Yes    Yes         Yes         INPUT     
+reg11_in[0]                          No     Yes         No          INPUT     
+reg11_in[1]                          No     No          No          INPUT     
+reg11_in[2]                          No     No          Yes         INPUT     
+reg11_in[4:3]                        No     No          No          INPUT     
+reg12_in[0]                          No     No          Yes         INPUT     
+reg12_in[1]                          No     Yes         No          INPUT     
+reg12_in[2]                          No     No          Yes         INPUT     
+reg12_in[4:3]                        No     No          No          INPUT     
+reg21_in[0]                          No     No          No          INPUT     
+reg21_in[2:1]                        No     No          Yes         INPUT     
+reg21_in[4:3]                        No     No          No          INPUT     
+reg22_in[0]                          No     No          No          INPUT     
+reg22_in[2:1]                        No     No          Yes         INPUT     
+reg22_in[4:3]                        No     No          No          INPUT     
+dest_reg1_in[1:0]                    No     No          No          INPUT     
+dest_reg1_in[2]                      No     No          Yes         INPUT     
+dest_reg1_in[3]                      No     No          No          INPUT     
+dest_reg1_in[4]                      No     No          Yes         INPUT     
+dest_reg2_in[0]                      No     No          Yes         INPUT     
+dest_reg2_in[1]                      No     No          No          INPUT     
+dest_reg2_in[2]                      No     No          Yes         INPUT     
+dest_reg2_in[3]                      No     No          No          INPUT     
+dest_reg2_in[4]                      No     No          Yes         INPUT     
+regNum1[0]                           No     No          Yes         INPUT     
+regNum1[1]                           Yes    Yes         Yes         INPUT     
+regNum1[2]                           No     No          No          INPUT     
+regNum1[3]                           No     Yes         No          INPUT     
+regNum1[5:4]                         No     No          No          INPUT     
+regNum2[1:0]                         No     Yes         No          INPUT     
+regNum2[2]                           No     No          Yes         INPUT     
+regNum2[3]                           No     Yes         No          INPUT     
+regNum2[5:4]                         No     No          No          INPUT     
+success1                             Yes    Yes         Yes         INPUT     
+success2                             Yes    Yes         Yes         INPUT     
+brat_en                              Yes    Yes         Yes         INPUT     
+brat_arr_in[0][4:0]                  No     Yes         No          INPUT     
+brat_arr_in[1][0]                    No     No          Yes         INPUT     
+brat_arr_in[1][4:1]                  No     Yes         No          INPUT     
+brat_arr_in[2][0]                    No     Yes         No          INPUT     
+brat_arr_in[2][1]                    No     No          Yes         INPUT     
+brat_arr_in[2][4:2]                  No     Yes         No          INPUT     
+brat_arr_in[3][1:0]                  No     No          Yes         INPUT     
+brat_arr_in[3][4:2]                  No     Yes         No          INPUT     
+brat_arr_in[4][1:0]                  No     Yes         No          INPUT     
+brat_arr_in[4][2]                    No     No          Yes         INPUT     
+brat_arr_in[4][4:3]                  No     Yes         No          INPUT     
+brat_arr_in[5][0]                    No     No          Yes         INPUT     
+brat_arr_in[5][1]                    No     Yes         No          INPUT     
+brat_arr_in[5][2]                    No     No          Yes         INPUT     
+brat_arr_in[5][4:3]                  No     Yes         No          INPUT     
+brat_arr_in[6][0]                    No     Yes         No          INPUT     
+brat_arr_in[6][2:1]                  No     No          Yes         INPUT     
+brat_arr_in[6][4:3]                  No     Yes         No          INPUT     
+brat_arr_in[7][2:0]                  No     No          Yes         INPUT     
+brat_arr_in[7][4:3]                  No     Yes         No          INPUT     
+brat_arr_in[8][2:0]                  No     Yes         No          INPUT     
+brat_arr_in[8][3]                    No     No          Yes         INPUT     
+brat_arr_in[8][4]                    No     Yes         No          INPUT     
+brat_arr_in[9][0]                    No     No          Yes         INPUT     
+brat_arr_in[9][2:1]                  No     Yes         No          INPUT     
+brat_arr_in[9][3]                    No     No          Yes         INPUT     
+brat_arr_in[9][4]                    No     Yes         No          INPUT     
+brat_arr_in[10][0]                   No     Yes         No          INPUT     
+brat_arr_in[10][1]                   No     No          Yes         INPUT     
+brat_arr_in[10][2]                   No     Yes         No          INPUT     
+brat_arr_in[10][3]                   No     No          Yes         INPUT     
+brat_arr_in[10][4]                   No     Yes         No          INPUT     
+brat_arr_in[11][1:0]                 No     No          Yes         INPUT     
+brat_arr_in[11][2]                   No     Yes         No          INPUT     
+brat_arr_in[11][3]                   No     No          Yes         INPUT     
+brat_arr_in[11][4]                   No     Yes         No          INPUT     
+brat_arr_in[12][1:0]                 No     Yes         No          INPUT     
+brat_arr_in[12][3:2]                 No     No          Yes         INPUT     
+brat_arr_in[12][4]                   No     Yes         No          INPUT     
+brat_arr_in[13][0]                   No     No          Yes         INPUT     
+brat_arr_in[13][1]                   No     Yes         No          INPUT     
+brat_arr_in[13][3:2]                 No     No          Yes         INPUT     
+brat_arr_in[13][4]                   No     Yes         No          INPUT     
+brat_arr_in[14][0]                   No     Yes         No          INPUT     
+brat_arr_in[14][3:1]                 No     No          Yes         INPUT     
+brat_arr_in[14][4]                   No     Yes         No          INPUT     
+brat_arr_in[15][3:0]                 No     No          Yes         INPUT     
+brat_arr_in[15][4]                   No     Yes         No          INPUT     
+brat_arr_in[16][3:0]                 No     Yes         No          INPUT     
+brat_arr_in[16][4]                   No     No          Yes         INPUT     
+brat_arr_in[17][0]                   No     No          Yes         INPUT     
+brat_arr_in[17][3:1]                 No     Yes         No          INPUT     
+brat_arr_in[17][4]                   No     No          Yes         INPUT     
+brat_arr_in[18][0]                   No     Yes         No          INPUT     
+brat_arr_in[18][1]                   No     No          Yes         INPUT     
+brat_arr_in[18][3:2]                 No     Yes         No          INPUT     
+brat_arr_in[18][4]                   No     No          Yes         INPUT     
+brat_arr_in[19][1:0]                 No     No          Yes         INPUT     
+brat_arr_in[19][3:2]                 No     Yes         No          INPUT     
+brat_arr_in[19][4]                   No     No          Yes         INPUT     
+brat_arr_in[20][1:0]                 No     Yes         No          INPUT     
+brat_arr_in[20][2]                   No     No          Yes         INPUT     
+brat_arr_in[20][3]                   No     Yes         No          INPUT     
+brat_arr_in[20][4]                   No     No          Yes         INPUT     
+brat_arr_in[21][0]                   No     No          Yes         INPUT     
+brat_arr_in[21][1]                   No     Yes         No          INPUT     
+brat_arr_in[21][2]                   No     No          Yes         INPUT     
+brat_arr_in[21][3]                   No     Yes         No          INPUT     
+brat_arr_in[21][4]                   No     No          Yes         INPUT     
+brat_arr_in[22][0]                   No     Yes         No          INPUT     
+brat_arr_in[22][2:1]                 No     No          Yes         INPUT     
+brat_arr_in[22][3]                   No     Yes         No          INPUT     
+brat_arr_in[22][4]                   No     No          Yes         INPUT     
+brat_arr_in[23][2:0]                 No     No          Yes         INPUT     
+brat_arr_in[23][3]                   No     Yes         No          INPUT     
+brat_arr_in[23][4]                   No     No          Yes         INPUT     
+brat_arr_in[24][2:0]                 No     Yes         No          INPUT     
+brat_arr_in[24][4:3]                 No     No          Yes         INPUT     
+brat_arr_in[25][0]                   No     No          Yes         INPUT     
+brat_arr_in[25][2:1]                 No     Yes         No          INPUT     
+brat_arr_in[25][4:3]                 No     No          Yes         INPUT     
+brat_arr_in[26][0]                   No     Yes         No          INPUT     
+brat_arr_in[26][1]                   No     No          Yes         INPUT     
+brat_arr_in[26][2]                   No     Yes         No          INPUT     
+brat_arr_in[26][4:3]                 No     No          Yes         INPUT     
+brat_arr_in[27][1:0]                 No     No          Yes         INPUT     
+brat_arr_in[27][2]                   No     Yes         No          INPUT     
+brat_arr_in[27][4:3]                 No     No          Yes         INPUT     
+brat_arr_in[28][1:0]                 No     Yes         No          INPUT     
+brat_arr_in[28][4:2]                 No     No          Yes         INPUT     
+brat_arr_in[29][0]                   No     No          Yes         INPUT     
+brat_arr_in[29][1]                   No     Yes         No          INPUT     
+brat_arr_in[29][4:2]                 No     No          Yes         INPUT     
+brat_arr_in[30][0]                   No     Yes         No          INPUT     
+brat_arr_in[30][4:1]                 No     No          Yes         INPUT     
+brat_arr_in[31][4:0]                 No     No          Yes         INPUT     
+Other bits of brat_arr_in[31:0][5:0] No     No          No          INPUT     
+rat1_valid                           Yes    Yes         Yes         OUTPUT    
+rat2_valid                           Yes    Yes         Yes         OUTPUT    
+rat11_reg[5:0]                       No     No          No          OUTPUT    
+rat12_reg[5:0]                       No     No          No          OUTPUT    
+rat21_reg[0]                         No     No          No          OUTPUT    
+rat21_reg[1]                         Yes    Yes         Yes         OUTPUT    
+rat21_reg[2]                         No     No          No          OUTPUT    
+rat21_reg[3]                         Yes    Yes         Yes         OUTPUT    
+rat21_reg[5:4]                       No     No          No          OUTPUT    
+rat22_reg[0]                         No     No          No          OUTPUT    
+rat22_reg[1]                         Yes    Yes         Yes         OUTPUT    
+rat22_reg[2]                         No     No          No          OUTPUT    
+rat22_reg[3]                         Yes    Yes         Yes         OUTPUT    
+rat22_reg[5:4]                       No     No          No          OUTPUT    
+rat_out1[0][4:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[1][0]                       No     No          Yes         OUTPUT    
+rat_out1[1][4:1]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[2][0]                       Yes    Yes         Yes         OUTPUT    
+rat_out1[2][1]                       No     No          Yes         OUTPUT    
+rat_out1[2][4:2]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[3][1:0]                     No     No          Yes         OUTPUT    
+rat_out1[3][4:2]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[4][1:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[4][2]                       No     No          Yes         OUTPUT    
+rat_out1[4][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[5][0]                       No     No          Yes         OUTPUT    
+rat_out1[5][1]                       Yes    Yes         Yes         OUTPUT    
+rat_out1[5][2]                       No     No          Yes         OUTPUT    
+rat_out1[5][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[6][0]                       Yes    Yes         Yes         OUTPUT    
+rat_out1[6][2:1]                     No     No          Yes         OUTPUT    
+rat_out1[6][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[7][2:0]                     No     No          Yes         OUTPUT    
+rat_out1[7][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[8][2:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[8][3]                       No     No          Yes         OUTPUT    
+rat_out1[8][4]                       Yes    Yes         Yes         OUTPUT    
+rat_out1[9][0]                       No     No          Yes         OUTPUT    
+rat_out1[9][2:1]                     Yes    Yes         Yes         OUTPUT    
+rat_out1[9][3]                       No     No          Yes         OUTPUT    
+rat_out1[9][4]                       Yes    Yes         Yes         OUTPUT    
+rat_out1[10][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[10][1]                      No     No          Yes         OUTPUT    
+rat_out1[10][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[10][3]                      No     No          Yes         OUTPUT    
+rat_out1[10][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[11][1:0]                    No     No          Yes         OUTPUT    
+rat_out1[11][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[11][3]                      No     No          Yes         OUTPUT    
+rat_out1[11][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[12][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[12][3:2]                    No     No          Yes         OUTPUT    
+rat_out1[12][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[13][0]                      No     No          Yes         OUTPUT    
+rat_out1[13][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[13][3:2]                    No     No          Yes         OUTPUT    
+rat_out1[13][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[14][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[14][3:1]                    No     No          Yes         OUTPUT    
+rat_out1[14][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[15][3:0]                    No     No          Yes         OUTPUT    
+rat_out1[15][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[16][3:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[16][4]                      No     No          Yes         OUTPUT    
+rat_out1[17][0]                      No     No          Yes         OUTPUT    
+rat_out1[17][3:1]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[17][4]                      No     No          Yes         OUTPUT    
+rat_out1[18][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[18][1]                      No     No          Yes         OUTPUT    
+rat_out1[18][3:2]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[18][4]                      No     No          Yes         OUTPUT    
+rat_out1[19][1:0]                    No     No          Yes         OUTPUT    
+rat_out1[19][3:2]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[19][4]                      No     No          Yes         OUTPUT    
+rat_out1[20][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[20][2]                      No     No          Yes         OUTPUT    
+rat_out1[20][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[20][4]                      No     No          Yes         OUTPUT    
+rat_out1[21][0]                      No     No          Yes         OUTPUT    
+rat_out1[21][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[21][2]                      No     No          Yes         OUTPUT    
+rat_out1[21][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[21][4]                      No     No          Yes         OUTPUT    
+rat_out1[22][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[22][2:1]                    No     No          Yes         OUTPUT    
+rat_out1[22][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[22][4]                      No     No          Yes         OUTPUT    
+rat_out1[23][2:0]                    No     No          Yes         OUTPUT    
+rat_out1[23][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[23][4]                      No     No          Yes         OUTPUT    
+rat_out1[24][2:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[24][4:3]                    No     No          Yes         OUTPUT    
+rat_out1[25][0]                      No     No          Yes         OUTPUT    
+rat_out1[25][2:1]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[25][4:3]                    No     No          Yes         OUTPUT    
+rat_out1[26][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[26][1]                      No     No          Yes         OUTPUT    
+rat_out1[26][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[26][4:3]                    No     No          Yes         OUTPUT    
+rat_out1[27][1:0]                    No     No          Yes         OUTPUT    
+rat_out1[27][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[27][4:3]                    No     No          Yes         OUTPUT    
+rat_out1[28][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out1[28][4:2]                    No     No          Yes         OUTPUT    
+rat_out1[29][0]                      No     No          Yes         OUTPUT    
+rat_out1[29][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[29][4:2]                    No     No          Yes         OUTPUT    
+rat_out1[30][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out1[30][4:1]                    No     No          Yes         OUTPUT    
+rat_out1[31][4:0]                    No     No          Yes         OUTPUT    
+Other bits of rat_out1[31:0][5:0]    No     No          No          OUTPUT    
+rat_out2[0][4:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[1][0]                       No     No          Yes         OUTPUT    
+rat_out2[1][4:1]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[2][0]                       Yes    Yes         Yes         OUTPUT    
+rat_out2[2][1]                       No     No          Yes         OUTPUT    
+rat_out2[2][4:2]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[3][1:0]                     No     No          Yes         OUTPUT    
+rat_out2[3][4:2]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[4][1:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[4][2]                       No     No          Yes         OUTPUT    
+rat_out2[4][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[5][0]                       No     No          Yes         OUTPUT    
+rat_out2[5][1]                       Yes    Yes         Yes         OUTPUT    
+rat_out2[5][2]                       No     No          Yes         OUTPUT    
+rat_out2[5][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[6][0]                       Yes    Yes         Yes         OUTPUT    
+rat_out2[6][2:1]                     No     No          Yes         OUTPUT    
+rat_out2[6][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[7][2:0]                     No     No          Yes         OUTPUT    
+rat_out2[7][4:3]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[8][2:0]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[8][3]                       No     No          Yes         OUTPUT    
+rat_out2[8][4]                       Yes    Yes         Yes         OUTPUT    
+rat_out2[9][0]                       No     No          Yes         OUTPUT    
+rat_out2[9][2:1]                     Yes    Yes         Yes         OUTPUT    
+rat_out2[9][3]                       No     No          Yes         OUTPUT    
+rat_out2[9][4]                       Yes    Yes         Yes         OUTPUT    
+rat_out2[10][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[10][1]                      No     No          Yes         OUTPUT    
+rat_out2[10][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[10][3]                      No     No          Yes         OUTPUT    
+rat_out2[10][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[11][1:0]                    No     No          Yes         OUTPUT    
+rat_out2[11][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[11][3]                      No     No          Yes         OUTPUT    
+rat_out2[11][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[12][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[12][3:2]                    No     No          Yes         OUTPUT    
+rat_out2[12][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[13][0]                      No     No          Yes         OUTPUT    
+rat_out2[13][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[13][3:2]                    No     No          Yes         OUTPUT    
+rat_out2[13][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[14][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[14][3:1]                    No     No          Yes         OUTPUT    
+rat_out2[14][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[15][3:0]                    No     No          Yes         OUTPUT    
+rat_out2[15][4]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[16][3:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[16][4]                      No     No          Yes         OUTPUT    
+rat_out2[17][0]                      No     No          Yes         OUTPUT    
+rat_out2[17][3:1]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[17][4]                      No     No          Yes         OUTPUT    
+rat_out2[18][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[18][1]                      No     No          Yes         OUTPUT    
+rat_out2[18][3:2]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[18][4]                      No     No          Yes         OUTPUT    
+rat_out2[19][1:0]                    No     No          Yes         OUTPUT    
+rat_out2[19][3:2]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[19][4]                      No     No          Yes         OUTPUT    
+rat_out2[20][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[20][2]                      No     No          Yes         OUTPUT    
+rat_out2[20][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[20][4]                      No     No          Yes         OUTPUT    
+rat_out2[21][0]                      No     No          Yes         OUTPUT    
+rat_out2[21][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[21][2]                      No     No          Yes         OUTPUT    
+rat_out2[21][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[21][4]                      No     No          Yes         OUTPUT    
+rat_out2[22][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[22][2:1]                    No     No          Yes         OUTPUT    
+rat_out2[22][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[22][4]                      No     No          Yes         OUTPUT    
+rat_out2[23][2:0]                    No     No          Yes         OUTPUT    
+rat_out2[23][3]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[23][4]                      No     No          Yes         OUTPUT    
+rat_out2[24][2:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[24][4:3]                    No     No          Yes         OUTPUT    
+rat_out2[25][0]                      No     No          Yes         OUTPUT    
+rat_out2[25][2:1]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[25][4:3]                    No     No          Yes         OUTPUT    
+rat_out2[26][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[26][1]                      No     No          Yes         OUTPUT    
+rat_out2[26][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[26][4:3]                    No     No          Yes         OUTPUT    
+rat_out2[27][1:0]                    No     No          Yes         OUTPUT    
+rat_out2[27][2]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[27][4:3]                    No     No          Yes         OUTPUT    
+rat_out2[28][1:0]                    Yes    Yes         Yes         OUTPUT    
+rat_out2[28][4:2]                    No     No          Yes         OUTPUT    
+rat_out2[29][0]                      No     No          Yes         OUTPUT    
+rat_out2[29][1]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[29][4:2]                    No     No          Yes         OUTPUT    
+rat_out2[30][0]                      Yes    Yes         Yes         OUTPUT    
+rat_out2[30][4:1]                    No     No          Yes         OUTPUT    
+rat_out2[31][4:0]                    No     No          Yes         OUTPUT    
+Other bits of rat_out2[31:0][5:0]    No     No          No          OUTPUT    
+rat_arr_out[0][4:0]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[1][0]                    No     No          Yes         OUTPUT    
+rat_arr_out[1][4:1]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[2][0]                    Yes    Yes         Yes         OUTPUT    
+rat_arr_out[2][1]                    No     No          Yes         OUTPUT    
+rat_arr_out[2][4:2]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[3][1:0]                  No     No          Yes         OUTPUT    
+rat_arr_out[3][4:2]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[4][1:0]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[4][2]                    No     No          Yes         OUTPUT    
+rat_arr_out[4][4:3]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[5][0]                    No     No          Yes         OUTPUT    
+rat_arr_out[5][1]                    Yes    Yes         Yes         OUTPUT    
+rat_arr_out[5][2]                    No     No          Yes         OUTPUT    
+rat_arr_out[5][4:3]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[6][0]                    Yes    Yes         Yes         OUTPUT    
+rat_arr_out[6][2:1]                  No     No          Yes         OUTPUT    
+rat_arr_out[6][4:3]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[7][2:0]                  No     No          Yes         OUTPUT    
+rat_arr_out[7][4:3]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[8][2:0]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[8][3]                    No     No          Yes         OUTPUT    
+rat_arr_out[8][4]                    Yes    Yes         Yes         OUTPUT    
+rat_arr_out[9][0]                    No     No          Yes         OUTPUT    
+rat_arr_out[9][2:1]                  Yes    Yes         Yes         OUTPUT    
+rat_arr_out[9][3]                    No     No          Yes         OUTPUT    
+rat_arr_out[9][4]                    Yes    Yes         Yes         OUTPUT    
+rat_arr_out[10][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[10][1]                   No     No          Yes         OUTPUT    
+rat_arr_out[10][2]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[10][3]                   No     No          Yes         OUTPUT    
+rat_arr_out[10][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[11][1:0]                 No     No          Yes         OUTPUT    
+rat_arr_out[11][2]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[11][3]                   No     No          Yes         OUTPUT    
+rat_arr_out[11][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[12][1:0]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[12][3:2]                 No     No          Yes         OUTPUT    
+rat_arr_out[12][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[13][0]                   No     No          Yes         OUTPUT    
+rat_arr_out[13][1]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[13][3:2]                 No     No          Yes         OUTPUT    
+rat_arr_out[13][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[14][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[14][3:1]                 No     No          Yes         OUTPUT    
+rat_arr_out[14][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[15][3:0]                 No     No          Yes         OUTPUT    
+rat_arr_out[15][4]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[16][3:0]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[16][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[17][0]                   No     No          Yes         OUTPUT    
+rat_arr_out[17][3:1]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[17][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[18][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[18][1]                   No     No          Yes         OUTPUT    
+rat_arr_out[18][3:2]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[18][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[19][1:0]                 No     No          Yes         OUTPUT    
+rat_arr_out[19][3:2]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[19][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[20][1:0]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[20][2]                   No     No          Yes         OUTPUT    
+rat_arr_out[20][3]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[20][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[21][0]                   No     No          Yes         OUTPUT    
+rat_arr_out[21][1]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[21][2]                   No     No          Yes         OUTPUT    
+rat_arr_out[21][3]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[21][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[22][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[22][2:1]                 No     No          Yes         OUTPUT    
+rat_arr_out[22][3]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[22][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[23][2:0]                 No     No          Yes         OUTPUT    
+rat_arr_out[23][3]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[23][4]                   No     No          Yes         OUTPUT    
+rat_arr_out[24][2:0]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[24][4:3]                 No     No          Yes         OUTPUT    
+rat_arr_out[25][0]                   No     No          Yes         OUTPUT    
+rat_arr_out[25][2:1]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[25][4:3]                 No     No          Yes         OUTPUT    
+rat_arr_out[26][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[26][1]                   No     No          Yes         OUTPUT    
+rat_arr_out[26][2]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[26][4:3]                 No     No          Yes         OUTPUT    
+rat_arr_out[27][1:0]                 No     No          Yes         OUTPUT    
+rat_arr_out[27][2]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[27][4:3]                 No     No          Yes         OUTPUT    
+rat_arr_out[28][1:0]                 Yes    Yes         Yes         OUTPUT    
+rat_arr_out[28][4:2]                 No     No          Yes         OUTPUT    
+rat_arr_out[29][0]                   No     No          Yes         OUTPUT    
+rat_arr_out[29][1]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[29][4:2]                 No     No          Yes         OUTPUT    
+rat_arr_out[30][0]                   Yes    Yes         Yes         OUTPUT    
+rat_arr_out[30][4:1]                 No     No          Yes         OUTPUT    
+rat_arr_out[31][4:0]                 No     No          Yes         OUTPUT    
+Other bits of rat_arr_out[31:0][5:0] No     No          No          OUTPUT    
+ar1_out[1:0]                         No     No          No          OUTPUT    
+ar1_out[2]                           No     No          Yes         OUTPUT    
+ar1_out[3]                           No     No          No          OUTPUT    
+ar1_out[4]                           No     No          Yes         OUTPUT    
+ar2_out[0]                           No     No          Yes         OUTPUT    
+ar2_out[1]                           No     No          No          OUTPUT    
+ar2_out[2]                           No     No          Yes         OUTPUT    
+ar2_out[3]                           No     No          No          OUTPUT    
+ar2_out[4]                           No     No          Yes         OUTPUT    
+pr1_out[5:0]                         No     No          No          OUTPUT    
+pr2_out[0]                           No     No          No          OUTPUT    
+pr2_out[1]                           Yes    Yes         Yes         OUTPUT    
+pr2_out[2]                           No     No          No          OUTPUT    
+pr2_out[3]                           Yes    Yes         Yes         OUTPUT    
+pr2_out[5:4]                         No     No          No          OUTPUT    
+pr1_valid                            Yes    Yes         Yes         OUTPUT    
+pr2_valid                            Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                                       Toggle Toggle 1->0 Toggle 0->1 
+rat_arr[0][4:0]                        Yes    Yes         Yes         
+rat_arr[1][0]                          No     No          Yes         
+rat_arr[1][4:1]                        Yes    Yes         Yes         
+rat_arr[2][0]                          Yes    Yes         Yes         
+rat_arr[2][1]                          No     No          Yes         
+rat_arr[2][4:2]                        Yes    Yes         Yes         
+rat_arr[3][1:0]                        No     No          Yes         
+rat_arr[3][4:2]                        Yes    Yes         Yes         
+rat_arr[4][1:0]                        Yes    Yes         Yes         
+rat_arr[4][2]                          No     No          Yes         
+rat_arr[4][4:3]                        Yes    Yes         Yes         
+rat_arr[5][0]                          No     No          Yes         
+rat_arr[5][1]                          Yes    Yes         Yes         
+rat_arr[5][2]                          No     No          Yes         
+rat_arr[5][4:3]                        Yes    Yes         Yes         
+rat_arr[6][0]                          Yes    Yes         Yes         
+rat_arr[6][2:1]                        No     No          Yes         
+rat_arr[6][4:3]                        Yes    Yes         Yes         
+rat_arr[7][2:0]                        No     No          Yes         
+rat_arr[7][4:3]                        Yes    Yes         Yes         
+rat_arr[8][2:0]                        Yes    Yes         Yes         
+rat_arr[8][3]                          No     No          Yes         
+rat_arr[8][4]                          Yes    Yes         Yes         
+rat_arr[9][0]                          No     No          Yes         
+rat_arr[9][2:1]                        Yes    Yes         Yes         
+rat_arr[9][3]                          No     No          Yes         
+rat_arr[9][4]                          Yes    Yes         Yes         
+rat_arr[10][0]                         Yes    Yes         Yes         
+rat_arr[10][1]                         No     No          Yes         
+rat_arr[10][2]                         Yes    Yes         Yes         
+rat_arr[10][3]                         No     No          Yes         
+rat_arr[10][4]                         Yes    Yes         Yes         
+rat_arr[11][1:0]                       No     No          Yes         
+rat_arr[11][2]                         Yes    Yes         Yes         
+rat_arr[11][3]                         No     No          Yes         
+rat_arr[11][4]                         Yes    Yes         Yes         
+rat_arr[12][1:0]                       Yes    Yes         Yes         
+rat_arr[12][3:2]                       No     No          Yes         
+rat_arr[12][4]                         Yes    Yes         Yes         
+rat_arr[13][0]                         No     No          Yes         
+rat_arr[13][1]                         Yes    Yes         Yes         
+rat_arr[13][3:2]                       No     No          Yes         
+rat_arr[13][4]                         Yes    Yes         Yes         
+rat_arr[14][0]                         Yes    Yes         Yes         
+rat_arr[14][3:1]                       No     No          Yes         
+rat_arr[14][4]                         Yes    Yes         Yes         
+rat_arr[15][3:0]                       No     No          Yes         
+rat_arr[15][4]                         Yes    Yes         Yes         
+rat_arr[16][3:0]                       Yes    Yes         Yes         
+rat_arr[16][4]                         No     No          Yes         
+rat_arr[17][0]                         No     No          Yes         
+rat_arr[17][3:1]                       Yes    Yes         Yes         
+rat_arr[17][4]                         No     No          Yes         
+rat_arr[18][0]                         Yes    Yes         Yes         
+rat_arr[18][1]                         No     No          Yes         
+rat_arr[18][3:2]                       Yes    Yes         Yes         
+rat_arr[18][4]                         No     No          Yes         
+rat_arr[19][1:0]                       No     No          Yes         
+rat_arr[19][3:2]                       Yes    Yes         Yes         
+rat_arr[19][4]                         No     No          Yes         
+rat_arr[20][1:0]                       Yes    Yes         Yes         
+rat_arr[20][2]                         No     No          Yes         
+rat_arr[20][3]                         Yes    Yes         Yes         
+rat_arr[20][4]                         No     No          Yes         
+rat_arr[21][0]                         No     No          Yes         
+rat_arr[21][1]                         Yes    Yes         Yes         
+rat_arr[21][2]                         No     No          Yes         
+rat_arr[21][3]                         Yes    Yes         Yes         
+rat_arr[21][4]                         No     No          Yes         
+rat_arr[22][0]                         Yes    Yes         Yes         
+rat_arr[22][2:1]                       No     No          Yes         
+rat_arr[22][3]                         Yes    Yes         Yes         
+rat_arr[22][4]                         No     No          Yes         
+rat_arr[23][2:0]                       No     No          Yes         
+rat_arr[23][3]                         Yes    Yes         Yes         
+rat_arr[23][4]                         No     No          Yes         
+rat_arr[24][2:0]                       Yes    Yes         Yes         
+rat_arr[24][4:3]                       No     No          Yes         
+rat_arr[25][0]                         No     No          Yes         
+rat_arr[25][2:1]                       Yes    Yes         Yes         
+rat_arr[25][4:3]                       No     No          Yes         
+rat_arr[26][0]                         Yes    Yes         Yes         
+rat_arr[26][1]                         No     No          Yes         
+rat_arr[26][2]                         Yes    Yes         Yes         
+rat_arr[26][4:3]                       No     No          Yes         
+rat_arr[27][1:0]                       No     No          Yes         
+rat_arr[27][2]                         Yes    Yes         Yes         
+rat_arr[27][4:3]                       No     No          Yes         
+rat_arr[28][1:0]                       Yes    Yes         Yes         
+rat_arr[28][4:2]                       No     No          Yes         
+rat_arr[29][0]                         No     No          Yes         
+rat_arr[29][1]                         Yes    Yes         Yes         
+rat_arr[29][4:2]                       No     No          Yes         
+rat_arr[30][0]                         Yes    Yes         Yes         
+rat_arr[30][4:1]                       No     No          Yes         
+rat_arr[31][4:0]                       No     No          Yes         
+Other bits of rat_arr[31:0][5:0]       No     No          No          
+rat_arr_temp1[0][4:0]                  Yes    Yes         Yes         
+rat_arr_temp1[1][0]                    No     No          Yes         
+rat_arr_temp1[1][4:1]                  Yes    Yes         Yes         
+rat_arr_temp1[2][0]                    Yes    Yes         Yes         
+rat_arr_temp1[2][1]                    No     No          Yes         
+rat_arr_temp1[2][4:2]                  Yes    Yes         Yes         
+rat_arr_temp1[3][1:0]                  No     No          Yes         
+rat_arr_temp1[3][4:2]                  Yes    Yes         Yes         
+rat_arr_temp1[4][1:0]                  Yes    Yes         Yes         
+rat_arr_temp1[4][2]                    No     No          Yes         
+rat_arr_temp1[4][4:3]                  Yes    Yes         Yes         
+rat_arr_temp1[5][0]                    No     No          Yes         
+rat_arr_temp1[5][1]                    Yes    Yes         Yes         
+rat_arr_temp1[5][2]                    No     No          Yes         
+rat_arr_temp1[5][4:3]                  Yes    Yes         Yes         
+rat_arr_temp1[6][0]                    Yes    Yes         Yes         
+rat_arr_temp1[6][2:1]                  No     No          Yes         
+rat_arr_temp1[6][4:3]                  Yes    Yes         Yes         
+rat_arr_temp1[7][2:0]                  No     No          Yes         
+rat_arr_temp1[7][4:3]                  Yes    Yes         Yes         
+rat_arr_temp1[8][2:0]                  Yes    Yes         Yes         
+rat_arr_temp1[8][3]                    No     No          Yes         
+rat_arr_temp1[8][4]                    Yes    Yes         Yes         
+rat_arr_temp1[9][0]                    No     No          Yes         
+rat_arr_temp1[9][2:1]                  Yes    Yes         Yes         
+rat_arr_temp1[9][3]                    No     No          Yes         
+rat_arr_temp1[9][4]                    Yes    Yes         Yes         
+rat_arr_temp1[10][0]                   Yes    Yes         Yes         
+rat_arr_temp1[10][1]                   No     No          Yes         
+rat_arr_temp1[10][2]                   Yes    Yes         Yes         
+rat_arr_temp1[10][3]                   No     No          Yes         
+rat_arr_temp1[10][4]                   Yes    Yes         Yes         
+rat_arr_temp1[11][1:0]                 No     No          Yes         
+rat_arr_temp1[11][2]                   Yes    Yes         Yes         
+rat_arr_temp1[11][3]                   No     No          Yes         
+rat_arr_temp1[11][4]                   Yes    Yes         Yes         
+rat_arr_temp1[12][1:0]                 Yes    Yes         Yes         
+rat_arr_temp1[12][3:2]                 No     No          Yes         
+rat_arr_temp1[12][4]                   Yes    Yes         Yes         
+rat_arr_temp1[13][0]                   No     No          Yes         
+rat_arr_temp1[13][1]                   Yes    Yes         Yes         
+rat_arr_temp1[13][3:2]                 No     No          Yes         
+rat_arr_temp1[13][4]                   Yes    Yes         Yes         
+rat_arr_temp1[14][0]                   Yes    Yes         Yes         
+rat_arr_temp1[14][3:1]                 No     No          Yes         
+rat_arr_temp1[14][4]                   Yes    Yes         Yes         
+rat_arr_temp1[15][3:0]                 No     No          Yes         
+rat_arr_temp1[15][4]                   Yes    Yes         Yes         
+rat_arr_temp1[16][3:0]                 Yes    Yes         Yes         
+rat_arr_temp1[16][4]                   No     No          Yes         
+rat_arr_temp1[17][0]                   No     No          Yes         
+rat_arr_temp1[17][3:1]                 Yes    Yes         Yes         
+rat_arr_temp1[17][4]                   No     No          Yes         
+rat_arr_temp1[18][0]                   Yes    Yes         Yes         
+rat_arr_temp1[18][1]                   No     No          Yes         
+rat_arr_temp1[18][3:2]                 Yes    Yes         Yes         
+rat_arr_temp1[18][4]                   No     No          Yes         
+rat_arr_temp1[19][1:0]                 No     No          Yes         
+rat_arr_temp1[19][3:2]                 Yes    Yes         Yes         
+rat_arr_temp1[19][4]                   No     No          Yes         
+rat_arr_temp1[20][1:0]                 Yes    Yes         Yes         
+rat_arr_temp1[20][2]                   No     No          Yes         
+rat_arr_temp1[20][3]                   Yes    Yes         Yes         
+rat_arr_temp1[20][4]                   No     No          Yes         
+rat_arr_temp1[21][0]                   No     No          Yes         
+rat_arr_temp1[21][1]                   Yes    Yes         Yes         
+rat_arr_temp1[21][2]                   No     No          Yes         
+rat_arr_temp1[21][3]                   Yes    Yes         Yes         
+rat_arr_temp1[21][4]                   No     No          Yes         
+rat_arr_temp1[22][0]                   Yes    Yes         Yes         
+rat_arr_temp1[22][2:1]                 No     No          Yes         
+rat_arr_temp1[22][3]                   Yes    Yes         Yes         
+rat_arr_temp1[22][4]                   No     No          Yes         
+rat_arr_temp1[23][2:0]                 No     No          Yes         
+rat_arr_temp1[23][3]                   Yes    Yes         Yes         
+rat_arr_temp1[23][4]                   No     No          Yes         
+rat_arr_temp1[24][2:0]                 Yes    Yes         Yes         
+rat_arr_temp1[24][4:3]                 No     No          Yes         
+rat_arr_temp1[25][0]                   No     No          Yes         
+rat_arr_temp1[25][2:1]                 Yes    Yes         Yes         
+rat_arr_temp1[25][4:3]                 No     No          Yes         
+rat_arr_temp1[26][0]                   Yes    Yes         Yes         
+rat_arr_temp1[26][1]                   No     No          Yes         
+rat_arr_temp1[26][2]                   Yes    Yes         Yes         
+rat_arr_temp1[26][4:3]                 No     No          Yes         
+rat_arr_temp1[27][1:0]                 No     No          Yes         
+rat_arr_temp1[27][2]                   Yes    Yes         Yes         
+rat_arr_temp1[27][4:3]                 No     No          Yes         
+rat_arr_temp1[28][1:0]                 Yes    Yes         Yes         
+rat_arr_temp1[28][4:2]                 No     No          Yes         
+rat_arr_temp1[29][0]                   No     No          Yes         
+rat_arr_temp1[29][1]                   Yes    Yes         Yes         
+rat_arr_temp1[29][4:2]                 No     No          Yes         
+rat_arr_temp1[30][0]                   Yes    Yes         Yes         
+rat_arr_temp1[30][4:1]                 No     No          Yes         
+rat_arr_temp1[31][4:0]                 No     No          Yes         
+Other bits of rat_arr_temp1[31:0][5:0] No     No          No          
+rat_arr_temp2[0][4:0]                  Yes    Yes         Yes         
+rat_arr_temp2[1][0]                    No     No          Yes         
+rat_arr_temp2[1][4:1]                  Yes    Yes         Yes         
+rat_arr_temp2[2][0]                    Yes    Yes         Yes         
+rat_arr_temp2[2][1]                    No     No          Yes         
+rat_arr_temp2[2][4:2]                  Yes    Yes         Yes         
+rat_arr_temp2[3][1:0]                  No     No          Yes         
+rat_arr_temp2[3][4:2]                  Yes    Yes         Yes         
+rat_arr_temp2[4][1:0]                  Yes    Yes         Yes         
+rat_arr_temp2[4][2]                    No     No          Yes         
+rat_arr_temp2[4][4:3]                  Yes    Yes         Yes         
+rat_arr_temp2[5][0]                    No     No          Yes         
+rat_arr_temp2[5][1]                    Yes    Yes         Yes         
+rat_arr_temp2[5][2]                    No     No          Yes         
+rat_arr_temp2[5][4:3]                  Yes    Yes         Yes         
+rat_arr_temp2[6][0]                    Yes    Yes         Yes         
+rat_arr_temp2[6][2:1]                  No     No          Yes         
+rat_arr_temp2[6][4:3]                  Yes    Yes         Yes         
+rat_arr_temp2[7][2:0]                  No     No          Yes         
+rat_arr_temp2[7][4:3]                  Yes    Yes         Yes         
+rat_arr_temp2[8][2:0]                  Yes    Yes         Yes         
+rat_arr_temp2[8][3]                    No     No          Yes         
+rat_arr_temp2[8][4]                    Yes    Yes         Yes         
+rat_arr_temp2[9][0]                    No     No          Yes         
+rat_arr_temp2[9][2:1]                  Yes    Yes         Yes         
+rat_arr_temp2[9][3]                    No     No          Yes         
+rat_arr_temp2[9][4]                    Yes    Yes         Yes         
+rat_arr_temp2[10][0]                   Yes    Yes         Yes         
+rat_arr_temp2[10][1]                   No     No          Yes         
+rat_arr_temp2[10][2]                   Yes    Yes         Yes         
+rat_arr_temp2[10][3]                   No     No          Yes         
+rat_arr_temp2[10][4]                   Yes    Yes         Yes         
+rat_arr_temp2[11][1:0]                 No     No          Yes         
+rat_arr_temp2[11][2]                   Yes    Yes         Yes         
+rat_arr_temp2[11][3]                   No     No          Yes         
+rat_arr_temp2[11][4]                   Yes    Yes         Yes         
+rat_arr_temp2[12][1:0]                 Yes    Yes         Yes         
+rat_arr_temp2[12][3:2]                 No     No          Yes         
+rat_arr_temp2[12][4]                   Yes    Yes         Yes         
+rat_arr_temp2[13][0]                   No     No          Yes         
+rat_arr_temp2[13][1]                   Yes    Yes         Yes         
+rat_arr_temp2[13][3:2]                 No     No          Yes         
+rat_arr_temp2[13][4]                   Yes    Yes         Yes         
+rat_arr_temp2[14][0]                   Yes    Yes         Yes         
+rat_arr_temp2[14][3:1]                 No     No          Yes         
+rat_arr_temp2[14][4]                   Yes    Yes         Yes         
+rat_arr_temp2[15][3:0]                 No     No          Yes         
+rat_arr_temp2[15][4]                   Yes    Yes         Yes         
+rat_arr_temp2[16][3:0]                 Yes    Yes         Yes         
+rat_arr_temp2[16][4]                   No     No          Yes         
+rat_arr_temp2[17][0]                   No     No          Yes         
+rat_arr_temp2[17][3:1]                 Yes    Yes         Yes         
+rat_arr_temp2[17][4]                   No     No          Yes         
+rat_arr_temp2[18][0]                   Yes    Yes         Yes         
+rat_arr_temp2[18][1]                   No     No          Yes         
+rat_arr_temp2[18][3:2]                 Yes    Yes         Yes         
+rat_arr_temp2[18][4]                   No     No          Yes         
+rat_arr_temp2[19][1:0]                 No     No          Yes         
+rat_arr_temp2[19][3:2]                 Yes    Yes         Yes         
+rat_arr_temp2[19][4]                   No     No          Yes         
+rat_arr_temp2[20][1:0]                 Yes    Yes         Yes         
+rat_arr_temp2[20][2]                   No     No          Yes         
+rat_arr_temp2[20][3]                   Yes    Yes         Yes         
+rat_arr_temp2[20][4]                   No     No          Yes         
+rat_arr_temp2[21][0]                   No     No          Yes         
+rat_arr_temp2[21][1]                   Yes    Yes         Yes         
+rat_arr_temp2[21][2]                   No     No          Yes         
+rat_arr_temp2[21][3]                   Yes    Yes         Yes         
+rat_arr_temp2[21][4]                   No     No          Yes         
+rat_arr_temp2[22][0]                   Yes    Yes         Yes         
+rat_arr_temp2[22][2:1]                 No     No          Yes         
+rat_arr_temp2[22][3]                   Yes    Yes         Yes         
+rat_arr_temp2[22][4]                   No     No          Yes         
+rat_arr_temp2[23][2:0]                 No     No          Yes         
+rat_arr_temp2[23][3]                   Yes    Yes         Yes         
+rat_arr_temp2[23][4]                   No     No          Yes         
+rat_arr_temp2[24][2:0]                 Yes    Yes         Yes         
+rat_arr_temp2[24][4:3]                 No     No          Yes         
+rat_arr_temp2[25][0]                   No     No          Yes         
+rat_arr_temp2[25][2:1]                 Yes    Yes         Yes         
+rat_arr_temp2[25][4:3]                 No     No          Yes         
+rat_arr_temp2[26][0]                   Yes    Yes         Yes         
+rat_arr_temp2[26][1]                   No     No          Yes         
+rat_arr_temp2[26][2]                   Yes    Yes         Yes         
+rat_arr_temp2[26][4:3]                 No     No          Yes         
+rat_arr_temp2[27][1:0]                 No     No          Yes         
+rat_arr_temp2[27][2]                   Yes    Yes         Yes         
+rat_arr_temp2[27][4:3]                 No     No          Yes         
+rat_arr_temp2[28][1:0]                 Yes    Yes         Yes         
+rat_arr_temp2[28][4:2]                 No     No          Yes         
+rat_arr_temp2[29][0]                   No     No          Yes         
+rat_arr_temp2[29][1]                   Yes    Yes         Yes         
+rat_arr_temp2[29][4:2]                 No     No          Yes         
+rat_arr_temp2[30][0]                   Yes    Yes         Yes         
+rat_arr_temp2[30][4:1]                 No     No          Yes         
+rat_arr_temp2[31][4:0]                 No     No          Yes         
+Other bits of rat_arr_temp2[31:0][5:0] No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.r
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 85.84 100.00 100.00  57.52 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 85.84 100.00 100.00  57.52 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 85.84 100.00 100.00  57.52 rat  
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 66.40  82.22 --      50.58 testbench 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.

@@ -1,0 +1,984 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : design
+Design : rob
+Version: O-2018.06
+Date   : Mon Feb 24 23:57:03 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Local Link Library:
+
+    {lec25dscc25_TT.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : nom_pvt
+    Library : lec25dscc25_TT
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   2.50
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected manually by the user.
+
+Name           :   tsmcwire
+Location       :   lec25dscc25_TT
+Resistance     :   0.2642
+Capacitance    :   0.000132782
+Area           :   0.27
+Slope          :   0.74
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.89
+     2     1.48
+     3     2.44
+     4     3.18
+     5     3.92
+
+
+
+Wire Loading Model Mode: top.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : area
+Design : rob
+Version: O-2018.06
+Date   : Mon Feb 24 23:57:03 2020
+****************************************
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Number of ports:                          622
+Number of nets:                          2470
+Number of cells:                         1951
+Number of combinational cells:           1541
+Number of sequential cells:               410
+Number of macros/black boxes:               0
+Number of buf/inv:                        278
+Number of references:                      43
+
+Combinational area:              91737.012299
+Buf/Inv area:                     9231.667439
+Noncombinational area:           71298.508682
+Macro/Black Box area:                0.000000
+Net Interconnect area:            1528.264169
+
+Total cell area:                163035.520981
+Total area:                     164563.785150
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -max_paths 2
+        -transition_time
+Design : rob
+Version: O-2018.06
+Date   : Mon Feb 24 23:57:03 2020
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: nom_pvt   Library: lec25dscc25_TT
+Wire Load Model Mode: top
+
+  Startpoint: head_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[10]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  head_reg[0]/CLK (dffs1)                  0.00      0.00       0.00 r
+  head_reg[0]/Q (dffs1)                    0.00      0.16       0.16 r
+  head_reg[0]/QN (dffs1)                   0.35      0.18       0.34 f
+  n1617 (net)                   10                   0.00       0.34 f
+  U975/DIN (i1s1)                          0.35      0.00       0.34 f
+  U975/Q (i1s1)                            1.22      0.50       0.84 r
+  head_out[0] (net)             10                   0.00       0.84 r
+  U2370/DIN1 (nor2s1)                      1.22      0.00       0.84 r
+  U2370/Q (nor2s1)                         0.56      0.31       1.15 f
+  n2056 (net)                    3                   0.00       1.15 f
+  U2369/DIN3 (oai22s1)                     0.56      0.00       1.15 f
+  U2369/Q (oai22s1)                        0.57      0.25       1.39 r
+  n2350 (net)                    1                   0.00       1.39 r
+  U2368/DIN3 (oai24s1)                     0.57      0.00       1.40 r
+  U2368/Q (oai24s1)                        0.62      0.37       1.77 f
+  n2349 (net)                    1                   0.00       1.77 f
+  U2367/DIN3 (aoai1112s1)                  0.62      0.00       1.77 f
+  U2367/Q (aoai1112s1)                     0.55      0.25       2.02 r
+  n2348 (net)                    1                   0.00       2.02 r
+  U2366/DIN3 (oai21s1)                     0.55      0.00       2.02 r
+  U2366/Q (oai21s1)                        0.63      0.26       2.28 f
+  n2334 (net)                    3                   0.00       2.28 f
+  U2365/DIN5 (aoi221s1)                    0.63      0.00       2.28 f
+  U2365/Q (aoi221s1)                       0.50      0.13       2.41 r
+  n2347 (net)                    1                   0.00       2.41 r
+  U2364/DIN4 (nnd4s1)                      0.50      0.00       2.41 r
+  U2364/Q (nnd4s1)                         0.30      0.15       2.56 f
+  n2343 (net)                    2                   0.00       2.56 f
+  U2361/DIN (hi1s1)                        0.30      0.00       2.56 f
+  U2361/Q (hi1s1)                          0.39      0.20       2.76 r
+  n2276 (net)                    2                   0.00       2.76 r
+  U2358/DIN1 (nnd2s1)                      0.39      0.00       2.76 r
+  U2358/Q (nnd2s1)                         0.17      0.07       2.82 f
+  n2337 (net)                    1                   0.00       2.82 f
+  U2357/DIN1 (oai1112s1)                   0.17      0.00       2.83 f
+  U2357/Q (oai1112s1)                      0.61      0.17       3.00 r
+  n2322 (net)                    2                   0.00       3.00 r
+  U2350/DIN1 (dsmxc31s1)                   0.61      0.00       3.00 r
+  U2350/Q (dsmxc31s1)                      0.16      0.19       3.20 r
+  n2324 (net)                    1                   0.00       3.20 r
+  U2346/DIN1 (oai21s1)                     0.16      0.00       3.20 r
+  U2346/Q (oai21s1)                        1.10      0.31       3.51 f
+  n2314 (net)                    5                   0.00       3.51 f
+  U2337/DIN2 (oai222s1)                    1.10      0.00       3.51 f
+  U2337/Q (oai222s1)                       0.78      0.43       3.94 r
+  first_mispredicted_rob[0] (net)     3              0.00       3.94 r
+  U2336/DIN (hi1s1)                        0.78      0.00       3.94 r
+  U2336/Q (hi1s1)                          0.69      0.38       4.31 f
+  n2283 (net)                    4                   0.00       4.31 f
+  U2335/DIN5 (or5s1)                       0.69      0.00       4.31 f
+  U2335/Q (or5s1)                          0.27      0.31       4.63 f
+  n2290 (net)                    6                   0.00       4.63 f
+  U2311/DIN2 (and2s1)                      0.27      0.00       4.63 f
+  U2311/Q (and2s1)                         0.18      0.25       4.88 f
+  n2288 (net)                    2                   0.00       4.88 f
+  U2289/DIN1 (nor2s1)                      0.18      0.00       4.88 f
+  U2289/Q (nor2s1)                         0.32      0.14       5.02 r
+  n2188 (net)                    3                   0.00       5.02 r
+  U2288/DIN (hi1s1)                        0.32      0.00       5.02 r
+  U2288/Q (hi1s1)                          0.55      0.27       5.30 f
+  n2256 (net)                    4                   0.00       5.30 f
+  U2166/DIN1 (nor2s1)                      0.55      0.00       5.30 f
+  U2166/Q (nor2s1)                         0.31      0.13       5.43 r
+  n2189 (net)                    2                   0.00       5.43 r
+  U2165/DIN (hi1s1)                        0.31      0.00       5.43 r
+  U2165/Q (hi1s1)                          0.61      0.30       5.73 f
+  n2119 (net)                    5                   0.00       5.73 f
+  U1829/DIN1 (nor2s1)                      0.61      0.00       5.73 f
+  U1829/Q (nor2s1)                         0.35      0.15       5.88 r
+  n2048 (net)                    2                   0.00       5.88 r
+  U1828/DIN (hi1s1)                        0.35      0.00       5.88 r
+  U1828/Q (hi1s1)                          0.38      0.20       6.08 f
+  n2086 (net)                    3                   0.00       6.08 f
+  U1755/DIN4 (oai22s1)                     0.38      0.00       6.08 f
+  U1755/Q (oai22s1)                        0.54      0.22       6.31 r
+  n2084 (net)                    1                   0.00       6.31 r
+  U1754/DIN1 (aoi123s1)                    0.54      0.00       6.31 r
+  U1754/Q (aoi123s1)                       0.77      0.21       6.52 f
+  n2081 (net)                    1                   0.00       6.52 f
+  U1753/DIN3 (oai1112s1)                   0.77      0.00       6.52 f
+  U1753/Q (oai1112s1)                      1.06      0.53       7.05 r
+  n2074 (net)                    4                   0.00       7.05 r
+  U1752/DIN (hi1s1)                        1.06      0.00       7.05 r
+  U1752/Q (hi1s1)                          0.54      0.29       7.34 f
+  n2069 (net)                    3                   0.00       7.34 f
+  U957/DIN2 (and2s1)                       0.54      0.00       7.34 f
+  U957/Q (and2s1)                          0.23      0.33       7.67 f
+  n1387 (net)                    3                   0.00       7.67 f
+  U1050/DIN (ib1s1)                        0.23      0.00       7.67 f
+  U1050/Q (ib1s1)                          0.93      0.38       8.05 r
+  n1875 (net)                   26                   0.00       8.05 r
+  U1713/DIN5 (oai222s1)                    0.93      0.00       8.05 r
+  U1713/Q (oai222s1)                       0.71      0.31       8.36 f
+  n1313 (net)                    1                   0.00       8.36 f
+  rob_body[1]/pc_reg[10]/DIN (dffs2)       0.71      0.01       8.37 f
+  data arrival time                                             8.37
+
+  clock clock (rise edge)                           15.00      15.00
+  clock network delay (ideal)                        0.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  rob_body[1]/pc_reg[10]/CLK (dffs2)                 0.00      14.90 r
+  library setup time                                -0.21      14.69
+  data required time                                           14.69
+  ---------------------------------------------------------------------
+  data required time                                           14.69
+  data arrival time                                            -8.37
+  ---------------------------------------------------------------------
+  slack (MET)                                                   6.32
+
+
+  Startpoint: head_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[9]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  head_reg[0]/CLK (dffs1)                  0.00      0.00       0.00 r
+  head_reg[0]/Q (dffs1)                    0.00      0.16       0.16 r
+  head_reg[0]/QN (dffs1)                   0.35      0.18       0.34 f
+  n1617 (net)                   10                   0.00       0.34 f
+  U975/DIN (i1s1)                          0.35      0.00       0.34 f
+  U975/Q (i1s1)                            1.22      0.50       0.84 r
+  head_out[0] (net)             10                   0.00       0.84 r
+  U2370/DIN1 (nor2s1)                      1.22      0.00       0.84 r
+  U2370/Q (nor2s1)                         0.56      0.31       1.15 f
+  n2056 (net)                    3                   0.00       1.15 f
+  U2369/DIN3 (oai22s1)                     0.56      0.00       1.15 f
+  U2369/Q (oai22s1)                        0.57      0.25       1.39 r
+  n2350 (net)                    1                   0.00       1.39 r
+  U2368/DIN3 (oai24s1)                     0.57      0.00       1.40 r
+  U2368/Q (oai24s1)                        0.62      0.37       1.77 f
+  n2349 (net)                    1                   0.00       1.77 f
+  U2367/DIN3 (aoai1112s1)                  0.62      0.00       1.77 f
+  U2367/Q (aoai1112s1)                     0.55      0.25       2.02 r
+  n2348 (net)                    1                   0.00       2.02 r
+  U2366/DIN3 (oai21s1)                     0.55      0.00       2.02 r
+  U2366/Q (oai21s1)                        0.63      0.26       2.28 f
+  n2334 (net)                    3                   0.00       2.28 f
+  U2365/DIN5 (aoi221s1)                    0.63      0.00       2.28 f
+  U2365/Q (aoi221s1)                       0.50      0.13       2.41 r
+  n2347 (net)                    1                   0.00       2.41 r
+  U2364/DIN4 (nnd4s1)                      0.50      0.00       2.41 r
+  U2364/Q (nnd4s1)                         0.30      0.15       2.56 f
+  n2343 (net)                    2                   0.00       2.56 f
+  U2361/DIN (hi1s1)                        0.30      0.00       2.56 f
+  U2361/Q (hi1s1)                          0.39      0.20       2.76 r
+  n2276 (net)                    2                   0.00       2.76 r
+  U2358/DIN1 (nnd2s1)                      0.39      0.00       2.76 r
+  U2358/Q (nnd2s1)                         0.17      0.07       2.82 f
+  n2337 (net)                    1                   0.00       2.82 f
+  U2357/DIN1 (oai1112s1)                   0.17      0.00       2.83 f
+  U2357/Q (oai1112s1)                      0.61      0.17       3.00 r
+  n2322 (net)                    2                   0.00       3.00 r
+  U2350/DIN1 (dsmxc31s1)                   0.61      0.00       3.00 r
+  U2350/Q (dsmxc31s1)                      0.16      0.19       3.20 r
+  n2324 (net)                    1                   0.00       3.20 r
+  U2346/DIN1 (oai21s1)                     0.16      0.00       3.20 r
+  U2346/Q (oai21s1)                        1.10      0.31       3.51 f
+  n2314 (net)                    5                   0.00       3.51 f
+  U2337/DIN2 (oai222s1)                    1.10      0.00       3.51 f
+  U2337/Q (oai222s1)                       0.78      0.43       3.94 r
+  first_mispredicted_rob[0] (net)     3              0.00       3.94 r
+  U2336/DIN (hi1s1)                        0.78      0.00       3.94 r
+  U2336/Q (hi1s1)                          0.69      0.38       4.31 f
+  n2283 (net)                    4                   0.00       4.31 f
+  U2335/DIN5 (or5s1)                       0.69      0.00       4.31 f
+  U2335/Q (or5s1)                          0.27      0.31       4.63 f
+  n2290 (net)                    6                   0.00       4.63 f
+  U2311/DIN2 (and2s1)                      0.27      0.00       4.63 f
+  U2311/Q (and2s1)                         0.18      0.25       4.88 f
+  n2288 (net)                    2                   0.00       4.88 f
+  U2289/DIN1 (nor2s1)                      0.18      0.00       4.88 f
+  U2289/Q (nor2s1)                         0.32      0.14       5.02 r
+  n2188 (net)                    3                   0.00       5.02 r
+  U2288/DIN (hi1s1)                        0.32      0.00       5.02 r
+  U2288/Q (hi1s1)                          0.55      0.27       5.30 f
+  n2256 (net)                    4                   0.00       5.30 f
+  U2166/DIN1 (nor2s1)                      0.55      0.00       5.30 f
+  U2166/Q (nor2s1)                         0.31      0.13       5.43 r
+  n2189 (net)                    2                   0.00       5.43 r
+  U2165/DIN (hi1s1)                        0.31      0.00       5.43 r
+  U2165/Q (hi1s1)                          0.61      0.30       5.73 f
+  n2119 (net)                    5                   0.00       5.73 f
+  U1829/DIN1 (nor2s1)                      0.61      0.00       5.73 f
+  U1829/Q (nor2s1)                         0.35      0.15       5.88 r
+  n2048 (net)                    2                   0.00       5.88 r
+  U1828/DIN (hi1s1)                        0.35      0.00       5.88 r
+  U1828/Q (hi1s1)                          0.38      0.20       6.08 f
+  n2086 (net)                    3                   0.00       6.08 f
+  U1755/DIN4 (oai22s1)                     0.38      0.00       6.08 f
+  U1755/Q (oai22s1)                        0.54      0.22       6.31 r
+  n2084 (net)                    1                   0.00       6.31 r
+  U1754/DIN1 (aoi123s1)                    0.54      0.00       6.31 r
+  U1754/Q (aoi123s1)                       0.77      0.21       6.52 f
+  n2081 (net)                    1                   0.00       6.52 f
+  U1753/DIN3 (oai1112s1)                   0.77      0.00       6.52 f
+  U1753/Q (oai1112s1)                      1.06      0.53       7.05 r
+  n2074 (net)                    4                   0.00       7.05 r
+  U1752/DIN (hi1s1)                        1.06      0.00       7.05 r
+  U1752/Q (hi1s1)                          0.54      0.29       7.34 f
+  n2069 (net)                    3                   0.00       7.34 f
+  U957/DIN2 (and2s1)                       0.54      0.00       7.34 f
+  U957/Q (and2s1)                          0.23      0.33       7.67 f
+  n1387 (net)                    3                   0.00       7.67 f
+  U1050/DIN (ib1s1)                        0.23      0.00       7.67 f
+  U1050/Q (ib1s1)                          0.93      0.38       8.05 r
+  n1875 (net)                   26                   0.00       8.05 r
+  U1712/DIN5 (oai222s1)                    0.93      0.00       8.05 r
+  U1712/Q (oai222s1)                       0.71      0.31       8.36 f
+  n1314 (net)                    1                   0.00       8.36 f
+  rob_body[1]/pc_reg[9]/DIN (dffs2)        0.71      0.01       8.37 f
+  data arrival time                                             8.37
+
+  clock clock (rise edge)                           15.00      15.00
+  clock network delay (ideal)                        0.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  rob_body[1]/pc_reg[9]/CLK (dffs2)                  0.00      14.90 r
+  library setup time                                -0.21      14.69
+  data required time                                           14.69
+  ---------------------------------------------------------------------
+  data required time                                           14.69
+  data arrival time                                            -8.37
+  ---------------------------------------------------------------------
+  slack (MET)                                                   6.32
+
+
+  Startpoint: cdb2_tag_in[0]
+              (input port clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[10]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  input external delay                               0.10       0.10 r
+  cdb2_tag_in[0] (in)                      0.26      0.04       0.14 r
+  N279 (net)                     2                   0.00       0.14 r
+  U2434/DIN (hi1s1)                        0.26      0.00       0.14 r
+  U2434/Q (hi1s1)                          0.86      0.39       0.53 f
+  n2313 (net)                    6                   0.00       0.53 f
+  U2431/DIN2 (nor2s1)                      0.86      0.00       0.53 f
+  U2431/Q (nor2s1)                         0.61      0.29       0.82 r
+  n2137 (net)                    5                   0.00       0.82 r
+  U2430/DIN (hi1s1)                        0.61      0.00       0.82 r
+  U2430/Q (hi1s1)                          0.56      0.31       1.12 f
+  n2378 (net)                    6                   0.00       1.12 f
+  U2427/DIN4 (oai2222s1)                   0.56      0.00       1.12 f
+  U2427/Q (oai2222s1)                      0.19      0.48       1.61 r
+  n2384 (net)                    1                   0.00       1.61 r
+  U2425/DIN2 (mxi21s1)                     0.19      0.00       1.61 r
+  U2425/Q (mxi21s1)                        0.33      0.18       1.79 f
+  n2382 (net)                    1                   0.00       1.79 f
+  U2424/DIN2 (xnr2s1)                      0.33      0.01       1.80 f
+  U2424/Q (xnr2s1)                         0.16      0.26       2.06 f
+  n2370 (net)                    1                   0.00       2.06 f
+  U2412/DIN1 (nnd3s1)                      0.16      0.00       2.06 f
+  U2412/Q (nnd3s1)                         0.33      0.12       2.18 r
+  n2326 (net)                    2                   0.00       2.18 r
+  U2349/DIN (hi1s1)                        0.33      0.00       2.18 r
+  U2349/Q (hi1s1)                          2.03      0.87       3.05 f
+  mispred_out2 (net)             3                   0.00       3.05 f
+  U2347/DIN1 (nnd2s1)                      2.03      0.00       3.05 f
+  U2347/Q (nnd2s1)                         0.61      0.28       3.33 r
+  n2320 (net)                    2                   0.00       3.33 r
+  U2346/DIN2 (oai21s1)                     0.61      0.00       3.33 r
+  U2346/Q (oai21s1)                        1.10      0.32       3.65 f
+  n2314 (net)                    5                   0.00       3.65 f
+  U2337/DIN2 (oai222s1)                    1.10      0.00       3.65 f
+  U2337/Q (oai222s1)                       0.78      0.43       4.08 r
+  first_mispredicted_rob[0] (net)     3              0.00       4.08 r
+  U2336/DIN (hi1s1)                        0.78      0.00       4.08 r
+  U2336/Q (hi1s1)                          0.69      0.38       4.46 f
+  n2283 (net)                    4                   0.00       4.46 f
+  U2335/DIN5 (or5s1)                       0.69      0.00       4.46 f
+  U2335/Q (or5s1)                          0.27      0.31       4.77 f
+  n2290 (net)                    6                   0.00       4.77 f
+  U2311/DIN2 (and2s1)                      0.27      0.00       4.77 f
+  U2311/Q (and2s1)                         0.18      0.25       5.03 f
+  n2288 (net)                    2                   0.00       5.03 f
+  U2289/DIN1 (nor2s1)                      0.18      0.00       5.03 f
+  U2289/Q (nor2s1)                         0.32      0.14       5.17 r
+  n2188 (net)                    3                   0.00       5.17 r
+  U2288/DIN (hi1s1)                        0.32      0.00       5.17 r
+  U2288/Q (hi1s1)                          0.55      0.27       5.44 f
+  n2256 (net)                    4                   0.00       5.44 f
+  U2166/DIN1 (nor2s1)                      0.55      0.00       5.44 f
+  U2166/Q (nor2s1)                         0.31      0.13       5.57 r
+  n2189 (net)                    2                   0.00       5.57 r
+  U2165/DIN (hi1s1)                        0.31      0.00       5.57 r
+  U2165/Q (hi1s1)                          0.61      0.30       5.87 f
+  n2119 (net)                    5                   0.00       5.87 f
+  U1829/DIN1 (nor2s1)                      0.61      0.00       5.87 f
+  U1829/Q (nor2s1)                         0.35      0.15       6.02 r
+  n2048 (net)                    2                   0.00       6.02 r
+  U1828/DIN (hi1s1)                        0.35      0.00       6.02 r
+  U1828/Q (hi1s1)                          0.38      0.20       6.23 f
+  n2086 (net)                    3                   0.00       6.23 f
+  U1755/DIN4 (oai22s1)                     0.38      0.00       6.23 f
+  U1755/Q (oai22s1)                        0.54      0.22       6.45 r
+  n2084 (net)                    1                   0.00       6.45 r
+  U1754/DIN1 (aoi123s1)                    0.54      0.00       6.45 r
+  U1754/Q (aoi123s1)                       0.77      0.21       6.66 f
+  n2081 (net)                    1                   0.00       6.66 f
+  U1753/DIN3 (oai1112s1)                   0.77      0.00       6.67 f
+  U1753/Q (oai1112s1)                      1.06      0.53       7.19 r
+  n2074 (net)                    4                   0.00       7.19 r
+  U1752/DIN (hi1s1)                        1.06      0.00       7.19 r
+  U1752/Q (hi1s1)                          0.54      0.29       7.48 f
+  n2069 (net)                    3                   0.00       7.48 f
+  U957/DIN2 (and2s1)                       0.54      0.00       7.48 f
+  U957/Q (and2s1)                          0.23      0.33       7.82 f
+  n1387 (net)                    3                   0.00       7.82 f
+  U1050/DIN (ib1s1)                        0.23      0.00       7.82 f
+  U1050/Q (ib1s1)                          0.93      0.38       8.19 r
+  n1875 (net)                   26                   0.00       8.19 r
+  U1713/DIN5 (oai222s1)                    0.93      0.00       8.19 r
+  U1713/Q (oai222s1)                       0.71      0.31       8.51 f
+  n1313 (net)                    1                   0.00       8.51 f
+  rob_body[1]/pc_reg[10]/DIN (dffs2)       0.71      0.01       8.51 f
+  data arrival time                                             8.51
+
+  clock clock (rise edge)                           15.00      15.00
+  clock network delay (ideal)                        0.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  rob_body[1]/pc_reg[10]/CLK (dffs2)                 0.00      14.90 r
+  library setup time                                -0.21      14.69
+  data required time                                           14.69
+  ---------------------------------------------------------------------
+  data required time                                           14.69
+  data arrival time                                            -8.51
+  ---------------------------------------------------------------------
+  slack (MET)                                                   6.17
+
+
+  Startpoint: cdb2_tag_in[0]
+              (input port clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[9]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  input external delay                               0.10       0.10 r
+  cdb2_tag_in[0] (in)                      0.26      0.04       0.14 r
+  N279 (net)                     2                   0.00       0.14 r
+  U2434/DIN (hi1s1)                        0.26      0.00       0.14 r
+  U2434/Q (hi1s1)                          0.86      0.39       0.53 f
+  n2313 (net)                    6                   0.00       0.53 f
+  U2431/DIN2 (nor2s1)                      0.86      0.00       0.53 f
+  U2431/Q (nor2s1)                         0.61      0.29       0.82 r
+  n2137 (net)                    5                   0.00       0.82 r
+  U2430/DIN (hi1s1)                        0.61      0.00       0.82 r
+  U2430/Q (hi1s1)                          0.56      0.31       1.12 f
+  n2378 (net)                    6                   0.00       1.12 f
+  U2427/DIN4 (oai2222s1)                   0.56      0.00       1.12 f
+  U2427/Q (oai2222s1)                      0.19      0.48       1.61 r
+  n2384 (net)                    1                   0.00       1.61 r
+  U2425/DIN2 (mxi21s1)                     0.19      0.00       1.61 r
+  U2425/Q (mxi21s1)                        0.33      0.18       1.79 f
+  n2382 (net)                    1                   0.00       1.79 f
+  U2424/DIN2 (xnr2s1)                      0.33      0.01       1.80 f
+  U2424/Q (xnr2s1)                         0.16      0.26       2.06 f
+  n2370 (net)                    1                   0.00       2.06 f
+  U2412/DIN1 (nnd3s1)                      0.16      0.00       2.06 f
+  U2412/Q (nnd3s1)                         0.33      0.12       2.18 r
+  n2326 (net)                    2                   0.00       2.18 r
+  U2349/DIN (hi1s1)                        0.33      0.00       2.18 r
+  U2349/Q (hi1s1)                          2.03      0.87       3.05 f
+  mispred_out2 (net)             3                   0.00       3.05 f
+  U2347/DIN1 (nnd2s1)                      2.03      0.00       3.05 f
+  U2347/Q (nnd2s1)                         0.61      0.28       3.33 r
+  n2320 (net)                    2                   0.00       3.33 r
+  U2346/DIN2 (oai21s1)                     0.61      0.00       3.33 r
+  U2346/Q (oai21s1)                        1.10      0.32       3.65 f
+  n2314 (net)                    5                   0.00       3.65 f
+  U2337/DIN2 (oai222s1)                    1.10      0.00       3.65 f
+  U2337/Q (oai222s1)                       0.78      0.43       4.08 r
+  first_mispredicted_rob[0] (net)     3              0.00       4.08 r
+  U2336/DIN (hi1s1)                        0.78      0.00       4.08 r
+  U2336/Q (hi1s1)                          0.69      0.38       4.46 f
+  n2283 (net)                    4                   0.00       4.46 f
+  U2335/DIN5 (or5s1)                       0.69      0.00       4.46 f
+  U2335/Q (or5s1)                          0.27      0.31       4.77 f
+  n2290 (net)                    6                   0.00       4.77 f
+  U2311/DIN2 (and2s1)                      0.27      0.00       4.77 f
+  U2311/Q (and2s1)                         0.18      0.25       5.03 f
+  n2288 (net)                    2                   0.00       5.03 f
+  U2289/DIN1 (nor2s1)                      0.18      0.00       5.03 f
+  U2289/Q (nor2s1)                         0.32      0.14       5.17 r
+  n2188 (net)                    3                   0.00       5.17 r
+  U2288/DIN (hi1s1)                        0.32      0.00       5.17 r
+  U2288/Q (hi1s1)                          0.55      0.27       5.44 f
+  n2256 (net)                    4                   0.00       5.44 f
+  U2166/DIN1 (nor2s1)                      0.55      0.00       5.44 f
+  U2166/Q (nor2s1)                         0.31      0.13       5.57 r
+  n2189 (net)                    2                   0.00       5.57 r
+  U2165/DIN (hi1s1)                        0.31      0.00       5.57 r
+  U2165/Q (hi1s1)                          0.61      0.30       5.87 f
+  n2119 (net)                    5                   0.00       5.87 f
+  U1829/DIN1 (nor2s1)                      0.61      0.00       5.87 f
+  U1829/Q (nor2s1)                         0.35      0.15       6.02 r
+  n2048 (net)                    2                   0.00       6.02 r
+  U1828/DIN (hi1s1)                        0.35      0.00       6.02 r
+  U1828/Q (hi1s1)                          0.38      0.20       6.23 f
+  n2086 (net)                    3                   0.00       6.23 f
+  U1755/DIN4 (oai22s1)                     0.38      0.00       6.23 f
+  U1755/Q (oai22s1)                        0.54      0.22       6.45 r
+  n2084 (net)                    1                   0.00       6.45 r
+  U1754/DIN1 (aoi123s1)                    0.54      0.00       6.45 r
+  U1754/Q (aoi123s1)                       0.77      0.21       6.66 f
+  n2081 (net)                    1                   0.00       6.66 f
+  U1753/DIN3 (oai1112s1)                   0.77      0.00       6.67 f
+  U1753/Q (oai1112s1)                      1.06      0.53       7.19 r
+  n2074 (net)                    4                   0.00       7.19 r
+  U1752/DIN (hi1s1)                        1.06      0.00       7.19 r
+  U1752/Q (hi1s1)                          0.54      0.29       7.48 f
+  n2069 (net)                    3                   0.00       7.48 f
+  U957/DIN2 (and2s1)                       0.54      0.00       7.48 f
+  U957/Q (and2s1)                          0.23      0.33       7.82 f
+  n1387 (net)                    3                   0.00       7.82 f
+  U1050/DIN (ib1s1)                        0.23      0.00       7.82 f
+  U1050/Q (ib1s1)                          0.93      0.38       8.19 r
+  n1875 (net)                   26                   0.00       8.19 r
+  U1712/DIN5 (oai222s1)                    0.93      0.00       8.19 r
+  U1712/Q (oai222s1)                       0.71      0.31       8.51 f
+  n1314 (net)                    1                   0.00       8.51 f
+  rob_body[1]/pc_reg[9]/DIN (dffs2)        0.71      0.01       8.51 f
+  data arrival time                                             8.51
+
+  clock clock (rise edge)                           15.00      15.00
+  clock network delay (ideal)                        0.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  rob_body[1]/pc_reg[9]/CLK (dffs2)                  0.00      14.90 r
+  library setup time                                -0.21      14.69
+  data required time                                           14.69
+  ---------------------------------------------------------------------
+  data required time                                           14.69
+  data arrival time                                            -8.51
+  ---------------------------------------------------------------------
+  slack (MET)                                                   6.17
+
+
+  Startpoint: head_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retire_pkt_2[retire_valid]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  head_reg[0]/CLK (dffs1)                  0.00      0.00       0.00 r
+  head_reg[0]/Q (dffs1)                    0.00      0.17       0.17 f
+  head_reg[0]/QN (dffs1)                   0.42      0.17       0.34 r
+  n1617 (net)                   10                   0.00       0.34 r
+  U975/DIN (i1s1)                          0.42      0.00       0.34 r
+  U975/Q (i1s1)                            1.07      0.53       0.87 f
+  head_out[0] (net)             10                   0.00       0.87 f
+  U1085/BIN (hadd1s1)                      1.07      0.00       0.87 f
+  U1085/OUTS (hadd1s1)                     0.10      0.46       1.33 r
+  N283 (net)                     1                   0.00       1.33 r
+  U2477/DIN1 (nnd2s1)                      0.10      0.00       1.33 r
+  U2477/Q (nnd2s1)                         0.61      0.25       1.58 f
+  n2044 (net)                    8                   0.00       1.58 f
+  U2468/DIN (hi1s1)                        0.61      0.00       1.58 f
+  U2468/Q (hi1s1)                          1.18      0.55       2.12 r
+  head_plus1[1] (net)            7                   0.00       2.12 r
+  U1342/DIN1 (nor2s1)                      1.18      0.00       2.13 r
+  U1342/Q (nor2s1)                         0.56      0.31       2.44 f
+  n1640 (net)                    2                   0.00       2.44 f
+  U950/DIN1 (nnd2s2)                       0.56      0.00       2.44 f
+  U950/Q (nnd2s2)                          0.47      0.13       2.57 r
+  n1380 (net)                    2                   0.00       2.57 r
+  U1031/DIN (ib1s1)                        0.47      0.00       2.57 r
+  U1031/Q (ib1s1)                          0.82      0.42       2.99 f
+  n1846 (net)                   23                   0.00       2.99 f
+  U1577/DIN2 (aoi22s1)                     0.82      0.00       2.99 f
+  U1577/Q (aoi22s1)                        0.43      0.21       3.20 r
+  n1828 (net)                    1                   0.00       3.20 r
+  U1580/DIN2 (nnd4s1)                      0.43      0.00       3.20 r
+  U1580/Q (nnd4s1)                         0.28      0.12       3.32 f
+  N308 (net)                     1                   0.00       3.32 f
+  U2487/DIN2 (nnd2s1)                      0.28      0.00       3.32 f
+  U2487/Q (nnd2s1)                         0.38      0.12       3.44 r
+  n2287 (net)                    2                   0.00       3.44 r
+  U2486/DIN (hi1s1)                        0.38      0.00       3.44 r
+  U2486/Q (hi1s1)                          2.15      0.92       4.36 f
+  retire_pkt_2[retire_valid] (net)     4             0.00       4.36 f
+  retire_pkt_2[retire_valid] (out)         2.15      0.02       4.38 f
+  data arrival time                                             4.38
+
+  max_delay                                         15.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  output external delay                             -0.10      14.80
+  data required time                                           14.80
+  ---------------------------------------------------------------------
+  data required time                                           14.80
+  data arrival time                                            -4.38
+  ---------------------------------------------------------------------
+  slack (MET)                                                  10.42
+
+
+  Startpoint: head_reg[3]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retire_pkt_2[pc][9]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  head_reg[3]/CLK (dffs2)                  0.00      0.00       0.00 r
+  head_reg[3]/Q (dffs2)                    0.31      0.26       0.26 f
+  head_out[3] (net)              6                   0.00       0.26 f
+  head_reg[3]/QN (dffs2)                   0.15      0.08       0.34 r
+  n2412 (net)                    4                   0.00       0.34 r
+  U2485/DIN2 (nnd2s1)                      0.15      0.00       0.34 r
+  U2485/Q (nnd2s1)                         0.27      0.12       0.46 f
+  n2149 (net)                    3                   0.00       0.46 f
+  U2484/DIN1 (nor2s1)                      0.27      0.00       0.47 f
+  U2484/Q (nor2s1)                         0.31      0.14       0.60 r
+  n2258 (net)                    3                   0.00       0.60 r
+  U2482/DIN1 (nnd2s1)                      0.31      0.00       0.60 r
+  U2482/Q (nnd2s1)                         0.40      0.19       0.79 f
+  n2275 (net)                    6                   0.00       0.79 f
+  U2475/DIN2 (nnd2s1)                      0.40      0.00       0.79 f
+  U2475/Q (nnd2s1)                         0.85      0.38       1.17 r
+  n2045 (net)                   11                   0.00       1.17 r
+  U2471/DIN (hi1s1)                        0.85      0.00       1.17 r
+  U2471/Q (hi1s1)                          1.49      0.73       1.90 f
+  head_plus1[0] (net)            9                   0.00       1.90 f
+  U1344/DIN2 (and2s1)                      1.49      0.00       1.90 f
+  U1344/Q (and2s1)                         0.53      0.65       2.55 f
+  n1831 (net)                   10                   0.00       2.55 f
+  U986/DIN (ib1s1)                         0.53      0.00       2.55 f
+  U986/Q (ib1s1)                           0.25      0.13       2.68 r
+  n1843 (net)                    2                   0.00       2.68 r
+  U1043/DIN (ib1s1)                        0.25      0.00       2.68 r
+  U1043/Q (ib1s1)                          0.87      0.41       3.10 f
+  n1845 (net)                   25                   0.00       3.10 f
+  U1472/DIN4 (aoi22s1)                     0.87      0.00       3.10 f
+  U1472/Q (aoi22s1)                        0.44      0.24       3.33 r
+  n1744 (net)                    1                   0.00       3.33 r
+  U1475/DIN2 (nnd4s1)                      0.44      0.00       3.34 r
+  U1475/Q (nnd4s1)                         0.93      0.40       3.73 f
+  retire_pkt_2[pc][9] (net)      1                   0.00       3.73 f
+  retire_pkt_2[pc][9] (out)                0.93      0.02       3.75 f
+  data arrival time                                             3.75
+
+  max_delay                                         15.00      15.00
+  clock uncertainty                                 -0.10      14.90
+  output external delay                             -0.10      14.80
+  data required time                                           14.80
+  ---------------------------------------------------------------------
+  data required time                                           14.80
+  data arrival time                                            -3.75
+  ---------------------------------------------------------------------
+  slack (MET)                                                  11.05
+
+
+1
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : rob
+Version: O-2018.06
+Date   : Mon Feb 24 23:57:03 2020
+****************************************
+
+
+  Startpoint: head_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[9]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  head_reg[0]/CLK (dffs1)                  0.00       0.00 r
+  head_reg[0]/Q (dffs1)                    0.16       0.16 r
+  head_reg[0]/QN (dffs1)                   0.18       0.34 f
+  U975/Q (i1s1)                            0.50       0.84 r
+  U2370/Q (nor2s1)                         0.31       1.15 f
+  U2369/Q (oai22s1)                        0.25       1.39 r
+  U2368/Q (oai24s1)                        0.37       1.77 f
+  U2367/Q (aoai1112s1)                     0.25       2.02 r
+  U2366/Q (oai21s1)                        0.26       2.28 f
+  U2365/Q (aoi221s1)                       0.13       2.41 r
+  U2364/Q (nnd4s1)                         0.15       2.56 f
+  U2361/Q (hi1s1)                          0.20       2.76 r
+  U2358/Q (nnd2s1)                         0.07       2.82 f
+  U2357/Q (oai1112s1)                      0.18       3.00 r
+  U2350/Q (dsmxc31s1)                      0.20       3.20 r
+  U2346/Q (oai21s1)                        0.31       3.51 f
+  U2337/Q (oai222s1)                       0.43       3.94 r
+  U2336/Q (hi1s1)                          0.38       4.31 f
+  U2335/Q (or5s1)                          0.31       4.63 f
+  U2311/Q (and2s1)                         0.25       4.88 f
+  U2289/Q (nor2s1)                         0.14       5.02 r
+  U2288/Q (hi1s1)                          0.27       5.30 f
+  U2166/Q (nor2s1)                         0.13       5.43 r
+  U2165/Q (hi1s1)                          0.30       5.73 f
+  U1829/Q (nor2s1)                         0.15       5.88 r
+  U1828/Q (hi1s1)                          0.20       6.08 f
+  U1755/Q (oai22s1)                        0.23       6.31 r
+  U1754/Q (aoi123s1)                       0.21       6.52 f
+  U1753/Q (oai1112s1)                      0.53       7.05 r
+  U1752/Q (hi1s1)                          0.29       7.34 f
+  U957/Q (and2s1)                          0.34       7.67 f
+  U1050/Q (ib1s1)                          0.38       8.05 r
+  U1712/Q (oai222s1)                       0.31       8.36 f
+  rob_body[1]/pc_reg[9]/DIN (dffs2)        0.01       8.37 f
+  data arrival time                                   8.37
+
+  clock clock (rise edge)                 15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock uncertainty                       -0.10      14.90
+  rob_body[1]/pc_reg[9]/CLK (dffs2)        0.00      14.90 r
+  library setup time                      -0.21      14.69
+  data required time                                 14.69
+  -----------------------------------------------------------
+  data required time                                 14.69
+  data arrival time                                  -8.37
+  -----------------------------------------------------------
+  slack (MET)                                         6.32
+
+
+  Startpoint: cdb2_tag_in[0]
+              (input port clocked by clock)
+  Endpoint: rob_body[1]/pc_reg[9]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  cdb2_tag_in[0] (in)                      0.04       0.14 r
+  U2434/Q (hi1s1)                          0.39       0.53 f
+  U2431/Q (nor2s1)                         0.29       0.82 r
+  U2430/Q (hi1s1)                          0.31       1.12 f
+  U2427/Q (oai2222s1)                      0.48       1.61 r
+  U2425/Q (mxi21s1)                        0.18       1.79 f
+  U2424/Q (xnr2s1)                         0.27       2.06 f
+  U2412/Q (nnd3s1)                         0.12       2.18 r
+  U2349/Q (hi1s1)                          0.87       3.05 f
+  U2347/Q (nnd2s1)                         0.28       3.33 r
+  U2346/Q (oai21s1)                        0.32       3.65 f
+  U2337/Q (oai222s1)                       0.43       4.08 r
+  U2336/Q (hi1s1)                          0.38       4.46 f
+  U2335/Q (or5s1)                          0.31       4.77 f
+  U2311/Q (and2s1)                         0.25       5.03 f
+  U2289/Q (nor2s1)                         0.14       5.17 r
+  U2288/Q (hi1s1)                          0.27       5.44 f
+  U2166/Q (nor2s1)                         0.13       5.57 r
+  U2165/Q (hi1s1)                          0.30       5.87 f
+  U1829/Q (nor2s1)                         0.15       6.02 r
+  U1828/Q (hi1s1)                          0.20       6.23 f
+  U1755/Q (oai22s1)                        0.23       6.45 r
+  U1754/Q (aoi123s1)                       0.21       6.66 f
+  U1753/Q (oai1112s1)                      0.53       7.19 r
+  U1752/Q (hi1s1)                          0.29       7.48 f
+  U957/Q (and2s1)                          0.34       7.82 f
+  U1050/Q (ib1s1)                          0.38       8.19 r
+  U1712/Q (oai222s1)                       0.31       8.51 f
+  rob_body[1]/pc_reg[9]/DIN (dffs2)        0.01       8.51 f
+  data arrival time                                   8.51
+
+  clock clock (rise edge)                 15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock uncertainty                       -0.10      14.90
+  rob_body[1]/pc_reg[9]/CLK (dffs2)        0.00      14.90 r
+  library setup time                      -0.21      14.69
+  data required time                                 14.69
+  -----------------------------------------------------------
+  data required time                                 14.69
+  data arrival time                                  -8.51
+  -----------------------------------------------------------
+  slack (MET)                                         6.17
+
+
+  Startpoint: head_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retire_pkt_2[retire_valid]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rob                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  head_reg[0]/CLK (dffs1)                  0.00       0.00 r
+  head_reg[0]/Q (dffs1)                    0.17       0.17 f
+  head_reg[0]/QN (dffs1)                   0.17       0.34 r
+  U975/Q (i1s1)                            0.53       0.87 f
+  U1085/OUTS (hadd1s1)                     0.46       1.33 r
+  U2477/Q (nnd2s1)                         0.25       1.58 f
+  U2468/Q (hi1s1)                          0.55       2.12 r
+  U1342/Q (nor2s1)                         0.31       2.44 f
+  U950/Q (nnd2s2)                          0.13       2.57 r
+  U1031/Q (ib1s1)                          0.42       2.99 f
+  U1577/Q (aoi22s1)                        0.21       3.20 r
+  U1580/Q (nnd4s1)                         0.12       3.32 f
+  U2487/Q (nnd2s1)                         0.12       3.44 r
+  U2486/Q (hi1s1)                          0.92       4.36 f
+  retire_pkt_2[retire_valid] (out)         0.02       4.38 f
+  data arrival time                                   4.38
+
+  max_delay                               15.00      15.00
+  clock uncertainty                       -0.10      14.90
+  output external delay                   -0.10      14.80
+  data required time                                 14.80
+  -----------------------------------------------------------
+  data required time                                 14.80
+  data arrival time                                  -4.38
+  -----------------------------------------------------------
+  slack (MET)                                        10.42
+
+
+1
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : reference
+Design : rob
+Version: O-2018.06
+Date   : Mon Feb 24 23:57:04 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+and2s1             lec25dscc25_TT    49.766399      20   995.327988
+and3s1             lec25dscc25_TT    66.355202      13   862.617622
+and4s1             lec25dscc25_TT    74.649597       2   149.299194
+aoai1112s1         lec25dscc25_TT    66.355202       2   132.710403
+aoi13s1            lec25dscc25_TT    58.060799       3   174.182396
+aoi21s1            lec25dscc25_TT    49.766399      19   945.561588
+aoi22s1            lec25dscc25_TT    58.060799     408 23688.805847
+aoi23s1            lec25dscc25_TT    66.355202       4   265.420807
+aoi123s1           lec25dscc25_TT    82.944000       2   165.888000
+aoi221s1           lec25dscc25_TT    74.649597       3   223.948792
+aoi222s1           lec25dscc25_TT    82.944000      12   995.328003
+dffs1              lec25dscc25_TT   157.593994       9  1418.345947 n
+dffs2              lec25dscc25_TT   174.182007     400 69672.802734 n
+dffss2             lec25dscc25_TT   207.360001       1   207.360001 n
+dsmxc31s1          lec25dscc25_TT    66.355202      14   928.972824
+hadd1s1            lec25dscc25_TT    62.181000      15   932.714996 r
+hi1s1              lec25dscc25_TT    33.177601     178  5905.612953
+i1s1               lec25dscc25_TT    33.177601       5   165.888004
+i1s2               lec25dscc25_TT    41.472000       1    41.472000
+ib1s1              lec25dscc25_TT    33.177601      94  3118.694481
+mxi21s1            lec25dscc25_TT    66.355202      12   796.262421
+nnd2s1             lec25dscc25_TT    41.472000      65  2695.680008
+nnd2s2             lec25dscc25_TT    41.472000       8   331.776001
+nnd3s1             lec25dscc25_TT    49.766399      12   597.196793
+nnd4s1             lec25dscc25_TT    58.060799     111  6444.748650
+nor2s1             lec25dscc25_TT    41.472000      44  1824.768005
+nor3s1             lec25dscc25_TT    82.944000       1    82.944000
+oai13s1            lec25dscc25_TT    58.060799       3   174.182396
+oai21s1            lec25dscc25_TT    49.766399      37  1841.356777
+oai22s1            lec25dscc25_TT    58.060799      18  1045.094376
+oai24s1            lec25dscc25_TT    91.238403       1    91.238403
+oai33s1            lec25dscc25_TT    55.271999       1    55.271999
+oai211s1           lec25dscc25_TT    58.060799       1    58.060799
+oai221s1           lec25dscc25_TT    74.649597       9   671.846375
+oai222s1           lec25dscc25_TT    82.944000     385 31933.440094
+oai1112s1          lec25dscc25_TT    66.355202      11   729.907219
+oai2222s1          lec25dscc25_TT   132.710007      12  1592.520081
+or2s1              lec25dscc25_TT    49.766399       4   199.065598
+or2s2              lec25dscc25_TT    58.060799       1    58.060799
+or3s1              lec25dscc25_TT    58.060799       1    58.060799
+or5s1              lec25dscc25_TT    91.238403       2   182.476807
+xnr2s1             lec25dscc25_TT    82.944000       2   165.888000
+xor2s1             lec25dscc25_TT    82.944000       5   414.720001
+-----------------------------------------------------------------------------
+Total 43 references                                 163035.520981
+1

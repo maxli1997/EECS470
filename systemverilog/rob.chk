@@ -1,0 +1,28 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Mon Feb 24 23:56:52 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                              14
+    Cells do not drive (LINT-1)                                    14
+--------------------------------------------------------------------------------
+
+Warning: In design 'rob', cell 'B_150' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_151' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_152' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_153' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3746' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3757' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3773' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3777' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3781' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_155' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3821' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3845' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3856' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C3971' does not drive any nets. (LINT-1)
+1

@@ -1,0 +1,453 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#/***********************************************************/
+#/*   FILE        : rob.tcl                          */
+#/*   Description : Default Synopsys Design Compiler Script */
+#/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
+#/*   You'll need to minimally set design_name & read files */
+#/***********************************************************/
+#/***********************************************************/
+#/* The following five lines must be updated for every      */
+#/* new design                                              */
+#/***********************************************************/
+suppress_message {"UID-401"}
+suppress_message {"VER-130"}
+read_file -f sverilog [list "macro.svh" "rob.sv"]
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Loading sverilog files: '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/macro.svh' '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/macro.svh
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:112: Redeclaration of port 'rob_arr_out'. (VER-331)
+
+Inferred memory devices in process
+	in routine rob_entry line 39 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    arch_reg_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     phy_reg_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|       pc_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       fu_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|   pred_taken_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   branch_rst_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:123: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:124: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:125: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:126: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:204: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:224: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:225: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:230: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:233: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv:231: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine rob line 292 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      tail_reg       | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|      head_reg       | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|     rob/128      |   8    |    1    |      3       |
+|     rob/128      |   8    |    1    |      3       |
+|     rob/134      |   8    |    2    |      3       |
+|     rob/137      |   8    |    2    |      3       |
+|     rob/140      |   8    |    5    |      3       |
+|     rob/141      |   8    |    6    |      3       |
+|     rob/142      |   8    |   32    |      3       |
+|     rob/143      |   8    |    3    |      3       |
+|     rob/148      |   8    |    5    |      3       |
+|     rob/149      |   8    |    6    |      3       |
+|     rob/150      |   8    |   32    |      3       |
+|     rob/151      |   8    |    3    |      3       |
+|     rob/163      |   8    |    3    |      3       |
+|     rob/163      |   8    |    1    |      3       |
+|     rob/165      |   8    |    3    |      3       |
+|     rob/165      |   8    |    1    |      3       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob_entry.db:rob_entry'
+Loaded 2 designs.
+Current design is 'rob_entry'.
+rob_entry rob
+set design_name rob
+rob
+set clock_name clock
+clock
+set reset_name reset
+reset
+set CLK_PERIOD 15
+15
+#/***********************************************************/
+#/* The rest of this file may be left alone for most small  */
+#/* to moderate sized designs.  You may need to alter it    */
+#/* when synthesizing your final project.                   */
+#/***********************************************************/
+set SYN_DIR ./
+./
+set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+./ /afs/umich.edu/class/eecs470/lib/synopsys/
+set target_library "lec25dscc25_TT.db"
+lec25dscc25_TT.db
+set link_library [concat  "*" $target_library]
+* lec25dscc25_TT.db
+#/***********************************************************/
+#/* Set some flags for optimisation */
+set compile_top_all_paths "true"
+true
+set auto_wire_load_selection "false"
+false
+#/***********************************************************/
+#/*  Clk Periods/uncertainty/transition                     */
+set CLK_TRANSITION 0.1
+0.1
+set CLK_UNCERTAINTY 0.1
+0.1
+set CLK_LATENCY 0.1
+0.1
+#/* Input/output Delay values */
+set AVG_INPUT_DELAY 0.1
+0.1
+set AVG_OUTPUT_DELAY 0.1
+0.1
+#/* Critical Range (ns) */
+set CRIT_RANGE 1.0
+1.0
+#/***********************************************************/
+#/* Design Constrains: Not all used                         */
+set MAX_TRANSITION 1.0
+1.0
+set FAST_TRANSITION 0.1
+0.1
+set MAX_FANOUT 32
+32
+set MID_FANOUT 8
+8
+set LOW_FANOUT 1
+1
+set HIGH_DRIVE 0
+0
+set HIGH_LOAD 1.0
+1.0
+set AVG_LOAD 0.1
+0.1
+set AVG_FANOUT_LOAD 10
+10
+#/***********************************************************/
+#/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
+#BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
+set DRIVING_CELL dffacs1
+dffacs1
+#/* DONT_USE_LIST = {   } */
+#/*************operation cons**************/
+#/*OP_WCASE = WCCOM;
+#OP_BCASE = BCCOM;*/
+set WIRE_LOAD "tsmcwire"
+tsmcwire
+set LOGICLIB lec25dscc25_TT
+lec25dscc25_TT
+#/*****************************/
+#/* Sourcing the file that sets the Search path and the libraries(target,link) */
+set sys_clk $clock_name
+clock
+set netlist_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".vg"]
+./rob.vg
+set ddc_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".ddc"]
+./rob.ddc
+set rep_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".rep"]
+./rob.rep
+set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".chk"] ]
+./rob.chk
+#/* if we didnt find errors at this point, run */
+if {  $dc_shell_status != [list] } {
+   current_design $design_name
+  link
+  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+  set_wire_load_mode top
+  set_fix_multiple_port_nets -outputs -buffer_constants
+  create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
+  set_clock_uncertainty $CLK_UNCERTAINTY $sys_clk
+  set_fix_hold $sys_clk
+  group_path -from [all_inputs] -name input_grp
+  group_path -to [all_outputs] -name output_grp
+  set_driving_cell  -lib_cell $DRIVING_CELL [all_inputs]
+  remove_driving_cell [find port $sys_clk]
+  set_fanout_load $AVG_FANOUT_LOAD [all_outputs]
+  set_load $AVG_LOAD [all_outputs]
+  set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
+  remove_input_delay -clock $sys_clk [find port $sys_clk]
+  set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
+  set_dont_touch $reset_name
+  set_resistance 0 $reset_name
+  set_drive 0 $reset_name
+  set_critical_range $CRIT_RANGE [current_design]
+  set_max_delay $CLK_PERIOD [all_outputs]
+  set MAX_FANOUT $MAX_FANOUT
+  set MAX_TRANSITION $MAX_TRANSITION
+  uniquify
+  ungroup -all -flatten
+  redirect $chk_file { check_design }
+  compile -map_effort high
+  write -hier -format verilog -output $netlist_file $design_name
+  write -hier -format ddc -output $ddc_file $design_name
+  redirect $rep_file { report_design -nosplit }
+  redirect -append $rep_file { report_area }
+  redirect -append $rep_file { report_timing -max_paths 2 -input_pins -nets -transition_time -nosplit }
+  redirect -append $rep_file { report_constraint -max_delay -verbose -nosplit }
+  remove_design -all
+  read_file -format verilog $netlist_file
+  current_design $design_name
+  redirect -append $rep_file { report_reference -nosplit }
+  quit
+} else {
+   quit
+}
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Current design is 'rob'.
+
+  Linking design 'rob'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.db, etc
+  lec25dscc25_TT (library)    /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db
+
+Current design is 'rob'.
+Information: Uniquified 8 instances of design 'rob_entry'. (OPT-1056)
+Information: Updating graph... (UID-83)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 14 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rob'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'rob_DW01_inc_0'
+  Processing 'rob_DW01_inc_1'
+  Processing 'rob_DW01_inc_2'
+  Processing 'rob_DW01_inc_3'
+  Processing 'rob_DW01_cmp2_0'
+  Processing 'rob_DW01_cmp2_1'
+  Processing 'rob_DW01_cmp2_2'
+  Processing 'rob_DW01_cmp2_3'
+  Processing 'rob_DW01_cmp2_4'
+  Processing 'rob_DW01_cmp2_5'
+  Processing 'rob_DW01_cmp2_6'
+  Processing 'rob_DW01_cmp2_7'
+  Processing 'rob_DW01_cmp2_8'
+  Processing 'rob_DW01_cmp2_9'
+  Processing 'rob_DW01_cmp2_10'
+  Processing 'rob_DW01_cmp2_11'
+  Processing 'rob_DW01_cmp2_12'
+  Processing 'rob_DW01_cmp2_13'
+  Processing 'rob_DW01_cmp2_14'
+  Processing 'rob_DW01_inc_4'
+  Processing 'rob_DW01_cmp2_15'
+  Processing 'rob_DW01_cmp6_0'
+  Processing 'rob_DW01_cmp2_16'
+  Processing 'rob_DW01_cmp2_17'
+  Processing 'rob_DW01_cmp2_18'
+  Processing 'rob_DW01_cmp2_19'
+  Processing 'rob_DW01_cmp2_20'
+  Processing 'rob_DW01_cmp6_1'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:05  237112.7      0.00       0.0       0.5                                0.00  
+    0:00:05  237112.7      0.00       0.0       0.5                                0.00  
+    0:00:05  237112.7      0.00       0.0       0.5                                0.00  
+    0:00:05  237112.7      0.00       0.0       0.5                                0.00  
+    0:00:05  237112.7      0.00       0.0       0.5                                0.00  
+    0:00:05  170110.6      0.00       0.0       0.3                                0.00  
+    0:00:05  169447.1      0.00       0.0       0.3                                0.00  
+    0:00:05  169447.1      0.00       0.0       0.3                                0.00  
+    0:00:05  169447.1      0.00       0.0       0.3                                0.00  
+    0:00:05  169447.1      0.00       0.0       0.3                                0.00  
+    0:00:05  169447.1      0.00       0.0       0.3                                0.00  
+    0:00:06  169422.2      0.00       0.0       0.0                                0.00  
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+    0:00:06  169405.6      0.00       0.0       0.0                                0.00  
+    0:00:06  160671.9      0.00       0.0      89.7                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  160671.9      0.00       0.0      89.7                                0.00  
+    0:00:06  161426.7      0.00       0.0      83.2 rob_arr_out[3][fu][1]          0.00  
+    0:00:07  161658.9      0.00       0.0      80.0 rob_arr_out[1][phy_reg][5]      0.00  
+    0:00:07  161758.5      0.00       0.0      78.7 rob_arr_out[5][pc][2]          0.00  
+    0:00:07  161990.7      0.00       0.0      75.8 rob_arr_out[2][pc][2]          0.00  
+    0:00:07  162090.2      0.00       0.0      74.5 rob_arr_out[3][pc][3]          0.00  
+    0:00:07  162281.0      0.00       0.0      71.9 rob_arr_out[5][fu][1]          0.00  
+    0:00:07  162579.6      0.00       0.0      68.0 rob_arr_out[1][arch_reg][4]      0.00  
+    0:00:07  162861.6      0.00       0.0      64.4 rob_arr_out[5][arch_reg][4]      0.00  
+    0:00:08  163160.2      0.00       0.0      60.5 rob_arr_out[4][pc][1]          0.00  
+    0:00:08  163226.5      0.00       0.0      59.8 rob_arr_out[4][pred_taken]      0.00  
+    0:00:08  163591.5      0.00       0.0      55.0 rob_arr_out[1][pc][24]         0.00  
+    0:00:08  163890.0      0.00       0.0      51.2 rob_arr_out[0][pc][8]          0.00  
+    0:00:08  164188.6      0.00       0.0      47.3 rob_arr_out[0][phy_reg][2]      0.00  
+    0:00:08  164487.2      0.00       0.0      43.5 rob_arr_out[5][pc][13]         0.00  
+    0:00:08  164785.8      0.00       0.0      39.6 rob_arr_out[4][pc][15]         0.00  
+    0:00:08  165084.4      0.00       0.0      35.8 rob_arr_out[4][pc][28]         0.00  
+    0:00:08  165383.0      0.00       0.0      32.0 rob_arr_out[2][pc][17]         0.00  
+    0:00:09  165681.5      0.00       0.0      28.1 rob_arr_out[2][pc][30]         0.00  
+    0:00:09  165980.1      0.00       0.0      24.3 rob_arr_out[6][pc][16]         0.00  
+    0:00:09  166278.7      0.00       0.0      20.5 rob_arr_out[6][pc][29]         0.00  
+    0:00:09  166577.3      0.00       0.0      16.7 rob_arr_out[7][arch_reg][3]      0.00  
+    0:00:09  166875.9      0.00       0.0      12.9 rob_arr_out[7][pc][0]          0.00  
+    0:00:09  167174.5      0.00       0.0       9.1 rob_arr_out[3][pc][31]         0.00  
+    0:00:09  167473.0      0.00       0.0       5.2 rob_arr_out[3][pc][18]         0.00  
+    0:00:09  167771.6      0.00       0.0       1.4 rob_arr_out[6][phy_reg][3]      0.00  
+    0:00:09  167920.9      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:09  167920.9      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:09  167920.9      0.00       0.0       0.0                                0.00  
+    0:00:09  167920.9      0.00       0.0       0.0                                0.00  
+    0:00:10  166054.7      0.00       0.0       0.0                                0.00  
+    0:00:10  164229.9      0.00       0.0       0.0                                0.00  
+    0:00:10  163433.7      0.00       0.0       0.0                                0.00  
+    0:00:10  163068.7      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+    0:00:10  163035.5      0.00       0.0       0.0                                0.00  
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.vg'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Writing ddc file './rob.ddc'.
+Removing design 'rob'
+Removing library 'gtech'
+Removing library 'lec25dscc25_TT'
+Removing library 'standard.sldb'
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Loading verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.vg'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.vg
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/rob.db:rob'
+Loaded 1 design.
+Current design is 'rob'.
+Current design is 'rob'.
+
+Thank you...

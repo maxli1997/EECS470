@@ -1,0 +1,198 @@
+`timescale 1ns/100ps
+
+
+module testbench ();
+logic                       clock, reset;
+logic                       valid1_in, valid2_in;
+logic   [`AR_LEN-1:0]       arch_reg1_in, arch_reg2_in;
+logic   [`PR_LEN-1:0]       phy_reg1_in, phy_reg2_in;
+logic   [`PC_LEN-1:0]       pc1_in, pc2_in;
+logic   [`FU_LEN-1:0]       fu1_in, fu2_in;
+logic                       pred_taken1_in, pred_taken2_in;
+logic                       cdb1_valid_in, cdb2_valid_in;
+logic   [`ROB_LEN-1:0]      cdb1_tag_in, cdb2_tag_in;
+logic                       cdb1_branch_rst_in, cdb2_branch_rst_in;
+logic                       mispred_out1, mispred_out2;
+logic                       full;                           
+logic   [`ROB_LEN-1:0]      tail_out, head_out;
+ROB_RETIRE_PACKET   retire_pkt_1, retire_pkt_2;
+logic [`ROB_LEN-1:0]  next_head, next_tail;
+ROB_ENTRY_PACKET [`ROB_SIZE-1:0] rob_arr_out;
+
+rob r (
+    clock, reset,
+    valid1_in, valid2_in,
+    arch_reg1_in, arch_reg2_in,
+    phy_reg1_in, phy_reg2_in,
+    pc1_in, pc2_in,
+    fu1_in, fu2_in,
+    pred_taken1_in, pred_taken2_in,
+    cdb1_valid_in, cdb2_valid_in,
+    cdb1_tag_in, cdb2_tag_in,
+    cdb1_branch_rst_in, cdb2_branch_rst_in,
+    mispred_out1, mispred_out2,
+    full,                               
+    tail_out, head_out,
+    retire_pkt_1, retire_pkt_2,
+    next_head, next_tail,
+    rob_arr_out
+);
+
+always begin
+    #5 clock=~clock;
+end
+
+initial begin
+    $monitor("Time:%4.0f head:%d tail:%d",$time, next_head, next_tail);
+
+    clock = 0;
+    reset = 1;
+    valid1_in = 0;
+    valid2_in = 0;
+    arch_reg1_in = 0;
+    arch_reg2_in = 0;
+    phy_reg1_in = 0; 
+    phy_reg2_in = 0;
+    pc1_in = 0; 
+    pc2_in = 0;
+    fu1_in = 0;
+    fu2_in = 0;
+    pred_taken1_in = 0;
+    pred_taken2_in = 0;
+    cdb1_valid_in = 0;
+    cdb2_valid_in = 0;
+    cdb1_tag_in = 0;
+    cdb2_tag_in = 0;
+    cdb1_branch_rst_in = 0;
+    cdb2_branch_rst_in = 0;
+    @(negedge clock);
+    @(negedge clock);
+    reset = 0;
+    pc1_in = 1;
+    pc2_in = 2;
+    arch_reg1_in = 1;
+    arch_reg2_in = 2;
+    phy_reg1_in = 3; 
+    phy_reg2_in = 4;
+    fu1_in = 1;
+    fu2_in = 2;
+    pred_taken1_in = 0;
+    pred_taken2_in = 0;
+    cdb1_valid_in = 0;
+    cdb2_valid_in = 0;
+    cdb1_tag_in = 1;
+    cdb2_tag_in = 2;
+    cdb1_branch_rst_in = 0;
+    cdb2_branch_rst_in = 1;
+    @(negedge clock);
+    valid1_in = 1;
+    @(negedge clock);
+    valid2_in = 1;
+    @(negedge clock);
+    pc1_in = 3;
+    pc2_in = 4;
+    arch_reg1_in = 3;
+    arch_reg2_in = 4;
+    phy_reg1_in = 5; 
+    phy_reg2_in = 6;
+    fu1_in = 3;
+    fu2_in = 0;
+    pred_taken1_in = 0;
+    pred_taken2_in = 1;
+    @(negedge clock); // 7
+    pc1_in = 5;
+    pc2_in = 6;
+    arch_reg1_in = 5;
+    arch_reg2_in = 6;
+    phy_reg1_in = 7; 
+    phy_reg2_in = 8;
+    fu1_in = 1;
+    fu2_in = 3;
+    pred_taken1_in = 1;
+    pred_taken2_in = 1;
+    @(negedge clock);
+    valid1_in = 0;
+    valid2_in = 0;
+    cdb1_valid_in = 1;
+    cdb2_valid_in = 1;
+    cdb1_tag_in = 3;
+    cdb2_tag_in = 2;
+    cdb1_branch_rst_in = 1;
+    cdb2_branch_rst_in = 1;
+    @(negedge clock);
+    cdb1_valid_in = 1;
+    cdb2_valid_in = 0;
+    cdb1_tag_in = 0;
+    valid1_in = 1;
+    valid2_in = 1;
+    pc1_in = 1;
+    pc2_in = 2;
+    arch_reg1_in = 1;
+    arch_reg2_in = 2;
+    phy_reg1_in = 1; 
+    phy_reg2_in = 2;
+    fu1_in = 3;
+    fu2_in = 3;
+    pred_taken1_in = 0;
+    pred_taken2_in = 1;
+    @(negedge clock);
+    cdb1_valid_in = 0;
+    cdb2_valid_in = 0;
+    valid1_in = 1;
+    valid2_in = 0;
+    pc1_in = 1;
+    pc2_in = 2;
+    arch_reg1_in = 3;
+    phy_reg1_in = 3; 
+    fu1_in = 3;
+    pred_taken1_in = 1;
+    @(negedge clock);
+    valid2_in = 1;
+    pc2_in = 2;
+    arch_reg2_in = 3;
+    phy_reg2_in = 3; 
+    fu2_in = 3;
+    pred_taken2_in = 1;
+    cdb1_valid_in = 1;
+    cdb1_tag_in = 1;
+    cdb2_valid_in = 1;
+    cdb2_tag_in = 6;
+    cdb2_branch_rst_in = 0;
+    @(negedge clock);
+    cdb1_valid_in = 0;
+    cdb2_valid_in = 0;
+    valid1_in = 1;
+    valid2_in = 0;
+    pc1_in = 5;
+    arch_reg1_in = 3;
+    phy_reg1_in = 3; 
+    fu1_in = 3;
+    pred_taken1_in = 1;
+    @(negedge clock);
+    valid1_in = 1;
+    valid2_in = 1;
+    pc1_in = 2;
+    pc2_in = 3;
+    arch_reg1_in = 4;
+    arch_reg2_in = 5;
+    phy_reg1_in = 0; 
+    phy_reg2_in = 1; 
+    fu1_in = 3;
+    fu2_in = 3;
+    pred_taken1_in = 1;
+    pred_taken2_in = 0;
+    @(negedge clock);
+    cdb1_valid_in = 1;
+    cdb2_valid_in = 1;
+    cdb1_tag_in = 5;
+    cdb2_tag_in = 0;
+    cdb1_branch_rst_in = 0;
+    cdb2_branch_rst_in = 0;
+    valid1_in = 0;
+    valid2_in = 0;
+    @(negedge clock);
+    $finish;
+end
+
+
+endmodule

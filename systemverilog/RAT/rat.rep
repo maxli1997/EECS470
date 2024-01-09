@@ -1,0 +1,608 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : design
+Design : rat
+Version: O-2018.06
+Date   : Fri Mar 20 17:27:38 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Local Link Library:
+
+    {lec25dscc25_TT.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : nom_pvt
+    Library : lec25dscc25_TT
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   2.50
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected manually by the user.
+
+Name           :   tsmcwire
+Location       :   lec25dscc25_TT
+Resistance     :   0.2642
+Capacitance    :   0.000132782
+Area           :   0.27
+Slope          :   0.74
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.89
+     2     1.48
+     3     2.44
+     4     3.18
+     5     3.92
+
+
+
+Wire Loading Model Mode: top.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : area
+Design : rat
+Version: O-2018.06
+Date   : Fri Mar 20 17:27:38 2020
+****************************************
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Number of ports:                          867
+Number of nets:                          3166
+Number of cells:                         2733
+Number of combinational cells:           2541
+Number of sequential cells:               192
+Number of macros/black boxes:               0
+Number of buf/inv:                        332
+Number of references:                      18
+
+Combinational area:             144471.819469
+Buf/Inv area:                    11139.379475
+Noncombinational area:           35035.584961
+Macro/Black Box area:                0.000000
+Net Interconnect area:            2060.546507
+
+Total cell area:                179507.404430
+Total area:                     181567.950938
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -max_paths 2
+        -transition_time
+Design : rat
+Version: O-2018.06
+Date   : Fri Mar 20 17:27:38 2020
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: nom_pvt   Library: lec25dscc25_TT
+Wire Load Model Mode: top
+
+  Startpoint: rat_arr_out_reg[2][1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rat_arr_out_reg[2][1]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  rat_arr_out_reg[2][1]/CLK (dffcs2)       0.00      0.00       0.00 r
+  rat_arr_out_reg[2][1]/QN (dffcs2)        0.19      0.16       0.16 r
+  n550 (net)                     3                   0.00       0.16 r
+  U2597/DIN4 (oai22s2)                     0.19      0.00       0.16 r
+  U2597/Q (oai22s2)                        0.49      0.23       0.39 f
+  N421 (net)                     4                   0.00       0.39 f
+  U2173/DIN (ib1s1)                        0.49      0.00       0.39 f
+  U2173/Q (ib1s1)                          0.24      0.12       0.51 r
+  n2142 (net)                    2                   0.00       0.51 r
+  U591/DIN1 (oai221s2)                     0.24      0.00       0.51 r
+  U591/Q (oai221s2)                        0.48      0.16       0.68 f
+  rat_arr_temp1[2][1] (net)      1                   0.00       0.68 f
+  rat_arr_out_reg[2][1]/CLRB (dffcs2)      0.48      0.00       0.68 f
+  data arrival time                                             0.68
+
+  clock clock (rise edge)                           20.00      20.00
+  clock network delay (ideal)                        0.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  rat_arr_out_reg[2][1]/CLK (dffcs2)                 0.00      19.90 r
+  library setup time                                -0.39      19.51
+  data required time                                           19.51
+  ---------------------------------------------------------------------
+  data required time                                           19.51
+  data arrival time                                            -0.68
+  ---------------------------------------------------------------------
+  slack (MET)                                                  18.83
+
+
+  Startpoint: rat_arr_out_reg[2][0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rat_arr_out_reg[2][0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  rat_arr_out_reg[2][0]/CLK (dffcs2)       0.00      0.00       0.00 r
+  rat_arr_out_reg[2][0]/QN (dffcs2)        0.19      0.16       0.16 r
+  n552 (net)                     3                   0.00       0.16 r
+  U2581/DIN4 (oai22s2)                     0.19      0.00       0.16 r
+  U2581/Q (oai22s2)                        0.49      0.23       0.39 f
+  N420 (net)                     4                   0.00       0.39 f
+  U2172/DIN (ib1s1)                        0.49      0.00       0.39 f
+  U2172/Q (ib1s1)                          0.24      0.12       0.51 r
+  n2106 (net)                    2                   0.00       0.51 r
+  U593/DIN1 (oai221s2)                     0.24      0.00       0.51 r
+  U593/Q (oai221s2)                        0.48      0.16       0.68 f
+  rat_arr_temp1[2][0] (net)      1                   0.00       0.68 f
+  rat_arr_out_reg[2][0]/CLRB (dffcs2)      0.48      0.00       0.68 f
+  data arrival time                                             0.68
+
+  clock clock (rise edge)                           20.00      20.00
+  clock network delay (ideal)                        0.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  rat_arr_out_reg[2][0]/CLK (dffcs2)                 0.00      19.90 r
+  library setup time                                -0.39      19.51
+  data required time                                           19.51
+  ---------------------------------------------------------------------
+  data required time                                           19.51
+  data arrival time                                            -0.68
+  ---------------------------------------------------------------------
+  slack (MET)                                                  18.83
+
+
+  Startpoint: dest_reg1_in[3]
+              (input port clocked by clock)
+  Endpoint: pr2_out[1] (output port clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  input external delay                               0.10       0.10 r
+  dest_reg1_in[3] (in)                     0.21      0.01       0.11 r
+  N97 (net)                      1                   0.00       0.11 r
+  U1714/DIN (hi1s1)                        0.21      0.00       0.11 r
+  U1714/Q (hi1s1)                          0.74      0.33       0.45 f
+  n1064 (net)                    5                   0.00       0.45 f
+  U1715/DIN (i1s1)                         0.74      0.00       0.45 f
+  U1715/Q (i1s1)                           1.06      0.50       0.95 r
+  ar1_out[3] (net)               5                   0.00       0.95 r
+  U1917/DIN1 (nor2s1)                      1.06      0.00       0.95 r
+  U1917/Q (nor2s1)                         0.97      0.55       1.50 f
+  n1039 (net)                    8                   0.00       1.50 f
+  U2108/DIN1 (nnd2s2)                      0.97      0.00       1.51 f
+  U2108/Q (nnd2s2)                         0.68      0.37       1.88 r
+  n734 (net)                    13                   0.00       1.88 r
+  U2049/DIN (ib1s1)                        0.68      0.00       1.88 r
+  U2049/Q (ib1s1)                          0.22      0.08       1.96 f
+  n2297 (net)                    2                   0.00       1.96 f
+  U2001/DIN1 (and2s1)                      0.22      0.00       1.96 f
+  U2001/Q (and2s1)                         0.35      0.31       2.27 f
+  n1045 (net)                    6                   0.00       2.27 f
+  U2692/DIN3 (oai22s2)                     0.35      0.00       2.27 f
+  U2692/Q (oai22s2)                        0.65      0.27       2.54 r
+  N415 (net)                     4                   0.00       2.54 r
+  U3614/DIN3 (aoi22s1)                     0.65      0.00       2.54 r
+  U3614/Q (aoi22s1)                        0.43      0.22       2.76 f
+  n1912 (net)                    1                   0.00       2.76 f
+  U3615/DIN4 (nnd4s1)                      0.43      0.00       2.76 f
+  U3615/Q (nnd4s1)                         0.38      0.22       2.97 r
+  n1921 (net)                    1                   0.00       2.97 r
+  U3621/DIN1 (oai21s1)                     0.38      0.00       2.97 r
+  U3621/Q (oai21s1)                        0.35      0.17       3.14 f
+  n1933 (net)                    1                   0.00       3.14 f
+  U3633/DIN1 (nnd2s1)                      0.35      0.00       3.14 f
+  U3633/Q (nnd2s1)                         0.27      0.11       3.25 r
+  N810 (net)                     1                   0.00       3.25 r
+  U954/DIN1 (and2s2)                       0.27      0.00       3.26 r
+  U954/Q (and2s2)                          0.33      0.21       3.46 r
+  pr2_out[1] (net)               1                   0.00       3.46 r
+  pr2_out[1] (out)                         0.33      0.02       3.49 r
+  data arrival time                                             3.49
+
+  max_delay                                         20.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  output external delay                             -0.10      19.80
+  data required time                                           19.80
+  ---------------------------------------------------------------------
+  data required time                                           19.80
+  data arrival time                                            -3.49
+  ---------------------------------------------------------------------
+  slack (MET)                                                  16.31
+
+
+  Startpoint: dest_reg1_in[3]
+              (input port clocked by clock)
+  Endpoint: pr2_out[0] (output port clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  input external delay                               0.10       0.10 r
+  dest_reg1_in[3] (in)                     0.21      0.01       0.11 r
+  N97 (net)                      1                   0.00       0.11 r
+  U1714/DIN (hi1s1)                        0.21      0.00       0.11 r
+  U1714/Q (hi1s1)                          0.74      0.33       0.45 f
+  n1064 (net)                    5                   0.00       0.45 f
+  U1715/DIN (i1s1)                         0.74      0.00       0.45 f
+  U1715/Q (i1s1)                           1.06      0.50       0.95 r
+  ar1_out[3] (net)               5                   0.00       0.95 r
+  U1917/DIN1 (nor2s1)                      1.06      0.00       0.95 r
+  U1917/Q (nor2s1)                         0.97      0.55       1.50 f
+  n1039 (net)                    8                   0.00       1.50 f
+  U2108/DIN1 (nnd2s2)                      0.97      0.00       1.51 f
+  U2108/Q (nnd2s2)                         0.68      0.37       1.88 r
+  n734 (net)                    13                   0.00       1.88 r
+  U2049/DIN (ib1s1)                        0.68      0.00       1.88 r
+  U2049/Q (ib1s1)                          0.22      0.08       1.96 f
+  n2297 (net)                    2                   0.00       1.96 f
+  U2001/DIN1 (and2s1)                      0.22      0.00       1.96 f
+  U2001/Q (and2s1)                         0.35      0.31       2.27 f
+  n1045 (net)                    6                   0.00       2.27 f
+  U2676/DIN3 (oai22s2)                     0.35      0.00       2.27 f
+  U2676/Q (oai22s2)                        0.65      0.27       2.54 r
+  N414 (net)                     4                   0.00       2.54 r
+  U3590/DIN3 (aoi22s1)                     0.65      0.00       2.54 r
+  U3590/Q (aoi22s1)                        0.43      0.22       2.76 f
+  n1884 (net)                    1                   0.00       2.76 f
+  U3591/DIN4 (nnd4s1)                      0.43      0.00       2.76 f
+  U3591/Q (nnd4s1)                         0.38      0.22       2.97 r
+  n1899 (net)                    1                   0.00       2.97 r
+  U3598/DIN1 (oai21s1)                     0.38      0.00       2.97 r
+  U3598/Q (oai21s1)                        0.35      0.17       3.14 f
+  n1911 (net)                    1                   0.00       3.14 f
+  U3610/DIN1 (nnd2s1)                      0.35      0.00       3.14 f
+  U3610/Q (nnd2s1)                         0.27      0.11       3.25 r
+  N811 (net)                     1                   0.00       3.25 r
+  U955/DIN1 (and2s2)                       0.27      0.00       3.26 r
+  U955/Q (and2s2)                          0.34      0.21       3.46 r
+  pr2_out[0] (net)               1                   0.00       3.46 r
+  pr2_out[0] (out)                         0.34      0.02       3.49 r
+  data arrival time                                             3.49
+
+  max_delay                                         20.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  output external delay                             -0.10      19.80
+  data required time                                           19.80
+  ---------------------------------------------------------------------
+  data required time                                           19.80
+  data arrival time                                            -3.49
+  ---------------------------------------------------------------------
+  slack (MET)                                                  16.31
+
+
+  Startpoint: rat_arr_out_reg[17][1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: pr2_out[1] (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  rat_arr_out_reg[17][1]/CLK (dffcs2)      0.00      0.00       0.00 r
+  rat_arr_out_reg[17][1]/QN (dffcs2)       0.17      0.17       0.17 f
+  n370 (net)                     3                   0.00       0.17 f
+  U2684/DIN4 (oai22s2)                     0.17      0.00       0.17 f
+  U2684/Q (oai22s2)                        0.65      0.24       0.42 r
+  N511 (net)                     4                   0.00       0.42 r
+  U3625/DIN3 (aoi22s1)                     0.65      0.00       0.42 r
+  U3625/Q (aoi22s1)                        0.43      0.22       0.63 f
+  n1922 (net)                    1                   0.00       0.63 f
+  U3626/DIN4 (nnd4s1)                      0.43      0.00       0.64 f
+  U3626/Q (nnd4s1)                         0.38      0.22       0.85 r
+  n1931 (net)                    1                   0.00       0.85 r
+  U3632/DIN1 (oai21s1)                     0.38      0.00       0.85 r
+  U3632/Q (oai21s1)                        0.50      0.16       1.02 f
+  n1932 (net)                    1                   0.00       1.02 f
+  U3633/DIN2 (nnd2s1)                      0.50      0.00       1.02 f
+  U3633/Q (nnd2s1)                         0.27      0.15       1.17 r
+  N810 (net)                     1                   0.00       1.17 r
+  U954/DIN1 (and2s2)                       0.27      0.00       1.18 r
+  U954/Q (and2s2)                          0.33      0.21       1.38 r
+  pr2_out[1] (net)               1                   0.00       1.38 r
+  pr2_out[1] (out)                         0.33      0.02       1.41 r
+  data arrival time                                             1.41
+
+  max_delay                                         20.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  output external delay                             -0.10      19.80
+  data required time                                           19.80
+  ---------------------------------------------------------------------
+  data required time                                           19.80
+  data arrival time                                            -1.41
+  ---------------------------------------------------------------------
+  slack (MET)                                                  18.39
+
+
+  Startpoint: rat_arr_out_reg[17][0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: pr2_out[0] (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  rat_arr_out_reg[17][0]/CLK (dffcs2)      0.00      0.00       0.00 r
+  rat_arr_out_reg[17][0]/QN (dffcs2)       0.17      0.17       0.17 f
+  n372 (net)                     3                   0.00       0.17 f
+  U2668/DIN4 (oai22s2)                     0.17      0.00       0.17 f
+  U2668/Q (oai22s2)                        0.65      0.24       0.42 r
+  N510 (net)                     4                   0.00       0.42 r
+  U3602/DIN3 (aoi22s1)                     0.65      0.00       0.42 r
+  U3602/Q (aoi22s1)                        0.43      0.22       0.63 f
+  n1900 (net)                    1                   0.00       0.63 f
+  U3603/DIN4 (nnd4s1)                      0.43      0.00       0.64 f
+  U3603/Q (nnd4s1)                         0.38      0.22       0.85 r
+  n1909 (net)                    1                   0.00       0.85 r
+  U3609/DIN1 (oai21s1)                     0.38      0.00       0.85 r
+  U3609/Q (oai21s1)                        0.50      0.16       1.02 f
+  n1910 (net)                    1                   0.00       1.02 f
+  U3610/DIN2 (nnd2s1)                      0.50      0.00       1.02 f
+  U3610/Q (nnd2s1)                         0.27      0.15       1.17 r
+  N811 (net)                     1                   0.00       1.17 r
+  U955/DIN1 (and2s2)                       0.27      0.00       1.18 r
+  U955/Q (and2s2)                          0.34      0.21       1.38 r
+  pr2_out[0] (net)               1                   0.00       1.38 r
+  pr2_out[0] (out)                         0.34      0.02       1.41 r
+  data arrival time                                             1.41
+
+  max_delay                                         20.00      20.00
+  clock uncertainty                                 -0.10      19.90
+  output external delay                             -0.10      19.80
+  data required time                                           19.80
+  ---------------------------------------------------------------------
+  data required time                                           19.80
+  data arrival time                                            -1.41
+  ---------------------------------------------------------------------
+  slack (MET)                                                  18.39
+
+
+1
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : rat
+Version: O-2018.06
+Date   : Fri Mar 20 17:27:38 2020
+****************************************
+
+
+  Startpoint: rat_arr_out_reg[2][0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rat_arr_out_reg[2][0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  rat_arr_out_reg[2][0]/CLK (dffcs2)       0.00       0.00 r
+  rat_arr_out_reg[2][0]/QN (dffcs2)        0.16       0.16 r
+  U2581/Q (oai22s2)                        0.23       0.39 f
+  U2172/Q (ib1s1)                          0.12       0.51 r
+  U593/Q (oai221s2)                        0.17       0.68 f
+  rat_arr_out_reg[2][0]/CLRB (dffcs2)      0.00       0.68 f
+  data arrival time                                   0.68
+
+  clock clock (rise edge)                 20.00      20.00
+  clock network delay (ideal)              0.00      20.00
+  clock uncertainty                       -0.10      19.90
+  rat_arr_out_reg[2][0]/CLK (dffcs2)       0.00      19.90 r
+  library setup time                      -0.39      19.51
+  data required time                                 19.51
+  -----------------------------------------------------------
+  data required time                                 19.51
+  data arrival time                                  -0.68
+  -----------------------------------------------------------
+  slack (MET)                                        18.83
+
+
+  Startpoint: dest_reg1_in[3]
+              (input port clocked by clock)
+  Endpoint: pr2_out[0] (output port clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.10       0.10 r
+  dest_reg1_in[3] (in)                     0.01       0.11 r
+  U1714/Q (hi1s1)                          0.34       0.45 f
+  U1715/Q (i1s1)                           0.50       0.95 r
+  U1917/Q (nor2s1)                         0.56       1.50 f
+  U2108/Q (nnd2s2)                         0.38       1.88 r
+  U2049/Q (ib1s1)                          0.08       1.96 f
+  U2001/Q (and2s1)                         0.31       2.27 f
+  U2676/Q (oai22s2)                        0.27       2.54 r
+  U3590/Q (aoi22s1)                        0.22       2.76 f
+  U3591/Q (nnd4s1)                         0.22       2.97 r
+  U3598/Q (oai21s1)                        0.17       3.14 f
+  U3610/Q (nnd2s1)                         0.11       3.25 r
+  U955/Q (and2s2)                          0.21       3.46 r
+  pr2_out[0] (out)                         0.02       3.49 r
+  data arrival time                                   3.49
+
+  max_delay                               20.00      20.00
+  clock uncertainty                       -0.10      19.90
+  output external delay                   -0.10      19.80
+  data required time                                 19.80
+  -----------------------------------------------------------
+  data required time                                 19.80
+  data arrival time                                  -3.49
+  -----------------------------------------------------------
+  slack (MET)                                        16.31
+
+
+  Startpoint: rat_arr_out_reg[17][0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: pr2_out[0] (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rat                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  rat_arr_out_reg[17][0]/CLK (dffcs2)      0.00       0.00 r
+  rat_arr_out_reg[17][0]/QN (dffcs2)       0.17       0.17 f
+  U2668/Q (oai22s2)                        0.24       0.42 r
+  U3602/Q (aoi22s1)                        0.22       0.63 f
+  U3603/Q (nnd4s1)                         0.22       0.85 r
+  U3609/Q (oai21s1)                        0.17       1.02 f
+  U3610/Q (nnd2s1)                         0.16       1.17 r
+  U955/Q (and2s2)                          0.21       1.38 r
+  pr2_out[0] (out)                         0.02       1.41 r
+  data arrival time                                   1.41
+
+  max_delay                               20.00      20.00
+  clock uncertainty                       -0.10      19.90
+  output external delay                   -0.10      19.80
+  data required time                                 19.80
+  -----------------------------------------------------------
+  data required time                                 19.80
+  data arrival time                                  -1.41
+  -----------------------------------------------------------
+  slack (MET)                                        18.39
+
+
+1
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : reference
+Design : rat
+Version: O-2018.06
+Date   : Fri Mar 20 17:27:39 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+and2s1             lec25dscc25_TT    49.766399      90  4478.975945
+and2s2             lec25dscc25_TT    58.060799     138  8012.390213
+and3s1             lec25dscc25_TT    66.355202      16  1061.683228
+aoi21s2            lec25dscc25_TT    49.766399      32  1592.524780
+aoi22s1            lec25dscc25_TT    58.060799     576 33443.020020
+dffcs2             lec25dscc25_TT   182.477005     192 35035.584961 n
+hi1s1              lec25dscc25_TT    33.177601      13   431.308811
+i1s1               lec25dscc25_TT    33.177601      11   364.953609
+i1s3               lec25dscc25_TT    41.472000      15   622.080002
+ib1s1              lec25dscc25_TT    33.177601     293  9721.037052
+nnd2s1             lec25dscc25_TT    41.472000      42  1741.824005
+nnd2s2             lec25dscc25_TT    41.472000     292 12109.824036
+nnd4s1             lec25dscc25_TT    58.060799     144  8360.755005
+nor2s1             lec25dscc25_TT    41.472000      39  1617.408005
+oai21s1            lec25dscc25_TT    49.766399      72  3583.180756
+oai22s2            lec25dscc25_TT    58.060799     384 22295.346680
+oai221s2           lec25dscc25_TT    74.649597     192 14332.722656
+oai222s3           lec25dscc25_TT   107.827003     192 20702.784668
+-----------------------------------------------------------------------------
+Total 18 references                                 179507.404430
+1

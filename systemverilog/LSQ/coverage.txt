@@ -1,0 +1,24 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE 
+ 57.82  94.06  73.91   5.50 
+
+
+Total modules in report: 5
+-------------------------------------------------------------------------------
+SCORE              LINE     COND     TOGGLE   NAME                                     
+ 32.80             --       --        32.80   psel_gen                                 
+                   
+  ---------------- 
+  SCORE              LINE     COND     TOGGLE   NAME                                   
+   22.81             --       --        22.81   psel_gen ( parameter REQS=1,WIDTH=8 )  
+   42.78             --       --        42.78   psel_gen ( parameter REQS=2,WIDTH=8 )  
+                   
+----------------   
+SCORE              LINE     COND     TOGGLE   NAME                                     
+ 50.80              98.14   --         3.46   testbench                                
+ 56.75              91.15    73.91     5.19   lsq                                      
+ 68.75             --       --        68.75   wand_sel                                 
+ 81.82             --       --        81.82   pe                                       
+

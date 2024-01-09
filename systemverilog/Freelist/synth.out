@@ -1,0 +1,389 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#/***********************************************************/
+#/*   FILE        : psel.tcl                                 */
+#/*   Description : Default Synopsys Design Compiler Script */
+#/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
+#/*   You'll need to minimally set design_name & read files */
+#/***********************************************************/
+#/***********************************************************/
+#/* The following five lines must be updated for every      */
+#/* new design                                              */
+#/***********************************************************/
+suppress_message {"UID-401"}
+suppress_message {"VER-130"}
+read_file -f sverilog [list "sys_defs.svh" "freelist.sv"]
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Loading sverilog files: '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/sys_defs.svh' '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/sys_defs.svh
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.sv
+Module 'pe' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'psel_gen' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'wand_sel' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+
+Inferred memory devices in process
+	in routine freelist line 201 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.sv'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    success2_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|    success1_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine freelist line 233 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     listOut_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.sv:201: Netlist for always_comb block contains a latch. (ELAB-974)
+Presto compilation completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.db:freelist'
+Loaded 1 design.
+Current design is 'freelist'.
+freelist
+set design_name freelist
+freelist
+set clock_name clock
+clock
+set reset_name reset
+reset
+set CLK_PERIOD 8
+8
+#/***********************************************************/
+#/* The rest of this file may be left alone for most small  */
+#/* to moderate sized designs.  You may need to alter it    */
+#/* when synthesizing your final project.                   */
+#/***********************************************************/
+set SYN_DIR ./
+./
+set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+./ /afs/umich.edu/class/eecs470/lib/synopsys/
+set target_library "lec25dscc25_TT.db"
+lec25dscc25_TT.db
+set link_library [concat  "*" $target_library]
+* lec25dscc25_TT.db
+#/***********************************************************/
+#/* Set some flags for optimisation */
+set compile_top_all_paths "true"
+true
+set auto_wire_load_selection "false"
+false
+#/***********************************************************/
+#/*  Clk Periods/uncertainty/transition                     */
+set CLK_TRANSITION 0.1
+0.1
+set CLK_UNCERTAINTY 0.1
+0.1
+set CLK_LATENCY 0.1
+0.1
+#/* Input/output Delay values */
+set AVG_INPUT_DELAY 0.1
+0.1
+set AVG_OUTPUT_DELAY 0.1
+0.1
+#/* Critical Range (ns) */
+set CRIT_RANGE 1.0
+1.0
+#/***********************************************************/
+#/* Design Constrains: Not all used                         */
+set MAX_TRANSITION 1.0
+1.0
+set FAST_TRANSITION 0.1
+0.1
+set MAX_FANOUT 32
+32
+set MID_FANOUT 8
+8
+set LOW_FANOUT 1
+1
+set HIGH_DRIVE 0
+0
+set HIGH_LOAD 1.0
+1.0
+set AVG_LOAD 0.1
+0.1
+set AVG_FANOUT_LOAD 10
+10
+#/***********************************************************/
+#/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
+#BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
+set DRIVING_CELL dffacs1
+dffacs1
+#/* DONT_USE_LIST = {   } */
+#/*************operation cons**************/
+#/*OP_WCASE = WCCOM;
+#OP_BCASE = BCCOM;*/
+set WIRE_LOAD "tsmcwire"
+tsmcwire
+set LOGICLIB lec25dscc25_TT
+lec25dscc25_TT
+#/*****************************/
+#/* Sourcing the file that sets the Search path and the libraries(target,link) */
+set sys_clk $clock_name
+clock
+set netlist_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".vg"]
+./freelist.vg
+set ddc_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".ddc"]
+./freelist.ddc
+set rep_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".rep"]
+./freelist.rep
+set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".chk"] ]
+./freelist.chk
+#/* if we didnt find errors at this point, run */
+if {  $dc_shell_status != [list] } {
+   current_design $design_name
+  link
+  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+  set_wire_load_mode top
+  set_fix_multiple_port_nets -outputs -buffer_constants
+  create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
+  set_clock_uncertainty $CLK_UNCERTAINTY $sys_clk
+  set_fix_hold $sys_clk
+  group_path -from [all_inputs] -name input_grp
+  group_path -to [all_outputs] -name output_grp
+  set_driving_cell  -lib_cell $DRIVING_CELL [all_inputs]
+  remove_driving_cell [find port $sys_clk]
+  set_fanout_load $AVG_FANOUT_LOAD [all_outputs]
+  set_load $AVG_LOAD [all_outputs]
+  set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
+  remove_input_delay -clock $sys_clk [find port $sys_clk]
+  set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
+  set_dont_touch $reset_name
+  set_resistance 0 $reset_name
+  set_drive 0 $reset_name
+  set_critical_range $CRIT_RANGE [current_design]
+  set_max_delay $CLK_PERIOD [all_outputs]
+  set MAX_FANOUT $MAX_FANOUT
+  set MAX_TRANSITION $MAX_TRANSITION
+  uniquify
+  ungroup -all -flatten
+  redirect $chk_file { check_design }
+  compile -map_effort high
+  write -hier -format verilog -output $netlist_file $design_name
+  write -hier -format ddc -output $ddc_file $design_name
+  redirect $rep_file { report_design -nosplit }
+  redirect -append $rep_file { report_area }
+  redirect -append $rep_file { report_timing -max_paths 2 -input_pins -nets -transition_time -nosplit }
+  redirect -append $rep_file { report_constraint -max_delay -verbose -nosplit }
+  remove_design -all
+  read_file -format verilog $netlist_file
+  current_design $design_name
+  redirect -append $rep_file { report_reference -nosplit }
+  quit
+} else {
+   quit
+}
+Current design is 'freelist'.
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+  Linking design 'freelist'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  freelist                    /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.db
+  lec25dscc25_TT (library)    /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db
+
+Information: Building the design 'psel_gen' instantiated from design 'freelist' with
+	the parameters "REQS=2,WIDTH=64". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'pe' instantiated from design 'freelist' with
+	the parameters "OUT_WIDTH=6". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'wand_sel' instantiated from design 'psel_gen_REQS2_WIDTH64' with
+	the parameters "64". (HDL-193)
+Presto compilation completed successfully.
+Current design is 'freelist'.
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Uniquified 2 instances of design 'pe_OUT_WIDTH6'. (OPT-1056)
+Information: Uniquified 2 instances of design 'wand_sel_WIDTH64'. (OPT-1056)
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Updating graph... (UID-83)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+
+Information: There are 516 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'freelist'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'freelist_DW01_cmp2_0'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:05  125931.6      0.00       0.0       0.1                                0.00  
+    0:00:05  125931.6      0.00       0.0       0.1                                0.00  
+    0:00:05  125931.6      0.00       0.0       0.1                                0.00  
+    0:00:05  125931.6      0.00       0.0       0.1                                0.00  
+    0:00:05  125931.6      0.00       0.0       0.1                                0.00  
+    0:00:05   70253.6      1.42     233.8       0.0                                0.00  
+    0:00:06   70709.8      0.27      16.6       0.0                                0.00  
+    0:00:06   71174.3      0.23      10.3       0.0                                0.00  
+    0:00:06   72119.8      0.21       6.8       0.0                                0.00  
+    0:00:06   72277.4      0.12       1.2       0.0                                0.00  
+    0:00:06   72374.1      0.02       0.1       0.0                                0.00  
+    0:00:06   72349.3      0.04       0.3       0.0                                0.00  
+    0:00:06   72487.5      0.03       0.3       0.0                                0.00  
+    0:00:06   72512.3      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:06   72465.4      0.00       0.0       0.0                                0.00  
+    0:00:07   72448.8      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:07   72448.8      0.00       0.0       0.0                               -0.04  
+    0:00:07   72465.4      0.00       0.0       0.0                               -0.04  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:07   72465.4      0.00       0.0       0.0                               -0.04  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:07   72465.4      0.00       0.0       0.0                               -0.04  
+    0:00:07   72465.4      0.00       0.0       0.0                               -0.04  
+    0:00:07   72191.7      0.00       0.0       0.0                                0.00  
+    0:00:07   72125.3      0.00       0.0       0.0                                0.00  
+    0:00:07   72059.0      0.00       0.0       0.0                                0.00  
+    0:00:07   71992.6      0.00       0.0       0.0                                0.00  
+    0:00:07   71959.4      0.00       0.0       0.0                                0.00  
+    0:00:07   71959.4      0.00       0.0       0.0                                0.00  
+    0:00:07   71959.4      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+    0:00:07   71389.9      0.00       0.0       0.0                                0.00  
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.vg'.
+Writing ddc file './freelist.ddc'.
+Removing design 'freelist'
+Removing library 'gtech'
+Removing library 'lec25dscc25_TT'
+Removing library 'standard.sldb'
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Loading verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.vg'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.vg
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/Freelist/freelist.db:freelist'
+Loaded 1 design.
+Current design is 'freelist'.
+Current design is 'freelist'.
+
+Thank you...

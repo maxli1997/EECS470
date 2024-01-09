@@ -1,0 +1,1 @@
+After the inputs are valid, they should not change until the next clock period.

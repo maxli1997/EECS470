@@ -1,0 +1,42 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   TOGGLE           
+ 58.02  94.06  73.91   6.10 testbench 
+  
+  ----------------
+  SCORE  LINE   COND   TOGGLE                  
+   57.58  91.15  73.91   7.68 load_store_queue 
+    
+    ----------------
+    SCORE  LINE   COND   TOGGLE                
+     45.45 --     --      45.45 lq_commit_enc1 
+     27.27 --     --      27.27 lq_commit_enc2 
+     27.33 --     --      27.33 lq_commit_sel  
+      
+      ----------------
+      SCORE  LINE   COND   TOGGLE             
+       31.25 --     --      31.25 foo[0].psel 
+       31.25 --     --      31.25 foo[1].psel 
+    
+    ----------------
+    SCORE  LINE   COND   TOGGLE               
+     54.55 --     --      54.55 lq_empty_enc1 
+     27.27 --     --      27.27 lq_empty_enc2 
+     37.58 --     --      37.58 lq_empty_sel  
+      
+      ----------------
+      SCORE  LINE   COND   TOGGLE             
+       46.88 --     --      46.88 foo[0].psel 
+       34.38 --     --      34.38 foo[1].psel 
+    
+    ----------------
+    SCORE  LINE   COND   TOGGLE              
+     45.45 --     --      45.45 lq_issue_enc 
+     23.60 --     --      23.60 lq_issue_sel 
+      
+      ----------------
+      SCORE  LINE   COND   TOGGLE             
+       25.00 --     --      25.00 foo[0].psel 
+

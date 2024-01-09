@@ -1,0 +1,45 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Fri Mar 27 22:18:51 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Nets                                                               30
+    Net has multiple drivers (LINT-4)                              22
+    Net is wired or (LINT-35)                                       8
+--------------------------------------------------------------------------------
+
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[7]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[6]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[5]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[4]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[3]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[2]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[1].psel/gnt_r[1]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[7]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[6]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[5]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[4]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[3]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[2]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'foo[0].psel/gnt_r[1]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[8]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[9]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[10]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[11]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[12]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[13]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[14]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt_bus[15]' has multiple drivers.  Wired AND assumed. (LINT-4)
+Information: In design 'psel_gen', net 'gnt[0]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[1]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[2]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[3]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[4]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[5]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[6]' has multiple drivers.  Wired OR assumed. (LINT-35)
+Information: In design 'psel_gen', net 'gnt[7]' has multiple drivers.  Wired OR assumed. (LINT-35)
+1

@@ -1,0 +1,67 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : O-2018.06
+// Date      : Fri Mar 27 22:18:53 2020
+/////////////////////////////////////////////////////////////
+
+
+module psel_gen ( req, gnt, gnt_bus, empty );
+  input [7:0] req;
+  output [7:0] gnt;
+  output [15:0] gnt_bus;
+  output empty;
+  wire   n40, n9, n10, n11, n12, n13, n14, n15, n16, n19, n20, n21, n22, n23,
+         n24, n25, n26, n27, n28, n29, n30, n33, n35;
+wor  \req[7] ;
+
+  and3s2 U1 ( .DIN1(n19), .DIN2(n33), .DIN3(req[1]), .Q(gnt_bus[9]) );
+  and3s2 U7 ( .DIN1(req[4]), .DIN2(n21), .DIN3(n23), .Q(gnt_bus[12]) );
+  or2s2 U13 ( .DIN1(gnt_bus[14]), .DIN2(gnt_bus[6]), .Q(gnt[6]) );
+  nnd2s2 U16 ( .DIN1(n22), .DIN2(n20), .Q(gnt[5]) );
+  nnd2s2 U18 ( .DIN1(req[5]), .DIN2(n29), .Q(n20) );
+  nnd3s2 U20 ( .DIN1(n29), .DIN2(n11), .DIN3(req[4]), .Q(n21) );
+  nnd2s2 U22 ( .DIN1(req[3]), .DIN2(n9), .Q(n25) );
+  nnd2s2 U23 ( .DIN1(n27), .DIN2(n26), .Q(gnt[2]) );
+  nnd3s2 U24 ( .DIN1(n33), .DIN2(n16), .DIN3(req[2]), .Q(n26) );
+  nnd3s2 U25 ( .DIN1(n9), .DIN2(n13), .DIN3(req[2]), .Q(n27) );
+  nnd2s2 U27 ( .DIN1(req[1]), .DIN2(n28), .Q(n19) );
+  nnd3s2 U31 ( .DIN1(n16), .DIN2(n15), .DIN3(n33), .Q(n24) );
+  nnd3s2 U32 ( .DIN1(n12), .DIN2(n11), .DIN3(n29), .Q(n30) );
+  ib1s1 U46 ( .DIN(1'b1), .Q(gnt_bus[15]) );
+  nb1s2 U48 ( .DIN(gnt_bus[7]), .Q(gnt[7]) );
+  ib1s1 U49 ( .DIN(n33), .Q(gnt[0]) );
+  ib1s1 U50 ( .DIN(req[0]), .Q(n33) );
+  hi1s1 U51 ( .DIN(req[7]), .Q(n35) );
+  i1s1 U52 ( .DIN(n35), .Q(gnt_bus[7]) );
+  nb1s2 U53 ( .DIN(n40), .Q(gnt_bus[0]) );
+  and3s1 U54 ( .DIN1(n28), .DIN2(n16), .DIN3(gnt[0]), .Q(n40) );
+  nor2s1 U55 ( .DIN1(n24), .DIN2(req[3]), .Q(n23) );
+  nor2s1 U56 ( .DIN1(n30), .DIN2(n14), .Q(empty) );
+  ib1s1 U57 ( .DIN(n30), .Q(n9) );
+  oai21s2 U58 ( .DIN1(n12), .DIN2(n14), .DIN3(n21), .Q(gnt[4]) );
+  oai21s2 U59 ( .DIN1(n13), .DIN2(n24), .DIN3(n25), .Q(gnt[3]) );
+  nor3s1 U60 ( .DIN1(n13), .DIN2(gnt_bus[3]), .DIN3(n24), .Q(gnt_bus[11]) );
+  nor2s1 U61 ( .DIN1(gnt_bus[0]), .DIN2(n33), .Q(gnt_bus[8]) );
+  nor2s1 U62 ( .DIN1(gnt_bus[2]), .DIN2(n26), .Q(gnt_bus[10]) );
+  ib1s1 U63 ( .DIN(n22), .Q(gnt_bus[13]) );
+  ib1s1 U64 ( .DIN(n27), .Q(gnt_bus[2]) );
+  ib1s1 U65 ( .DIN(n25), .Q(gnt_bus[3]) );
+  ib1s1 U66 ( .DIN(n19), .Q(gnt_bus[1]) );
+  ib1s1 U67 ( .DIN(n23), .Q(n14) );
+  and3s1 U68 ( .DIN1(n15), .DIN2(n13), .DIN3(n9), .Q(n28) );
+  ib1s1 U69 ( .DIN(n21), .Q(gnt_bus[4]) );
+  ib1s1 U70 ( .DIN(n20), .Q(gnt_bus[5]) );
+  oai21s2 U71 ( .DIN1(gnt[0]), .DIN2(n16), .DIN3(n19), .Q(gnt[1]) );
+  nor2s1 U72 ( .DIN1(n10), .DIN2(gnt_bus[7]), .Q(gnt_bus[6]) );
+  nnd4s1 U73 ( .DIN1(n23), .DIN2(req[5]), .DIN3(n20), .DIN4(n12), .Q(n22) );
+  nor2s1 U74 ( .DIN1(req[6]), .DIN2(gnt_bus[7]), .Q(n29) );
+  nor5s2 U75 ( .DIN1(req[5]), .DIN2(req[4]), .DIN3(gnt_bus[6]), .DIN4(n10), 
+        .DIN5(n14), .Q(gnt_bus[14]) );
+  ib1s1 U76 ( .DIN(req[4]), .Q(n12) );
+  ib1s1 U77 ( .DIN(req[1]), .Q(n16) );
+  ib1s1 U78 ( .DIN(req[5]), .Q(n11) );
+  ib1s1 U79 ( .DIN(req[2]), .Q(n15) );
+  ib1s1 U80 ( .DIN(req[3]), .Q(n13) );
+  ib1s1 U81 ( .DIN(req[6]), .Q(n10) );
+endmodule
+

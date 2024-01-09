@@ -1,0 +1,11 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   TOGGLE           
+ 79.50  84.69 100.00  53.82 testbench 
+  
+  ----------------
+  SCORE  LINE   COND   TOGGLE   
+   85.84 100.00 100.00  57.52 r 
+

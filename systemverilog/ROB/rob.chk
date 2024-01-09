@@ -1,0 +1,38 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Sat Mar 28 21:45:34 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
+
+Cells                                                              15
+    Cells do not drive (LINT-1)                                    15
+--------------------------------------------------------------------------------
+
+Warning: In design 'rob', cell 'B_251' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_252' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_253' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_254' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_255' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19027' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19038' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19054' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19058' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19062' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'B_257' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19126' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19174' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19193' does not drive any nets. (LINT-1)
+Warning: In design 'rob', cell 'C19396' does not drive any nets. (LINT-1)
+Warning: In design 'rob', port 'retire_pkt_1[fu][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'rob', port 'retire_pkt_1[fu][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'rob', port 'retire_pkt_1[fu][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'rob', port 'retire_pkt_2[fu][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'rob', port 'retire_pkt_2[fu][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'rob', port 'retire_pkt_2[fu][0]' is not connected to any nets. (LINT-28)
+1

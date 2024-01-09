@@ -1,0 +1,3172 @@
+===============================================================================
+Module : psel_gen
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 32.80 --     --      32.80 
+
+Source File(s) : 
+
+/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME                                     
+ 22.81 --     --      22.81 testbench.load_store_queue.lq_issue_sel  
+ 24.74 --     --      24.74 testbench.load_store_queue.lq_commit_sel 
+ 35.57 --     --      35.57 testbench.load_store_queue.lq_empty_sel  
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : psel_gen ( parameter REQS=2,WIDTH=8 ) 
+Toggle Coverage for Module self-instances : 
+testbench.load_store_queue.lq_empty_sel
+----------------
+SCORE  TOGGLE 
+ 35.57  35.57 
+
+testbench.load_store_queue.lq_commit_sel
+----------------
+SCORE  TOGGLE 
+ 24.74  24.74 
+
+                Total Covered Percent 
+Totals          8     1       12.50   
+Total Bits      194   83      42.78   
+Total Bits 0->1 97    40      41.24   
+Total Bits 1->0 97    43      44.33   
+
+                            
+Ports          4  1  25.00  
+Port Bits      66 37 56.06  
+Port Bits 0->1 33 18 54.55  
+Port Bits 1->0 33 19 57.58  
+
+                               
+Signals          4   0  0.00   
+Signal Bits      128 46 35.94  
+Signal Bits 0->1 64  22 34.38  
+Signal Bits 1->0 64  24 37.50  
+
+Port Details
+               Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[0]         Yes    Yes         Yes         INPUT     
+req[4:1]       No     No          No          INPUT     
+req[5]         No     Yes         No          INPUT     
+req[7:6]       Yes    Yes         Yes         INPUT     
+gnt[1:0]       Yes    Yes         Yes         OUTPUT    
+gnt[3:2]       No     No          No          OUTPUT    
+gnt[7:4]       Yes    Yes         Yes         OUTPUT    
+gnt_bus[0]     Yes    Yes         Yes         OUTPUT    
+gnt_bus[3:1]   No     No          No          OUTPUT    
+gnt_bus[9:4]   Yes    Yes         Yes         OUTPUT    
+gnt_bus[13:10] No     No          No          OUTPUT    
+gnt_bus[14]    Yes    Yes         Yes         OUTPUT    
+gnt_bus[15]    No     No          No          OUTPUT    
+empty          Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                    Toggle Toggle 1->0 Toggle 0->1 
+tmp_reqs[0]         Yes    Yes         Yes         
+tmp_reqs[4:1]       No     No          No          
+tmp_reqs[5]         No     Yes         No          
+tmp_reqs[9:6]       Yes    Yes         Yes         
+tmp_reqs[10]        No     Yes         No          
+tmp_reqs[14:11]     No     No          No          
+tmp_reqs[15]        Yes    Yes         Yes         
+tmp_reqs_rev[15:0]  No     No          No          
+tmp_gnts[0]         Yes    Yes         Yes         
+tmp_gnts[3:1]       No     No          No          
+tmp_gnts[7:4]       Yes    Yes         Yes         
+tmp_gnts[8]         No     No          No          
+tmp_gnts[9]         Yes    Yes         Yes         
+tmp_gnts[13:10]     No     No          No          
+tmp_gnts[15:14]     Yes    Yes         Yes         
+tmp_gnts_rev[3:0]   Yes    Yes         Yes         
+tmp_gnts_rev[6:4]   No     No          No          
+tmp_gnts_rev[9:7]   Yes    Yes         Yes         
+tmp_gnts_rev[13:10] No     No          No          
+tmp_gnts_rev[14]    Yes    Yes         Yes         
+tmp_gnts_rev[15]    No     No          No          
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : psel_gen ( parameter REQS=1,WIDTH=8 ) 
+Toggle Coverage for Module self-instances : 
+testbench.load_store_queue.lq_issue_sel
+----------------
+SCORE  TOGGLE 
+ 22.81  22.81 
+
+                Total Covered Percent 
+Totals          8     1       12.50   
+Total Bits      114   26      22.81   
+Total Bits 0->1 57    13      22.81   
+Total Bits 1->0 57    13      22.81   
+
+                            
+Ports          4  1  25.00  
+Port Bits      50 14 28.00  
+Port Bits 0->1 25 7  28.00  
+Port Bits 1->0 25 7  28.00  
+
+                              
+Signals          4  0  0.00   
+Signal Bits      64 12 18.75  
+Signal Bits 0->1 32 6  18.75  
+Signal Bits 1->0 32 6  18.75  
+
+Port Details
+             Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[5:0]     No     No          No          INPUT     
+req[7:6]     Yes    Yes         Yes         INPUT     
+gnt[5:0]     No     No          No          OUTPUT    
+gnt[7:6]     Yes    Yes         Yes         OUTPUT    
+gnt_bus[5:0] No     No          No          OUTPUT    
+gnt_bus[7:6] Yes    Yes         Yes         OUTPUT    
+empty        Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                  Toggle Toggle 1->0 Toggle 0->1 
+tmp_reqs[5:0]     No     No          No          
+tmp_reqs[7:6]     Yes    Yes         Yes         
+tmp_reqs_rev[7:0] No     No          No          
+tmp_gnts[5:0]     No     No          No          
+tmp_gnts[7:6]     Yes    Yes         Yes         
+tmp_gnts_rev[1:0] Yes    Yes         Yes         
+tmp_gnts_rev[7:2] No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_issue_sel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 22.81 --     --      22.81 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 23.60 --     --      23.60 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 32.80 --     --      32.80 psel_gen 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME        
+ 25.00 --     --      25.00 foo[0].psel 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_issue_sel
+                Total Covered Percent 
+Totals          8     1       12.50   
+Total Bits      114   26      22.81   
+Total Bits 0->1 57    13      22.81   
+Total Bits 1->0 57    13      22.81   
+
+                            
+Ports          4  1  25.00  
+Port Bits      50 14 28.00  
+Port Bits 0->1 25 7  28.00  
+Port Bits 1->0 25 7  28.00  
+
+                              
+Signals          4  0  0.00   
+Signal Bits      64 12 18.75  
+Signal Bits 0->1 32 6  18.75  
+Signal Bits 1->0 32 6  18.75  
+
+Port Details
+             Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[5:0]     No     No          No          INPUT     
+req[7:6]     Yes    Yes         Yes         INPUT     
+gnt[5:0]     No     No          No          OUTPUT    
+gnt[7:6]     Yes    Yes         Yes         OUTPUT    
+gnt_bus[5:0] No     No          No          OUTPUT    
+gnt_bus[7:6] Yes    Yes         Yes         OUTPUT    
+empty        Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                  Toggle Toggle 1->0 Toggle 0->1 
+tmp_reqs[5:0]     No     No          No          
+tmp_reqs[7:6]     Yes    Yes         Yes         
+tmp_reqs_rev[7:0] No     No          No          
+tmp_gnts[5:0]     No     No          No          
+tmp_gnts[7:6]     Yes    Yes         Yes         
+tmp_gnts_rev[1:0] Yes    Yes         Yes         
+tmp_gnts_rev[7:2] No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_commit_sel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 24.74 --     --      24.74 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 27.33 --     --      27.33 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 32.80 --     --      32.80 psel_gen 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME        
+ 31.25 --     --      31.25 foo[0].psel 
+ 31.25 --     --      31.25 foo[1].psel 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_commit_sel
+                Total Covered Percent 
+Totals          8     1       12.50   
+Total Bits      194   48      24.74   
+Total Bits 0->1 97    24      24.74   
+Total Bits 1->0 97    24      24.74   
+
+                            
+Ports          4  1  25.00  
+Port Bits      66 20 30.30  
+Port Bits 0->1 33 10 30.30  
+Port Bits 1->0 33 10 30.30  
+
+                               
+Signals          4   0  0.00   
+Signal Bits      128 28 21.88  
+Signal Bits 0->1 64  14 21.88  
+Signal Bits 1->0 64  14 21.88  
+
+Port Details
+              Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[0]        Yes    Yes         Yes         INPUT     
+req[5:1]      No     No          No          INPUT     
+req[7:6]      Yes    Yes         Yes         INPUT     
+gnt[0]        Yes    Yes         Yes         OUTPUT    
+gnt[5:1]      No     No          No          OUTPUT    
+gnt[7:6]      Yes    Yes         Yes         OUTPUT    
+gnt_bus[0]    Yes    Yes         Yes         OUTPUT    
+gnt_bus[6:1]  No     No          No          OUTPUT    
+gnt_bus[7]    Yes    Yes         Yes         OUTPUT    
+gnt_bus[13:8] No     No          No          OUTPUT    
+gnt_bus[14]   Yes    Yes         Yes         OUTPUT    
+gnt_bus[15]   No     No          No          OUTPUT    
+empty         Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                   Toggle Toggle 1->0 Toggle 0->1 
+tmp_reqs[0]        Yes    Yes         Yes         
+tmp_reqs[5:1]      No     No          No          
+tmp_reqs[9:6]      Yes    Yes         Yes         
+tmp_reqs[14:10]    No     No          No          
+tmp_reqs[15]       Yes    Yes         Yes         
+tmp_reqs_rev[15:0] No     No          No          
+tmp_gnts[0]        Yes    Yes         Yes         
+tmp_gnts[6:1]      No     No          No          
+tmp_gnts[7]        Yes    Yes         Yes         
+tmp_gnts[8]        No     No          No          
+tmp_gnts[9]        Yes    Yes         Yes         
+tmp_gnts[14:10]    No     No          No          
+tmp_gnts[15]       Yes    Yes         Yes         
+tmp_gnts_rev[0]    Yes    Yes         Yes         
+tmp_gnts_rev[6:1]  No     No          No          
+tmp_gnts_rev[8:7]  Yes    Yes         Yes         
+tmp_gnts_rev[13:9] No     No          No          
+tmp_gnts_rev[14]   Yes    Yes         Yes         
+tmp_gnts_rev[15]   No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_empty_sel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 35.57 --     --      35.57 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 37.58 --     --      37.58 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 32.80 --     --      32.80 psel_gen 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME        
+ 46.88 --     --      46.88 foo[0].psel 
+ 34.38 --     --      34.38 foo[1].psel 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_empty_sel
+                Total Covered Percent 
+Totals          8     0       0.00    
+Total Bits      194   69      35.57   
+Total Bits 0->1 97    33      34.02   
+Total Bits 1->0 97    36      37.11   
+
+                            
+Ports          4  0  0.00   
+Port Bits      66 31 46.97  
+Port Bits 0->1 33 15 45.45  
+Port Bits 1->0 33 16 48.48  
+
+                               
+Signals          4   0  0.00   
+Signal Bits      128 38 29.69  
+Signal Bits 0->1 64  18 28.12  
+Signal Bits 1->0 64  20 31.25  
+
+Port Details
+               Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[0]         Yes    Yes         Yes         INPUT     
+req[4:1]       No     No          No          INPUT     
+req[5]         No     Yes         No          INPUT     
+req[7:6]       Yes    Yes         Yes         INPUT     
+gnt[1:0]       Yes    Yes         Yes         OUTPUT    
+gnt[3:2]       No     No          No          OUTPUT    
+gnt[7:4]       Yes    Yes         Yes         OUTPUT    
+gnt_bus[3:0]   No     No          No          OUTPUT    
+gnt_bus[9:4]   Yes    Yes         Yes         OUTPUT    
+gnt_bus[15:10] No     No          No          OUTPUT    
+empty          No     No          No          OUTPUT    
+
+Signal Details
+                    Toggle Toggle 1->0 Toggle 0->1 
+tmp_reqs[0]         Yes    Yes         Yes         
+tmp_reqs[4:1]       No     No          No          
+tmp_reqs[5]         No     Yes         No          
+tmp_reqs[9:6]       Yes    Yes         Yes         
+tmp_reqs[10]        No     Yes         No          
+tmp_reqs[14:11]     No     No          No          
+tmp_reqs[15]        Yes    Yes         Yes         
+tmp_reqs_rev[15:0]  No     No          No          
+tmp_gnts[3:0]       No     No          No          
+tmp_gnts[7:4]       Yes    Yes         Yes         
+tmp_gnts[13:8]      No     No          No          
+tmp_gnts[15:14]     Yes    Yes         Yes         
+tmp_gnts_rev[3:0]   Yes    Yes         Yes         
+tmp_gnts_rev[7:4]   No     No          No          
+tmp_gnts_rev[9:8]   Yes    Yes         Yes         
+tmp_gnts_rev[15:10] No     No          No          
+
+
+===============================================================================
+Module : testbench
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 50.80  98.14 --       3.46 
+
+Source File(s) : 
+
+/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq_testbench.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 50.80  98.14 --       3.46 testbench 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : testbench
+
+             Line No.   Total   Covered  Percent
+TOTAL                      161      158    98.14
+ALWAYS            100        2        2   100.00
+ROUTINE           186       28       25    89.29
+INITIAL           244      131      131   100.00
+
+99                          always begin
+100        2/2                  #5 clock=~clock;
+101                         end
+102                     
+103                         task check_lsq_output;
+104                             input   data2cdb_valid, c_data2cdb_valid;
+105                     	    input   [`XLEN-1:0]   data2cdb, c_data2cdb;
+106                             input   [`PR_LEN-1:0] dest_phy_reg_out, c_dest_phy_reg_out;
+107                             input   [`ROB_LEN-1:0] rob_num_out, c_rob_num_out;
+108                             input   [1:0]           lsq2mem_command, c_lsq2mem_command;
+109                             input   [`XLEN-1:0] lsq2mem_addr, c_lsq2mem_addr;
+110                             input   [`XLEN-1:0] lsq2mem_data, c_lsq2mem_data;
+111                             input   [1:0]   full, c_full;
+112                             // check whether load is issued to broadcast correctly
+113                             if (data2cdb_valid != c_data2cdb_valid) begin
+114                                 $display("@@@ Wrong load queue broadcast status, expected: %d", c_data2cdb_valid);
+115                                 $display("@@@ Failed");
+116                                 $finish;
+117                             end
+118                             if (c_data2cdb_valid && (data2cdb != c_data2cdb)) begin
+119                                 $display("@@@ Wrong loaded data, expected: %d but get: %%d", c_data2cdb, data2cdb);
+120                                 $display("@@@ Failed");
+121                                 $finish;
+122                             end
+123                             if (c_data2cdb_valid && (dest_phy_reg_out != c_dest_phy_reg_out)) begin
+124                                 $display("@@@ Wrong destination register, expected: %d, got: %d", c_dest_phy_reg_out, dest_phy_reg_out);
+125                                 $display("@@@ Failed");
+126                                 $finish;
+127                             end
+128                             if (c_data2cdb_valid && (rob_num_out != c_rob_num_out)) begin
+129                                 $display("@@@ Wrong load instruction rob number, expected: %d, got: %d", c_rob_num_out, rob_num_out);
+130                                 $display("@@@ Failed");
+131                                 $finish;
+132                             end
+133                             // check whether the memory access is correct
+134                             if (c_lsq2mem_command != lsq2mem_command) begin
+135                                 $display("@@@ Wrong memory access command, expected: %d, got: %d", c_lsq2mem_command, lsq2mem_command);
+136                                 $display("@@@ Failed");
+137                                 $finish;
+138                             end
+139                             if (c_lsq2mem_command != 0 && (lsq2mem_addr != c_lsq2mem_addr)) begin
+140                                 $display("@@@ Wrong memory address, expected: %b, got: %b", c_lsq2mem_addr, lsq2mem_addr);
+141                                 $display("@@@ Failed");
+142                                 $finish;
+143                             end
+144                             if (c_lsq2mem_command == 2 && (lsq2mem_data != c_lsq2mem_data)) begin
+145                                 $display("@@@ Wrong store data, expected: %d, got: %d", c_lsq2mem_data, lsq2mem_data);
+146                                 $display("@@@ Failed");
+147                                 $finish;
+148                             end
+149                             // check full
+150                             if (full != c_full) begin
+151                                 $display("@@@ Wrong full signal, expected: %b, got: %b", c_full, full);
+152                                 $display("@@@ Failed");
+153                                 $finish;
+154                             end                                  
+155                         endtask
+156                     
+157                         task show_lsq;
+158                             input [`LSQ_SIZE-1:0]						lq_valid;
+159                     	    input [`LSQ_SIZE-1:0][`XLEN-1:0]			lq_dest_addr;
+160                     	    input [`LSQ_SIZE-1:0][`PR_LEN-1:0]			lq_dest_regs;
+161                             input [`LSQ_SIZE-1:0]						lq_addr_valid;
+162                             input [`LSQ_SIZE-1:0]						lq_need_mem;
+163                             input [`LSQ_SIZE-1:0]						lq_need_store;
+164                             input [`LSQ_SIZE-1:0]						lq_done;
+165                             input [`LSQ_SIZE-1:0][`BRAT_SIZE-1:0]		lq_brat_vec;
+166                             input [`LSQ_SIZE-1:0][`ROB_LEN-1:0]			lq_rob_nums;
+167                             input [`LSQ_SIZE-1:0][`LSQ_LEN-1:0]			lq_age;
+168                             input [`LSQ_SIZE-1:0][`XLEN-1:0]			lq_value;
+169                             input [`LSQ_SIZE-1:0][3:0]                  lq_tags;
+170                             input [`LSQ_SIZE-1:0]                       lq_issued;
+171                             input [1:0]									lq_full;
+172                             input [`LSQ_LEN-1:0]						sq_head;
+173                             input [`LSQ_LEN-1:0]						sq_tail;
+174                             input [`LSQ_SIZE-1:0]						sq_valid;
+175                             input [`LSQ_SIZE-1:0][`XLEN-1:0]			sq_dest_addr;
+176                             input [`LSQ_SIZE-1:0][`XLEN-1:0]			sq_value;
+177                             input [`LSQ_SIZE-1:0]						sq_addr_done;
+178                             input [`LSQ_SIZE-1:0]						sq_done;
+179                             input [`LSQ_SIZE-1:0][`BRAT_SIZE-1:0]		sq_brat_vec;
+180                             input [1:0]									sq_full;
+181                             input [`LSQ_SIZE-1:0][`ROB_LEN-1:0]			sq_rob_nums;
+182                             input [15:0][`LSQ_LEN-1:0]					map_lsq_num;
+183                     	    input [15:0]								map_valid;
+184                             input [10:0]                      cnt;
+185                             begin
+186        1/1                      $display("@@@\t\tCycle %d", cnt);
+187        1/1                      $display("@@@updated lsq from last cycle:");
+188                                 
+189                                 // print lq
+190        1/1                      $display("@@@\tlq#\tvalid\tdest_addr  dest_reg  addr_valid  need_mem  need_store  done\tbrat_vec\trob#\tage\tvalue\ttags\tissued");
+191        1/1                      for (int i = 0; i < `LSQ_SIZE; i++) begin
+192                                     //if (lq_tags[i] != 0) $display("lq has wrong tag %d", lq_tags[i]);
+193        1/1                          $display("@@@%9d%9d    %8h%9d%9d%9d   %9d%9d        %4b   %9d%9d    %8h%4d  %b",
+194                                         i, lq_valid[i], lq_dest_addr[i], lq_dest_regs[i], lq_addr_valid[i], lq_need_mem[i],lq_need_store[i],lq_done[i],lq_brat_vec[i],lq_rob_nums[i],lq_age[i],lq_value[i],lq_tags[i],lq_issued[i]);
+195                                 end
+196        1/1                      $display("@@@lq_full: %b", lq_full);
+197        1/1                      $display("@@@");
+198                                 
+199                                 // print lq map
+200        1/1                      $display("@@@ lq map:   mem_tag     lq_idx    valid");
+201        1/1                      for (int i=0; i<16; i++) begin
+202        1/1                          $display("          %9d%9d%9d", i, map_lsq_num[i], map_valid[i]);
+203                                 end
+204        1/1                      $display("@@@");
+205                     
+206                                 // print sq
+207        1/1                      $display("@@@\tsq#\tvalid\tdest_addr      value\t addr_done\tdone\tbrat_vec\trob#");
+208        1/1                      for (int i = 0; i < `LSQ_SIZE; i++) begin
+209        1/1                          if (sq_valid[i]) begin
+210        1/1                              if (sq_head == i && sq_head == sq_tail) begin
+211        0/1     ==>                          $display("@@@%6d%9d      %8h     %8h   %9d%9d        %4b   %9d  HEAD,TAIL", 
+212                                             i, sq_valid[i],sq_dest_addr[i],sq_value[i],sq_addr_done[i],sq_done[i],sq_brat_vec[i],sq_rob_nums[i]);
+213                                         end
+214        1/1                              else if (sq_head == i) begin
+215        1/1                                  $display("@@@%6d%9d      %8h     %8h   %9d%9d        %4b   %9d  HEAD", 
+216                                             i, sq_valid[i],sq_dest_addr[i],sq_value[i],sq_addr_done[i],sq_done[i],sq_brat_vec[i],sq_rob_nums[i]);
+217        1/1                              end else if (sq_tail == i) begin
+218        0/1     ==>                          $display("@@@%6d%9d      %8h     %8h   %9d%9d        %4b   %9d  TAIL", 
+219                                             i, sq_valid[i],sq_dest_addr[i],sq_value[i],sq_addr_done[i],sq_done[i],sq_brat_vec[i],sq_rob_nums[i]);
+220                                         end else begin
+221        1/1                                  $display("@@@%6d%9d      %8h     %8h   %9d%9d        %4b   %9d", 
+222                                             i, sq_valid[i],sq_dest_addr[i],sq_value[i],sq_addr_done[i],sq_done[i],sq_brat_vec[i],sq_rob_nums[i]);
+223                                         end
+224                                     end 
+225                                     else begin
+226        1/1                              if (sq_head == sq_tail && i == sq_head) begin
+227        0/1     ==>                          $display("@@@%6d HEAD,TAIL", i);
+228        1/1                              end else if (i == sq_tail) begin
+229        1/1                                  $display("@@@%6d TAIL", i);
+230                                         end else begin
+231        1/1                                  $display("@@@%6d", i);
+232                                         end
+233                                     end
+234                                 end
+235                     
+236                                 
+237        1/1                      $display("@@@sq_full: %b", sq_full);
+238        1/1                      $display("@@@");
+239                             end
+240                         endtask  // show_lsq
+241                     
+242                     
+243                         initial begin
+244        1/1                  clock = 0;
+245        1/1                  reset = 1;
+246        1/1                  id_dispatch_packet1 = '{
+247                     				{`XLEN{1'b0}},
+248                     				{`XLEN{1'b0}}, 
+249                     				{`XLEN{1'b0}}, 
+250                     				{`XLEN{1'b0}}, 
+251                     				{`AR_LEN{1'b0}},
+252                     				{`AR_LEN{1'b0}},
+253                     				OPA_IS_RS1, 
+254                     				OPB_IS_RS2, 
+255                     				`NOP,
+256                     				`ZERO_REG,
+257                     				{`PR_LEN{1'b0}},
+258                     				ALU_ADD, 
+259                     				1'b0, //rd_mem
+260                     				1'b0, //wr_mem
+261                     				1'b0, //cond
+262                     				1'b0, //uncond
+263                     				1'b0, //halt
+264                     				1'b0, //illegal
+265                     				1'b0, //csr_op
+266                     				1'b0, //valid
+267                     				1'b0, //pred_taken,
+268                     				{`BRAT_SIZE{1'b0}}, //brat_vec
+269                     				{`ROB_LEN{1'b0}}
+270                     			}; 
+271        1/1                  id_dispatch_packet2 = '{
+272                     				{`XLEN{1'b0}},
+273                     				{`XLEN{1'b0}}, 
+274                     				{`XLEN{1'b0}}, 
+275                     				{`XLEN{1'b0}}, 
+276                     				{`AR_LEN{1'b0}},
+277                     				{`AR_LEN{1'b0}},
+278                     				OPA_IS_RS1, 
+279                     				OPB_IS_RS2, 
+280                     				`NOP,
+281                     				`ZERO_REG,
+282                     				{`PR_LEN{1'b0}},
+283                     				ALU_ADD, 
+284                     				1'b0, //rd_mem
+285                     				1'b0, //wr_mem
+286                     				1'b0, //cond
+287                     				1'b0, //uncond
+288                     				1'b0, //halt
+289                     				1'b0, //illegal
+290                     				1'b0, //csr_op
+291                     				1'b0, //valid
+292                     				1'b0, //pred_taken,
+293                     				{`BRAT_SIZE{1'b0}}, //brat_vec
+294                     				{`ROB_LEN{1'b0}}
+295                     			}; 
+296        1/1                  dest_phy_reg1 = 0;
+297        1/1                  dest_phy_reg2 = 0;
+298        1/1                  rob_tail = 0;
+299        1/1                  rob_tail_plus1 = 1;
+300        1/1                  rob_head = 0;
+301        1/1                  rob_head_plus1 = 1;
+302        1/1                  dcache2lsq_valid = 0;
+303        1/1                  dcache2lsq_tag = 0;
+304        1/1                  dcache2lsq_data = 0;
+305        1/1                  brat_en = 0;
+306        1/1                  c_valid1 = 0;
+307        1/1                  c_valid2 = 0;
+308        1/1                  brat_mis = 0;
+309        1/1                  correct_index1 = 0;
+310        1/1                  correct_index2 = 0;
+311        1/1                  cdb1_valid = 0;
+312        1/1                  cdb2_valid = 0;
+313        1/1                  cdb1_tag = 0;
+314        1/1                  cdb2_tag = 0;
+315        1/1                  cdb1_data = 0;
+316        1/1                  cdb2_data = 0;
+317        1/1                  cdb1_pkt = '{
+318                                 {`XLEN{1'b0}},
+319                                 {`XLEN{1'b0}},
+320                                 1'b0, 1'b0, 1'b0,
+321                                 {`BRAT_SIZE{1'b0}},
+322                                 {`XLEN{1'b0}},
+323                                 1'b0, 1'b0,
+324                                 {`PR_LEN{1'b0}},
+325                                 {`ROB_LEN{1'b0}},
+326                                 1'b0, 1'b0, 1'b0, 1'b0,
+327                                 3'b0
+328                             };
+329        1/1                  cdb2_pkt = '{
+330                                 {`XLEN{1'b0}},
+331                                 {`XLEN{1'b0}},
+332                                 1'b0, 1'b0, 1'b0,
+333                                 {`BRAT_SIZE{1'b0}},
+334                                 {`XLEN{1'b0}},
+335                                 1'b0, 1'b0,
+336                                 {`PR_LEN{1'b0}},
+337                                 {`ROB_LEN{1'b0}},
+338                                 1'b0, 1'b0, 1'b0, 1'b0,
+339                                 3'b0
+340                             };
+341        1/1                  retire1_valid = 0;
+342                     
+343                             // cycle 0 just check reset, nothing will be done in cycle 0
+344        1/1                  @(negedge clock)
+345                             // dispatch 2 stores
+346        1/1                  reset = 0;
+347        1/1                  id_dispatch_packet1.valid = 1;
+348        1/1                  id_dispatch_packet1.wr_mem = 1;
+349        1/1                  id_dispatch_packet2.valid = 1;
+350        1/1                  id_dispatch_packet2.wr_mem = 1;
+351                             // at negedge cycle 0 id stage send out insts and correct values are prepared
+352        1/1                  @(negedge clock)
+353                             // issue a store, then load, load's age should be 3
+354        1/1                  rob_tail = 2;
+355        1/1                  rob_tail_plus1 = 3;
+356        1/1                  id_dispatch_packet2.rd_mem = 1;
+357        1/1                  id_dispatch_packet2.wr_mem = 0;
+358        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+359                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+360        1/1                  @(negedge clock)
+361                             // store 0 broadcast with addr 1 and val 2
+362        1/1                  id_dispatch_packet1.valid = 0;
+363        1/1                  id_dispatch_packet2.valid = 0;
+364        1/1                  cdb1_valid = 1;
+365        1/1                  cdb1_tag = 0;
+366        1/1                  cdb1_data = 1;
+367        1/1                  cdb1_pkt.rs2_value = 2;
+368        1/1                  cdb1_pkt.rob_num = 0;
+369        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+370                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+371        1/1                  @(negedge clock)
+372                             // store 1 broadcast with addr 0 val 2
+373                             // store 2 broadcast with addr 0 val 1
+374        1/1                  cdb1_data = 0;
+375        1/1                  cdb1_tag = 1;
+376        1/1                  cdb2_valid = 1;
+377        1/1                  cdb2_tag = 2;
+378        1/1                  cdb2_data = 0;
+379        1/1                  cdb2_pkt.rs2_value = 1;
+380        1/1                  cdb2_pkt.rob_num = 2;
+381        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+382                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+383        1/1                  @(negedge clock)
+384                             // the load (addr 0) should be ready with val 1
+385        1/1                  cdb1_data = 0;
+386        1/1                  cdb1_tag = 3;
+387        1/1                  cdb1_valid = 1;
+388        1/1                  cdb2_valid = 0;
+389        1/1                  rob_tail = 4;
+390        1/1                  rob_tail_plus1 = 5;
+391        1/1                  id_dispatch_packet1.valid = 1;
+392        1/1                  id_dispatch_packet1.rd_mem = 1;
+393        1/1                  id_dispatch_packet1.wr_mem = 0;
+394        1/1                  id_dispatch_packet2.valid = 1;
+395        1/1                  id_dispatch_packet2.rd_mem = 0;
+396        1/1                  id_dispatch_packet2.wr_mem = 1;
+397        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+398                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+399        1/1                  @(negedge clock)
+400                             // cycle 5, rob# 3 load addr valid
+401        1/1                  cdb1_valid = 0;
+402        1/1                  rob_tail = 6;
+403        1/1                  rob_tail_plus1 = 7;
+404        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+405                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+406        1/1                  @(negedge clock)
+407                             // rob#3 load resolved
+408        1/1                  rob_tail = 0;
+409        1/1                  rob_tail_plus1 = 1;
+410        1/1                  cdb1_valid = 1;
+411        1/1                  cdb1_data = 7;
+412        1/1                  cdb1_tag = 4;
+413        1/1                  id_dispatch_packet1.valid = 1;
+414        1/1                  id_dispatch_packet1.rd_mem = 1;
+415        1/1                  id_dispatch_packet1.wr_mem = 0;
+416        1/1                  id_dispatch_packet2.valid = 1;
+417        1/1                  id_dispatch_packet2.rd_mem = 1;
+418        1/1                  id_dispatch_packet2.wr_mem = 0;
+419        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+420                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+421        1/1                  @(negedge clock)
+422                             // rob#3 load commmitted
+423                             // issue rob# 4 load, cache miss
+424        1/1                  id_dispatch_packet1.valid = 0;
+425        1/1                  id_dispatch_packet2.valid = 0;
+426        1/1                  cdb1_valid = 1;
+427        1/1                  cdb1_tag = 5;
+428        1/1                  cdb1_data = 13;
+429        1/1                  cdb2_valid = 1;
+430        1/1                  cdb2_tag = 6;
+431        1/1                  cdb2_data = 15;
+432        1/1                  dcache2lsq_tag = 1;
+433                             
+434        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+435                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+436        1/1                  $display("ld issue valid: %b, addr: %d", lsq2mem_command, lsq2mem_addr);
+437        1/1                  @(negedge clock)
+438                             // memory respond to issued load rob #4
+439                             // issue rob #6 cache hit
+440        1/1                  cdb1_valid = 0;
+441        1/1                  cdb2_valid = 0;
+442        1/1                  mem2lsq_valid = 1;
+443        1/1                  mem2lsq_tag = 1;
+444        1/1                  mem2lsq_data = 8;
+445        1/1                  dcache2lsq_valid = 1;
+446        1/1                  dcache2lsq_tag = 2;
+447        1/1                  dcache2lsq_data = 16;
+448        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+449                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+450        1/1                  @(negedge clock)
+451                             // rob# 4, 6 done
+452        1/1                  mem2lsq_valid = 0;
+453        1/1                  dcache2lsq_valid = 0;
+454        1/1                  rob_head = 1;
+455        1/1                  rob_head_plus1 = 2;
+456        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+457                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+458        1/1                  @(negedge clock)
+459        1/1                  rob_head = 2;
+460        1/1                  rob_head_plus1 = 3;
+461                     
+462        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+463                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+464        1/1                  @(negedge clock)
+465        1/1                  rob_head = 4;
+466        1/1                  rob_head_plus1 = 5;
+467        1/1                  retire1_valid = 0;
+468        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+469                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+470        1/1                  @(negedge clock)
+471        1/1                  show_lsq(lq_valid, lq_dest_addr,lq_dest_regs,lq_addr_valid,lq_need_mem, lq_need_store,lq_done,lq_brat_vec,lq_rob_nums,lq_age,lq_value,lq_tags,lq_issued,lq_full,
+472                     		sq_head,sq_tail,sq_valid,sq_dest_addr,sq_value,sq_addr_done,sq_done,sq_brat_vec,sq_full,sq_rob_nums,map_lsq_num,map_valid, $time);
+473                             
+474        1/1                  $display("@@@ PASSED!");
+475        1/1                  $finish;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : testbench
+                Total Covered Percent 
+Totals          236   12      5.08    
+Total Bits      5922  205     3.46    
+Total Bits 0->1 2961  137     4.63    
+Total Bits 1->0 2961  68      2.30    
+
+                                 
+Signals          236  12  5.08   
+Signal Bits      5922 205 3.46   
+Signal Bits 0->1 2961 137 4.63   
+Signal Bits 1->0 2961 68  2.30   
+
+Signal Details
+                                       Toggle Toggle 1->0 Toggle 0->1 
+clock                                  Yes    Yes         Yes         
+reset                                  No     Yes         No          
+id_dispatch_packet1.rob_num[3:0]       No     No          No          
+id_dispatch_packet1.brat_vec[3:0]      No     No          No          
+id_dispatch_packet1.pred_taken         No     No          No          
+id_dispatch_packet1.valid              Yes    Yes         Yes         
+id_dispatch_packet1.csr_op             No     No          No          
+id_dispatch_packet1.illegal            No     No          No          
+id_dispatch_packet1.halt               No     No          No          
+id_dispatch_packet1.uncond_branch      No     No          No          
+id_dispatch_packet1.cond_branch        No     No          No          
+id_dispatch_packet1.wr_mem             Yes    Yes         Yes         
+id_dispatch_packet1.rd_mem             No     No          Yes         
+id_dispatch_packet1.alu_func[4:0]      No     No          No          
+id_dispatch_packet1.dest_phy_reg[5:0]  No     No          No          
+id_dispatch_packet1.dest_reg_idx[4:0]  No     No          No          
+id_dispatch_packet1.inst.j.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.j.rd[4:0]     No     No          No          
+id_dispatch_packet1.inst.j.f[7:0]      No     No          No          
+id_dispatch_packet1.inst.j.s           No     No          No          
+id_dispatch_packet1.inst.j.et[9:0]     No     No          No          
+id_dispatch_packet1.inst.j.of          No     No          No          
+id_dispatch_packet1.inst.u.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.u.rd[4:0]     No     No          No          
+id_dispatch_packet1.inst.u.imm[19:0]   No     No          No          
+id_dispatch_packet1.inst.b.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.b.f           No     No          No          
+id_dispatch_packet1.inst.b.et[3:0]     No     No          No          
+id_dispatch_packet1.inst.b.funct3[2:0] No     No          No          
+id_dispatch_packet1.inst.b.rs1[4:0]    No     No          No          
+id_dispatch_packet1.inst.b.rs2[4:0]    No     No          No          
+id_dispatch_packet1.inst.b.s[5:0]      No     No          No          
+id_dispatch_packet1.inst.b.of          No     No          No          
+id_dispatch_packet1.inst.s.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.s.set[4:0]    No     No          No          
+id_dispatch_packet1.inst.s.funct3[2:0] No     No          No          
+id_dispatch_packet1.inst.s.rs1[4:0]    No     No          No          
+id_dispatch_packet1.inst.s.rs2[4:0]    No     No          No          
+id_dispatch_packet1.inst.s.off[6:0]    No     No          No          
+id_dispatch_packet1.inst.i.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.i.rd[4:0]     No     No          No          
+id_dispatch_packet1.inst.i.funct3[2:0] No     No          No          
+id_dispatch_packet1.inst.i.rs1[4:0]    No     No          No          
+id_dispatch_packet1.inst.i.imm[11:0]   No     No          No          
+id_dispatch_packet1.inst.r.opcode[6:0] No     No          No          
+id_dispatch_packet1.inst.r.rd[4:0]     No     No          No          
+id_dispatch_packet1.inst.r.funct3[2:0] No     No          No          
+id_dispatch_packet1.inst.r.rs1[4:0]    No     No          No          
+id_dispatch_packet1.inst.r.rs2[4:0]    No     No          No          
+id_dispatch_packet1.inst.r.funct7[6:0] No     No          No          
+id_dispatch_packet1.inst.inst[31:0]    No     No          No          
+id_dispatch_packet1.opb_select[3:0]    No     No          No          
+id_dispatch_packet1.opa_select[1:0]    No     No          No          
+id_dispatch_packet1.rs2_reg[4:0]       No     No          No          
+id_dispatch_packet1.rs1_reg[4:0]       No     No          No          
+id_dispatch_packet1.rs2_value[31:0]    No     No          No          
+id_dispatch_packet1.rs1_value[31:0]    No     No          No          
+id_dispatch_packet1.PC[31:0]           No     No          No          
+id_dispatch_packet1.NPC[31:0]          No     No          No          
+id_dispatch_packet2.rob_num[3:0]       No     No          No          
+id_dispatch_packet2.brat_vec[3:0]      No     No          No          
+id_dispatch_packet2.pred_taken         No     No          No          
+id_dispatch_packet2.valid              Yes    Yes         Yes         
+id_dispatch_packet2.csr_op             No     No          No          
+id_dispatch_packet2.illegal            No     No          No          
+id_dispatch_packet2.halt               No     No          No          
+id_dispatch_packet2.uncond_branch      No     No          No          
+id_dispatch_packet2.cond_branch        No     No          No          
+id_dispatch_packet2.wr_mem             Yes    Yes         Yes         
+id_dispatch_packet2.rd_mem             Yes    Yes         Yes         
+id_dispatch_packet2.alu_func[4:0]      No     No          No          
+id_dispatch_packet2.dest_phy_reg[5:0]  No     No          No          
+id_dispatch_packet2.dest_reg_idx[4:0]  No     No          No          
+id_dispatch_packet2.inst.j.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.j.rd[4:0]     No     No          No          
+id_dispatch_packet2.inst.j.f[7:0]      No     No          No          
+id_dispatch_packet2.inst.j.s           No     No          No          
+id_dispatch_packet2.inst.j.et[9:0]     No     No          No          
+id_dispatch_packet2.inst.j.of          No     No          No          
+id_dispatch_packet2.inst.u.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.u.rd[4:0]     No     No          No          
+id_dispatch_packet2.inst.u.imm[19:0]   No     No          No          
+id_dispatch_packet2.inst.b.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.b.f           No     No          No          
+id_dispatch_packet2.inst.b.et[3:0]     No     No          No          
+id_dispatch_packet2.inst.b.funct3[2:0] No     No          No          
+id_dispatch_packet2.inst.b.rs1[4:0]    No     No          No          
+id_dispatch_packet2.inst.b.rs2[4:0]    No     No          No          
+id_dispatch_packet2.inst.b.s[5:0]      No     No          No          
+id_dispatch_packet2.inst.b.of          No     No          No          
+id_dispatch_packet2.inst.s.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.s.set[4:0]    No     No          No          
+id_dispatch_packet2.inst.s.funct3[2:0] No     No          No          
+id_dispatch_packet2.inst.s.rs1[4:0]    No     No          No          
+id_dispatch_packet2.inst.s.rs2[4:0]    No     No          No          
+id_dispatch_packet2.inst.s.off[6:0]    No     No          No          
+id_dispatch_packet2.inst.i.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.i.rd[4:0]     No     No          No          
+id_dispatch_packet2.inst.i.funct3[2:0] No     No          No          
+id_dispatch_packet2.inst.i.rs1[4:0]    No     No          No          
+id_dispatch_packet2.inst.i.imm[11:0]   No     No          No          
+id_dispatch_packet2.inst.r.opcode[6:0] No     No          No          
+id_dispatch_packet2.inst.r.rd[4:0]     No     No          No          
+id_dispatch_packet2.inst.r.funct3[2:0] No     No          No          
+id_dispatch_packet2.inst.r.rs1[4:0]    No     No          No          
+id_dispatch_packet2.inst.r.rs2[4:0]    No     No          No          
+id_dispatch_packet2.inst.r.funct7[6:0] No     No          No          
+id_dispatch_packet2.inst.inst[31:0]    No     No          No          
+id_dispatch_packet2.opb_select[3:0]    No     No          No          
+id_dispatch_packet2.opa_select[1:0]    No     No          No          
+id_dispatch_packet2.rs2_reg[4:0]       No     No          No          
+id_dispatch_packet2.rs1_reg[4:0]       No     No          No          
+id_dispatch_packet2.rs2_value[31:0]    No     No          No          
+id_dispatch_packet2.rs1_value[31:0]    No     No          No          
+id_dispatch_packet2.PC[31:0]           No     No          No          
+id_dispatch_packet2.NPC[31:0]          No     No          No          
+dest_phy_reg1[5:0]                     No     No          No          
+dest_phy_reg2[5:0]                     No     No          No          
+rob_tail[0]                            No     No          No          
+rob_tail[2:1]                          Yes    Yes         Yes         
+rob_tail[3]                            No     No          No          
+rob_tail_plus1[0]                      No     No          No          
+rob_tail_plus1[2:1]                    Yes    Yes         Yes         
+rob_tail_plus1[3]                      No     No          No          
+rob_head[1:0]                          Yes    Yes         Yes         
+rob_head[2]                            No     No          Yes         
+rob_head[3]                            No     No          No          
+rob_head_plus1[1:0]                    Yes    Yes         Yes         
+rob_head_plus1[2]                      No     No          Yes         
+rob_head_plus1[3]                      No     No          No          
+dcache2lsq_valid                       Yes    Yes         Yes         
+dcache2lsq_tag[0]                      Yes    Yes         Yes         
+dcache2lsq_tag[1]                      No     No          Yes         
+dcache2lsq_tag[3:2]                    No     No          No          
+dcache2lsq_data[3:0]                   No     No          No          
+dcache2lsq_data[4]                     No     No          Yes         
+dcache2lsq_data[31:5]                  No     No          No          
+mem2lsq_valid                          No     Yes         No          
+mem2lsq_tag[3:0]                       No     No          No          
+mem2lsq_data[31:0]                     No     No          No          
+brat_en                                No     No          No          
+c_valid1                               No     No          No          
+c_valid2                               No     No          No          
+brat_mis[3:0]                          No     No          No          
+correct_index1[1:0]                    No     No          No          
+correct_index2[1:0]                    No     No          No          
+cdb1_valid                             Yes    Yes         Yes         
+cdb2_valid                             Yes    Yes         Yes         
+cdb1_tag[1:0]                          Yes    Yes         Yes         
+cdb1_tag[2]                            No     No          Yes         
+cdb1_tag[3]                            No     No          No          
+cdb2_tag[0]                            No     No          No          
+cdb2_tag[2:1]                          No     No          Yes         
+cdb2_tag[3]                            No     No          No          
+cdb1_data[1:0]                         Yes    Yes         Yes         
+cdb1_data[3:2]                         No     No          Yes         
+cdb1_data[31:4]                        No     No          No          
+cdb2_data[3:0]                         No     No          Yes         
+cdb2_data[31:4]                        No     No          No          
+cdb1_pkt.mem_size[2:0]                 No     No          No          
+cdb1_pkt.valid                         No     No          No          
+cdb1_pkt.csr_op                        No     No          No          
+cdb1_pkt.illegal                       No     No          No          
+cdb1_pkt.halt                          No     No          No          
+cdb1_pkt.rob_num[3:0]                  No     No          No          
+cdb1_pkt.dest_phy_reg[5:0]             No     No          No          
+cdb1_pkt.wr_mem                        No     No          No          
+cdb1_pkt.rd_mem                        No     No          No          
+cdb1_pkt.rs2_value[0]                  No     No          No          
+cdb1_pkt.rs2_value[1]                  No     No          Yes         
+cdb1_pkt.rs2_value[31:2]               No     No          No          
+cdb1_pkt.brat_vec[3:0]                 No     No          No          
+cdb1_pkt.uncond_branch                 No     No          No          
+cdb1_pkt.cond_branch                   No     No          No          
+cdb1_pkt.take_branch                   No     No          No          
+cdb1_pkt.NPC[31:0]                     No     No          No          
+cdb1_pkt.result[31:0]                  No     No          No          
+cdb2_pkt.mem_size[2:0]                 No     No          No          
+cdb2_pkt.valid                         No     No          No          
+cdb2_pkt.csr_op                        No     No          No          
+cdb2_pkt.illegal                       No     No          No          
+cdb2_pkt.halt                          No     No          No          
+cdb2_pkt.rob_num[0]                    No     No          No          
+cdb2_pkt.rob_num[1]                    No     No          Yes         
+cdb2_pkt.rob_num[3:2]                  No     No          No          
+cdb2_pkt.dest_phy_reg[5:0]             No     No          No          
+cdb2_pkt.wr_mem                        No     No          No          
+cdb2_pkt.rd_mem                        No     No          No          
+cdb2_pkt.rs2_value[0]                  No     No          Yes         
+cdb2_pkt.rs2_value[31:1]               No     No          No          
+cdb2_pkt.brat_vec[3:0]                 No     No          No          
+cdb2_pkt.uncond_branch                 No     No          No          
+cdb2_pkt.cond_branch                   No     No          No          
+cdb2_pkt.take_branch                   No     No          No          
+cdb2_pkt.NPC[31:0]                     No     No          No          
+cdb2_pkt.result[31:0]                  No     No          No          
+ld_commit_pkt1.mem_size[2:0]           No     No          No          
+ld_commit_pkt1.valid                   Yes    Yes         Yes         
+ld_commit_pkt1.csr_op                  No     No          No          
+ld_commit_pkt1.illegal                 No     No          No          
+ld_commit_pkt1.halt                    No     No          No          
+ld_commit_pkt1.rob_num[2:0]            Yes    Yes         Yes         
+ld_commit_pkt1.rob_num[3]              No     No          No          
+ld_commit_pkt1.dest_phy_reg[5:0]       No     No          No          
+ld_commit_pkt1.wr_mem                  No     No          No          
+ld_commit_pkt1.rd_mem                  No     No          No          
+ld_commit_pkt1.rs2_value[31:0]         No     No          No          
+ld_commit_pkt1.brat_vec[3:0]           No     No          No          
+ld_commit_pkt1.uncond_branch           No     No          No          
+ld_commit_pkt1.cond_branch             No     No          No          
+ld_commit_pkt1.take_branch             No     No          No          
+ld_commit_pkt1.NPC[31:0]               No     No          No          
+ld_commit_pkt1.result[0]               Yes    Yes         Yes         
+ld_commit_pkt1.result[2:1]             No     No          No          
+ld_commit_pkt1.result[3]               Yes    Yes         Yes         
+ld_commit_pkt1.result[31:4]            No     No          No          
+ld_commit_pkt2.mem_size[2:0]           No     No          No          
+ld_commit_pkt2.valid                   Yes    Yes         Yes         
+ld_commit_pkt2.csr_op                  No     No          No          
+ld_commit_pkt2.illegal                 No     No          No          
+ld_commit_pkt2.halt                    No     No          No          
+ld_commit_pkt2.rob_num[2:0]            Yes    Yes         Yes         
+ld_commit_pkt2.rob_num[3]              No     No          No          
+ld_commit_pkt2.dest_phy_reg[5:0]       No     No          No          
+ld_commit_pkt2.wr_mem                  No     No          No          
+ld_commit_pkt2.rd_mem                  No     No          No          
+ld_commit_pkt2.rs2_value[31:0]         No     No          No          
+ld_commit_pkt2.brat_vec[3:0]           No     No          No          
+ld_commit_pkt2.uncond_branch           No     No          No          
+ld_commit_pkt2.cond_branch             No     No          No          
+ld_commit_pkt2.take_branch             No     No          No          
+ld_commit_pkt2.NPC[31:0]               No     No          No          
+ld_commit_pkt2.result[0]               Yes    Yes         Yes         
+ld_commit_pkt2.result[3:1]             No     No          No          
+ld_commit_pkt2.result[4]               Yes    Yes         Yes         
+ld_commit_pkt2.result[31:5]            No     No          No          
+lsq2mem_command[1:0]                   Yes    Yes         Yes         
+lsq2mem_addr[3:0]                      Yes    Yes         Yes         
+lsq2mem_addr[31:4]                     No     No          No          
+lsq2mem_data[1:0]                      Yes    Yes         Yes         
+lsq2mem_data[31:2]                     No     No          No          
+retire1_valid                          No     No          No          
+full[0]                                Yes    Yes         Yes         
+full[1]                                No     No          No          
+lq_valid[0]                            Yes    Yes         Yes         
+lq_valid[4:1]                          No     No          No          
+lq_valid[5]                            No     No          Yes         
+lq_valid[7:6]                          Yes    Yes         Yes         
+lq_dest_addr[6][3:0]                   No     No          Yes         
+lq_dest_addr[7][2:0]                   No     No          Yes         
+Other bits of lq_dest_addr[7:0][31:0]  No     No          No          
+lq_dest_regs[7:0][5:0]                 No     No          No          
+lq_addr_valid[0]                       Yes    Yes         Yes         
+lq_addr_valid[5:1]                     No     No          No          
+lq_addr_valid[7:6]                     Yes    Yes         Yes         
+lq_need_mem[5:0]                       No     No          No          
+lq_need_mem[7:6]                       Yes    Yes         Yes         
+lq_need_store[0]                       Yes    Yes         Yes         
+lq_need_store[7:1]                     No     No          No          
+lq_done[0]                             Yes    Yes         Yes         
+lq_done[5:1]                           No     No          No          
+lq_done[7:6]                           Yes    Yes         Yes         
+lq_brat_vec[7:0][3:0]                  No     No          No          
+lq_rob_nums[0][0]                      No     No          Yes         
+lq_rob_nums[0][1]                      Yes    Yes         Yes         
+lq_rob_nums[6][2:1]                    No     No          Yes         
+lq_rob_nums[7][2]                      No     No          Yes         
+Other bits of lq_rob_nums[7:0][3:0]    No     No          No          
+lq_age[0][0]                           No     No          Yes         
+lq_age[0][1]                           Yes    Yes         Yes         
+lq_age[0][2]                           No     No          Yes         
+lq_age[5][0]                           No     No          Yes         
+lq_age[5][2]                           No     No          Yes         
+lq_age[6][2]                           No     No          Yes         
+lq_age[7][1:0]                         No     No          Yes         
+Other bits of lq_age[7:0][2:0]         No     No          No          
+lq_value[0][0]                         Yes    Yes         Yes         
+lq_value[6][4]                         No     No          Yes         
+lq_value[7][3]                         No     No          Yes         
+Other bits of lq_value[7:0][31:0]      No     No          No          
+lq_issued[5:0]                         No     No          No          
+lq_issued[7:6]                         No     No          Yes         
+lq_full[1:0]                           No     No          No          
+sq_head[0]                             Yes    Yes         Yes         
+sq_head[1]                             No     No          Yes         
+sq_head[2]                             No     No          No          
+sq_tail[1:0]                           Yes    Yes         Yes         
+sq_tail[2]                             No     No          Yes         
+sq_valid[2:0]                          Yes    Yes         Yes         
+sq_valid[4:3]                          No     No          Yes         
+sq_valid[7:5]                          No     No          No          
+sq_dest_addr[0][0]                     No     No          Yes         
+sq_dest_addr[3][0]                     No     No          Yes         
+sq_dest_addr[3][3:2]                   No     No          Yes         
+Other bits of sq_dest_addr[7:0][31:0]  No     No          No          
+sq_value[0][1]                         No     No          Yes         
+sq_value[1][1]                         No     No          Yes         
+sq_value[2][0]                         No     No          Yes         
+sq_value[3][1]                         No     No          Yes         
+Other bits of sq_value[7:0][31:0]      No     No          No          
+sq_addr_done[3:0]                      No     No          Yes         
+sq_addr_done[7:4]                      No     No          No          
+sq_done[3:0]                           No     No          Yes         
+sq_done[7:4]                           No     No          No          
+sq_brat_vec[7:0][3:0]                  No     No          No          
+sq_full[0]                             Yes    Yes         Yes         
+sq_full[1]                             No     No          No          
+sq_rob_nums[1][0]                      No     No          Yes         
+sq_rob_nums[2][1]                      No     No          Yes         
+sq_rob_nums[3][0]                      No     No          Yes         
+sq_rob_nums[3][2]                      No     No          Yes         
+sq_rob_nums[4][2:0]                    No     No          Yes         
+Other bits of sq_rob_nums[7:0][3:0]    No     No          No          
+lq_tags[7][0]                          No     No          Yes         
+Other bits of lq_tags[7:0][3:0]        No     No          No          
+map_lsq_num[1][2:0]                    No     No          Yes         
+Other bits of map_lsq_num[15:0][2:0]   No     No          No          
+map_valid[0]                           No     No          No          
+map_valid[1]                           Yes    Yes         Yes         
+map_valid[15:2]                        No     No          No          
+cnt[10:0]                              No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 50.80  98.14 --       3.46 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 58.02  94.06  73.91   6.10 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 50.80  98.14 --       3.46 testbench 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 57.58  91.15  73.91   7.68 load_store_queue 
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : lsq
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 56.75  91.15  73.91   5.19 
+
+Source File(s) : 
+
+/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME                       
+ 56.75  91.15  73.91   5.19 testbench.load_store_queue 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : lsq
+
+             Line No.   Total   Covered  Percent
+TOTAL                      226      206    91.15
+ALWAYS            286        8        8   100.00
+ALWAYS            426      168      148    88.10
+ALWAYS            675       31       31   100.00
+ALWAYS            715       19       19   100.00
+
+285                     	always_comb begin
+286        1/1          	    lq_cnt = 0;
+287        1/1              	for (int i=0; i<`LSQ_SIZE; i++) begin
+288        1/1                      lq_empty_slots[i] = !(lq_valid[i]);
+289        1/1          	        lq_cnt += !(lq_valid[i]);
+290                         	end
+291        1/1          		if (id_dispatch_packet1.valid & id_dispatch_packet1.rd_mem) begin
+292        1/1          			lq_cnt--;
+293                     		end
+                        MISSING_ELSE
+294        1/1          		if (id_dispatch_packet2.valid & id_dispatch_packet2.rd_mem) begin
+295        1/1          			lq_cnt--;
+296                     		end
+                        MISSING_ELSE
+297                     	end
+298                     	
+299                     	// lq_need_mem iff comparisons finished and no match
+300                     	// loads can be issued if need_mem & not done & not issued
+301                     	assign lq_issue_slots = lq_need_mem & lq_addr_valid & (~lq_need_store) & (~lq_done) & (~lq_issued);
+302                     	
+303                     	
+304                     	assign lq_full = (lq_cnt >= 2) ? 2'b00 : 
+305                     					 (lq_cnt > 0)  ? 2'b01 : 2'b10;
+306                     	// TODO: Could make it the same as rob full, for now keep it simple
+307                     	assign sq_full = sq_valid[sq_tail_nxt]			? 2'b10 :
+308                     					 sq_valid[sq_tail_nxt_plus1] 	? 2'b01 : 2'b00;
+309                     
+310                     	// select the next two empty lq entry
+311                     	psel_gen #(.REQS(2), .WIDTH(`LSQ_SIZE)) lq_empty_sel(
+312                     		lq_empty_slots,
+313                     		lq_empty_gnt,
+314                     		lq_empty_gnt_bus,
+315                     		lq_empty_none
+316                     	);
+317                     
+318                     	pe #(.OUT_WIDTH(`LSQ_LEN)) lq_empty_enc1(
+319                     		lq_empty_gnt_bus[`LSQ_SIZE-1:0],
+320                     		lq_empty_idx1
+321                     	);
+322                     
+323                     	pe #(.OUT_WIDTH(`LSQ_LEN)) lq_empty_enc2(
+324                     		lq_empty_gnt_bus[2*`LSQ_SIZE-1:`LSQ_SIZE],
+325                     		lq_empty_idx2
+326                     	);
+327                     
+328                     	psel_gen #(.REQS(1), .WIDTH(`LSQ_SIZE)) lq_issue_sel(
+329                     		lq_issue_slots,
+330                     		lq_issue_gnt,
+331                     		lq_issue_gnt_bus,
+332                     		lq_issue_none
+333                     	);
+334                     
+335                     	pe #(.OUT_WIDTH(`LSQ_LEN)) lq_issue_enc(
+336                     		lq_issue_gnt_bus,
+337                     		lq_issue_idx
+338                     	);
+339                     
+340                     	// need selection logic to determine loads to cdb broadcast
+341                     	psel_gen #(.REQS(2), .WIDTH(`LSQ_SIZE)) lq_commit_sel(
+342                     		lq_done,
+343                     		lq_commit_gnt,
+344                     		lq_commit_gnt_bus,
+345                     		lq_done_empty
+346                     	);
+347                     
+348                     	pe #(.OUT_WIDTH(`LSQ_LEN)) lq_commit_enc1(
+349                     		lq_commit_gnt_bus[`LSQ_SIZE-1:0],
+350                     		lq_commit_idx1
+351                     	);
+352                     
+353                     	pe #(.OUT_WIDTH(`LSQ_LEN)) lq_commit_enc2(
+354                     		lq_commit_gnt_bus[2*`LSQ_SIZE-1:`LSQ_SIZE],
+355                     		lq_commit_idx2
+356                     	);
+357                     
+358                     
+359                     
+360                     	// When mispredict in the same cycle, need to check brat_vec of commit pkt
+361                     	// format the output ex packet (containing the load results)
+362                     	assign ld_commit_pkt1.valid			= (lq_commit_gnt_bus[`LSQ_SIZE-1:0] > 0) 
+363                     										& ((!brat_en) | (brat_en & (lq_brat_vec[lq_commit_idx1] <= brat_mis)));
+364                     	assign ld_commit_pkt2.valid			= (lq_commit_gnt_bus[2*`LSQ_SIZE-1:`LSQ_SIZE] > 0)
+365                     										& ((!brat_en) | (brat_en & (lq_brat_vec[lq_commit_idx2] <= brat_mis)));
+366                     	assign ld_commit_pkt1.result 		= lq_value[lq_commit_idx1];
+367                     	assign ld_commit_pkt2.result 		= lq_value[lq_commit_idx2];
+368                     	assign ld_commit_pkt1.brat_vec 		= lq_brat_vec[lq_commit_idx1];
+369                     	assign ld_commit_pkt2.brat_vec 		= lq_brat_vec[lq_commit_idx2];
+370                     	assign ld_commit_pkt1.dest_phy_reg 	= lq_dest_regs[lq_commit_idx1];
+371                     	assign ld_commit_pkt2.dest_phy_reg 	= lq_dest_regs[lq_commit_idx2];
+372                     	assign ld_commit_pkt1.rob_num		= lq_rob_nums[lq_commit_idx1];
+373                     	assign ld_commit_pkt2.rob_num		= lq_rob_nums[lq_commit_idx2];
+374                     	assign ld_commit_pkt1.rd_mem		= 1;
+375                     	assign ld_commit_pkt2.rd_mem		= 1;
+376                     	assign ld_commit_pkt1.wr_mem		= 0;
+377                     	assign ld_commit_pkt2.wr_mem		= 0;
+378                     
+379                     	/* we don't care about these fileds since it's a ld inst */
+380                     	assign ld_commit_pkt1.take_branch	= 0;
+381                     	assign ld_commit_pkt1.cond_branch	= 0;
+382                     	assign ld_commit_pkt1.uncond_branch = 0;
+383                     	assign ld_commit_pkt1.halt			= 0;
+384                     	assign ld_commit_pkt1.illegal		= 0;
+385                     	assign ld_commit_pkt1.csr_op		= 0;
+386                     	assign ld_commit_pkt1.NPC			= 0; // this is because the rob already has the correct NPC, here it is not used
+387                     	assign ld_commit_pkt2.take_branch	= 0;
+388                     	assign ld_commit_pkt2.cond_branch	= 0;
+389                     	assign ld_commit_pkt2.uncond_branch = 0;
+390                     	assign ld_commit_pkt2.halt			= 0;
+391                     	assign ld_commit_pkt2.illegal		= 0;
+392                     	assign ld_commit_pkt2.csr_op		= 0;
+393                     	assign ld_commit_pkt2.NPC			= 0; // this is because the rob already has the correct NPC, here it is not used
+394                     	
+395                     
+396                     
+397                     	assign lq_issue_valid = (lq_issue_gnt_bus > 0) 
+398                     							& ((!brat_en) | (brat_en & (lq_brat_vec[lq_issue_idx] <= brat_mis)));
+399                     	// we can only issue a store if it's gonna retire 
+400                     	assign sq_issue_valid = (sq_addr_done[sq_head] 
+401                     						& ((rob_head == sq_rob_nums[sq_head]) | 
+402                     							((rob_head_plus1 == sq_rob_nums[sq_head]) & retire1_valid)));
+403                     	
+404                     	assign lsq2mem_command = sq_issue_valid ? BUS_STORE	: 
+405                     							 lq_issue_valid ? BUS_LOAD	: BUS_NONE;
+406                     	assign lsq2mem_addr = sq_issue_valid ? sq_dest_addr[sq_head]		:
+407                     						  lq_issue_valid ? lq_dest_addr[lq_issue_idx]	: 0;
+408                     	assign lsq2mem_data = sq_issue_valid ? sq_value[sq_head] : 0;
+409                     
+410                     	
+411                     	assign sq_head_plus1 = (sq_head == (`LSQ_SIZE-1)) ? 0 : (sq_head+1);
+412                     	//assign sq_head_plus2 = (sq_head_plus1 == (`LSQ_SIZE-1)) ? 0 : (sq_head_plus1+1);
+413                     	assign sq_tail_plus1 = (sq_tail == (`LSQ_SIZE-1)) ? 0 : (sq_tail+1);
+414                     	assign sq_tail_plus2 = (sq_tail_plus1 == (`LSQ_SIZE-1)) ? 0 : (sq_tail_plus1+1);
+415                     	// if two stores, tail+2, one store, tail+1
+416                     	assign sq_tail_nxt = (id_dispatch_packet1.wr_mem & id_dispatch_packet1.valid 
+417                     						& id_dispatch_packet2.wr_mem & id_dispatch_packet2.valid) ? sq_tail_plus2 :
+418                     						((id_dispatch_packet1.wr_mem & id_dispatch_packet1.valid)
+419                     						| (id_dispatch_packet2.wr_mem & id_dispatch_packet2.valid)) ? sq_tail_plus1 : sq_tail;
+420                     	assign sq_tail_nxt_plus1 = (sq_tail_nxt != (`LSQ_SIZE-1)) ? 0 : (sq_tail_nxt+1);
+421                     																					
+422                     	assign sq_head_nxt = sq_issue_valid ? sq_head_plus1 : sq_head;
+423                     	assign full = (lq_full > sq_full) ? lq_full : sq_full;
+424                     	
+425                     	always_comb begin
+426        1/1          		lq_valid_next = lq_valid;
+427        1/1          		lq_dest_addr_next = lq_dest_addr;
+428        1/1          		lq_dest_regs_next = lq_dest_regs;
+429        1/1          		lq_addr_valid_next = lq_addr_valid;
+430        1/1          		lq_need_mem_next = lq_need_mem;
+431        1/1          		lq_need_store_next = lq_need_store;
+432        1/1          		lq_done_next = lq_done;
+433        1/1          		lq_brat_vec_next = lq_brat_vec;
+434        1/1          		lq_rob_nums_next = lq_rob_nums;
+435        1/1          		lq_value_next = lq_value;
+436        1/1          		lq_age_next = lq_age;
+437        1/1          		sq_valid_nxt = sq_valid;
+438        1/1          		sq_dest_addr_nxt =  sq_dest_addr;
+439        1/1          		sq_addr_done_nxt = sq_addr_done;
+440        1/1          		sq_brat_vec_nxt = sq_brat_vec;
+441        1/1          		sq_done_nxt = sq_done;
+442        1/1          		sq_value_nxt = sq_value;
+443        1/1          		sq_rob_nums_nxt = sq_rob_nums;
+444        1/1          		map_lsq_num_next = map_lsq_num;
+445        1/1          		map_valid_next = map_valid;
+446        1/1          		lq_tags_next = lq_tags;
+447        1/1          		lq_issued_next = lq_issued;
+448                     		// Squash mispredicted inst(s)
+449        1/1          		if (brat_en) begin
+450        0/1     ==>  			for (int i=0; i<`LSQ_SIZE; i++) begin
+451        0/1     ==>  				if (lq_valid[i] && lq_brat_vec[i] > brat_mis) begin
+452        0/1     ==>  					lq_valid_next[i] = 0;
+453        0/1     ==>  					map_valid_next[lq_tags_next[i]] = 0;
+454                     				end
+                   ==>  MISSING_ELSE
+455        0/1     ==>  				if (sq_valid[i] && sq_brat_vec[i] > brat_mis) begin
+456        0/1     ==>  					sq_valid_nxt[i] = 0;
+457                     				end
+                   ==>  MISSING_ELSE
+458                     			end
+459                     		end
+                        MISSING_ELSE
+460                     		// Update brat_vec for correctly predicted branches
+461        1/1          		if (c_valid1) begin
+462        0/1     ==>              for (int i=0; i< `LSQ_SIZE; i++) begin
+463        0/1     ==>                  if (lq_valid[i]) begin
+464        0/1     ==>                      lq_brat_vec_next[i] = lq_brat_vec[i] - (1<<correct_index1) + (lq_brat_vec[i] & ((1<<correct_index1)-1'b1));
+465        0/1     ==>                      if (c_valid2)
+466        0/1     ==>                          lq_brat_vec_next[i] = lq_brat_vec_next[i] - (1<<correct_index2) + (lq_brat_vec_next[i] & ((1<<correct_index2)-1'b1));
+                   ==>  MISSING_ELSE
+467                                     end
+                   ==>  MISSING_ELSE
+468        0/1     ==>  				if (sq_valid[i]) begin
+469        0/1     ==>                      sq_brat_vec_nxt[i] = sq_brat_vec[i] - (1<<correct_index1) + (sq_brat_vec[i] & ((1<<correct_index1)-1'b1));
+470        0/1     ==>                      if (c_valid2)
+471        0/1     ==>                          sq_brat_vec_nxt[i] = sq_brat_vec_nxt[i] - (1<<correct_index2) + (sq_brat_vec_nxt[i] & ((1<<correct_index2)-1'b1));
+                   ==>  MISSING_ELSE
+472                                     end
+                   ==>  MISSING_ELSE
+473                                 end
+474                             end
+475        1/1                  else if (c_valid2) begin
+476        0/1     ==>              for (int i=0; i< `LSQ_SIZE; i++) begin
+477        0/1     ==>                  if (lq_valid[i]) begin
+478        0/1     ==>                      lq_brat_vec_next[i] = lq_brat_vec[i]- (1<<correct_index2) + (lq_brat_vec[i] & ((1<<correct_index2)-1'b1));
+479                                     end
+                   ==>  MISSING_ELSE
+480        0/1     ==>  				if (sq_valid[i]) begin
+481        0/1     ==>                      sq_brat_vec_nxt[i] = sq_brat_vec[i]- (1<<correct_index2) + (sq_brat_vec[i] & ((1<<correct_index2)-1'b1));
+482                                     end
+                   ==>  MISSING_ELSE
+483                                 end
+484                             end
+                        MISSING_ELSE
+485                     		// Add new inst(s) only when no misprediction
+486        1/1          		if (!brat_en) begin
+487        1/1          			if (id_dispatch_packet1.valid) begin
+488        1/1          				if (id_dispatch_packet1.rd_mem) begin
+489        1/1          					lq_valid_next[lq_empty_idx1] = 1;
+490        1/1          					lq_dest_addr_next[lq_empty_idx1] = 0;
+491        1/1          					lq_dest_regs_next[lq_empty_idx1] = dest_phy_reg1;
+492        1/1          					lq_addr_valid_next[lq_empty_idx1] = 0;
+493        1/1          					lq_need_mem_next[lq_empty_idx1] = 0;
+494        1/1          					lq_need_store_next[lq_empty_idx1] = 0;
+495        1/1          					lq_done_next[lq_empty_idx1] = 0;
+496        1/1          					lq_brat_vec_next[lq_empty_idx1] = id_dispatch_packet1.brat_vec;
+497        1/1          					lq_rob_nums_next[lq_empty_idx1] = rob_tail;
+498        1/1          					lq_age_next[lq_empty_idx1] = sq_tail;
+499        1/1          					lq_value_next[lq_empty_idx1] = 0;
+500        1/1          					lq_tags_next[lq_empty_idx1] = 0;
+501        1/1          					lq_issued_next[lq_empty_idx1] = 0;
+502                     				end
+503        1/1          				else if (id_dispatch_packet1.wr_mem) begin
+504        1/1          					sq_dest_addr_nxt[sq_tail] = 0;
+505        1/1          					sq_valid_nxt[sq_tail] = 1;
+506        1/1          					sq_addr_done_nxt[sq_tail] = 0;
+507        1/1          					sq_done_nxt[sq_tail] = 0;
+508        1/1          					sq_brat_vec_nxt[sq_tail] = id_dispatch_packet1.brat_vec;
+509        1/1          					sq_value_nxt[sq_tail] = 0;
+510        1/1          					sq_rob_nums_nxt[sq_tail] = rob_tail;
+511                     				end
+                   ==>  MISSING_ELSE
+512                     			end
+                        MISSING_ELSE
+513        1/1          			if (id_dispatch_packet2.valid) begin
+514        1/1          				if (id_dispatch_packet2.rd_mem) begin
+515                     					// $display("inst2 with rob_tail_plus1:%d, %d", rob_tail_plus1,  $time);
+516        1/1          					lq_valid_next[lq_empty_idx2] = 1;
+517        1/1          					lq_dest_addr_next[lq_empty_idx2] = 0;
+518        1/1          					lq_dest_regs_next[lq_empty_idx2] = dest_phy_reg2;
+519        1/1          					lq_addr_valid_next[lq_empty_idx2] = 0;
+520        1/1          					lq_need_mem_next[lq_empty_idx2] = 0;
+521        1/1          					lq_need_store_next[lq_empty_idx2] = 0;
+522        1/1          					lq_done_next[lq_empty_idx2] = 0;
+523        1/1          					lq_brat_vec_next[lq_empty_idx2] = id_dispatch_packet2.brat_vec;
+524        1/1          					lq_rob_nums_next[lq_empty_idx2] = rob_tail_plus1;
+525        1/1          					lq_value_next[lq_empty_idx2] = 0;
+526        1/1          					lq_tags_next[lq_empty_idx2] = 0;
+527        1/1          					lq_issued_next[lq_empty_idx2] = 0;
+528        1/1          					if (id_dispatch_packet1.valid && id_dispatch_packet1.wr_mem)
+529        1/1          						lq_age_next[lq_empty_idx2] = sq_tail_plus1;
+530                     					else
+531        1/1          						lq_age_next[lq_empty_idx2] = sq_tail;
+532                     				end
+533        1/1          				else if (id_dispatch_packet2.wr_mem) begin
+534                     					// FIXED: if the first inst is also a store, put this one in tail+1, otherwise put on tail
+535        1/1          					if (id_dispatch_packet1.wr_mem) begin
+536        1/1          						sq_dest_addr_nxt[sq_tail_plus1] = 0;
+537        1/1          						sq_valid_nxt[sq_tail_plus1] = 1;
+538        1/1          						sq_addr_done_nxt[sq_tail_plus1] = 0;
+539        1/1          						sq_done_nxt[sq_tail_plus1] = 0;
+540        1/1          						sq_brat_vec_nxt[sq_tail_plus1] = id_dispatch_packet2.brat_vec;
+541        1/1          						sq_value_nxt[sq_tail_plus1] = 0;
+542        1/1          						sq_rob_nums_nxt[sq_tail_plus1] = rob_tail_plus1;
+543                     					end 
+544                     					else begin
+545        1/1          						sq_dest_addr_nxt[sq_tail] = 0;
+546        1/1          						sq_valid_nxt[sq_tail] = 1;
+547        1/1          						sq_addr_done_nxt[sq_tail] = 0;
+548        1/1          						sq_done_nxt[sq_tail] = 0;
+549        1/1          						sq_brat_vec_nxt[sq_tail] = id_dispatch_packet2.brat_vec;
+550        1/1          						sq_value_nxt[sq_tail] = 0;
+551        1/1          						sq_rob_nums_nxt[sq_tail] = rob_tail_plus1;
+552                     					end
+553                     				end
+                   ==>  MISSING_ELSE
+554                     			end
+                        MISSING_ELSE
+555                     		end
+                   ==>  MISSING_ELSE
+556                     		// CDB broadcast address for LOAD STORE and value for STORE
+557        1/1          		if (cdb1_valid) begin
+558        1/1          			for (int i=0; i<`LSQ_SIZE; i++) begin
+559        1/1          				if (lq_valid[i] && lq_rob_nums[i] == cdb1_tag) begin
+560        1/1          					lq_dest_addr_next[i] = cdb1_data;
+561        1/1          					lq_addr_valid_next[i] = 1;
+562                     					// whether we need this break can be tested
+563        1/1          					break;
+564                     				end
+565        1/1          				else if (sq_valid[i] && sq_rob_nums[i] == cdb1_tag) begin
+566        1/1          					sq_dest_addr_nxt[i] = cdb1_data;
+567        1/1          					sq_addr_done_nxt[i] = 1;
+568        1/1          					sq_done_nxt[i] = 1;
+569        1/1          					sq_value_nxt[i] = cdb1_pkt.rs2_value;
+570        1/1          					break;
+571                     				end
+                        MISSING_ELSE
+572                     			end
+573                     		end
+                        MISSING_ELSE
+574        1/1          		if (cdb2_valid) begin
+575        1/1          			for (int i=0; i<`LSQ_SIZE; i++) begin
+576        1/1          				if (lq_valid[i] && lq_rob_nums[i] == cdb2_tag) begin
+577        1/1          					lq_dest_addr_next[i] = cdb2_data;
+578        1/1          					lq_addr_valid_next[i] = 1;
+579        1/1          					break;
+580                     				end
+581        1/1          				else if (sq_valid[i] && sq_rob_nums[i] == cdb2_tag) begin
+582        1/1          					sq_dest_addr_nxt[i] = cdb2_data;
+583        1/1          					sq_addr_done_nxt[i] = 1;
+584        1/1          					sq_done_nxt[i] = 1;
+585        1/1          					sq_value_nxt[i] = cdb2_pkt.rs2_value;
+586        1/1          					break;
+587                     				end
+                        MISSING_ELSE
+588                     			end
+589                     		end
+                        MISSING_ELSE
+590                     		// if issuing a load this cycle, make issue valid for next cycle
+591        1/1          		if (lq_issue_valid)
+592        1/1          			lq_issued_next[lq_issue_idx] = 1;
+                        MISSING_ELSE
+593                     		// Response from DCACHE dcache2lsq_valid indicates cache hit
+594        1/1          		if (dcache2lsq_valid && lq_issue_valid) begin
+595                     			// DCACHE hit
+596        1/1          			lq_value_next[lq_issue_idx] = dcache2lsq_data;
+597        1/1          			lq_done_next[lq_issue_idx] = 1;
+598                     		end
+599        1/1          		else if ((!dcache2lsq_valid) && lq_issue_valid) begin
+600                     			// DCACHE miss
+601        1/1          			map_valid_next[dcache2lsq_tag] = 1;
+602        1/1          			map_lsq_num_next[dcache2lsq_tag] = lq_issue_idx;
+603        1/1          			lq_tags_next[lq_issue_idx] = dcache2lsq_tag;
+604                     		end
+                        MISSING_ELSE
+605        1/1          		if (mem2lsq_valid && map_valid[mem2lsq_tag]) begin
+606                     			// MEM response for missed DCACHE request
+607        1/1          			lq_value_next[map_lsq_num[mem2lsq_tag]] = mem2lsq_data;
+608        1/1          			lq_done_next[map_lsq_num[mem2lsq_tag]] = 1;
+609        1/1          			map_valid_next[mem2lsq_tag] = 0;
+610                     		end
+                        MISSING_ELSE
+611                     		// Check dependencies for each LOAD inst
+612                     		// Find out the number of calculated store addresses until hitting the first unresolved address
+613        1/1          		sq_completed_num = 0;
+614        1/1          		for (int i=0; i<`LSQ_SIZE; i++) begin
+615        1/1          			if (sq_valid_nxt[sq_head+i] & sq_addr_done_nxt[sq_head+i])
+616        1/1          				sq_completed_num += 1;
+617                     			else
+618        1/1          				break;
+619                     		end
+620                     		// $display("sq head: %d, sq_tail:%d", sq_head, sq_tail);
+621                     		// $display("sq valid next: %b", sq_valid_nxt);
+622                     		// $display("sq completed num: %d, %d", sq_completed_num, $time);
+623                     		// For each load, first calculate the total number of comparing needed
+624                     		// If the number is larger than the sq_completed_num, it means there is not resolved but potentially matching address
+625                     		// Therefore the comparison will be useless, so, stop it.
+626                     		// If comparison is necessary, start from sq head and stop at sq_head + test_num.
+627                     		// Notice, addr and addr_done refer to next cycle since internal forwarding of same-cycle completed store is needed.
+628                     		// Valid refer to this cycle because retiring sq will be invalid but still need to compare.
+629                     		// lq_value is newly added to store value from sq. An alternative is to use lq_addr if data_size = addr_size
+630        1/1          		for (int i=0; i<`LSQ_SIZE; i++) begin
+631        1/1          			sq_total_test_num = 0;
+632        1/1          			sq_total_test_num = (lq_age[i] > sq_head) ? (lq_age[i] - sq_head) : (`LSQ_SIZE - (sq_head - lq_age[i]));
+633                     			// FIXED: should only consider loads that their addr has resolved (Problem: should we use lq_addr_valid_next here to forward?)
+634        1/1          			if (lq_valid[i] && lq_addr_valid_next[i] && (sq_total_test_num <= sq_completed_num)) begin	
+635                     				// $display("total test num for lq idx: %d, %d, %d", i, sq_total_test_num, $time);
+636        1/1          				for (int j=0; j<`LSQ_SIZE; j++) begin
+637        1/1          					if (j<sq_total_test_num) begin
+638        1/1          						if (sq_valid[sq_head+j] && sq_addr_done_nxt[sq_head+j] && (sq_dest_addr_nxt[sq_head+j]==lq_dest_addr_next[i])) begin
+639        1/1          							lq_need_store_next[i] = 1;
+640        1/1          							lq_value_next[i] = sq_value_nxt[sq_head+j];
+641        1/1          							lq_done_next[i] = 1;
+642                     						end
+                        MISSING_ELSE
+643                     					end 
+                        MISSING_ELSE
+644                     				end
+645        1/1          				if (!lq_done_next[i]) begin
+646        1/1          					lq_need_mem_next[i] = 1;
+647                     				end
+                        MISSING_ELSE
+648                     			end
+                        MISSING_ELSE
+649                     		end
+650                     
+651                     		// Moved clear logic to the end, since there are load comparison logic that need to perform before invalidation
+652                     		// Clear issued inst(s)
+653        1/1          		if (ld_commit_pkt1.valid) begin
+654                     			// we can not just clear the issued load because we have to wait for dcache & memory responses
+655                     			// we can clear the committed loads for sure, FIXED: need to invalidate all the control bits
+656        1/1          			lq_valid_next[lq_commit_idx1] = 0;
+657        1/1          			lq_addr_valid_next[lq_commit_idx1] = 0;
+658        1/1          			lq_need_mem_next[lq_commit_idx1] = 0;
+659        1/1          			lq_done_next[lq_commit_idx1] = 0;
+660                     		end
+                        MISSING_ELSE
+661        1/1          		if (ld_commit_pkt2.valid) begin
+662        1/1          			lq_valid_next[lq_commit_idx2] = 0;
+663        1/1          			lq_addr_valid_next[lq_commit_idx2] = 0;
+664        1/1          			lq_need_mem_next[lq_commit_idx2] = 0;
+665        1/1          			lq_done_next[lq_commit_idx2] = 0;
+666                     		end
+                        MISSING_ELSE
+667        1/1          		if (sq_issue_valid) begin
+668        1/1          			sq_valid_nxt[sq_head] = 0;
+669                     		end
+                        MISSING_ELSE
+670                     	end
+671                     
+672                     	// lq sequential logic
+673                     	// synopsys sync_set_reset "reset"
+674                     	always_ff @(posedge clock) begin
+675        1/1          		if (reset) begin
+676        1/1          			lq_valid		<= `SD 0;
+677        1/1          			lq_dest_addr	<= `SD 0;
+678        1/1          			lq_dest_regs    <= `SD 0;
+679        1/1          			lq_addr_valid   <= `SD 0;
+680        1/1          			lq_need_mem		<= `SD 0;
+681        1/1          			lq_need_store	<= `SD 0;
+682        1/1          			lq_done			<= `SD 0;
+683        1/1          			lq_brat_vec		<= `SD 0;
+684        1/1          			lq_rob_nums     <= `SD 0;
+685        1/1          			lq_age          <= `SD 0;
+686        1/1          			lq_value		<= `SD 0;
+687        1/1          			lq_tags			<= `SD 0;
+688        1/1          			lq_issued		<= `SD 0;
+689        1/1          			map_lsq_num		<= `SD 0;
+690        1/1          			map_valid		<= `SD 0;
+691                     		end
+692                     		else begin
+693        1/1          			lq_valid 		<= `SD lq_valid_next;
+694        1/1          			lq_dest_addr	<= `SD lq_dest_addr_next;
+695        1/1          			lq_dest_regs	<= `SD lq_dest_regs_next;
+696        1/1          			lq_addr_valid	<= `SD lq_addr_valid_next;
+697        1/1          			lq_need_mem		<= `SD lq_need_mem_next;
+698        1/1          			lq_need_store	<= `SD lq_need_store_next;
+699        1/1          			lq_done			<= `SD lq_done_next;
+700        1/1          			lq_brat_vec 	<= `SD lq_brat_vec_next;
+701        1/1          			lq_rob_nums     <= `SD lq_rob_nums_next;
+702        1/1          			lq_age			<= `SD lq_age_next;
+703        1/1          			lq_value		<= `SD lq_value_next;
+704        1/1          			lq_tags			<= `SD lq_tags_next;
+705        1/1          			lq_issued		<= `SD lq_issued_next;
+706        1/1          			map_lsq_num		<= `SD map_lsq_num_next;
+707        1/1          			map_valid		<= `SD map_valid_next;
+708                     		end
+709                     	end
+710                     
+711                     
+712                     	// SQ sequential logic
+713                     	// synopsys sync_set_reset "reset"
+714                     	always_ff @(posedge clock) begin
+715        1/1          		if(reset) begin 
+716        1/1          			sq_head			<= `SD 0;
+717        1/1          			sq_tail			<= `SD 0;
+718        1/1          			sq_dest_addr	<= `SD 0;
+719        1/1          			sq_valid		<= `SD 0;
+720        1/1          			sq_addr_done	<= `SD 0;
+721        1/1          			sq_done			<= `SD 0;
+722        1/1          			sq_brat_vec		<= `SD 0;
+723        1/1          			sq_value		<= `SD 0;
+724        1/1          			sq_rob_nums		<= `SD 0;
+725                     		end
+726                     		else begin
+727        1/1          			sq_head			<= `SD sq_head_nxt;
+728        1/1          			sq_tail			<= `SD sq_tail_nxt;
+729        1/1          			sq_dest_addr	<= `SD sq_dest_addr_nxt;
+730        1/1          			sq_valid		<= `SD sq_valid_nxt;
+731        1/1          			sq_addr_done	<= `SD sq_addr_done_nxt;
+732        1/1          			sq_done			<= `SD sq_done_nxt;
+733        1/1          			sq_brat_vec		<= `SD sq_brat_vec_nxt;
+734        1/1          			sq_value		<= `SD sq_value_nxt;
+735        1/1          			sq_rob_nums		<= `SD sq_rob_nums_nxt;
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : lsq
+
+               Total   Covered  Percent
+Conditions         46       34    73.91
+Logical            46       34    73.91
+Non-Logical         0        0
+Event               0        0
+
+ LINE       528
+ EXPRESSION (id_dispatch_packet1.valid && id_dispatch_packet1.wr_mem)
+             ------------1------------    -------------2------------
+
+-1- -2- Status
+ 0   1  Not Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       594
+ EXPRESSION (dcache2lsq_valid && lq_issue_valid)
+             --------1-------    -------2------
+
+-1- -2- Status
+ 0   1  Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       599
+ EXPRESSION (((!dcache2lsq_valid)) && lq_issue_valid)
+             ----------1----------    -------2------
+
+-1- -2- Status
+ 0   1  Not Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       605
+ EXPRESSION (mem2lsq_valid && map_valid[mem2lsq_tag])
+             ------1------    -----------2----------
+
+-1- -2- Status
+ 0   1  Not Covered
+ 1   0  Covered
+ 1   1  Covered
+
+ LINE       304
+ EXPRESSION ((lq_cnt >= 4'h2) ? 2'b0 : ((lq_cnt > 4'b0) ? 2'b1 : 2'b10))
+             --------1-------
+
+-1- Status
+ 0  Not Covered
+ 1  Covered
+
+ LINE       304
+ SUB-EXPRESSION ((lq_cnt > 4'b0) ? 2'b1 : 2'b10)
+                 -------1-------
+
+-1- Status
+ 0  Not Covered
+ 1  Not Covered
+
+ LINE       307
+ EXPRESSION (sq_valid[sq_tail_nxt] ? 2'b10 : (sq_valid[sq_tail_nxt_plus1] ? 2'b1 : 2'b0))
+             ----------1----------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+ LINE       307
+ SUB-EXPRESSION (sq_valid[sq_tail_nxt_plus1] ? 2'b1 : 2'b0)
+                 -------------1-------------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       404
+ EXPRESSION (sq_issue_valid ? BUS_STORE : (lq_issue_valid ? BUS_LOAD : BUS_NONE))
+             -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       404
+ SUB-EXPRESSION (lq_issue_valid ? BUS_LOAD : BUS_NONE)
+                 -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       406
+ EXPRESSION (sq_issue_valid ? sq_dest_addr[sq_head] : (lq_issue_valid ? lq_dest_addr[lq_issue_idx] : 0))
+             -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       406
+ SUB-EXPRESSION (lq_issue_valid ? lq_dest_addr[lq_issue_idx] : 0)
+                 -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       408
+ EXPRESSION (sq_issue_valid ? sq_value[sq_head] : 0)
+             -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       411
+ EXPRESSION ((sq_head == ((1 << 3) - 1)) ? 0 : ((sq_head + 1)))
+             -------------1-------------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+ LINE       413
+ EXPRESSION ((sq_tail == ((1 << 3) - 1)) ? 0 : ((sq_tail + 1)))
+             -------------1-------------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+ LINE       414
+ EXPRESSION ((sq_tail_plus1 == ((1 << 3) - 1)) ? 0 : ((sq_tail_plus1 + 1)))
+             ----------------1----------------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+ LINE       416
+ EXPRESSION 
+ Number  Term
+      1  ((((id_dispatch_packet1.wr_mem & id_dispatch_packet1.valid) & id_dispatch_packet2.wr_mem) & id_dispatch_packet2.valid)) ? sq_tail_plus2 : ((((id_dispatch_packet1.wr_mem & id_dispatch_packet1.valid) | (id_dispatch_packet2.wr_mem & id_dispatch_packet2.valid))) ? sq_tail_plus1 : sq_tail))
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       416
+ SUB-EXPRESSION ((((id_dispatch_packet1.wr_mem & id_dispatch_packet1.valid) | (id_dispatch_packet2.wr_mem & id_dispatch_packet2.valid))) ? sq_tail_plus1 : sq_tail)
+                 -----------------------------------------------------------1-----------------------------------------------------------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       420
+ EXPRESSION ((sq_tail_nxt != ((1 << 3) - 1)) ? 0 : ((sq_tail_nxt + 1)))
+             ---------------1---------------
+
+-1- Status
+ 0  Not Covered
+ 1  Covered
+
+ LINE       422
+ EXPRESSION (sq_issue_valid ? sq_head_plus1 : sq_head)
+             -------1------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       423
+ EXPRESSION ((lq_full > sq_full) ? lq_full : sq_full)
+             ---------1---------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : lsq
+                Total Covered Percent 
+Totals          285   20      7.02    
+Total Bits      8946  464     5.19    
+Total Bits 0->1 4473  292     6.53    
+Total Bits 1->0 4473  172     3.85    
+
+                               
+Ports          235  12  5.11   
+Port Bits      5900 205 3.47   
+Port Bits 0->1 2950 137 4.64   
+Port Bits 1->0 2950 68  2.31   
+
+                                 
+Signals          50   8   16.00  
+Signal Bits      3046 259 8.50   
+Signal Bits 0->1 1523 155 10.18  
+Signal Bits 1->0 1523 104 6.83   
+
+Port Details
+                                       Toggle Toggle 1->0 Toggle 0->1 Direction 
+clock                                  Yes    Yes         Yes         INPUT     
+reset                                  No     Yes         No          INPUT     
+id_dispatch_packet1.rob_num[3:0]       No     No          No          INPUT     
+id_dispatch_packet1.brat_vec[3:0]      No     No          No          INPUT     
+id_dispatch_packet1.pred_taken         No     No          No          INPUT     
+id_dispatch_packet1.valid              Yes    Yes         Yes         INPUT     
+id_dispatch_packet1.csr_op             No     No          No          INPUT     
+id_dispatch_packet1.illegal            No     No          No          INPUT     
+id_dispatch_packet1.halt               No     No          No          INPUT     
+id_dispatch_packet1.uncond_branch      No     No          No          INPUT     
+id_dispatch_packet1.cond_branch        No     No          No          INPUT     
+id_dispatch_packet1.wr_mem             Yes    Yes         Yes         INPUT     
+id_dispatch_packet1.rd_mem             No     No          Yes         INPUT     
+id_dispatch_packet1.alu_func[4:0]      No     No          No          INPUT     
+id_dispatch_packet1.dest_phy_reg[5:0]  No     No          No          INPUT     
+id_dispatch_packet1.dest_reg_idx[4:0]  No     No          No          INPUT     
+id_dispatch_packet1.inst.j.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.j.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.j.f[7:0]      No     No          No          INPUT     
+id_dispatch_packet1.inst.j.s           No     No          No          INPUT     
+id_dispatch_packet1.inst.j.et[9:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.j.of          No     No          No          INPUT     
+id_dispatch_packet1.inst.u.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.u.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.u.imm[19:0]   No     No          No          INPUT     
+id_dispatch_packet1.inst.b.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.b.f           No     No          No          INPUT     
+id_dispatch_packet1.inst.b.et[3:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.b.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.b.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.b.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.b.s[5:0]      No     No          No          INPUT     
+id_dispatch_packet1.inst.b.of          No     No          No          INPUT     
+id_dispatch_packet1.inst.s.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.s.set[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.s.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.s.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.s.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.s.off[6:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.i.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.i.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.i.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.i.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.i.imm[11:0]   No     No          No          INPUT     
+id_dispatch_packet1.inst.r.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.r.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet1.inst.r.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.r.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.r.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet1.inst.r.funct7[6:0] No     No          No          INPUT     
+id_dispatch_packet1.inst.inst[31:0]    No     No          No          INPUT     
+id_dispatch_packet1.opb_select[3:0]    No     No          No          INPUT     
+id_dispatch_packet1.opa_select[1:0]    No     No          No          INPUT     
+id_dispatch_packet1.rs2_reg[4:0]       No     No          No          INPUT     
+id_dispatch_packet1.rs1_reg[4:0]       No     No          No          INPUT     
+id_dispatch_packet1.rs2_value[31:0]    No     No          No          INPUT     
+id_dispatch_packet1.rs1_value[31:0]    No     No          No          INPUT     
+id_dispatch_packet1.PC[31:0]           No     No          No          INPUT     
+id_dispatch_packet1.NPC[31:0]          No     No          No          INPUT     
+id_dispatch_packet2.rob_num[3:0]       No     No          No          INPUT     
+id_dispatch_packet2.brat_vec[3:0]      No     No          No          INPUT     
+id_dispatch_packet2.pred_taken         No     No          No          INPUT     
+id_dispatch_packet2.valid              Yes    Yes         Yes         INPUT     
+id_dispatch_packet2.csr_op             No     No          No          INPUT     
+id_dispatch_packet2.illegal            No     No          No          INPUT     
+id_dispatch_packet2.halt               No     No          No          INPUT     
+id_dispatch_packet2.uncond_branch      No     No          No          INPUT     
+id_dispatch_packet2.cond_branch        No     No          No          INPUT     
+id_dispatch_packet2.wr_mem             Yes    Yes         Yes         INPUT     
+id_dispatch_packet2.rd_mem             Yes    Yes         Yes         INPUT     
+id_dispatch_packet2.alu_func[4:0]      No     No          No          INPUT     
+id_dispatch_packet2.dest_phy_reg[5:0]  No     No          No          INPUT     
+id_dispatch_packet2.dest_reg_idx[4:0]  No     No          No          INPUT     
+id_dispatch_packet2.inst.j.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.j.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.j.f[7:0]      No     No          No          INPUT     
+id_dispatch_packet2.inst.j.s           No     No          No          INPUT     
+id_dispatch_packet2.inst.j.et[9:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.j.of          No     No          No          INPUT     
+id_dispatch_packet2.inst.u.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.u.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.u.imm[19:0]   No     No          No          INPUT     
+id_dispatch_packet2.inst.b.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.b.f           No     No          No          INPUT     
+id_dispatch_packet2.inst.b.et[3:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.b.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.b.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.b.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.b.s[5:0]      No     No          No          INPUT     
+id_dispatch_packet2.inst.b.of          No     No          No          INPUT     
+id_dispatch_packet2.inst.s.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.s.set[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.s.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.s.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.s.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.s.off[6:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.i.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.i.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.i.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.i.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.i.imm[11:0]   No     No          No          INPUT     
+id_dispatch_packet2.inst.r.opcode[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.r.rd[4:0]     No     No          No          INPUT     
+id_dispatch_packet2.inst.r.funct3[2:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.r.rs1[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.r.rs2[4:0]    No     No          No          INPUT     
+id_dispatch_packet2.inst.r.funct7[6:0] No     No          No          INPUT     
+id_dispatch_packet2.inst.inst[31:0]    No     No          No          INPUT     
+id_dispatch_packet2.opb_select[3:0]    No     No          No          INPUT     
+id_dispatch_packet2.opa_select[1:0]    No     No          No          INPUT     
+id_dispatch_packet2.rs2_reg[4:0]       No     No          No          INPUT     
+id_dispatch_packet2.rs1_reg[4:0]       No     No          No          INPUT     
+id_dispatch_packet2.rs2_value[31:0]    No     No          No          INPUT     
+id_dispatch_packet2.rs1_value[31:0]    No     No          No          INPUT     
+id_dispatch_packet2.PC[31:0]           No     No          No          INPUT     
+id_dispatch_packet2.NPC[31:0]          No     No          No          INPUT     
+dest_phy_reg1[5:0]                     No     No          No          INPUT     
+dest_phy_reg2[5:0]                     No     No          No          INPUT     
+rob_tail[0]                            No     No          No          INPUT     
+rob_tail[2:1]                          Yes    Yes         Yes         INPUT     
+rob_tail[3]                            No     No          No          INPUT     
+rob_tail_plus1[0]                      No     No          No          INPUT     
+rob_tail_plus1[2:1]                    Yes    Yes         Yes         INPUT     
+rob_tail_plus1[3]                      No     No          No          INPUT     
+rob_head[1:0]                          Yes    Yes         Yes         INPUT     
+rob_head[2]                            No     No          Yes         INPUT     
+rob_head[3]                            No     No          No          INPUT     
+rob_head_plus1[1:0]                    Yes    Yes         Yes         INPUT     
+rob_head_plus1[2]                      No     No          Yes         INPUT     
+rob_head_plus1[3]                      No     No          No          INPUT     
+retire1_valid                          No     No          No          INPUT     
+dcache2lsq_valid                       Yes    Yes         Yes         INPUT     
+dcache2lsq_tag[0]                      Yes    Yes         Yes         INPUT     
+dcache2lsq_tag[1]                      No     No          Yes         INPUT     
+dcache2lsq_tag[3:2]                    No     No          No          INPUT     
+dcache2lsq_data[3:0]                   No     No          No          INPUT     
+dcache2lsq_data[4]                     No     No          Yes         INPUT     
+dcache2lsq_data[31:5]                  No     No          No          INPUT     
+mem2lsq_valid                          No     Yes         No          INPUT     
+mem2lsq_tag[3:0]                       No     No          No          INPUT     
+mem2lsq_data[31:0]                     No     No          No          INPUT     
+brat_en                                No     No          No          INPUT     
+c_valid1                               No     No          No          INPUT     
+c_valid2                               No     No          No          INPUT     
+brat_mis[3:0]                          No     No          No          INPUT     
+correct_index1[1:0]                    No     No          No          INPUT     
+correct_index2[1:0]                    No     No          No          INPUT     
+cdb1_valid                             Yes    Yes         Yes         INPUT     
+cdb2_valid                             Yes    Yes         Yes         INPUT     
+cdb1_tag[1:0]                          Yes    Yes         Yes         INPUT     
+cdb1_tag[2]                            No     No          Yes         INPUT     
+cdb1_tag[3]                            No     No          No          INPUT     
+cdb2_tag[0]                            No     No          No          INPUT     
+cdb2_tag[2:1]                          No     No          Yes         INPUT     
+cdb2_tag[3]                            No     No          No          INPUT     
+cdb1_data[1:0]                         Yes    Yes         Yes         INPUT     
+cdb1_data[3:2]                         No     No          Yes         INPUT     
+cdb1_data[31:4]                        No     No          No          INPUT     
+cdb2_data[3:0]                         No     No          Yes         INPUT     
+cdb2_data[31:4]                        No     No          No          INPUT     
+cdb1_pkt.mem_size[2:0]                 No     No          No          INPUT     
+cdb1_pkt.valid                         No     No          No          INPUT     
+cdb1_pkt.csr_op                        No     No          No          INPUT     
+cdb1_pkt.illegal                       No     No          No          INPUT     
+cdb1_pkt.halt                          No     No          No          INPUT     
+cdb1_pkt.rob_num[3:0]                  No     No          No          INPUT     
+cdb1_pkt.dest_phy_reg[5:0]             No     No          No          INPUT     
+cdb1_pkt.wr_mem                        No     No          No          INPUT     
+cdb1_pkt.rd_mem                        No     No          No          INPUT     
+cdb1_pkt.rs2_value[0]                  No     No          No          INPUT     
+cdb1_pkt.rs2_value[1]                  No     No          Yes         INPUT     
+cdb1_pkt.rs2_value[31:2]               No     No          No          INPUT     
+cdb1_pkt.brat_vec[3:0]                 No     No          No          INPUT     
+cdb1_pkt.uncond_branch                 No     No          No          INPUT     
+cdb1_pkt.cond_branch                   No     No          No          INPUT     
+cdb1_pkt.take_branch                   No     No          No          INPUT     
+cdb1_pkt.NPC[31:0]                     No     No          No          INPUT     
+cdb1_pkt.result[31:0]                  No     No          No          INPUT     
+cdb2_pkt.mem_size[2:0]                 No     No          No          INPUT     
+cdb2_pkt.valid                         No     No          No          INPUT     
+cdb2_pkt.csr_op                        No     No          No          INPUT     
+cdb2_pkt.illegal                       No     No          No          INPUT     
+cdb2_pkt.halt                          No     No          No          INPUT     
+cdb2_pkt.rob_num[0]                    No     No          No          INPUT     
+cdb2_pkt.rob_num[1]                    No     No          Yes         INPUT     
+cdb2_pkt.rob_num[3:2]                  No     No          No          INPUT     
+cdb2_pkt.dest_phy_reg[5:0]             No     No          No          INPUT     
+cdb2_pkt.wr_mem                        No     No          No          INPUT     
+cdb2_pkt.rd_mem                        No     No          No          INPUT     
+cdb2_pkt.rs2_value[0]                  No     No          Yes         INPUT     
+cdb2_pkt.rs2_value[31:1]               No     No          No          INPUT     
+cdb2_pkt.brat_vec[3:0]                 No     No          No          INPUT     
+cdb2_pkt.uncond_branch                 No     No          No          INPUT     
+cdb2_pkt.cond_branch                   No     No          No          INPUT     
+cdb2_pkt.take_branch                   No     No          No          INPUT     
+cdb2_pkt.NPC[31:0]                     No     No          No          INPUT     
+cdb2_pkt.result[31:0]                  No     No          No          INPUT     
+ld_commit_pkt1.mem_size[2:0]           No     No          No          OUTPUT    
+ld_commit_pkt1.valid                   Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt1.csr_op                  No     No          No          OUTPUT    
+ld_commit_pkt1.illegal                 No     No          No          OUTPUT    
+ld_commit_pkt1.halt                    No     No          No          OUTPUT    
+ld_commit_pkt1.rob_num[2:0]            Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt1.rob_num[3]              No     No          No          OUTPUT    
+ld_commit_pkt1.dest_phy_reg[5:0]       No     No          No          OUTPUT    
+ld_commit_pkt1.wr_mem                  No     No          No          OUTPUT    
+ld_commit_pkt1.rd_mem                  No     No          No          OUTPUT    
+ld_commit_pkt1.rs2_value[31:0]         No     No          No          OUTPUT    
+ld_commit_pkt1.brat_vec[3:0]           No     No          No          OUTPUT    
+ld_commit_pkt1.uncond_branch           No     No          No          OUTPUT    
+ld_commit_pkt1.cond_branch             No     No          No          OUTPUT    
+ld_commit_pkt1.take_branch             No     No          No          OUTPUT    
+ld_commit_pkt1.NPC[31:0]               No     No          No          OUTPUT    
+ld_commit_pkt1.result[0]               Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt1.result[2:1]             No     No          No          OUTPUT    
+ld_commit_pkt1.result[3]               Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt1.result[31:4]            No     No          No          OUTPUT    
+ld_commit_pkt2.mem_size[2:0]           No     No          No          OUTPUT    
+ld_commit_pkt2.valid                   Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt2.csr_op                  No     No          No          OUTPUT    
+ld_commit_pkt2.illegal                 No     No          No          OUTPUT    
+ld_commit_pkt2.halt                    No     No          No          OUTPUT    
+ld_commit_pkt2.rob_num[2:0]            Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt2.rob_num[3]              No     No          No          OUTPUT    
+ld_commit_pkt2.dest_phy_reg[5:0]       No     No          No          OUTPUT    
+ld_commit_pkt2.wr_mem                  No     No          No          OUTPUT    
+ld_commit_pkt2.rd_mem                  No     No          No          OUTPUT    
+ld_commit_pkt2.rs2_value[31:0]         No     No          No          OUTPUT    
+ld_commit_pkt2.brat_vec[3:0]           No     No          No          OUTPUT    
+ld_commit_pkt2.uncond_branch           No     No          No          OUTPUT    
+ld_commit_pkt2.cond_branch             No     No          No          OUTPUT    
+ld_commit_pkt2.take_branch             No     No          No          OUTPUT    
+ld_commit_pkt2.NPC[31:0]               No     No          No          OUTPUT    
+ld_commit_pkt2.result[0]               Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt2.result[3:1]             No     No          No          OUTPUT    
+ld_commit_pkt2.result[4]               Yes    Yes         Yes         OUTPUT    
+ld_commit_pkt2.result[31:5]            No     No          No          OUTPUT    
+lsq2mem_command[1:0]                   Yes    Yes         Yes         OUTPUT    
+lsq2mem_addr[3:0]                      Yes    Yes         Yes         OUTPUT    
+lsq2mem_addr[31:4]                     No     No          No          OUTPUT    
+lsq2mem_data[1:0]                      Yes    Yes         Yes         OUTPUT    
+lsq2mem_data[31:2]                     No     No          No          OUTPUT    
+full[0]                                Yes    Yes         Yes         OUTPUT    
+full[1]                                No     No          No          OUTPUT    
+lq_valid[0]                            Yes    Yes         Yes         OUTPUT    
+lq_valid[4:1]                          No     No          No          OUTPUT    
+lq_valid[5]                            No     No          Yes         OUTPUT    
+lq_valid[7:6]                          Yes    Yes         Yes         OUTPUT    
+lq_addr_valid[0]                       Yes    Yes         Yes         OUTPUT    
+lq_addr_valid[5:1]                     No     No          No          OUTPUT    
+lq_addr_valid[7:6]                     Yes    Yes         Yes         OUTPUT    
+lq_need_mem[5:0]                       No     No          No          OUTPUT    
+lq_need_mem[7:6]                       Yes    Yes         Yes         OUTPUT    
+lq_need_store[0]                       Yes    Yes         Yes         OUTPUT    
+lq_need_store[7:1]                     No     No          No          OUTPUT    
+lq_done[0]                             Yes    Yes         Yes         OUTPUT    
+lq_done[5:1]                           No     No          No          OUTPUT    
+lq_done[7:6]                           Yes    Yes         Yes         OUTPUT    
+lq_issued[5:0]                         No     No          No          OUTPUT    
+lq_issued[7:6]                         No     No          Yes         OUTPUT    
+lq_full[1:0]                           No     No          No          OUTPUT    
+sq_head[0]                             Yes    Yes         Yes         OUTPUT    
+sq_head[1]                             No     No          Yes         OUTPUT    
+sq_head[2]                             No     No          No          OUTPUT    
+sq_tail[1:0]                           Yes    Yes         Yes         OUTPUT    
+sq_tail[2]                             No     No          Yes         OUTPUT    
+sq_valid[2:0]                          Yes    Yes         Yes         OUTPUT    
+sq_valid[4:3]                          No     No          Yes         OUTPUT    
+sq_valid[7:5]                          No     No          No          OUTPUT    
+sq_addr_done[3:0]                      No     No          Yes         OUTPUT    
+sq_addr_done[7:4]                      No     No          No          OUTPUT    
+sq_done[3:0]                           No     No          Yes         OUTPUT    
+sq_done[7:4]                           No     No          No          OUTPUT    
+sq_full[0]                             Yes    Yes         Yes         OUTPUT    
+sq_full[1]                             No     No          No          OUTPUT    
+map_valid[0]                           No     No          No          OUTPUT    
+map_valid[1]                           Yes    Yes         Yes         OUTPUT    
+map_valid[15:2]                        No     No          No          OUTPUT    
+lq_dest_addr[6][3:0]                   No     No          Yes         OUTPUT    
+lq_dest_addr[7][2:0]                   No     No          Yes         OUTPUT    
+Other bits of lq_dest_addr[7:0][31:0]  No     No          No          OUTPUT    
+lq_dest_regs[7:0][5:0]                 No     No          No          OUTPUT    
+lq_brat_vec[7:0][3:0]                  No     No          No          OUTPUT    
+lq_rob_nums[0][0]                      No     No          Yes         OUTPUT    
+lq_rob_nums[0][1]                      Yes    Yes         Yes         OUTPUT    
+lq_rob_nums[6][2:1]                    No     No          Yes         OUTPUT    
+lq_rob_nums[7][2]                      No     No          Yes         OUTPUT    
+Other bits of lq_rob_nums[7:0][3:0]    No     No          No          OUTPUT    
+lq_age[0][0]                           No     No          Yes         OUTPUT    
+lq_age[0][1]                           Yes    Yes         Yes         OUTPUT    
+lq_age[0][2]                           No     No          Yes         OUTPUT    
+lq_age[5][0]                           No     No          Yes         OUTPUT    
+lq_age[5][2]                           No     No          Yes         OUTPUT    
+lq_age[6][2]                           No     No          Yes         OUTPUT    
+lq_age[7][1:0]                         No     No          Yes         OUTPUT    
+Other bits of lq_age[7:0][2:0]         No     No          No          OUTPUT    
+lq_value[0][0]                         Yes    Yes         Yes         OUTPUT    
+lq_value[6][4]                         No     No          Yes         OUTPUT    
+lq_value[7][3]                         No     No          Yes         OUTPUT    
+Other bits of lq_value[7:0][31:0]      No     No          No          OUTPUT    
+lq_tags[7][0]                          No     No          Yes         OUTPUT    
+Other bits of lq_tags[7:0][3:0]        No     No          No          OUTPUT    
+sq_dest_addr[0][0]                     No     No          Yes         OUTPUT    
+sq_dest_addr[3][0]                     No     No          Yes         OUTPUT    
+sq_dest_addr[3][3:2]                   No     No          Yes         OUTPUT    
+Other bits of sq_dest_addr[7:0][31:0]  No     No          No          OUTPUT    
+sq_value[0][1]                         No     No          Yes         OUTPUT    
+sq_value[1][1]                         No     No          Yes         OUTPUT    
+sq_value[2][0]                         No     No          Yes         OUTPUT    
+sq_value[3][1]                         No     No          Yes         OUTPUT    
+Other bits of sq_value[7:0][31:0]      No     No          No          OUTPUT    
+sq_brat_vec[7:0][3:0]                  No     No          No          OUTPUT    
+sq_rob_nums[1][0]                      No     No          Yes         OUTPUT    
+sq_rob_nums[2][1]                      No     No          Yes         OUTPUT    
+sq_rob_nums[3][0]                      No     No          Yes         OUTPUT    
+sq_rob_nums[3][2]                      No     No          Yes         OUTPUT    
+sq_rob_nums[4][2:0]                    No     No          Yes         OUTPUT    
+Other bits of sq_rob_nums[7:0][3:0]    No     No          No          OUTPUT    
+map_lsq_num[1][2:0]                    No     No          Yes         OUTPUT    
+Other bits of map_lsq_num[15:0][2:0]   No     No          No          OUTPUT    
+
+Signal Details
+                                           Toggle Toggle 1->0 Toggle 0->1 
+lq_valid_next[1:0]                         Yes    Yes         Yes         
+lq_valid_next[3:2]                         No     No          No          
+lq_valid_next[4]                           Yes    Yes         Yes         
+lq_valid_next[5]                           No     No          Yes         
+lq_valid_next[7:6]                         Yes    Yes         Yes         
+lq_dest_addr_next[6][3:0]                  No     No          Yes         
+lq_dest_addr_next[7][2:0]                  No     No          Yes         
+Other bits of lq_dest_addr_next[7:0][31:0] No     No          No          
+lq_dest_regs_next[7:0][5:0]                No     No          No          
+lq_addr_valid_next[0]                      Yes    Yes         Yes         
+lq_addr_valid_next[5:1]                    No     No          No          
+lq_addr_valid_next[7:6]                    Yes    Yes         Yes         
+lq_need_mem_next[5:0]                      No     No          No          
+lq_need_mem_next[7:6]                      Yes    Yes         Yes         
+lq_need_store_next[0]                      Yes    Yes         Yes         
+lq_need_store_next[7:1]                    No     No          No          
+lq_done_next[0]                            Yes    Yes         Yes         
+lq_done_next[5:1]                          No     No          No          
+lq_done_next[7:6]                          Yes    Yes         Yes         
+lq_brat_vec_next[7:0][3:0]                 No     No          No          
+lq_rob_nums_next[0][0]                     No     No          Yes         
+lq_rob_nums_next[0][1]                     Yes    Yes         Yes         
+lq_rob_nums_next[1][1:0]                   Yes    Yes         Yes         
+lq_rob_nums_next[5][2:1]                   Yes    Yes         Yes         
+lq_rob_nums_next[6][2:1]                   No     No          Yes         
+lq_rob_nums_next[7][2]                     No     No          Yes         
+Other bits of lq_rob_nums_next[7:0][3:0]   No     No          No          
+lq_age_next[0][0]                          No     No          Yes         
+lq_age_next[0][1]                          Yes    Yes         Yes         
+lq_age_next[0][2]                          No     No          Yes         
+lq_age_next[1][0]                          Yes    Yes         Yes         
+lq_age_next[1][2]                          Yes    Yes         Yes         
+lq_age_next[4][0]                          Yes    Yes         Yes         
+lq_age_next[4][2]                          Yes    Yes         Yes         
+lq_age_next[5][0]                          No     No          Yes         
+lq_age_next[5][2]                          No     No          Yes         
+lq_age_next[6][2]                          No     No          Yes         
+lq_age_next[7][1:0]                        No     No          Yes         
+Other bits of lq_age_next[7:0][2:0]        No     No          No          
+lq_value_next[0][0]                        Yes    Yes         Yes         
+lq_value_next[6][4]                        No     No          Yes         
+lq_value_next[7][3]                        No     No          Yes         
+Other bits of lq_value_next[7:0][31:0]     No     No          No          
+lq_tags_next[6][0]                         Yes    Yes         Yes         
+lq_tags_next[7][0]                         No     No          Yes         
+Other bits of lq_tags_next[7:0][3:0]       No     No          No          
+lq_issued_next[5:0]                        No     No          No          
+lq_issued_next[7:6]                        No     No          Yes         
+lq_empty_slots[0]                          Yes    Yes         Yes         
+lq_empty_slots[4:1]                        No     No          No          
+lq_empty_slots[5]                          No     Yes         No          
+lq_empty_slots[7:6]                        Yes    Yes         Yes         
+lq_issue_slots[5:0]                        No     No          No          
+lq_issue_slots[7:6]                        Yes    Yes         Yes         
+lq_empty_gnt[1:0]                          Yes    Yes         Yes         
+lq_empty_gnt[3:2]                          No     No          No          
+lq_empty_gnt[7:4]                          Yes    Yes         Yes         
+lq_issue_gnt[5:0]                          No     No          No          
+lq_issue_gnt[7:6]                          Yes    Yes         Yes         
+lq_empty_gnt_bus[3:0]                      No     No          No          
+lq_empty_gnt_bus[9:4]                      Yes    Yes         Yes         
+lq_empty_gnt_bus[15:10]                    No     No          No          
+lq_issue_gnt_bus[5:0]                      No     No          No          
+lq_issue_gnt_bus[7:6]                      Yes    Yes         Yes         
+lq_empty_none                              No     No          No          
+lq_issue_none                              Yes    Yes         Yes         
+lq_empty_idx1[1:0]                         Yes    Yes         Yes         
+lq_empty_idx1[2]                           No     No          No          
+lq_empty_idx2[0]                           Yes    Yes         Yes         
+lq_empty_idx2[2:1]                         No     No          No          
+lq_issue_idx[2:0]                          Yes    Yes         Yes         
+lq_cnt[2:0]                                Yes    Yes         Yes         
+lq_cnt[3]                                  No     Yes         No          
+lq_issue_valid                             Yes    Yes         Yes         
+lq_commit_gnt[0]                           Yes    Yes         Yes         
+lq_commit_gnt[5:1]                         No     No          No          
+lq_commit_gnt[7:6]                         Yes    Yes         Yes         
+lq_commit_gnt_bus[0]                       Yes    Yes         Yes         
+lq_commit_gnt_bus[6:1]                     No     No          No          
+lq_commit_gnt_bus[7]                       Yes    Yes         Yes         
+lq_commit_gnt_bus[13:8]                    No     No          No          
+lq_commit_gnt_bus[14]                      Yes    Yes         Yes         
+lq_commit_gnt_bus[15]                      No     No          No          
+lq_done_empty                              Yes    Yes         Yes         
+lq_commit_idx1[2:0]                        Yes    Yes         Yes         
+lq_commit_idx2[0]                          No     No          No          
+lq_commit_idx2[2:1]                        Yes    Yes         Yes         
+sq_head_nxt[0]                             Yes    Yes         Yes         
+sq_head_nxt[1]                             No     No          Yes         
+sq_head_nxt[2]                             No     No          No          
+sq_tail_nxt[2:0]                           Yes    Yes         Yes         
+sq_tail_nxt_plus1[2:0]                     No     No          No          
+sq_valid_nxt[3:0]                          Yes    Yes         Yes         
+sq_valid_nxt[4]                            No     No          Yes         
+sq_valid_nxt[5]                            Yes    Yes         Yes         
+sq_valid_nxt[7:6]                          No     No          No          
+sq_dest_addr_nxt[0][0]                     No     No          Yes         
+sq_dest_addr_nxt[3][0]                     No     No          Yes         
+sq_dest_addr_nxt[3][3:2]                   No     No          Yes         
+Other bits of sq_dest_addr_nxt[7:0][31:0]  No     No          No          
+sq_value_nxt[0][1]                         No     No          Yes         
+sq_value_nxt[1][1]                         No     No          Yes         
+sq_value_nxt[2][0]                         No     No          Yes         
+sq_value_nxt[3][1]                         No     No          Yes         
+Other bits of sq_value_nxt[7:0][31:0]      No     No          No          
+sq_addr_done_nxt[3:0]                      No     No          Yes         
+sq_addr_done_nxt[7:4]                      No     No          No          
+sq_done_nxt[3:0]                           No     No          Yes         
+sq_done_nxt[7:4]                           No     No          No          
+sq_brat_vec_nxt[7:0][3:0]                  No     No          No          
+sq_rob_nums_nxt[1][0]                      No     No          Yes         
+sq_rob_nums_nxt[2][1]                      No     No          Yes         
+sq_rob_nums_nxt[3][1:0]                    Yes    Yes         Yes         
+sq_rob_nums_nxt[3][2]                      No     No          Yes         
+sq_rob_nums_nxt[4][2:0]                    No     No          Yes         
+sq_rob_nums_nxt[5][2:0]                    Yes    Yes         Yes         
+Other bits of sq_rob_nums_nxt[7:0][3:0]    No     No          No          
+sq_tail_plus1[1:0]                         Yes    Yes         Yes         
+sq_tail_plus1[2]                           No     No          Yes         
+sq_tail_plus2[1:0]                         Yes    Yes         Yes         
+sq_tail_plus2[2]                           No     No          Yes         
+sq_head_plus1[1:0]                         Yes    Yes         Yes         
+sq_head_plus1[2]                           No     No          Yes         
+sq_head_plus2[2:0]                         No     No          No          
+sq_total_test_num[2:0]                     Yes    Yes         Yes         
+sq_completed_num[1:0]                      Yes    Yes         Yes         
+sq_completed_num[2]                        No     No          No          
+sq_issue_valid                             Yes    Yes         Yes         
+map_lsq_num_next[0][2:0]                   Yes    Yes         Yes         
+map_lsq_num_next[1][0]                     Yes    Yes         Yes         
+map_lsq_num_next[1][2:1]                   No     No          Yes         
+Other bits of map_lsq_num_next[15:0][2:0]  No     No          No          
+map_valid_next[1:0]                        Yes    Yes         Yes         
+map_valid_next[15:2]                       No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 56.75  91.15  73.91   5.19 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 57.58  91.15  73.91   7.68 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 56.75  91.15  73.91   5.19 lsq  
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME      
+ 50.80  98.14 --       3.46 testbench 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE NAME           
+ 45.45 --     --      45.45 lq_commit_enc1 
+ 27.27 --     --      27.27 lq_commit_enc2 
+ 27.33 --     --      27.33 lq_commit_sel  
+ 54.55 --     --      54.55 lq_empty_enc1  
+ 27.27 --     --      27.27 lq_empty_enc2  
+ 37.58 --     --      37.58 lq_empty_sel   
+ 45.45 --     --      45.45 lq_issue_enc   
+ 23.60 --     --      23.60 lq_issue_sel   
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : wand_sel
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 68.75 --     --      68.75 
+
+Source File(s) : 
+
+/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME                                                 
+ 25.00 --     --      25.00 testbench.load_store_queue.lq_issue_sel.foo[0].psel  
+ 31.25 --     --      31.25 testbench.load_store_queue.lq_commit_sel.foo[0].psel 
+ 31.25 --     --      31.25 testbench.load_store_queue.lq_commit_sel.foo[1].psel 
+ 34.38 --     --      34.38 testbench.load_store_queue.lq_empty_sel.foo[1].psel  
+ 46.88 --     --      46.88 testbench.load_store_queue.lq_empty_sel.foo[0].psel  
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : wand_sel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    44      68.75   
+Total Bits 0->1 32    20      62.50   
+Total Bits 1->0 32    24      75.00   
+
+                            
+Ports          2  0  0.00   
+Port Bits      32 22 68.75  
+Port Bits 0->1 16 10 62.50  
+Port Bits 1->0 16 12 75.00  
+
+                              
+Signals          2  0  0.00   
+Signal Bits      32 22 68.75  
+Signal Bits 0->1 16 10 62.50  
+Signal Bits 1->0 16 12 75.00  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[1:0] Yes    Yes         Yes         INPUT     
+req[2]   No     Yes         No          INPUT     
+req[4:3] No     No          No          INPUT     
+req[5]   No     Yes         No          INPUT     
+req[7:6] Yes    Yes         Yes         INPUT     
+gnt[1:0] Yes    Yes         Yes         OUTPUT    
+gnt[3:2] No     No          No          OUTPUT    
+gnt[7:4] Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[1:0] Yes    Yes         Yes         
+req_r[2]   No     Yes         No          
+req_r[4:3] No     No          No          
+req_r[5]   No     Yes         No          
+req_r[7:6] Yes    Yes         Yes         
+gnt_r[3:0] Yes    Yes         Yes         
+gnt_r[5:4] No     No          No          
+gnt_r[7:6] Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_issue_sel.foo[0].psel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 25.00 --     --      25.00 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 25.00 --     --      25.00 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 68.75 --     --      68.75 wand_sel 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME         
+ 22.81 --     --      22.81 lq_issue_sel 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_issue_sel.foo[0].psel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    16      25.00   
+Total Bits 0->1 32    8       25.00   
+Total Bits 1->0 32    8       25.00   
+
+                           
+Ports          2  0 0.00   
+Port Bits      32 8 25.00  
+Port Bits 0->1 16 4 25.00  
+Port Bits 1->0 16 4 25.00  
+
+                             
+Signals          2  0 0.00   
+Signal Bits      32 8 25.00  
+Signal Bits 0->1 16 4 25.00  
+Signal Bits 1->0 16 4 25.00  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[5:0] No     No          No          INPUT     
+req[7:6] Yes    Yes         Yes         INPUT     
+gnt[5:0] No     No          No          OUTPUT    
+gnt[7:6] Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[1:0] Yes    Yes         Yes         
+req_r[7:2] No     No          No          
+gnt_r[1:0] Yes    Yes         Yes         
+gnt_r[7:2] No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_commit_sel.foo[0].psel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 31.25 --     --      31.25 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 31.25 --     --      31.25 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 68.75 --     --      68.75 wand_sel 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME          
+ 24.74 --     --      24.74 lq_commit_sel 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_commit_sel.foo[0].psel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    20      31.25   
+Total Bits 0->1 32    10      31.25   
+Total Bits 1->0 32    10      31.25   
+
+                            
+Ports          2  0  0.00   
+Port Bits      32 10 31.25  
+Port Bits 0->1 16 5  31.25  
+Port Bits 1->0 16 5  31.25  
+
+                              
+Signals          2  0  0.00   
+Signal Bits      32 10 31.25  
+Signal Bits 0->1 16 5  31.25  
+Signal Bits 1->0 16 5  31.25  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[0]   Yes    Yes         Yes         INPUT     
+req[5:1] No     No          No          INPUT     
+req[7:6] Yes    Yes         Yes         INPUT     
+gnt[0]   Yes    Yes         Yes         OUTPUT    
+gnt[6:1] No     No          No          OUTPUT    
+gnt[7]   Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[1:0] Yes    Yes         Yes         
+req_r[6:2] No     No          No          
+req_r[7]   Yes    Yes         Yes         
+gnt_r[0]   Yes    Yes         Yes         
+gnt_r[6:1] No     No          No          
+gnt_r[7]   Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_commit_sel.foo[1].psel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 31.25 --     --      31.25 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 31.25 --     --      31.25 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 68.75 --     --      68.75 wand_sel 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME          
+ 24.74 --     --      24.74 lq_commit_sel 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_commit_sel.foo[1].psel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    20      31.25   
+Total Bits 0->1 32    10      31.25   
+Total Bits 1->0 32    10      31.25   
+
+                            
+Ports          2  0  0.00   
+Port Bits      32 10 31.25  
+Port Bits 0->1 16 5  31.25  
+Port Bits 1->0 16 5  31.25  
+
+                              
+Signals          2  0  0.00   
+Signal Bits      32 10 31.25  
+Signal Bits 0->1 16 5  31.25  
+Signal Bits 1->0 16 5  31.25  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[1:0] Yes    Yes         Yes         INPUT     
+req[6:2] No     No          No          INPUT     
+req[7]   Yes    Yes         Yes         INPUT     
+gnt[0]   No     No          No          OUTPUT    
+gnt[1]   Yes    Yes         Yes         OUTPUT    
+gnt[6:2] No     No          No          OUTPUT    
+gnt[7]   Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[0]   Yes    Yes         Yes         
+req_r[5:1] No     No          No          
+req_r[7:6] Yes    Yes         Yes         
+gnt_r[0]   Yes    Yes         Yes         
+gnt_r[5:1] No     No          No          
+gnt_r[6]   Yes    Yes         Yes         
+gnt_r[7]   No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_empty_sel.foo[1].psel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 34.38 --     --      34.38 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 34.38 --     --      34.38 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 68.75 --     --      68.75 wand_sel 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME         
+ 35.57 --     --      35.57 lq_empty_sel 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_empty_sel.foo[1].psel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    22      34.38   
+Total Bits 0->1 32    10      31.25   
+Total Bits 1->0 32    12      37.50   
+
+                            
+Ports          2  0  0.00   
+Port Bits      32 11 34.38  
+Port Bits 0->1 16 5  31.25  
+Port Bits 1->0 16 6  37.50  
+
+                              
+Signals          2  0  0.00   
+Signal Bits      32 11 34.38  
+Signal Bits 0->1 16 5  31.25  
+Signal Bits 1->0 16 6  37.50  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[1:0] Yes    Yes         Yes         INPUT     
+req[2]   No     Yes         No          INPUT     
+req[6:3] No     No          No          INPUT     
+req[7]   Yes    Yes         Yes         INPUT     
+gnt[5:0] No     No          No          OUTPUT    
+gnt[7:6] Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[0]   Yes    Yes         Yes         
+req_r[4:1] No     No          No          
+req_r[5]   No     Yes         No          
+req_r[7:6] Yes    Yes         Yes         
+gnt_r[1:0] Yes    Yes         Yes         
+gnt_r[7:2] No     No          No          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_empty_sel.foo[0].psel
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 46.88 --     --      46.88 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 46.88 --     --      46.88 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME     
+ 68.75 --     --      68.75 wand_sel 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME         
+ 35.57 --     --      35.57 lq_empty_sel 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_empty_sel.foo[0].psel
+                Total Covered Percent 
+Totals          4     0       0.00    
+Total Bits      64    30      46.88   
+Total Bits 0->1 32    14      43.75   
+Total Bits 1->0 32    16      50.00   
+
+                            
+Ports          2  0  0.00   
+Port Bits      32 15 46.88  
+Port Bits 0->1 16 7  43.75  
+Port Bits 1->0 16 8  50.00  
+
+                              
+Signals          2  0  0.00   
+Signal Bits      32 15 46.88  
+Signal Bits 0->1 16 7  43.75  
+Signal Bits 1->0 16 8  50.00  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+req[0]   Yes    Yes         Yes         INPUT     
+req[4:1] No     No          No          INPUT     
+req[5]   No     Yes         No          INPUT     
+req[7:6] Yes    Yes         Yes         INPUT     
+gnt[3:0] No     No          No          OUTPUT    
+gnt[7:4] Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+           Toggle Toggle 1->0 Toggle 0->1 
+req_r[1:0] Yes    Yes         Yes         
+req_r[2]   No     Yes         No          
+req_r[6:3] No     No          No          
+req_r[7]   Yes    Yes         Yes         
+gnt_r[3:0] Yes    Yes         Yes         
+gnt_r[7:4] No     No          No          
+
+
+===============================================================================
+Module : pe
+===============================================================================
+SCORE  LINE   COND   TOGGLE 
+ 81.82 --     --      81.82 
+
+Source File(s) : 
+
+/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE NAME                                      
+ 27.27 --     --      27.27 testbench.load_store_queue.lq_empty_enc2  
+ 27.27 --     --      27.27 testbench.load_store_queue.lq_commit_enc2 
+ 45.45 --     --      45.45 testbench.load_store_queue.lq_issue_enc   
+ 45.45 --     --      45.45 testbench.load_store_queue.lq_commit_enc1 
+ 54.55 --     --      54.55 testbench.load_store_queue.lq_empty_enc1  
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : pe
+                Total Covered Percent 
+Totals          2     1       50.00   
+Total Bits      22    18      81.82   
+Total Bits 0->1 11    9       81.82   
+Total Bits 1->0 11    9       81.82   
+
+                            
+Ports          2  1  50.00  
+Port Bits      22 18 81.82  
+Port Bits 0->1 11 9  81.82  
+Port Bits 1->0 11 9  81.82  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[1:0] Yes    Yes         Yes         INPUT     
+gnt[3:2] No     No          No          INPUT     
+gnt[7:4] Yes    Yes         Yes         INPUT     
+enc[2:0] Yes    Yes         Yes         OUTPUT    
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_empty_enc2
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 27.27 --     --      27.27 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 27.27 --     --      27.27 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 81.82 --     --      81.82 pe   
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_empty_enc2
+                Total Covered Percent 
+Totals          2     0       0.00    
+Total Bits      22    6       27.27   
+Total Bits 0->1 11    3       27.27   
+Total Bits 1->0 11    3       27.27   
+
+                           
+Ports          2  0 0.00   
+Port Bits      22 6 27.27  
+Port Bits 0->1 11 3 27.27  
+Port Bits 1->0 11 3 27.27  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[1:0] Yes    Yes         Yes         INPUT     
+gnt[7:2] No     No          No          INPUT     
+enc[0]   Yes    Yes         Yes         OUTPUT    
+enc[2:1] No     No          No          OUTPUT    
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_commit_enc2
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 27.27 --     --      27.27 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 27.27 --     --      27.27 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 81.82 --     --      81.82 pe   
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_commit_enc2
+                Total Covered Percent 
+Totals          2     0       0.00    
+Total Bits      22    6       27.27   
+Total Bits 0->1 11    3       27.27   
+Total Bits 1->0 11    3       27.27   
+
+                           
+Ports          2  0 0.00   
+Port Bits      22 6 27.27  
+Port Bits 0->1 11 3 27.27  
+Port Bits 1->0 11 3 27.27  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[5:0] No     No          No          INPUT     
+gnt[6]   Yes    Yes         Yes         INPUT     
+gnt[7]   No     No          No          INPUT     
+enc[0]   No     No          No          OUTPUT    
+enc[2:1] Yes    Yes         Yes         OUTPUT    
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_issue_enc
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 45.45 --     --      45.45 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 45.45 --     --      45.45 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 81.82 --     --      81.82 pe   
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_issue_enc
+                Total Covered Percent 
+Totals          2     1       50.00   
+Total Bits      22    10      45.45   
+Total Bits 0->1 11    5       45.45   
+Total Bits 1->0 11    5       45.45   
+
+                            
+Ports          2  1  50.00  
+Port Bits      22 10 45.45  
+Port Bits 0->1 11 5  45.45  
+Port Bits 1->0 11 5  45.45  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[5:0] No     No          No          INPUT     
+gnt[7:6] Yes    Yes         Yes         INPUT     
+enc[2:0] Yes    Yes         Yes         OUTPUT    
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_commit_enc1
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 45.45 --     --      45.45 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 45.45 --     --      45.45 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 81.82 --     --      81.82 pe   
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_commit_enc1
+                Total Covered Percent 
+Totals          2     1       50.00   
+Total Bits      22    10      45.45   
+Total Bits 0->1 11    5       45.45   
+Total Bits 1->0 11    5       45.45   
+
+                            
+Ports          2  1  50.00  
+Port Bits      22 10 45.45  
+Port Bits 0->1 11 5  45.45  
+Port Bits 1->0 11 5  45.45  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[0]   Yes    Yes         Yes         INPUT     
+gnt[6:1] No     No          No          INPUT     
+gnt[7]   Yes    Yes         Yes         INPUT     
+enc[2:0] Yes    Yes         Yes         OUTPUT    
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : testbench.load_store_queue.lq_empty_enc1
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE 
+ 54.55 --     --      54.55 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE 
+ 54.55 --     --      54.55 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE NAME 
+ 81.82 --     --      81.82 pe   
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE NAME             
+ 56.75  91.15  73.91   5.19 load_store_queue 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Instance : testbench.load_store_queue.lq_empty_enc1
+                Total Covered Percent 
+Totals          2     0       0.00    
+Total Bits      22    12      54.55   
+Total Bits 0->1 11    6       54.55   
+Total Bits 1->0 11    6       54.55   
+
+                            
+Ports          2  0  0.00   
+Port Bits      22 12 54.55  
+Port Bits 0->1 11 6  54.55  
+Port Bits 1->0 11 6  54.55  
+
+Port Details
+         Toggle Toggle 1->0 Toggle 0->1 Direction 
+gnt[3:0] No     No          No          INPUT     
+gnt[7:4] Yes    Yes         Yes         INPUT     
+enc[1:0] Yes    Yes         Yes         OUTPUT    
+enc[2]   No     No          No          OUTPUT    
+
+

@@ -1,0 +1,760 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#/***********************************************************/
+#/*   FILE        : rob.tcl                          */
+#/*   Description : Default Synopsys Design Compiler Script */
+#/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
+#/*   You'll need to minimally set design_name & read files */
+#/***********************************************************/
+#/***********************************************************/
+#/* The following five lines must be updated for every      */
+#/* new design                                              */
+#/***********************************************************/
+suppress_message {"UID-401"}
+suppress_message {"VER-130"}
+read_file -f sverilog [list "sys_defs.svh" "lsq.sv"]
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Loading sverilog files: '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/sys_defs.svh' '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/sys_defs.svh
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv
+Module 'pe' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'psel_gen' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'wand_sel' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:228: Redeclaration of port 'lq_valid'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:228: Port lq_valid is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:229: Redeclaration of port 'lq_dest_addr'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:229: Port lq_dest_addr is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:230: Redeclaration of port 'lq_dest_regs'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:230: Port lq_dest_regs is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:231: Redeclaration of port 'lq_addr_valid'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:231: Port lq_addr_valid is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:232: Redeclaration of port 'lq_need_mem'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:232: Port lq_need_mem is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:233: Redeclaration of port 'lq_need_store'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:233: Port lq_need_store is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:234: Redeclaration of port 'lq_done'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:234: Port lq_done is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:235: Redeclaration of port 'lq_brat_vec'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:235: Port lq_brat_vec is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:236: Redeclaration of port 'lq_rob_nums'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:236: Port lq_rob_nums is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:237: Redeclaration of port 'lq_age'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:237: Port lq_age is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:238: Redeclaration of port 'lq_value'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:238: Port lq_value is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:239: Redeclaration of port 'lq_tags'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:239: Port lq_tags is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:240: Redeclaration of port 'lq_issued'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:240: Port lq_issued is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:241: Redeclaration of port 'lq_full'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:241: Port lq_full is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:262: Redeclaration of port 'sq_head'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:262: Port sq_head is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:263: Redeclaration of port 'sq_tail'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:263: Port sq_tail is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:264: Redeclaration of port 'sq_valid'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:264: Port sq_valid is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:265: Redeclaration of port 'sq_dest_addr'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:265: Port sq_dest_addr is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:266: Redeclaration of port 'sq_value'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:266: Port sq_value is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:267: Redeclaration of port 'sq_addr_done'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:267: Port sq_addr_done is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:268: Redeclaration of port 'sq_done'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:268: Port sq_done is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:269: Redeclaration of port 'sq_brat_vec'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:269: Port sq_brat_vec is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:270: Redeclaration of port 'sq_full'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:270: Port sq_full is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:271: Redeclaration of port 'sq_rob_nums'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:271: Port sq_rob_nums is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:281: Redeclaration of port 'map_lsq_num'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:281: Port map_lsq_num is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:282: Redeclaration of port 'map_valid'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:282: Port map_valid is implicitly typed  (VER-987)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:411: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:413: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:414: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:420: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:464: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:466: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:469: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:471: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:478: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:481: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:615: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:615: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:632: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:640: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:638: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv:638: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine lsq line 674 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    map_valid_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    lq_valid_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  lq_dest_addr_reg   | Flip-flop |  256  |  Y  | N  | N  | N  | Y  | N  | N  |
+|  lq_dest_regs_reg   | Flip-flop |  48   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  lq_addr_valid_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   lq_need_mem_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  lq_need_store_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     lq_done_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   lq_brat_vec_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   lq_rob_nums_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     lq_age_reg      | Flip-flop |  24   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    lq_value_reg     | Flip-flop |  256  |  Y  | N  | N  | N  | Y  | N  | N  |
+|     lq_tags_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    lq_issued_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   map_lsq_num_reg   | Flip-flop |  48   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine lsq line 714 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sq_rob_nums_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     sq_head_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     sq_tail_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  sq_dest_addr_reg   | Flip-flop |  256  |  Y  | N  | N  | N  | Y  | N  | N  |
+|    sq_valid_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  sq_addr_done_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|     sq_done_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | Y  | N  | N  |
+|   sq_brat_vec_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    sq_value_reg     | Flip-flop |  256  |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|     lsq/307      |   8    |    1    |      3       |
+|     lsq/307      |   8    |    1    |      3       |
+|     lsq/362      |   8    |    8    |      3       |
+|     lsq/364      |   8    |    8    |      3       |
+|     lsq/366      |   8    |   32    |      3       |
+|     lsq/367      |   8    |   32    |      3       |
+|     lsq/370      |   8    |    6    |      3       |
+|     lsq/371      |   8    |    6    |      3       |
+|     lsq/397      |   8    |    4    |      3       |
+|     lsq/400      |   8    |    4    |      3       |
+|     lsq/400      |   8    |    4    |      3       |
+|     lsq/406      |   8    |   128   |      3       |
+|     lsq/406      |   8    |   32    |      3       |
+|     lsq/605      |   16   |    1    |      4       |
+|     lsq/607      |   16   |    3    |      4       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.db:lsq'
+Loaded 1 design.
+Current design is 'lsq'.
+lsq
+set design_name lsq
+lsq
+set clock_name clock
+clock
+set reset_name reset
+reset
+set CLK_PERIOD 8
+8
+#/***********************************************************/
+#/* The rest of this file may be left alone for most small  */
+#/* to moderate sized designs.  You may need to alter it    */
+#/* when synthesizing your final project.                   */
+#/***********************************************************/
+set SYN_DIR ./
+./
+set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+./ /afs/umich.edu/class/eecs470/lib/synopsys/
+set target_library "lec25dscc25_TT.db"
+lec25dscc25_TT.db
+set link_library [concat  "*" $target_library]
+* lec25dscc25_TT.db
+#/***********************************************************/
+#/* Set some flags for optimisation */
+set compile_top_all_paths "true"
+true
+set auto_wire_load_selection "false"
+false
+#/***********************************************************/
+#/*  Clk Periods/uncertainty/transition                     */
+set CLK_TRANSITION 0.1
+0.1
+set CLK_UNCERTAINTY 0.1
+0.1
+set CLK_LATENCY 0.1
+0.1
+#/* Input/output Delay values */
+set AVG_INPUT_DELAY 0.1
+0.1
+set AVG_OUTPUT_DELAY 0.1
+0.1
+#/* Critical Range (ns) */
+set CRIT_RANGE 1.0
+1.0
+#/***********************************************************/
+#/* Design Constrains: Not all used                         */
+set MAX_TRANSITION 1.0
+1.0
+set FAST_TRANSITION 0.1
+0.1
+set MAX_FANOUT 32
+32
+set MID_FANOUT 8
+8
+set LOW_FANOUT 1
+1
+set HIGH_DRIVE 0
+0
+set HIGH_LOAD 1.0
+1.0
+set AVG_LOAD 0.1
+0.1
+set AVG_FANOUT_LOAD 10
+10
+#/***********************************************************/
+#/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
+#BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
+set DRIVING_CELL dffacs1
+dffacs1
+#/* DONT_USE_LIST = {   } */
+#/*************operation cons**************/
+#/*OP_WCASE = WCCOM;
+#OP_BCASE = BCCOM;*/
+set WIRE_LOAD "tsmcwire"
+tsmcwire
+set LOGICLIB lec25dscc25_TT
+lec25dscc25_TT
+#/*****************************/
+#/* Sourcing the file that sets the Search path and the libraries(target,link) */
+set sys_clk $clock_name
+clock
+set netlist_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".vg"]
+./lsq.vg
+set ddc_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".ddc"]
+./lsq.ddc
+set rep_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".rep"]
+./lsq.rep
+set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".chk"] ]
+./lsq.chk
+#/* if we didnt find errors at this point, run */
+if {  $dc_shell_status != [list] } {
+   current_design $design_name
+  link
+  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+  set_wire_load_mode top
+  set_fix_multiple_port_nets -outputs -buffer_constants
+  create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
+  set_clock_uncertainty $CLK_UNCERTAINTY $sys_clk
+  set_fix_hold $sys_clk
+  group_path -from [all_inputs] -name input_grp
+  group_path -to [all_outputs] -name output_grp
+  set_driving_cell  -lib_cell $DRIVING_CELL [all_inputs]
+  remove_driving_cell [find port $sys_clk]
+  set_fanout_load $AVG_FANOUT_LOAD [all_outputs]
+  set_load $AVG_LOAD [all_outputs]
+  set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
+  remove_input_delay -clock $sys_clk [find port $sys_clk]
+  set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
+  set_dont_touch $reset_name
+  set_resistance 0 $reset_name
+  set_drive 0 $reset_name
+  set_critical_range $CRIT_RANGE [current_design]
+  set_max_delay $CLK_PERIOD [all_outputs]
+  set MAX_FANOUT $MAX_FANOUT
+  set MAX_TRANSITION $MAX_TRANSITION
+  uniquify
+  ungroup -all -flatten
+  redirect $chk_file { check_design }
+  compile -map_effort high
+  write -hier -format verilog -output $netlist_file $design_name
+  write -hier -format ddc -output $ddc_file $design_name
+  redirect $rep_file { report_design -nosplit }
+  redirect -append $rep_file { report_area }
+  redirect -append $rep_file { report_timing -max_paths 2 -input_pins -nets -transition_time -nosplit }
+  redirect -append $rep_file { report_constraint -max_delay -verbose -nosplit }
+  remove_design -all
+  read_file -format verilog $netlist_file
+  current_design $design_name
+  redirect -append $rep_file { report_reference -nosplit }
+  quit
+} else {
+   quit
+}
+Current design is 'lsq'.
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+  Linking design 'lsq'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  lsq                         /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.db
+  lec25dscc25_TT (library)    /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db
+
+Information: Building the design 'psel_gen' instantiated from design 'lsq' with
+	the parameters "REQS=2,WIDTH=8". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'pe' instantiated from design 'lsq' with
+	the parameters "OUT_WIDTH=3". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'psel_gen' instantiated from design 'lsq' with
+	the parameters "REQS=1,WIDTH=8". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'wand_sel' instantiated from design 'psel_gen_REQS2_WIDTH8' with
+	the parameters "8". (HDL-193)
+Presto compilation completed successfully.
+Current design is 'lsq'.
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Uniquified 2 instances of design 'psel_gen_REQS2_WIDTH8'. (OPT-1056)
+Information: Uniquified 5 instances of design 'pe_OUT_WIDTH3'. (OPT-1056)
+Information: Uniquified 5 instances of design 'wand_sel_WIDTH8'. (OPT-1056)
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Updating graph... (UID-83)
+Warning: Design 'lsq' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+
+Information: There are 981 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'lsq'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'lsq_DW01_cmp6_0'
+  Processing 'lsq_DW01_cmp6_1'
+  Processing 'lsq_DW01_cmp6_2'
+  Processing 'lsq_DW01_cmp6_3'
+  Processing 'lsq_DW01_cmp6_4'
+  Processing 'lsq_DW01_cmp6_5'
+  Processing 'lsq_DW01_cmp6_6'
+  Processing 'lsq_DW01_cmp6_7'
+  Processing 'lsq_DW01_cmp6_8'
+  Processing 'lsq_DW01_cmp6_9'
+  Processing 'lsq_DW01_cmp6_10'
+  Processing 'lsq_DW01_cmp6_11'
+  Processing 'lsq_DW01_cmp6_12'
+  Processing 'lsq_DW01_cmp6_13'
+  Processing 'lsq_DW01_cmp6_14'
+  Processing 'lsq_DW01_cmp6_15'
+  Processing 'lsq_DW01_cmp6_16'
+  Processing 'lsq_DW01_cmp6_17'
+  Processing 'lsq_DW01_cmp6_18'
+  Processing 'lsq_DW01_cmp6_19'
+  Processing 'lsq_DW01_cmp6_20'
+  Processing 'lsq_DW01_cmp6_21'
+  Processing 'lsq_DW01_cmp6_22'
+  Processing 'lsq_DW01_cmp6_23'
+  Processing 'lsq_DW01_cmp6_24'
+  Processing 'lsq_DW01_cmp6_25'
+  Processing 'lsq_DW01_cmp6_26'
+  Processing 'lsq_DW01_cmp6_27'
+  Processing 'lsq_DW01_cmp6_28'
+  Processing 'lsq_DW01_cmp6_29'
+  Processing 'lsq_DW01_cmp6_30'
+  Processing 'lsq_DW01_cmp6_31'
+  Processing 'lsq_DW01_cmp6_32'
+  Processing 'lsq_DW01_cmp6_33'
+  Processing 'lsq_DW01_cmp6_34'
+  Processing 'lsq_DW01_cmp6_35'
+  Processing 'lsq_DW01_cmp6_36'
+  Processing 'lsq_DW01_cmp6_37'
+  Processing 'lsq_DW01_cmp6_38'
+  Processing 'lsq_DW01_cmp6_39'
+  Processing 'lsq_DW01_cmp6_40'
+  Processing 'lsq_DW01_cmp6_41'
+  Processing 'lsq_DW01_cmp6_42'
+  Processing 'lsq_DW01_cmp6_43'
+  Processing 'lsq_DW01_cmp6_44'
+  Processing 'lsq_DW01_cmp6_45'
+  Processing 'lsq_DW01_cmp6_46'
+  Processing 'lsq_DW01_cmp6_47'
+  Processing 'lsq_DW01_cmp6_48'
+  Processing 'lsq_DW01_cmp6_49'
+  Processing 'lsq_DW01_cmp6_50'
+  Processing 'lsq_DW01_cmp6_51'
+  Processing 'lsq_DW01_cmp6_52'
+  Processing 'lsq_DW01_cmp6_53'
+  Processing 'lsq_DW01_cmp6_54'
+  Processing 'lsq_DW01_cmp6_55'
+  Processing 'lsq_DW01_cmp2_0'
+  Processing 'lsq_DW01_cmp2_1'
+  Processing 'lsq_DW01_cmp2_2'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_sub_width3'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:56 1117814.2   1188.89 1665231.5    9861.9                                0.00  
+    0:00:56 1117814.2   1188.89 1665231.5    9861.9                                0.00  
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:10 1540231.9      0.00       0.0      91.7                                0.00  
+    0:01:10 1540231.9      0.00       0.0      91.7                                0.00  
+    0:01:10 1540231.9      0.00       0.0      91.7                                0.00  
+    0:01:10 1540231.9      0.00       0.0      91.7                                0.00  
+    0:01:11 1540231.9      0.00       0.0      91.7                                0.00  
+    0:01:16 1036990.5      0.02       0.5      45.5                                0.00  
+    0:01:16 1030006.6      0.02       0.5      45.5                                0.00  
+    0:01:18 1030048.1      0.00       0.0      26.5                                0.00  
+    0:01:18 1029990.0      0.00       0.0      26.5                                0.00  
+    0:01:19 1029990.0      0.00       0.0      26.5                                0.00  
+    0:01:19 1029990.0      0.00       0.0      26.5                                0.00  
+    0:01:19 1029990.0      0.00       0.0      26.5                                0.00  
+    0:01:19 1029990.0      0.00       0.0      26.5                                0.00  
+    0:01:19 1030844.3      0.00       0.0      20.8                                0.00  
+    0:01:20 1031358.6      0.00       0.0      17.9                                0.00  
+    0:01:20 1031715.3      0.00       0.0      14.1                                0.00  
+    0:01:20 1032038.7      0.00       0.0      12.6                                0.00  
+    0:01:20 1032196.3      0.00       0.0      11.9                                0.00  
+    0:01:20 1032287.6      0.00       0.0      11.2                                0.00  
+    0:01:20 1032345.6      0.00       0.0      10.5                                0.00  
+    0:01:20 1032403.7      0.00       0.0       9.8                                0.00  
+    0:01:20 1032436.9      0.00       0.0       9.2                                0.00  
+    0:01:20 1032436.9      0.00       0.0       9.2                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:20 1032436.9      0.00       0.0       9.2                                0.00  
+    0:01:20 1032436.9      0.00       0.0       9.2                                0.00  
+    0:01:21 1030330.1      0.00       0.0      51.6                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:21 1030330.1      0.00       0.0      51.6                                0.00  
+    0:01:22 1031607.4      0.00       0.0      40.8 sq_rob_nums[4][2]              0.00  
+    0:01:23 1032088.5      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:23 1032088.5      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:23 1032088.5      0.00       0.0       0.0                                0.00  
+    0:01:23 1032088.5      0.00       0.0       0.0                                0.00  
+    0:01:24 1019190.7      0.00       0.0       0.0                                0.00  
+    0:01:25 1012240.0      0.00       0.0       0.0                                0.00  
+    0:01:26 1009784.9      0.00       0.0       0.0                                0.00  
+    0:01:27 1008913.9      0.00       0.0       0.0                                0.00  
+    0:01:27 1008250.4      0.00       0.0       0.0                                0.00  
+    0:01:27 1007752.7      0.00       0.0       0.0                                0.00  
+    0:01:28 1007321.4      0.00       0.0       0.0                                0.00  
+    0:01:28 1006890.1      0.00       0.0       0.0                                0.00  
+    0:01:28 1006790.6      0.00       0.0       0.0                                0.00  
+    0:01:28 1006691.0      0.00       0.0       0.0                                0.00  
+    0:01:29 1006591.5      0.00       0.0       0.0                                0.00  
+    0:01:29 1006492.0      0.00       0.0       0.0                                0.00  
+    0:01:29 1006392.5      0.00       0.0       0.0                                0.00  
+    0:01:29 1006292.9      0.00       0.0       0.0                                0.00  
+    0:01:29 1006259.7      0.00       0.0       0.0                                0.00  
+    0:01:29 1006226.6      0.00       0.0       0.0                                0.00  
+    0:01:29 1006226.6      0.00       0.0       0.0                                0.00  
+    0:01:30 1006226.6      0.00       0.0       0.0                                0.00  
+    0:01:30 1005090.2      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:30 1004717.0      0.00       0.0       0.0                                0.00  
+    0:01:30 1007371.2      0.00       0.0       0.0                                0.00  
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'lsq' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clock': 1398 load(s), 1 driver(s)
+Writing verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.vg'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Writing ddc file './lsq.ddc'.
+Removing design 'lsq'
+Removing design 'lsq_DW01_cmp6_0'
+Removing design 'lsq_DW01_cmp6_1'
+Removing design 'lsq_DW01_cmp6_2'
+Removing design 'lsq_DW01_cmp6_3'
+Removing design 'lsq_DW01_cmp6_4'
+Removing design 'lsq_DW01_cmp6_5'
+Removing design 'lsq_DW01_cmp6_6'
+Removing design 'lsq_DW01_cmp6_7'
+Removing design 'lsq_DW01_cmp6_8'
+Removing design 'lsq_DW01_cmp6_9'
+Removing design 'lsq_DW01_cmp6_10'
+Removing design 'lsq_DW01_cmp6_11'
+Removing design 'lsq_DW01_cmp6_12'
+Removing design 'lsq_DW01_cmp6_13'
+Removing design 'lsq_DW01_cmp6_14'
+Removing design 'lsq_DW01_cmp6_15'
+Removing design 'lsq_DW01_cmp6_16'
+Removing design 'lsq_DW01_cmp6_17'
+Removing design 'lsq_DW01_cmp6_18'
+Removing design 'lsq_DW01_cmp6_19'
+Removing design 'lsq_DW01_cmp6_20'
+Removing design 'lsq_DW01_cmp6_21'
+Removing design 'lsq_DW01_cmp6_22'
+Removing design 'lsq_DW01_cmp6_23'
+Removing design 'lsq_DW01_cmp6_24'
+Removing design 'lsq_DW01_cmp6_25'
+Removing design 'lsq_DW01_cmp6_26'
+Removing design 'lsq_DW01_cmp6_27'
+Removing design 'lsq_DW01_cmp6_28'
+Removing design 'lsq_DW01_cmp6_29'
+Removing design 'lsq_DW01_cmp6_30'
+Removing design 'lsq_DW01_cmp6_31'
+Removing design 'lsq_DW01_cmp6_32'
+Removing design 'lsq_DW01_cmp6_33'
+Removing design 'lsq_DW01_cmp6_34'
+Removing design 'lsq_DW01_cmp6_35'
+Removing design 'lsq_DW01_cmp6_36'
+Removing design 'lsq_DW01_cmp6_37'
+Removing design 'lsq_DW01_cmp6_38'
+Removing design 'lsq_DW01_cmp6_39'
+Removing design 'lsq_DW01_cmp6_40'
+Removing design 'lsq_DW01_cmp6_41'
+Removing design 'lsq_DW01_cmp6_42'
+Removing design 'lsq_DW01_cmp6_43'
+Removing design 'lsq_DW01_cmp6_44'
+Removing design 'lsq_DW01_cmp6_45'
+Removing design 'lsq_DW01_cmp6_46'
+Removing design 'lsq_DW01_cmp6_47'
+Removing design 'lsq_DW01_cmp6_48'
+Removing design 'lsq_DW01_cmp6_49'
+Removing design 'lsq_DW01_cmp6_50'
+Removing design 'lsq_DW01_cmp6_51'
+Removing design 'lsq_DW01_cmp6_52'
+Removing design 'lsq_DW01_cmp6_53'
+Removing design 'lsq_DW01_cmp6_54'
+Removing design 'lsq_DW01_cmp6_55'
+Removing library 'gtech'
+Removing library 'lec25dscc25_TT'
+Removing library 'standard.sldb'
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Loading verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.vg'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq.vg
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/LSQ/lsq_DW01_cmp6_0.db:lsq_DW01_cmp6_0'
+Loaded 57 designs.
+Current design is 'lsq_DW01_cmp6_0'.
+Current design is 'lsq'.
+
+Thank you...

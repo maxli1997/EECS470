@@ -1,0 +1,24 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Fri Mar 20 17:27:28 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     10
+    Feedthrough (LINT-29)                                          10
+--------------------------------------------------------------------------------
+
+Warning: In design 'rat', input port 'dest_reg1_in[4]' is connected directly to output port 'ar1_out[4]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg1_in[3]' is connected directly to output port 'ar1_out[3]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg1_in[2]' is connected directly to output port 'ar1_out[2]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg1_in[1]' is connected directly to output port 'ar1_out[1]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg1_in[0]' is connected directly to output port 'ar1_out[0]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg2_in[4]' is connected directly to output port 'ar2_out[4]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg2_in[3]' is connected directly to output port 'ar2_out[3]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg2_in[2]' is connected directly to output port 'ar2_out[2]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg2_in[1]' is connected directly to output port 'ar2_out[1]'. (LINT-29)
+Warning: In design 'rat', input port 'dest_reg2_in[0]' is connected directly to output port 'ar2_out[0]'. (LINT-29)
+1

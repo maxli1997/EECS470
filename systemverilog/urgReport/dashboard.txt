@@ -1,0 +1,28 @@
+Dashboard
+
+Date: Tue Feb 25 00:06:45 2020
+
+User: ryanzhu
+
+Version: N-2017.12-SP2-1
+Command line: urg -dir simv.vdb -format text 
+
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE 
+ 66.43  94.22  67.59  37.48 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE NAME      
+ 66.43  94.22  67.59  37.48 testbench 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE 
+ 65.59  93.20  63.01  40.56 
+

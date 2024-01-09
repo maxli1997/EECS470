@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_srcinfo.dtd">
+  <srcinfo name="/afs/umich.edu/user/m/e/meitang/Desktop/EECS470-final-project/systemverilog/BRAT"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="N-2017.12-SP2-1"  />
+      <fileinfo name="macro.svh"  id="0"  />
+      <fileinfo name="brat_testbench.sv"  id="1"  />
+      <fileinfo name="brat.sv"  id="2"  />
+    </srcinfo>

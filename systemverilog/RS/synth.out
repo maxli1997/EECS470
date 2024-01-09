@@ -1,0 +1,808 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#/***********************************************************/
+#/*   FILE        : rob.tcl                          */
+#/*   Description : Default Synopsys Design Compiler Script */
+#/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
+#/*   You'll need to minimally set design_name & read files */
+#/***********************************************************/
+#/***********************************************************/
+#/* The following five lines must be updated for every      */
+#/* new design                                              */
+#/***********************************************************/
+suppress_message {"UID-401"}
+suppress_message {"VER-130"}
+read_file -f sverilog [list "sys_defs.svh" "rs.sv"]
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Loading sverilog files: '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/sys_defs.svh' '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/sys_defs.svh
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv
+Module 'pe' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'psel_gen' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Module 'wand_sel' was not elaborated because it contains the 'template' attribute.  Instead, it has been saved as a template.
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:291: Redeclaration of port 'rs_arr_out'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:306: Redeclaration of port 'rs_empty_idx1'. (VER-331)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:306: Redeclaration of port 'rs_empty_idx2'. (VER-331)
+
+Inferred memory devices in process
+	in routine rs_entry line 185 in file
+		'/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rob_num_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|       tag_reg       | Flip-flop |   6   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      tag1_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      tag2_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|       pc_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    tag1_rdy_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|    tag2_rdy_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+|  id_ex_packet_reg   | Flip-flop |  207  |  Y  | N  | N  | N  | Y  | N  | N  |
+|  id_ex_packet_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | Y  | N  |
+|    brat_vec_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:613: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:615: signed to unsigned conversion occurs. (VER-318)
+Warning:  /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.sv:622: signed to unsigned conversion occurs. (VER-318)
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|      rs/377      |   32   |   160   |      5       |
+|      rs/381      |   32   |   25    |      5       |
+|      rs/383      |   32   |    2    |      5       |
+|      rs/384      |   32   |    8    |      5       |
+|      rs/386      |   32   |    6    |      5       |
+|      rs/388      |   32   |    9    |      5       |
+|      rs/402      |   32   |   160   |      5       |
+|      rs/406      |   32   |   25    |      5       |
+|      rs/408      |   32   |    2    |      5       |
+|      rs/409      |   32   |    8    |      5       |
+|      rs/411      |   32   |    6    |      5       |
+|      rs/413      |   32   |    9    |      5       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs_entry.db:rs_entry'
+Loaded 2 designs.
+Current design is 'rs_entry'.
+rs_entry rs
+set design_name rs
+rs
+set clock_name clock
+clock
+set reset_name reset
+reset
+set CLK_PERIOD 9
+9
+#/***********************************************************/
+#/* The rest of this file may be left alone for most small  */
+#/* to moderate sized designs.  You may need to alter it    */
+#/* when synthesizing your final project.                   */
+#/***********************************************************/
+set SYN_DIR ./
+./
+set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+./ /afs/umich.edu/class/eecs470/lib/synopsys/
+set target_library "lec25dscc25_TT.db"
+lec25dscc25_TT.db
+set link_library [concat  "*" $target_library]
+* lec25dscc25_TT.db
+#/***********************************************************/
+#/* Set some flags for optimisation */
+set compile_top_all_paths "true"
+true
+set auto_wire_load_selection "false"
+false
+#/***********************************************************/
+#/*  Clk Periods/uncertainty/transition                     */
+set CLK_TRANSITION 0.1
+0.1
+set CLK_UNCERTAINTY 0.1
+0.1
+set CLK_LATENCY 0.1
+0.1
+#/* Input/output Delay values */
+set AVG_INPUT_DELAY 0.1
+0.1
+set AVG_OUTPUT_DELAY 0.1
+0.1
+#/* Critical Range (ns) */
+set CRIT_RANGE 1.0
+1.0
+#/***********************************************************/
+#/* Design Constrains: Not all used                         */
+set MAX_TRANSITION 1.0
+1.0
+set FAST_TRANSITION 0.1
+0.1
+set MAX_FANOUT 32
+32
+set MID_FANOUT 8
+8
+set LOW_FANOUT 1
+1
+set HIGH_DRIVE 0
+0
+set HIGH_LOAD 1.0
+1.0
+set AVG_LOAD 0.1
+0.1
+set AVG_FANOUT_LOAD 10
+10
+#/***********************************************************/
+#/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
+#BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
+set DRIVING_CELL dffacs1
+dffacs1
+#/* DONT_USE_LIST = {   } */
+#/*************operation cons**************/
+#/*OP_WCASE = WCCOM;
+#OP_BCASE = BCCOM;*/
+set WIRE_LOAD "tsmcwire"
+tsmcwire
+set LOGICLIB lec25dscc25_TT
+lec25dscc25_TT
+#/*****************************/
+#/* Sourcing the file that sets the Search path and the libraries(target,link) */
+set sys_clk $clock_name
+clock
+set netlist_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".vg"]
+./rs.vg
+set ddc_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".ddc"]
+./rs.ddc
+set rep_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".rep"]
+./rs.rep
+set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".chk"] ]
+./rs.chk
+#/* if we didnt find errors at this point, run */
+if {  $dc_shell_status != [list] } {
+   current_design $design_name
+  link
+  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+  set_wire_load_mode top
+  set_fix_multiple_port_nets -outputs -buffer_constants
+  create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
+  set_clock_uncertainty $CLK_UNCERTAINTY $sys_clk
+  set_fix_hold $sys_clk
+  group_path -from [all_inputs] -name input_grp
+  group_path -to [all_outputs] -name output_grp
+  set_driving_cell  -lib_cell $DRIVING_CELL [all_inputs]
+  remove_driving_cell [find port $sys_clk]
+  set_fanout_load $AVG_FANOUT_LOAD [all_outputs]
+  set_load $AVG_LOAD [all_outputs]
+  set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
+  remove_input_delay -clock $sys_clk [find port $sys_clk]
+  set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
+  set_dont_touch $reset_name
+  set_resistance 0 $reset_name
+  set_drive 0 $reset_name
+  set_critical_range $CRIT_RANGE [current_design]
+  set_max_delay $CLK_PERIOD [all_outputs]
+  set MAX_FANOUT $MAX_FANOUT
+  set MAX_TRANSITION $MAX_TRANSITION
+  uniquify
+  ungroup -all -flatten
+  redirect $chk_file { check_design }
+  compile -map_effort high
+  write -hier -format verilog -output $netlist_file $design_name
+  write -hier -format ddc -output $ddc_file $design_name
+  redirect $rep_file { report_design -nosplit }
+  redirect -append $rep_file { report_area }
+  redirect -append $rep_file { report_timing -max_paths 2 -input_pins -nets -transition_time -nosplit }
+  redirect -append $rep_file { report_constraint -max_delay -verbose -nosplit }
+  remove_design -all
+  read_file -format verilog $netlist_file
+  current_design $design_name
+  redirect -append $rep_file { report_reference -nosplit }
+  quit
+} else {
+   quit
+}
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Current design is 'rs'.
+
+  Linking design 'rs'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.db, etc
+  lec25dscc25_TT (library)    /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db
+
+Information: Building the design 'psel_gen' instantiated from design 'rs' with
+	the parameters "REQS=2,WIDTH=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'pe' instantiated from design 'rs' with
+	the parameters "OUT_WIDTH=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'wand_sel' instantiated from design 'psel_gen_REQS2_WIDTH32' with
+	the parameters "32". (HDL-193)
+Presto compilation completed successfully.
+Current design is 'rs'.
+Information: Uniquified 32 instances of design 'rs_entry'. (OPT-1056)
+Information: Uniquified 2 instances of design 'psel_gen_REQS2_WIDTH32'. (OPT-1056)
+Information: Uniquified 4 instances of design 'pe_OUT_WIDTH5'. (OPT-1056)
+Information: Uniquified 4 instances of design 'wand_sel_WIDTH32'. (OPT-1056)
+Information: Updating graph... (UID-83)
+Warning: Design 'rs' contains 35 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+
+Information: There are 101 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rs'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'rs_DW01_cmp6_0'
+  Processing 'rs_DW01_cmp6_1'
+  Processing 'rs_DW01_cmp6_2'
+  Processing 'rs_DW01_cmp6_3'
+  Processing 'rs_DW01_cmp6_4'
+  Processing 'rs_DW01_cmp6_5'
+  Processing 'rs_DW01_cmp6_6'
+  Processing 'rs_DW01_cmp6_7'
+  Processing 'rs_DW01_cmp6_8'
+  Processing 'rs_DW01_cmp6_9'
+  Processing 'rs_DW01_cmp6_10'
+  Processing 'rs_DW01_cmp6_11'
+  Processing 'rs_DW01_cmp6_12'
+  Processing 'rs_DW01_cmp6_13'
+  Processing 'rs_DW01_cmp6_14'
+  Processing 'rs_DW01_cmp6_15'
+  Processing 'rs_DW01_cmp6_16'
+  Processing 'rs_DW01_cmp6_17'
+  Processing 'rs_DW01_cmp6_18'
+  Processing 'rs_DW01_cmp6_19'
+  Processing 'rs_DW01_cmp6_20'
+  Processing 'rs_DW01_cmp6_21'
+  Processing 'rs_DW01_cmp6_22'
+  Processing 'rs_DW01_cmp6_23'
+  Processing 'rs_DW01_cmp6_24'
+  Processing 'rs_DW01_cmp6_25'
+  Processing 'rs_DW01_cmp6_26'
+  Processing 'rs_DW01_cmp6_27'
+  Processing 'rs_DW01_cmp6_28'
+  Processing 'rs_DW01_cmp6_29'
+  Processing 'rs_DW01_cmp6_30'
+  Processing 'rs_DW01_cmp6_31'
+  Processing 'rs_DW01_cmp6_32'
+  Processing 'rs_DW01_cmp6_33'
+  Processing 'rs_DW01_cmp6_34'
+  Processing 'rs_DW01_cmp6_35'
+  Processing 'rs_DW01_cmp6_36'
+  Processing 'rs_DW01_cmp6_37'
+  Processing 'rs_DW01_cmp6_38'
+  Processing 'rs_DW01_cmp6_39'
+  Processing 'rs_DW01_cmp6_40'
+  Processing 'rs_DW01_cmp6_41'
+  Processing 'rs_DW01_cmp6_42'
+  Processing 'rs_DW01_cmp6_43'
+  Processing 'rs_DW01_cmp6_44'
+  Processing 'rs_DW01_cmp6_45'
+  Processing 'rs_DW01_cmp6_46'
+  Processing 'rs_DW01_cmp6_47'
+  Processing 'rs_DW01_cmp6_48'
+  Processing 'rs_DW01_cmp6_49'
+  Processing 'rs_DW01_cmp6_50'
+  Processing 'rs_DW01_cmp6_51'
+  Processing 'rs_DW01_cmp6_52'
+  Processing 'rs_DW01_cmp6_53'
+  Processing 'rs_DW01_cmp6_54'
+  Processing 'rs_DW01_cmp6_55'
+  Processing 'rs_DW01_cmp6_56'
+  Processing 'rs_DW01_cmp6_57'
+  Processing 'rs_DW01_cmp6_58'
+  Processing 'rs_DW01_cmp6_59'
+  Processing 'rs_DW01_cmp6_60'
+  Processing 'rs_DW01_cmp6_61'
+  Processing 'rs_DW01_cmp6_62'
+  Processing 'rs_DW01_cmp6_63'
+  Processing 'rs_DW01_cmp6_64'
+  Processing 'rs_DW01_cmp6_65'
+  Processing 'rs_DW01_cmp6_66'
+  Processing 'rs_DW01_cmp6_67'
+  Processing 'rs_DW01_cmp6_68'
+  Processing 'rs_DW01_cmp6_69'
+  Processing 'rs_DW01_cmp6_70'
+  Processing 'rs_DW01_cmp6_71'
+  Processing 'rs_DW01_cmp6_72'
+  Processing 'rs_DW01_cmp6_73'
+  Processing 'rs_DW01_cmp6_74'
+  Processing 'rs_DW01_cmp6_75'
+  Processing 'rs_DW01_cmp6_76'
+  Processing 'rs_DW01_cmp6_77'
+  Processing 'rs_DW01_cmp6_78'
+  Processing 'rs_DW01_cmp6_79'
+  Processing 'rs_DW01_cmp6_80'
+  Processing 'rs_DW01_cmp6_81'
+  Processing 'rs_DW01_cmp6_82'
+  Processing 'rs_DW01_cmp6_83'
+  Processing 'rs_DW01_cmp6_84'
+  Processing 'rs_DW01_cmp6_85'
+  Processing 'rs_DW01_cmp6_86'
+  Processing 'rs_DW01_cmp6_87'
+  Processing 'rs_DW01_cmp6_88'
+  Processing 'rs_DW01_cmp6_89'
+  Processing 'rs_DW01_cmp6_90'
+  Processing 'rs_DW01_cmp6_91'
+  Processing 'rs_DW01_cmp6_92'
+  Processing 'rs_DW01_cmp6_93'
+  Processing 'rs_DW01_cmp6_94'
+  Processing 'rs_DW01_cmp6_95'
+  Processing 'rs_DW01_cmp6_96'
+  Processing 'rs_DW01_cmp6_97'
+  Processing 'rs_DW01_cmp6_98'
+  Processing 'rs_DW01_cmp6_99'
+  Processing 'rs_DW01_cmp6_100'
+  Processing 'rs_DW01_cmp6_101'
+  Processing 'rs_DW01_cmp6_102'
+  Processing 'rs_DW01_cmp6_103'
+  Processing 'rs_DW01_cmp6_104'
+  Processing 'rs_DW01_cmp6_105'
+  Processing 'rs_DW01_cmp6_106'
+  Processing 'rs_DW01_cmp6_107'
+  Processing 'rs_DW01_cmp6_108'
+  Processing 'rs_DW01_cmp6_109'
+  Processing 'rs_DW01_cmp6_110'
+  Processing 'rs_DW01_cmp6_111'
+  Processing 'rs_DW01_cmp6_112'
+  Processing 'rs_DW01_cmp6_113'
+  Processing 'rs_DW01_cmp6_114'
+  Processing 'rs_DW01_cmp6_115'
+  Processing 'rs_DW01_cmp6_116'
+  Processing 'rs_DW01_cmp6_117'
+  Processing 'rs_DW01_cmp6_118'
+  Processing 'rs_DW01_cmp6_119'
+  Processing 'rs_DW01_cmp6_120'
+  Processing 'rs_DW01_cmp6_121'
+  Processing 'rs_DW01_cmp6_122'
+  Processing 'rs_DW01_cmp6_123'
+  Processing 'rs_DW01_cmp6_124'
+  Processing 'rs_DW01_cmp6_125'
+  Processing 'rs_DW01_cmp6_126'
+  Processing 'rs_DW01_cmp6_127'
+  Processing 'rs_DW01_cmp2_0'
+  Processing 'rs_DW01_cmp2_1'
+  Processing 'rs_DW01_cmp2_2'
+  Processing 'rs_DW01_cmp2_3'
+  Processing 'rs_DW01_cmp2_4'
+  Processing 'rs_DW01_cmp2_5'
+  Processing 'rs_DW01_cmp2_6'
+  Processing 'rs_DW01_cmp2_7'
+  Processing 'rs_DW01_cmp2_8'
+  Processing 'rs_DW01_cmp2_9'
+  Processing 'rs_DW01_cmp2_10'
+  Processing 'rs_DW01_cmp2_11'
+  Processing 'rs_DW01_cmp2_12'
+  Processing 'rs_DW01_cmp2_13'
+  Processing 'rs_DW01_cmp2_14'
+  Processing 'rs_DW01_cmp2_15'
+  Processing 'rs_DW01_cmp2_16'
+  Processing 'rs_DW01_cmp2_17'
+  Processing 'rs_DW01_cmp2_18'
+  Processing 'rs_DW01_cmp2_19'
+  Processing 'rs_DW01_cmp2_20'
+  Processing 'rs_DW01_cmp2_21'
+  Processing 'rs_DW01_cmp2_22'
+  Processing 'rs_DW01_cmp2_23'
+  Processing 'rs_DW01_cmp2_24'
+  Processing 'rs_DW01_cmp2_25'
+  Processing 'rs_DW01_cmp2_26'
+  Processing 'rs_DW01_cmp2_27'
+  Processing 'rs_DW01_cmp2_28'
+  Processing 'rs_DW01_cmp2_29'
+  Processing 'rs_DW01_cmp2_30'
+  Processing 'rs_DW01_cmp2_31'
+  Processing 'rs_DW01_cmp2_32'
+  Processing 'rs_DW01_cmp2_33'
+  Processing 'rs_DW01_cmp2_34'
+  Processing 'rs_DW01_cmp2_35'
+  Processing 'rs_DW01_cmp2_36'
+  Processing 'rs_DW01_cmp2_37'
+  Processing 'rs_DW01_cmp2_38'
+  Processing 'rs_DW01_cmp2_39'
+  Processing 'rs_DW01_cmp2_40'
+  Processing 'rs_DW01_cmp2_41'
+  Processing 'rs_DW01_cmp2_42'
+  Processing 'rs_DW01_cmp2_43'
+  Processing 'rs_DW01_cmp2_44'
+  Processing 'rs_DW01_cmp2_45'
+  Processing 'rs_DW01_cmp2_46'
+  Processing 'rs_DW01_cmp2_47'
+  Processing 'rs_DW01_cmp2_48'
+  Processing 'rs_DW01_cmp2_49'
+  Processing 'rs_DW01_cmp2_50'
+  Processing 'rs_DW01_cmp2_51'
+  Processing 'rs_DW01_cmp2_52'
+  Processing 'rs_DW01_cmp2_53'
+  Processing 'rs_DW01_cmp2_54'
+  Processing 'rs_DW01_cmp2_55'
+  Processing 'rs_DW01_cmp2_56'
+  Processing 'rs_DW01_cmp2_57'
+  Processing 'rs_DW01_cmp2_58'
+  Processing 'rs_DW01_cmp2_59'
+  Processing 'rs_DW01_cmp2_60'
+  Processing 'rs_DW01_cmp2_61'
+  Processing 'rs_DW01_cmp2_62'
+  Processing 'rs_DW01_cmp2_63'
+  Processing 'rs_DW01_cmp2_64'
+  Processing 'rs_DW01_cmp2_65'
+  Processing 'rs_DW01_cmp2_66'
+  Processing 'rs_DW01_cmp2_67'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:04:52 5451501.5   1187.89 12340280.0   96301.2                                0.00  
+    0:04:52 5451501.5   1187.89 12340280.0   96301.2                                0.00  
+    0:04:58 7236463.4   1187.89 12298781.0   78216.0                                0.00  
+    0:04:59 7367879.7   1187.89 12229453.0   74403.8                                0.00  
+    0:05:00 7704516.0   1187.89 12222001.0   67095.4                                0.00  
+    0:05:28 7659564.6      0.00       0.0      95.0                                0.00  
+    0:05:28 7659564.6      0.00       0.0      95.0                                0.00  
+    0:05:28 7659564.6      0.00       0.0      95.0                                0.00  
+    0:05:29 7659564.6      0.00       0.0      95.0                                0.00  
+    0:05:30 7659564.6      0.00       0.0      95.0                                0.00  
+    0:05:51 4324227.8      0.38       4.8      94.9                                0.00  
+    0:05:57 4295728.2      0.22       0.7      94.9                                0.00  
+    0:06:04 4295379.9      0.12       0.2       0.3                                0.00  
+    0:06:05 4295371.6      0.02       0.0       0.3                                0.00  
+    0:06:09 4295529.2      0.00       0.0       0.3                                0.00  
+    0:06:10 4295338.4      0.04       0.0       0.3                                0.00  
+    0:06:11 4295437.9      0.00       0.0       0.3                                0.00  
+    0:06:12 4295321.8      0.00       0.0       0.3                                0.00  
+    0:06:13 4295321.8      0.00       0.0       0.3                                0.00  
+    0:06:13 4295321.8      0.00       0.0       0.3                                0.00  
+    0:06:14 4295321.8      0.00       0.0       0.3                                0.00  
+    0:06:14 4295321.8      0.00       0.0       0.3                                0.00  
+    0:06:15 4295255.5      0.07       6.5       0.0                                0.00  
+    0:06:15 4295255.5      0.07       6.5       0.0                                0.00  
+    0:06:15 4295255.5      0.07       6.5       0.0                                0.00  
+    0:06:15 4295255.5      0.07       6.5       0.0                                0.00  
+    0:06:16 4296051.7      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:06:16 4296051.7      0.00       0.0       0.0                                0.00  
+    0:06:16 4296051.7      0.00       0.0       0.0                                0.00  
+    0:06:17 4292866.7      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:06:21 4292866.7      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:06:21 4292866.7      0.00       0.0       0.0                                0.00  
+    0:06:21 4292866.7      0.00       0.0       0.0                                0.00  
+    0:06:26 4264690.6      0.04       0.1       0.0                                0.00  
+    0:06:31 4249387.4      0.28     716.5       0.0                                0.00  
+    0:06:35 4237526.4      0.25     571.0       0.0                                0.00  
+    0:06:38 4229547.2      0.25     571.1       0.0                                0.00  
+    0:06:41 4222065.7      0.25     573.8       0.0                                0.00  
+    0:06:44 4215040.3      0.25     573.9       0.0                                0.00  
+    0:06:48 4208288.7      0.25     574.0       0.0                                0.00  
+    0:06:51 4202806.1      0.25     574.3       0.0                                0.00  
+    0:06:54 4198493.0      0.25     574.3       0.0                                0.00  
+    0:06:57 4195822.2      0.25     574.4       0.0                                0.00  
+    0:06:59 4193607.6      0.25     574.4       0.0                                0.00  
+    0:07:02 4191293.5      0.25     574.4       0.0                                0.00  
+    0:07:04 4188962.7      0.25     574.4       0.0                                0.00  
+    0:07:07 4187063.3      0.25     574.6       0.0                                0.00  
+    0:07:09 4185130.7      0.25     574.6       0.0                                0.00  
+    0:07:11 4183496.7      0.25     574.6       0.0                                0.00  
+    0:07:11 4183496.7      0.25     574.6       0.0                                0.00  
+    0:07:16 4190837.3      0.11      70.8       0.0 rs_body[7]/id_ex_packet_reg[opa_select][0]/CLRB      0.00  
+    0:07:19 4193524.6      0.00       0.0       0.0                                0.00  
+    0:07:20 4190107.3      0.28     138.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:21 4189750.7      0.46     558.5       0.0                                0.00  
+    0:07:25 4195225.0      0.04       3.2       0.0 rs_body[19]/brat_vec_reg[3]/CLRB      0.00  
+    0:07:26 4195490.4      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:07:26 4195490.4      0.00       0.0       0.0                                0.00  
+    0:07:27 4195490.4      0.00       0.0       0.0                                0.00  
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'rs' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clock': 10368 load(s), 1 driver(s)
+Writing verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.vg'.
+Writing ddc file './rs.ddc'.
+Removing design 'rs'
+Removing library 'gtech'
+Removing library 'lec25dscc25_TT'
+Removing library 'standard.sldb'
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Loading verilog file '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.vg'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.vg
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/afs/umich.edu/user/r/y/ryanzhu/EECS470-final-project/systemverilog/RS/rs.db:rs'
+Loaded 1 design.
+Current design is 'rs'.
+Current design is 'rs'.
+
+Thank you...

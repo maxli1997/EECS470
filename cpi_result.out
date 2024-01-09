@@ -1,0 +1,98 @@
+Using the following parameters:
+// AR_SIZE: 32 PR_SIZE: 64 ROB_SIZE: 16 RS_SIZE:8 BRAT_SIZE: 4 LSQ_SIZE: 8 BTB_SIZE: 8 MSHRSIZE: 4
+Executing rv32_mult
+@@!  674 cycles / 326 instrs = 2.067485 CPI
+@@!
+@@!  6730.00 ns total time to execute
+@@!
+Executing rv32_parallel
+@@!  307 cycles / 200 instrs = 1.535000 CPI
+@@!
+@@!  3060.00 ns total time to execute
+@@!
+Executing rv32_copy_long
+@@!  416 cycles / 590 instrs = 0.705085 CPI
+@@!
+@@!  4150.00 ns total time to execute
+@@!
+Executing rv32_copy
+@@!  172 cycles / 132 instrs = 1.303030 CPI
+@@!
+@@!  1710.00 ns total time to execute
+@@!
+Executing rv32_fib_long
+@@!  468 cycles / 636 instrs = 0.735849 CPI
+@@!
+@@!  4670.00 ns total time to execute
+@@!
+Executing rv32_fib
+@@!  186 cycles / 150 instrs = 1.240000 CPI
+@@!
+@@!  1850.00 ns total time to execute
+@@!
+Executing rv32_saxpy
+@@!  391 cycles / 187 instrs = 2.090909 CPI
+@@!
+@@!  3900.00 ns total time to execute
+@@!
+Executing rv32_evens_long
+@@!  314 cycles / 335 instrs = 0.937313 CPI
+@@!
+@@!  3130.00 ns total time to execute
+@@!
+Executing rv32_evens
+@@!  290 cycles / 97 instrs = 2.989691 CPI
+@@!
+@@!  2890.00 ns total time to execute
+@@!
+Executing rv32_btest1
+@@!  820 cycles / 231 instrs = 3.549784 CPI
+@@!
+@@!  8190.00 ns total time to execute
+@@!
+Executing rv32_btest2
+@@!  1494 cycles / 457 instrs = 3.269147 CPI
+@@!
+@@!  14930.00 ns total time to execute
+@@!
+Executing rv32_insertion
+@@!  983 cycles / 597 instrs = 1.646566 CPI
+@@!
+@@!  9820.00 ns total time to execute
+@@!
+Executing rv32_halt
+@@!  9 cycles / 0 instrs = inf CPI
+@@!
+@@!  80.00 ns total time to execute
+@@!
+Executing haha
+@@!  40 cycles / 16 instrs = 2.500000 CPI
+@@!
+@@!  390.00 ns total time to execute
+@@!
+Executing mult_no_lsq
+@@!  693 cycles / 281 instrs = 2.466192 CPI
+@@!
+@@!  6920.00 ns total time to execute
+@@!
+Executing sampler
+@@!  223 cycles / 109 instrs = 2.045872 CPI
+@@!
+@@!  2220.00 ns total time to execute
+@@!
+Executing bfs
+@@!  8125 cycles / 3484 instrs = 2.332090 CPI
+@@!
+@@!  81240.00 ns total time to execute
+@@!
+Executing basic_malloc
+@@!  2500 cycles / 944 instrs = 2.648305 CPI
+@@!
+@@!  24990.00 ns total time to execute
+@@!
+Executing insertionsort
+@@!  117368 cycles / 73291 instrs = 1.601397 CPI
+@@!
+@@!  1173670.00 ns total time to execute
+@@!
+All programs executed!

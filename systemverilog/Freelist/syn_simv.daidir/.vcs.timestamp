@@ -1,0 +1,100 @@
+0 
+32
++define+
++vc
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/caen/vcs-2017.12-SP2-1/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvirsim.so /usr/caen/vcs-2017.12-SP2-1/linux64/lib/liberrorinf.so /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libsnpsmalloc.so /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvfs.so
+-Mout=syn_simv
+-Msaverestoreobj=/usr/caen/vcs-2017.12-SP2-1/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mupdate
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/caen/vcs-2017.12-SP2-1/include
+-cm
+-full64
+-gen_obj
+-line
+-o syn_simv
+-picarchive
+-sverilog
+/afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
+/usr/caen/vcs-2017.12-SP2-1/linux64/bin/vcs1
+freelist.vg
+freelist_testbench.sv
+line+cond+tgl
+sys_defs.svh
+51
+sysc_uni_pwd=/home/ryanzhu/EECS470-final-project/systemverilog/Freelist
+_LMFILES_=/afs/umich.edu/class/coe/modules/eecs484/w17:/usr/caen/misc/modules/gcc/7.1.0:/usr/caen/misc/modules/mongodb/3.6.8:/usr/caen/misc/modules/go/1.13:/usr/caen/misc/modules/vcs/2017.12-SP2-1
+XDG_SESSION_ID=4180
+XDG_RUNTIME_DIR=/run/user/114151300
+XDG_DATA_DIRS=/home/ryanzhu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+VSCODE_IPC_HOOK_CLI=/tmp/vscode-ipc-0ba9310b-708c-4a19-9ea0-9e7895430d03.sock
+VMR_MODE_FLAG=64
+VERBOSE_LOGGING=true
+VCS_MODE_FLAG=64
+VCS_HOME=/usr/caen/vcs-2017.12-SP2-1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TWO_TASK=muscle
+TOOL_HOME=/usr/caen/vcs-2017.12-SP2-1/linux64
+TNS_ADMIN=/usr/caen/oracle/local
+TERM_PROGRAM_VERSION=1.43.2
+TERM_PROGRAM=vscode
+SW_VCS=2017.12-SP2-1
+SSH_CONNECTION=68.36.55.242 53850 141.213.74.61 22
+SSH_CLIENT=68.36.55.242 53850 22
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+QT_GRAPHICSSYSTEM_CHECKED=1
+PIPE_LOGGING=true
+OVA_UUM=0
+ORACLE_HOME=/usr/caen/oracle
+MSI2LMP_LIBRARY=/usr/share/lammps/frc_files
+MODULESHOME=/usr/share/Modules
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/caen/misc/modules:/afs/umich.edu/class/coe/modules
+MFLAGS=
+MAKELEVEL=1
+MAKEFLAGS=
+LOADEDMODULES=eecs484/w17:gcc/7.1.0:mongodb/3.6.8:go/1.13:vcs/2017.12-SP2-1
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LD_RUN_PATH=/usr/um/gcc-7.1.0/lib64
+LC_ALL=C
+LAMMPS_POTENTIALS=/usr/share/lammps/potentials
+KRB5CCNAME=FILE:/tmp/krb5cc_114151300_VlU0WV
+KDEDIRS=/usr
+HISTCONTROL=ignoredups
+GOROOT=/usr/um/go-1.13
+COLORTERM=truecolor
+CINNAMON_2D=1
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=true
+AMD_ENTRYPOINT=vs/server/remoteExtensionHostProcess
+0
+5
+1062689876 /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
+1585367611 freelist.vg
+1585367338 freelist_testbench.sv
+1585364632 sys_defs.svh
+1531623946 /usr/caen/vcs-2017.12-SP2-1/include/cm_vcsd.tab
+5
+0 
+1531625631 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvirsim.so
+1531624898 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/liberrorinf.so
+1531624871 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libsnpsmalloc.so
+1531625298 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvfs.so
+1585367617 syn_simv.daidir

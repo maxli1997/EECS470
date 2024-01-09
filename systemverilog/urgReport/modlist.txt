@@ -1,0 +1,14 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE 
+ 65.59  93.20  63.01  40.56 
+
+
+Total modules in report: 3
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   TOGGLE NAME      
+ 63.81  91.07  60.29  40.07 rob       
+ 64.51  93.18 --      35.84 testbench 
+ 82.90 100.00 100.00  48.69 rob_entry 
+
